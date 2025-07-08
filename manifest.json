@@ -4,5 +4,6 @@
 	"minAppVersion": "1.0.0",
 	"author": "Riffaells",
 	"authorUrl": "https://github.com/Riffaells/Robsi",
-	"description": "Modern Material Design 3 theme with purple accents and blur effects"
+	"description": "Modern Material Design 3 theme with purple accents and blur effects",
+	"modes": ["dark", "light"]
 }
