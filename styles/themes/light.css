@@ -1,0 +1,87 @@
+.theme-light {
+  /* --accent-h: 261; /* magenta */
+  /* --accent-s: 24%; */
+  /* --accent-l: 38%; */
+  /* cyan */
+  --accent-h: 202;
+  --accent-s: 86%;
+  --accent-l: 43%;
+
+  --bg_dark2_x: 188, 189, 194;
+  --bg_dark2: rgb(var(--bg_dark2_x));
+  --bg_dark_x: 203, 204, 209;
+  --bg_dark: rgb(var(--bg_dark_x));
+  --bg_x: 213, 214, 219;
+  --bg: rgb(var(--bg_x));
+  --bg_highlight_x: 220, 222, 226;
+  --bg_highlight: rgb(var(--bg_highlight_x));
+  --bg_highlight_dark_x: 195, 197, 201;
+  --bg_highlight_dark: rgb(var(--bg_highlight_dark_x));
+  --terminal_black_x: 15, 15, 20;
+  --terminal_black: rgb(var(--terminal_black_x));
+  --fg_x: 52, 59, 88;
+  --fg: rgb(var(--fg_x));
+  --fg_dark_x: 39, 46, 75;
+  --fg_dark: rgb(var(--fg_dark_x));
+  --comment_x: 150, 153, 163;
+  --comment: rgb(var(--comment_x));
+  --code-comment_x: 130, 135, 145;
+  --code-comment: rgb(var(--code-comment_x));
+  --blue0_x: 39, 71, 125;
+  --blue0: rgb(var(--blue0_x));
+  --blue_x: 52, 84, 138;
+  --blue: rgb(var(--blue_x));
+  --cyan_x: 15, 75, 110;
+  --cyan: rgb(var(--cyan_x));
+  --purple_x: 187, 154, 247;
+  --purple: rgb(var(--purple_x));
+  --magent_hsl: 261 24% 38%;
+  --magenta_x: 90, 74, 120;
+  --magenta: rgb(var(--magenta_x));
+  --magenta-light_x: 140, 110, 180;
+  --magenta-light: rgb(var(--magenta-light_x));
+  --pink_hsl: 286 24% 38%;
+  --pink_x: 109, 74, 120;
+  --pink: rgb(var(--pink_x));
+  --orange_x: 150, 80, 39;
+  --orange: rgb(var(--orange_x));
+  --yellow_x: 143, 94, 21;
+  --yellow: rgb(var(--yellow_x));
+  --green_x: 51, 99, 92;
+  --green: rgb(var(--green_x));
+  --teal_x: 22, 103, 117;
+  --teal: rgb(var(--teal_x));
+  --red_x: 140, 67, 81;
+  --red: rgb(var(--red_x));
+  --red1_x: 115, 42, 56;
+  --red1: rgb(var(--red1_x));
+  --unknown: #000000;
+
+  --link-external-filter: invert(62%) sepia(9%) saturate(266%) hue-rotate(189deg) brightness(97%) contrast(88%);
+
+  --background-primary: #f7f7f7;
+  --background-secondary: #fcfcfc;
+  --text-normal: #1a1a1a;
+  --text-muted: #b5b3b1;
+
+  /* File explorer dark text fix for light theme */
+  --nav-item-color: #2c2c2c;
+  --nav-item-color-hover: #1a1a1a;
+}
+
+/* File explorer styling for light theme */
+.theme-light .nav-file-title,
+.theme-light .nav-folder-title {
+  color: #2c2c2c !important;
+}
+
+.theme-light .nav-file-title:hover,
+.theme-light .nav-folder-title:hover {
+  color: #1a1a1a !important;
+  background: rgba(15, 75, 110, 0.1);
+}
+
+.theme-light .nav-file-title.is-active {
+  color: #ffffff !important;
+  background: var(--cyan);
+}

@@ -1,0 +1,99 @@
+.theme-dark {
+  color-scheme: dark;
+  --accent-h: 202;
+  --accent-s: 100%;
+  --accent-l: 75%;
+
+  --bg_dark2_x: 2, 2, 2;
+  --bg_dark2: rgb(var(--bg_dark2_x));
+  --bg_dark_x: 8, 8, 8;
+  --bg_dark: rgb(var(--bg_dark_x));
+  --bg_x: 15, 15, 15;
+  --bg: rgb(var(--bg_x));
+  --bg_highlight_x: 25, 25, 25;
+  --bg_highlight: rgb(var(--bg_highlight_x));
+  --bg_highlight_dark_x: 18, 18, 18;
+  --bg_highlight_dark: rgb(var(--bg_highlight_dark_x));
+  --terminal_black_x: 65, 72, 104;
+  --terminal_black: rgb(var(--terminal_black_x));
+  --fg_x: 220, 220, 220;
+  --fg: rgb(var(--fg_x));
+  --fg_dark_x: 180, 180, 180;
+  --fg_dark: rgb(var(--fg_dark_x));
+  --comment_x: 120, 120, 120;
+  --comment: rgb(var(--comment_x));
+  --code-comment_x: 115, 125, 165;
+  --code-comment: rgb(var(--code-comment_x));
+  --blue0_x: 61, 89, 161;
+  --blue0: rgb(var(--blue0_x));
+  --blue_x: 122, 162, 247;
+  --blue: rgb(var(--blue_x));
+  --cyan_hsl: 202 100% 75%;
+  --cyan_x: 125, 207, 255;
+  --cyan: rgb(var(--cyan_x));
+  --purple_x: 187, 154, 247;
+  --purple: rgb(var(--purple_x));
+  --magent_hsl: 261 85% 79%;
+  --magenta_x: 187, 154, 247;
+  --magenta: rgb(var(--magenta_x));
+  --magenta-light_x: 210, 190, 255;
+  --magenta-light: rgb(var(--magenta-light_x));
+
+  /* Special colors for folder notes - purple mixed with white */
+  --folder-note-color_x: 220, 200, 250;
+  --folder-note-color: rgb(var(--folder-note-color_x));
+  --pink_hsl: 331 100% 43%;
+  --pink_x: 217, 0, 105;
+  --pink: rgb(var(--pink_x));
+  --orange_x: 255, 158, 100;
+  --orange: rgb(var(--orange_x));
+  --yellow_x: 224, 175, 104;
+  --yellow: rgb(var(--yellow_x));
+  --green_x: 158, 206, 106;
+  --green: rgb(var(--green_x));
+  --teal_x: 26, 188, 156;
+  --teal: rgb(var(--teal_x));
+  --red_x: 255, 117, 127;
+  --red: rgb(var(--red_x));
+  --red1_x: 219, 75, 75;
+  --red1: rgb(var(--red1_x));
+  --unknown: #ffffff;
+
+  --link-external-filter: invert(35%) sepia(28%) saturate(681%) hue-rotate(192deg) brightness(94%) contrast(85%);
+
+  --background-primary: #020202;
+  --background-secondary: #0a0a0a;
+  --text-normal: #d0d0d0;
+  --text-muted: #888;
+
+  /* Tab and workspace background variables */
+  --tab-container-background: rgba(8, 8, 8, 0.95);
+  --tab-background: rgba(2, 2, 2, 0.9);
+  --tab-background-active: rgba(25, 25, 25, 0.95);
+  --tab-background-hover: rgba(18, 18, 18, 0.8);
+  --tab-background-unfocused: rgba(8, 8, 8, 0.7);
+  --tab-divider-color: rgba(40, 40, 40, 0.3);
+  --tab-outline-color: rgba(60, 60, 60, 0.5);
+  --tab-outline-color-active: rgba(80, 80, 80, 0.8);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --workspace-background-translucent: rgba(2, 2, 2, 0.9);
+  --titlebar-background: rgba(8, 8, 8, 0.98);
+  --titlebar-background-focused: rgba(15, 15, 15, 0.98);
+  --titlebar-text-color: #e8e8e8;
+  --titlebar-text-color-focused: #ffffff;
+  --titlebar-text-color-inactive: #666;
+
+  --bg-primary-rgb: 2, 2, 2;
+  --bg-primary: #020202;
+  --bg-secondary-rgb: 8, 8, 8;
+  --text-on-accent: #ffffff;
+
+  /* Special colors for folder notes */
+  --folder-note-color_x: 220, 200, 250;
+  --folder-note-color: rgb(var(--folder-note-color_x));
+}
+
+
+:not(.mod-windows).theme-dark {
+  --background-primary: transparent;
+}

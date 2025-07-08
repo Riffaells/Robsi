@@ -1,0 +1,20 @@
+/* Styles for modals and popovers */
+:not(.mod-windows) .prompt,
+:not(.mod-windows) .popover,
+:not(.mod-windows) .suggestion,
+:not(.mod-windows) .graph-controls,
+:not(.mod-windows) .lt-predictions-container,
+:not(.mod-windows) .vertical-tab-content {
+  background-color: var(--modal-background) !important;
+}
+
+/* Add blur to modals */
+.modal {
+    backdrop-filter: blur(4px);
+
+}
+
+.modal-bg {
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+}

@@ -1,0 +1,58 @@
+/* ========================================================================== */
+/*                             INTERFACE FIXES                               */
+/* ========================================================================== */
+
+/* ========================================================================== */
+/*                           NAVIGATION ARROWS                               */
+/* ========================================================================== */
+
+/* Navigation buttons container */
+.view-header-nav-buttons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+
+
+.view-action:hover {
+  background: var(--background-modifier-hover);
+}
+
+/* Hide only when disabled/unavailable */
+.view-action:disabled,
+.view-action.is-disabled,
+.view-action[aria-disabled="true"] {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Ensure back/forward buttons show when available */
+.view-action[aria-label*="back"]:not(:disabled):not(.is-disabled),
+.view-action[aria-label*="forward"]:not(:disabled):not(.is-disabled) {
+  opacity: 1;
+  display: flex;
+}
+
+/* ========================================================================== */
+/*                             OVERFLOW FIXES                                */
+/* ========================================================================== */
+
+/* Clean overflow fixes - only where actually needed */
+.clickable-icon,
+.nav-action-button,
+.view-action,
+.tree-item,
+.nav-file,
+.nav-folder,
+.workspace-tab-header,
+.titlebar,
+.status-bar {
+  overflow: visible !important;
+}
+
+/* Essential overflow settings for content areas */
+.workspace-leaf-content .view-content,
+.nav-files-container {
+  overflow: auto;
+}

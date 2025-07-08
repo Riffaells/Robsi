@@ -1,0 +1,330 @@
+/* Hide all scrollbars by default */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+}
+
+/* ========================================================================== */
+/*                           CONTENT AREAS ONLY                              */
+/* ========================================================================== */
+
+/* Show scrollbars only on main content areas */
+.workspace-leaf-content::-webkit-scrollbar,
+.markdown-source-view::-webkit-scrollbar,
+.markdown-preview-view::-webkit-scrollbar,
+.cm-scroller::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  display: block;
+}
+
+.workspace-leaf-content::-webkit-scrollbar-track,
+.markdown-source-view::-webkit-scrollbar-track,
+.markdown-preview-view::-webkit-scrollbar-track,
+.cm-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.workspace-leaf-content::-webkit-scrollbar-thumb,
+.markdown-source-view::-webkit-scrollbar-thumb,
+.markdown-preview-view::-webkit-scrollbar-thumb,
+.cm-scroller::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+/* Show scrollbars only on hover */
+.workspace-leaf-content:hover::-webkit-scrollbar-thumb,
+.markdown-source-view:hover::-webkit-scrollbar-thumb,
+.markdown-preview-view:hover::-webkit-scrollbar-thumb,
+.cm-scroller:hover::-webkit-scrollbar-thumb {
+  background: rgba(var(--text-muted-rgb), 0.2);
+}
+
+.workspace-leaf-content:hover::-webkit-scrollbar-thumb:hover,
+.markdown-source-view:hover::-webkit-scrollbar-thumb:hover,
+.markdown-preview-view:hover::-webkit-scrollbar-thumb:hover,
+.cm-scroller:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--text-muted-rgb), 0.4);
+}
+
+/* Show scrollbars when content is focused */
+.workspace-leaf-content:focus-within::-webkit-scrollbar-thumb,
+.markdown-source-view:focus-within::-webkit-scrollbar-thumb,
+.markdown-preview-view:focus-within::-webkit-scrollbar-thumb,
+.cm-scroller:focus-within::-webkit-scrollbar-thumb {
+  background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+}
+
+/* ========================================================================== */
+/*                          MOBILE - COMPLETELY HIDDEN                       */
+/* ========================================================================== */
+
+/* Mobile - hide all scrollbars completely */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar,
+  .workspace-leaf-content::-webkit-scrollbar,
+  .markdown-source-view::-webkit-scrollbar,
+  .markdown-preview-view::-webkit-scrollbar,
+  .cm-scroller::-webkit-scrollbar {
+    width: 0px !important;
+    height: 0px !important;
+    display: none !important;
+  }
+
+  /* Ensure smooth scrolling on mobile - DISABLED to prevent auto-scroll */
+  .workspace-leaf-content,
+  .markdown-preview-view,
+  .markdown-source-view,
+  .cm-scroller {
+    scroll-behavior: auto;
+    -webkit-overflow-scrolling: auto;
+    scrollbar-width: none;
+  }
+
+  /* Hide all scrollbar elements */
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-thumb {
+    display: none !important;
+  }
+}
+
+/* ========================================================================== */
+/*                          DESKTOP - HOVER ONLY                             */
+/* ========================================================================== */
+
+/* Desktop - subtle scrollbars on hover */
+@media (min-width: 769px) {
+  /* Main content scrollbars */
+.workspace-leaf-content::-webkit-scrollbar,
+.markdown-source-view::-webkit-scrollbar,
+  .markdown-preview-view::-webkit-scrollbar,
+  .cm-scroller::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Default state - invisible */
+  .workspace-leaf-content::-webkit-scrollbar-thumb,
+  .markdown-source-view::-webkit-scrollbar-thumb,
+  .markdown-preview-view::-webkit-scrollbar-thumb,
+  .cm-scroller::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  /* Hover state - barely visible */
+  .workspace-leaf-content:hover::-webkit-scrollbar-thumb,
+  .markdown-source-view:hover::-webkit-scrollbar-thumb,
+  .markdown-preview-view:hover::-webkit-scrollbar-thumb,
+  .cm-scroller:hover::-webkit-scrollbar-thumb {
+    background: rgba(var(--text-muted-rgb), 0.15);
+  }
+
+  /* Scrollbar thumb hover - more visible */
+  .workspace-leaf-content:hover::-webkit-scrollbar-thumb:hover,
+  .markdown-source-view:hover::-webkit-scrollbar-thumb:hover,
+  .markdown-preview-view:hover::-webkit-scrollbar-thumb:hover,
+  .cm-scroller:hover::-webkit-scrollbar-thumb:hover {
+    background: rgba(var(--text-muted-rgb), 0.35);
+  }
+}
+
+/* ========================================================================== */
+/*                         EXCLUDE SMALL ELEMENTS                            */
+/* ========================================================================== */
+
+/* Never show scrollbars on small elements */
+.clickable-icon::-webkit-scrollbar,
+.nav-action-button::-webkit-scrollbar,
+.tree-item::-webkit-scrollbar,
+.nav-file::-webkit-scrollbar,
+.nav-folder::-webkit-scrollbar,
+.workspace-tab-header::-webkit-scrollbar,
+.titlebar::-webkit-scrollbar,
+.status-bar::-webkit-scrollbar,
+.status-bar-item::-webkit-scrollbar,
+.sidebar-toggle-button::-webkit-scrollbar,
+.view-action::-webkit-scrollbar,
+.setting-item::-webkit-scrollbar,
+.checkbox-container::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+  display: none !important;
+}
+
+/* ========================================================================== */
+/*                          SPECIAL CONTEXTS                                 */
+/* ========================================================================== */
+
+/* Modals and popups - minimal scrollbars */
+.modal::-webkit-scrollbar,
+.popover::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.modal::-webkit-scrollbar-thumb,
+.popover::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.modal:hover::-webkit-scrollbar-thumb,
+.popover:hover::-webkit-scrollbar-thumb {
+  background: rgba(var(--text-muted-rgb), 0.3);
+}
+
+/* Suggestion containers - no scrollbars */
+.suggestion-container::-webkit-scrollbar,
+.menu::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+  display: none !important;
+}
+
+/* Code blocks - minimal horizontal scrollbar */
+pre::-webkit-scrollbar {
+  width: 0px;
+  height: 4px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 2px;
+}
+
+pre:hover::-webkit-scrollbar-thumb {
+  background: rgba(var(--text-muted-rgb), 0.3);
+}
+
+/* Tables - horizontal scrollbar only */
+.table-wrapper::-webkit-scrollbar {
+  width: 0px;
+  height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.table-wrapper:hover::-webkit-scrollbar-thumb {
+  background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+}
+
+/* ========================================================================== */
+/*                         ACCESSIBILITY SUPPORT                             */
+/* ========================================================================== */
+
+/* High contrast mode - always visible scrollbars */
+@media (prefers-contrast: high) {
+  .workspace-leaf-content::-webkit-scrollbar-thumb,
+  .markdown-source-view::-webkit-scrollbar-thumb,
+  .markdown-preview-view::-webkit-scrollbar-thumb,
+  .cm-scroller::-webkit-scrollbar-thumb {
+    background: rgba(var(--text-normal-rgb), 0.3) !important;
+    border: 1px solid var(--background-primary);
+  }
+
+  .workspace-leaf-content::-webkit-scrollbar-track,
+  .markdown-source-view::-webkit-scrollbar-track,
+  .markdown-preview-view::-webkit-scrollbar-track,
+  .cm-scroller::-webkit-scrollbar-track {
+    background: var(--background-secondary);
+    border: 1px solid var(--text-muted);
+  }
+}
+
+/* Reduced motion - no hover transitions */
+@media (prefers-reduced-motion: reduce) {
+  .workspace-leaf-content::-webkit-scrollbar-thumb,
+  .markdown-source-view::-webkit-scrollbar-thumb,
+  .markdown-preview-view::-webkit-scrollbar-thumb,
+  .cm-scroller::-webkit-scrollbar-thumb {
+    transition: none !important;
+  }
+}
+
+/* ========================================================================== */
+/*                         FIREFOX SUPPORT                                   */
+/* ========================================================================== */
+
+/* Firefox - hide scrollbars by default */
+* {
+  scrollbar-width: none;
+}
+
+.workspace-leaf-content,
+.markdown-source-view,
+.markdown-preview-view,
+.cm-scroller {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+/* Show Firefox scrollbars on hover (limited support) */
+@media (min-width: 769px) {
+  .workspace-leaf-content:hover,
+  .markdown-source-view:hover,
+  .markdown-preview-view:hover,
+  .cm-scroller:hover {
+    scrollbar-color: rgba(var(--text-muted-rgb), 0.2) transparent;
+  }
+}
+
+/* Mobile Firefox - completely hidden */
+@media (max-width: 768px) {
+  .workspace-leaf-content,
+  .markdown-source-view,
+  .markdown-preview-view,
+  .cm-scroller {
+    scrollbar-width: none !important;
+  }
+}
+
+/* ========================================================================== */
+/*                         PERFORMANCE OPTIMIZATIONS                         */
+/* ========================================================================== */
+
+/* Disable scrollbars on low-end devices */
+@media (max-width: 480px) and (max-resolution: 150dpi) {
+  ::-webkit-scrollbar,
+  .workspace-leaf-content::-webkit-scrollbar,
+  .markdown-source-view::-webkit-scrollbar,
+  .markdown-preview-view::-webkit-scrollbar,
+  .cm-scroller::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  * {
+    scrollbar-width: none !important;
+  }
+}
+
+/* GPU acceleration for scrollbar animations */
+@media (min-width: 769px) {
+  .workspace-leaf-content::-webkit-scrollbar-thumb,
+  .markdown-source-view::-webkit-scrollbar-thumb,
+  .markdown-preview-view::-webkit-scrollbar-thumb,
+  .cm-scroller::-webkit-scrollbar-thumb {
+    will-change: background-color;
+  }
+
+  .workspace-leaf-content:not(:hover)::-webkit-scrollbar-thumb,
+  .markdown-source-view:not(:hover)::-webkit-scrollbar-thumb,
+  .markdown-preview-view:not(:hover)::-webkit-scrollbar-thumb,
+  .cm-scroller:not(:hover)::-webkit-scrollbar-thumb {
+    will-change: auto;
+  }
+}

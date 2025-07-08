@@ -1,0 +1,120 @@
+/* ========================================================================== */
+/*                           ANIMATION OVERRIDES                             */
+/* ========================================================================== */
+
+/* Critical animation overrides - remove unwanted default animations */
+
+/* Remove hover transforms from interactive elements */
+.mod-cta:hover,
+button:hover,
+.clickable-icon:hover,
+.nav-action-button:hover,
+.tree-item-self:hover,
+.workspace-tab-header:hover,
+.suggestion-item:hover,
+.menu-item:hover {
+  transform: none !important;
+}
+
+/* Enhanced button hover effects */
+.mod-cta:hover {
+  box-shadow: 0 4px 16px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.4);
+}
+
+/* Remove transforms from button active states */
+.mod-cta:active {
+  transform: none !important;
+  box-shadow: 0 2px 8px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+}
+
+/* ========================================================================== */
+/*                         MOBILE-SPECIFIC OVERRIDES                        */
+/* ========================================================================== */
+
+/* Mobile performance overrides */
+@media (max-width: 768px) {
+
+
+  /* Remove pseudo-element animations */
+  .mod-cta::before,
+  button::before {
+    display: none !important;
+  }
+
+  /* Disable expensive effects */
+  .mod-cta:hover,
+  .workspace-leaf:hover {
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  /* Disable ANY layout-shifting animations */
+  .workspace-leaf-content,
+  .markdown-preview-view,
+  .markdown-source-view,
+  .cm-scroller,
+  .workspace-leaf,
+  .workspace-tabs,
+  .workspace-tab-header-container,
+  .view-header-title-container,
+  .suggestion-container,
+  .menu,
+  .modal,
+  .popover {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+
+  /* Disable scale/zoom animations that can trigger scrolling */
+  .clickable-icon,
+  .nav-file-title,
+  .nav-folder-title,
+  .tree-item-inner,
+  .menu-item,
+  .suggestion-item,
+  .workspace-tab-header {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    scale: none !important;
+  }
+}
+
+/* ========================================================================== */
+/*                         ACCESSIBILITY OVERRIDES                          */
+/* ========================================================================== */
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+  /* Keep essential transitions */
+  .menu-item:hover,
+  .suggestion-item:hover,
+  .clickable-icon:hover {
+    transition: background-color 0.1s ease !important;
+  }
+}
+
+/* ========================================================================== */
+/*                        PERFORMANCE CRITICAL OVERRIDES                    */
+/* ========================================================================== */
+
+/* Remove expensive animations that cause layout thrashing */
+.workspace-split.mod-vertical .workspace-leaf,
+.workspace-split.mod-horizontal .workspace-leaf {
+  transform: none !important;
+  transition: opacity 0.1s ease;
+}
+
+/* Override backdrop-filter animations on low-end devices */
+@media (max-width: 480px) and (max-resolution: 150dpi) {
+  .modal,
+  .popover,
+  .suggestion-container,
+  .menu {
+    backdrop-filter: none !important;
+    background: var(--background-secondary) !important;
+  }
+}

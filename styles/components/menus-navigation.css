@@ -1,0 +1,263 @@
+/* ========================================================================== */
+/*                           MENUS & NAVIGATION                              */
+/* ========================================================================== */
+
+/* Enhanced Blur Effects for UI */
+.suggestion-container,
+.menu {
+  backdrop-filter: blur(8px);
+  background: rgba(var(--bg-secondary-rgb), 0.7);
+  border-radius: 8px;
+}
+
+
+
+.menu-item {
+  border-radius: 6px;
+  color: var(--text-normal);
+  padding: 2px 8px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.menu-item:hover {
+  transform: none !important;
+  background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+}
+
+.menu-item.is-selected,
+.menu-item.is-focused {
+  background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+/* Callout Styling */
+.callout {
+  --callout-padding: 16px;
+  padding: var(--callout-padding);
+  border-radius: 12px;
+  border-width: 1px;
+}
+
+
+
+
+.workspace-tab-header:hover {
+  background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+}
+
+.workspace-tab-header.is-active {
+  background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.workspace-split.mod-root .workspace-tab-header.is-active::before,
+.workspace-split.mod-root .workspace-tab-header.is-active::after {
+    box-shadow: none;
+}
+
+/* Enhanced Card Design */
+.workspace-leaf-content,
+.markdown-preview-view,
+.markdown-source-view {
+  border-radius: 12px;
+}
+
+/* ========================================================================== */
+/*                         TOUCH-FRIENDLY IMPROVEMENTS                       */
+/* ========================================================================== */
+
+/* Ensure minimum touch target size */
+@media (max-width: 768px) {
+
+
+  /* Touch-friendly suggestion items */
+  .suggestion-item {
+    min-height: 48px;
+    padding: 12px 16px;
+    margin: 2px 0;
+  }
+
+  .suggestion-item:first-child {
+    margin-top: 0;
+  }
+
+  .suggestion-item:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Touch-friendly menu separators */
+  .menu-separator {
+    height: 1px;
+    margin: 8px 0;
+    background: rgba(var(--text-muted-rgb), 0.2);
+  }
+
+
+
+  /* Touch-friendly toggle buttons */
+  .setting-item.mod-toggle {
+    min-height: 60px;
+    padding: 12px 16px;
+  }
+
+  .setting-item-control {
+    min-height: 44px;
+  }
+
+  /* Touch-friendly status bar */
+  .status-bar-item {
+    min-height: 32px;
+    padding: 8px 12px;
+    margin: 2px;
+    border-radius: 8px;
+  }
+
+  /* Touch-friendly breadcrumbs */
+  .breadcrumb-item {
+    min-height: 32px;
+    padding: 6px 8px;
+  }
+}
+
+/* ========================================================================== */
+/*                          ACCESSIBILITY IMPROVEMENTS                       */
+/* ========================================================================== */
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .menu-item,
+  .suggestion-item,
+  .workspace-tab-header,
+  .nav-file-title,
+  .nav-folder-title {
+    border: 1px solid var(--text-muted);
+  }
+
+  .menu-item:hover,
+  .suggestion-item:hover,
+  .workspace-tab-header:hover,
+  .nav-file-title:hover,
+  .nav-folder-title:hover {
+    border-color: var(--accent-color);
+  }
+
+  .menu-item.is-selected,
+  .suggestion-item.is-selected,
+  .workspace-tab-header.is-active {
+    border-color: var(--accent-color);
+    border-width: 1px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .menu-item,
+  .suggestion-item,
+  .workspace-tab-header,
+  .nav-file-title,
+  .nav-folder-title,
+  .callout {
+    transition: none !important;
+  }
+}
+
+/* Focus indicators */
+.menu-item:focus,
+.suggestion-item:focus,
+.workspace-tab-header:focus,
+.nav-file-title:focus,
+.nav-folder-title:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ========================================================================== */
+/*                        PERFORMANCE OPTIMIZATIONS                          */
+/* ========================================================================== */
+
+/* Optimize animations for mobile */
+@media (max-width: 768px) {
+  .menu-item,
+  .suggestion-item,
+  .workspace-tab-header,
+  .nav-file-title,
+  .nav-folder-title {
+    transition-duration: 0.1s;
+  }
+
+  /* Disable complex backdrop filters on low-end devices */
+  @media (max-width: 480px) and (max-resolution: 150dpi) {
+    .suggestion-container,
+    .menu,
+    .workspace-leaf-content,
+    .markdown-preview-view,
+    .markdown-source-view {
+      backdrop-filter: none;
+    }
+  }
+}
+
+/* Optimize for touch scrolling - DISABLED smooth scroll to prevent auto-scroll */
+@media (max-width: 768px) {
+  .suggestion-container,
+  .menu,
+  .workspace-tabs {
+    -webkit-overflow-scrolling: auto;
+    scroll-behavior: auto;
+  }
+}
+
+/* ========================================================================== */
+/*                           LANDSCAPE OPTIMIZATIONS                         */
+/* ========================================================================== */
+
+/* Landscape mobile adjustments */
+@media (max-width: 1024px) and (orientation: landscape) {
+
+
+  .menu-item {
+    padding: 6px 12px;
+    min-height: 32px;
+  }
+
+  .nav-file-title,
+  .nav-folder-title {
+    min-height: 32px;
+  }
+
+  /* Compact modals in landscape */
+  .modal {
+    max-height: 70vh;
+    margin: 16px;
+  }
+
+  /* Compact callouts in landscape */
+  .callout {
+    --callout-padding: 12px;
+    margin: 6px 0;
+  }
+}
+
+/* ========================================================================== */
+/*                            FUTURE-PROOFING                               */
+/* ========================================================================== */
+
+/* Container query support */
+@supports (container-type: inline-size) {
+  .workspace-leaf {
+    container-type: inline-size;
+  }
+
+  @container (max-width: 400px) {
+    .workspace-tab-header {
+      height: 36px;
+      font-size: 12px;
+    }
+  }
+}

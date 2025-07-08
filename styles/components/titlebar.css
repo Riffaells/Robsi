@@ -1,0 +1,63 @@
+/* ========================================================================== */
+/*                                TITLEBAR                                   */
+/* ========================================================================== */
+
+/* Titlebar Button Container */
+.titlebar-button-container.mod-right {
+  gap: 2px;
+}
+
+.titlebar-button-container.mod-right .titlebar-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  background: rgba(var(--text-normal-rgb), 0.15);
+  border: 1px solid rgba(var(--text-normal-rgb), 0.1);
+  padding: 0px !important;
+}
+
+.titlebar-button-container.mod-right .titlebar-button:hover {
+  background: rgba(var(--text-normal-rgb), 0.25);
+  border-color: rgba(var(--text-normal-rgb), 0.2);
+}
+
+/* Close button - make it clearly red and visible */
+.titlebar-button-container.mod-right .titlebar-button:last-child {
+  background: rgba(255, 59, 48, 0.2);
+  border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+.titlebar-button-container.mod-right .titlebar-button:last-child:hover {
+  background: rgba(255, 59, 48, 0.4);
+  border-color: rgba(255, 59, 48, 0.5);
+}
+
+.titlebar-button-container.mod-right .titlebar-button:last-child svg {
+  color: #ff3b30 !important;
+  filter: brightness(1.2);
+}
+
+.titlebar-button-container.mod-right .titlebar-button svg {
+  width: 14px;
+  height: 14px;
+  opacity: 1 !important;
+  color: var(--text-normal);
+  filter: contrast(1.2);
+}
+
+/* Fix general titlebar button padding */
+.titlebar-button {
+  -webkit-app-region: no-drag;
+  display: inline-flex;
+  align-items: center;
+}
+
+.mod-linux .titlebar-button,
+.mod-windows .titlebar-button {
+  display: flex;
+  align-items: center;
+}

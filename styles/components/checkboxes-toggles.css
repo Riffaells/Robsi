@@ -1,0 +1,287 @@
+/* ===== CHECKBOXES & TOGGLES - SIMPLIFIED ===== */
+
+/* Setting items with toggle functionality */
+.setting-item.mod-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Setting item info section */
+.setting-item-info {
+    padding-right: 12px;
+    min-width: 0;
+}
+
+.setting-item-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-normal);
+    margin-bottom: 2px;
+    line-height: 1.3;
+}
+
+.setting-item-description {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+.setting-item-description > div {
+    margin-bottom: 1px;
+}
+
+.setting-item-description > div:last-child {
+    margin-bottom: 0;
+}
+
+/* Setting item control section */
+.setting-item-control {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+/* Extra setting buttons */
+.extra-setting-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+}
+
+.extra-setting-button:hover {
+    opacity: 1;
+}
+
+.extra-setting-button .svg-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Checkbox container - simplified */
+.checkbox-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+/* Checkbox input styling - simplified */
+.checkbox-container input[type="checkbox"] {
+    appearance: none;
+    width: 44px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--background-modifier-border);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    position: relative;
+    outline: none;
+    flex-shrink: 0;
+}
+
+.checkbox-container input[type="checkbox"]:focus {
+    box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+}
+
+/* Checkbox slider - simplified */
+.checkbox-container input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--background-primary);
+    top: 2px;
+    left: 2px;
+    transition: transform 0.15s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Enabled state - simplified */
+.checkbox-container.is-enabled input[type="checkbox"],
+.checkbox-container input[type="checkbox"]:checked {
+    background-color: var(--interactive-accent);
+}
+
+.checkbox-container.is-enabled input[type="checkbox"]::before,
+.checkbox-container input[type="checkbox"]:checked::before {
+    transform: translateX(20px);
+    background-color: var(--text-on-accent);
+}
+
+/* Disabled state */
+.checkbox-container input[type="checkbox"]:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+}
+
+.checkbox-container input[type="checkbox"]:disabled::before {
+    cursor: not-allowed;
+}
+
+/* Installed plugins */
+.installed-plugins-container .setting-item.mod-toggle {
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 4px;
+}
+
+
+/* ========================================================================== */
+/*                         ACCESSIBILITY IMPROVEMENTS                        */
+/* ========================================================================== */
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .checkbox-container input[type="checkbox"] {
+        border: 2px solid var(--text-muted);
+    }
+
+    .checkbox-container input[type="checkbox"]:checked {
+        border: 2px solid var(--interactive-accent);
+    }
+
+    .checkbox-container input[type="checkbox"]::before {
+        border: 1px solid var(--text-muted);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .checkbox-container input[type="checkbox"],
+    .checkbox-container input[type="checkbox"]::before,
+    .setting-item.mod-toggle,
+    .extra-setting-button {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ========================================================================== */
+/*                        PERFORMANCE OPTIMIZATIONS                          */
+/* ========================================================================== */
+
+/* Optimize animations for mobile */
+@media (max-width: 768px) {
+    .checkbox-container input[type="checkbox"],
+    .checkbox-container input[type="checkbox"]::before {
+        transition-duration: 0.15s;
+    }
+
+    .setting-item.mod-toggle::before,
+    .extra-setting-button::before {
+        transition-duration: 0.1s;
+    }
+}
+
+/* Remove complex animations on low-end devices */
+@media (max-width: 480px) and (max-resolution: 150dpi) {
+    .setting-item.mod-toggle::before,
+    .extra-setting-button::before {
+        display: none;
+    }
+
+    .checkbox-container input[type="checkbox"],
+    .checkbox-container input[type="checkbox"]::before {
+        transition: none;
+    }
+}
+
+/* ========================================================================== */
+/*                           LEGACY SIZE CLASSES                             */
+/* ========================================================================== */
+
+/* Small size toggles */
+.checkbox-container.size-small {
+    min-width: 40px;
+    height: 20px;
+}
+
+.checkbox-container.size-small input[type="checkbox"] {
+    width: 36px;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.checkbox-container.size-small input[type="checkbox"]::before {
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 2px;
+}
+
+.checkbox-container.size-small input[type="checkbox"]:checked::before {
+    transform: translateX(16px);
+}
+
+/* Medium size (default) */
+.checkbox-container.size-medium {
+    min-width: 48px;
+    height: 24px;
+}
+
+.checkbox-container.size-medium input[type="checkbox"] {
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+}
+
+.checkbox-container.size-medium input[type="checkbox"]::before {
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+}
+
+.checkbox-container.size-medium input[type="checkbox"]:checked::before {
+    transform: translateX(20px);
+}
+
+/* Large size toggles */
+.checkbox-container.size-large {
+    min-width: 54px;
+    height: 28px;
+}
+
+.checkbox-container.size-large input[type="checkbox"] {
+    width: 50px;
+    height: 28px;
+    border-radius: 14px;
+}
+
+.checkbox-container.size-large input[type="checkbox"]::before {
+    width: 24px;
+    height: 24px;
+    top: 2px;
+    left: 2px;
+}
+
+.checkbox-container.size-large input[type="checkbox"]:checked::before {
+    transform: translateX(22px);
+}
+
+/* ========================================================================== */
+/*                           ENHANCED TYPOGRAPHY                             */
+/* ========================================================================== */
+
+/* Material Design 3 typography improvements */
+.setting-item-name {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', system-ui, sans-serif;
+    font-weight: 500;
+}
+
+.setting-item-description {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', system-ui, sans-serif;
+    font-weight: 400;
+}

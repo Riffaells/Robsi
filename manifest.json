@@ -1,7 +1,8 @@
 {
-	"name": "Sample Theme",
+	"name": "Robsi",
 	"version": "1.0.0",
 	"minAppVersion": "1.0.0",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md"
+	"author": "Riffaells",
+	"authorUrl": "https://github.com/Riffaells/Robsi",
+	"description": "Modern Material Design 3 theme with purple accents and blur effects"
 }

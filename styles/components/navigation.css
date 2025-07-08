@@ -1,0 +1,504 @@
+/*
+ * ╭─────────────────────────────────────────────────────────╮
+ * │                  Sidebars & Dock Areas                  │
+ * ╰─────────────────────────────────────────────────────────╯
+*/
+
+/* Hide left/right sidebar toggle buttons */
+.sidebar-toggle-button.mod-right,
+.sidebar-toggle-button.mod-left {
+  display: none;
+}
+
+.workspace-sidedock-vault-profile:hover .workspace-drawer-vault-switcher,
+.workspace-sidedock-vault-profile
+  .workspace-drawer-vault-switcher.has-active-menu {
+  opacity: 1;
+}
+
+/* Hide vault action buttons (help, settings) */
+.workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
+  display: none !important;
+}
+
+/* Hide tag, backlinks, outgoing links, and outline headers unless hovered */
+.workspace-split .workspace-leaf-content[data-type="tag"] .nav-header,
+.workspace-split .workspace-leaf-content[data-type="outgoing-link"] .nav-header,
+.workspace-split .workspace-leaf-content[data-type="backlink"] .nav-header,
+.workspace-split .workspace-leaf-content[data-type="outline"] .nav-header {
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  transition:
+    opacity 0.3s ease,
+    height 0.3s ease,
+    padding 0.3s ease;
+}
+
+.workspace-split:hover .workspace-leaf-content[data-type="tag"] .nav-header,
+.workspace-split:hover
+  .workspace-leaf-content[data-type="outgoing-link"]
+  .nav-header,
+.workspace-split:hover
+  .workspace-leaf-content[data-type="backlink"]
+  .nav-header,
+.workspace-split:hover
+  .workspace-leaf-content[data-type="outline"]
+  .nav-header {
+  opacity: 1;
+  height: 1.75em;
+}
+
+.mod-left-split
+  .mod-top-left-space
+  .workspace-tab-header-container-inner:hover {
+  opacity: 1;
+}
+
+/* Add softer blur to sidebars */
+.workspace-drawer.mod-left::before,
+.workspace-drawer.mod-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(var(--bg_x), 0.9);
+    z-index: -1;
+}
+
+.workspace-drawer.mod-left,
+.workspace-drawer.mod-right {
+    background-color: transparent;
+    border: none;
+}
+
+/* Navigation Item Colors */
+.nav-file-title,
+.nav-folder-title {
+  color: var(--nav-item-color);
+}
+
+/* Remove default ellipsis from navigation titles */
+.nav-file-title-content:not([contenteditable="true"]),
+.nav-folder-title-content:not([contenteditable="true"]) {
+    text-overflow: unset !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    line-height: 1.3;
+}
+
+/* Ensure single line display without wrapping */
+.nav-file-title,
+.nav-folder-title {
+    white-space: nowrap;
+    overflow: visible;
+    min-height: auto;
+}
+
+/* ========================================================================== */
+/*                            NAVIGATION STRUCTURE                           */
+/* ========================================================================== */
+
+/* File explorer container */
+.nav-files-container {
+    padding: 2px 4px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Active file highlighting - minimal */
+.nav-file.is-active {
+    background-color: transparent;
+    color: var(--text-accent);
+}
+
+.nav-file.is-active .nav-file-title-content {
+    color: var(--text-accent);
+    font-weight: 500;
+}
+
+/* ========================================================================== */
+/*                             FOLDER STYLES                                 */
+/* ========================================================================== */
+
+/* Folder collapse/expand */
+.nav-folder.mod-root > .nav-folder-title {
+    font-weight: 600;
+    color: var(--text-normal);
+    font-size: 13px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-bottom: 1px;
+}
+
+.nav-folder-title {
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: none;
+}
+
+.nav-folder-title:hover {
+    background-color: transparent;
+}
+
+/* Folder icons */
+.nav-folder-collapse-indicator {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.nav-folder-collapse-indicator:hover {
+    opacity: 1;
+}
+
+
+/* Folder children */
+.nav-folder-children {
+    padding-left: 12px;
+    margin-left: 4px;
+    border-left: 1px solid var(--background-modifier-border);
+}
+
+/* ========================================================================== */
+/*                              FILE STYLES                                  */
+/* ========================================================================== */
+
+/* File items */
+.nav-file-title {
+    cursor: pointer;
+    padding: 2px 2px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: none;
+    min-height: 22px;
+}
+
+.nav-file-title:hover {
+    background-color: transparent;
+}
+
+/* File content */
+.nav-file-title-content {
+    flex: 1;
+    font-size: 13px;
+    color: var(--text-normal);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+/* File extensions */
+.nav-file-title-content::after {
+    content: "";
+    display: none;
+}
+
+/* Hide file extension by default */
+.nav-file-title-content[data-path$=".md"]::after {
+    display: none;
+}
+
+/* ========================================================================== */
+/*                           MOBILE OPTIMIZATIONS                            */
+/* ========================================================================== */
+
+/* Mobile touch targets */
+@media (max-width: 768px) {
+    .nav-file-title,
+    .nav-folder-title {
+        font-size: 14px;
+    }
+
+    .nav-file-title-content,
+    .nav-folder-title-content {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .nav-files-container {
+        padding: 4px 8px;
+    }
+
+    .nav-folder-children {
+        padding-left: 16px;
+        margin-left: 8px;
+    }
+
+    .nav-folder-collapse-indicator {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Larger touch targets for mobile */
+    .nav-file,
+    .nav-folder {
+        margin-bottom: 1px;
+        border-radius: 4px;
+    }
+
+    /* No background highlighting on mobile */
+    .nav-file:active,
+    .nav-folder:active {
+        background-color: transparent;
+        transition: none;
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .nav-files-container {
+        padding: 6px 10px;
+    }
+
+    .nav-folder-children {
+        padding-left: 18px;
+        margin-left: 10px;
+    }
+}
+
+/* ========================================================================== */
+/*                           DRAG AND DROP SUPPORT                           */
+/* ========================================================================== */
+
+/* Drag hover states - neutral styling */
+.nav-file.is-being-dragged,
+.nav-folder.is-being-dragged {
+    opacity: 0.5;
+}
+
+.nav-file.is-being-dragged-over,
+.nav-folder.is-being-dragged-over {
+    background: rgba(var(--text-muted-rgb), 0.15);
+    border: 2px dashed rgba(var(--text-muted-rgb), 0.4);
+    border-radius: 4px;
+}
+
+.nav-file.is-being-dragged-over .nav-file-title-content,
+.nav-folder.is-being-dragged-over .nav-folder-title-content {
+    font-weight: 500;
+}
+
+/* ========================================================================== */
+/*                            SEARCH HIGHLIGHTING                            */
+/* ========================================================================== */
+
+/* Search results in navigation */
+.nav-file-title-content mark,
+.nav-folder-title-content mark {
+    background-color: var(--text-highlight-bg);
+    color: var(--text-normal);
+    padding: 1px 2px;
+    border-radius: 2px;
+}
+
+/* Search match highlighting */
+.nav-file.is-search-match,
+.nav-folder.is-search-match {
+    background-color: var(--background-modifier-success);
+    border-left: 3px solid var(--text-accent);
+}
+
+/* ========================================================================== */
+/*                           ACCESSIBILITY SUPPORT                           */
+/* ========================================================================== */
+
+/* Focus indicators */
+.nav-file-title:focus,
+.nav-folder-title:focus {
+    outline: 2px solid var(--interactive-accent);
+    outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .nav-file-title,
+    .nav-folder-title {
+        border: 1px solid var(--background-modifier-border);
+    }
+
+    .nav-file.is-active {
+        border: 2px solid var(--interactive-accent);
+    }
+
+    .nav-file-title-content,
+    .nav-folder-title-content {
+        color: var(--text-normal);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .nav-file,
+    .nav-folder,
+    .nav-file-title,
+    .nav-folder-title,
+    .nav-folder-collapse-indicator {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ========================================================================== */
+/*                         PERFORMANCE OPTIMIZATIONS                         */
+/* ========================================================================== */
+
+/* Optimize animations for mobile */
+@media (max-width: 768px) {
+    .nav-file,
+    .nav-folder,
+    .nav-file-title,
+    .nav-folder-title {
+        transition-duration: 0.1s;
+    }
+
+    .nav-folder-collapse-indicator {
+        transition-duration: 0.1s;
+    }
+}
+
+/* Remove complex effects on low-end devices */
+@media (max-width: 480px) and (max-resolution: 150dpi) {
+    .nav-file,
+    .nav-folder,
+    .nav-file-title,
+    .nav-folder-title,
+    .nav-folder-collapse-indicator {
+        transition: none;
+    }
+
+    .nav-file.is-being-dragged,
+    .nav-folder.is-being-dragged {
+        transform: none;
+    }
+}
+
+/* GPU acceleration for smooth scrolling */
+.nav-files-container {
+  transform: translateZ(0);
+  -webkit-overflow-scrolling: auto;
+}
+
+/* ========================================================================== */
+/*                            CUSTOM ENHANCEMENTS                            */
+/* ========================================================================== */
+
+/* Enhanced folder structure visualization */
+.nav-folder-children .nav-folder-children {
+    border-left-color: var(--background-modifier-border-hover);
+}
+
+.nav-folder-children .nav-folder-children .nav-folder-children {
+    border-left-color: var(--background-modifier-border-focus);
+}
+
+/* Recent files highlighting */
+.nav-file.is-recent {
+    position: relative;
+}
+
+.nav-file.is-recent::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 12px;
+    background-color: var(--interactive-accent);
+    border-radius: 2px;
+}
+
+/* Pinned files */
+.nav-file.is-pinned .nav-file-title-content::before {
+    content: "📌";
+    margin-right: 6px;
+    font-size: 10px;
+}
+
+/* ========================================================================== */
+/*                           COMPACT MODE SUPPORT                            */
+/* ========================================================================== */
+
+/* Compact navigation mode */
+.nav-files-container.is-compact {
+    padding: 2px 4px;
+    font-size: 12px;
+}
+
+.nav-files-container.is-compact .nav-file-title,
+.nav-files-container.is-compact .nav-folder-title {
+    min-height: 20px;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.nav-files-container.is-compact .nav-folder-children {
+    padding-left: 12px;
+    margin-left: 6px;
+}
+
+.nav-files-container.is-compact .nav-folder-collapse-indicator {
+    width: 12px;
+    height: 12px;
+}
+
+/* ========================================================================== */
+/*                           THEME INTEGRATION                               */
+/* ========================================================================== */
+
+/* Dark theme adjustments */
+.theme-dark .nav-file-title-content,
+.theme-dark .nav-folder-title-content {
+    color: var(--text-normal);
+}
+
+/* Light theme adjustments */
+.theme-light .nav-file-title-content,
+.theme-light .nav-folder-title-content {
+    color: var(--text-normal);
+}
+
+.theme-light .nav-file.is-active {
+    background-color: var(--background-modifier-active-hover);
+}
+
+/* ========================================================================== */
+/*                           FOLDER NOTES STYLING                            */
+/* ========================================================================== */
+
+.folder-note-cursive .has-folder-note .nav-folder-title-content,
+.folder-note-cursive-path .has-folder-note.view-header-breadcrumb {
+  color: var(--folder-note-color);
+  font-style: italic;
+  font-weight: 450;
+}
+
+.folder-note-cursive .has-folder-note .nav-folder-title-content {
+  border-bottom: 1px solid rgba(var(--folder-note-color_x), 0.3);
+}
+
+.folder-note-cursive .has-folder-note .nav-folder-title:hover .nav-folder-title-content {
+  color: var(--magenta-light);
+  border-bottom-color: rgba(var(--folder-note-color_x), 0.8);
+}
+
+.folder-note-cursive-path .has-folder-note.view-header-breadcrumb {
+  background: rgba(var(--folder-note-color_x), 0.08);
+  border-bottom: 1px solid rgba(var(--folder-note-color_x), 0.2);
+}
+
+.folder-note-cursive-path .has-folder-note.view-header-breadcrumb:hover {
+  background: rgba(var(--folder-note-color_x), 0.15);
+  border-bottom-color: rgba(var(--folder-note-color_x), 0.5);
+}

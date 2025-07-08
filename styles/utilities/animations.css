@@ -1,0 +1,475 @@
+/* A simple fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.anim-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* A slide-in animation */
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.anim-slide-in-up {
+  animation: slideInUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ========================================================================== */
+/*                              ANIMATIONS                                    */
+/* ========================================================================== */
+
+
+/* Blur animations for modals and sidebars */
+.modal,
+.popover,
+.workspace-drawer.mod-left,
+.workspace-drawer.mod-right {
+  animation: blurIn 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes blurIn {
+  from {
+    backdrop-filter: blur(0px);
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    backdrop-filter: blur(16px);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+/* Smooth scale animations for interactive elements */
+.clickable-icon,
+.nav-file-title,
+.nav-folder-title,
+.tree-item-inner {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fade in/out animations */
+.workspace-leaf-content,
+.markdown-preview-view,
+.markdown-source-view {
+  animation: fadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ripple effect for buttons */
+.mod-cta,
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.mod-cta::before,
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.mod-cta:active::before,
+.button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* ========================================================================== */
+/*                           MOBILE OPTIMIZATIONS                            */
+/* ========================================================================== */
+
+/* Mobile Small (0-480px) - Minimal animations for performance */
+@media (max-width: 480px) {
+  /* Disable complex animations */
+  .modal,
+  .popover,
+  .workspace-drawer.mod-left,
+  .workspace-drawer.mod-right {
+    animation: none;
+    backdrop-filter: none;
+    background: var(--background-secondary);
+  }
+
+  /* Simplified fade-in */
+  .anim-fade-in {
+    animation: fadeIn 0.15s ease-out;
+  }
+
+  /* Remove slide animations */
+  .anim-slide-in-up {
+    animation: fadeIn 0.15s ease-out;
+  }
+
+  /* Ultra-fast transitions */
+  .clickable-icon,
+  .nav-file-title,
+  .nav-folder-title,
+  .tree-item-inner,
+  .menu-item,
+  .suggestion-item,
+  .workspace-tab-header {
+    transition: background-color 0.1s ease, color 0.1s ease;
+  }
+
+  /* Disable ripple effect on mobile */
+  .mod-cta::before,
+  .button::before {
+    display: none;
+  }
+  /* Disable transform animations */
+  .workspace-leaf-content,
+  .markdown-preview-view,
+  .markdown-source-view {
+    opacity: 1;
+  }
+
+  /* Remove hover transforms */
+  .clickable-icon:hover,
+  .nav-file-title:hover,
+  .nav-folder-title:hover {
+    transform: none;
+  }
+
+  /* Disable complex blur effects */
+  .suggestion-container,
+  .menu {
+    backdrop-filter: none;
+    background: var(--background-secondary);
+  }
+
+  .tree-item-inner {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Full ripple effect */
+  .mod-cta:active::before,
+  .button:active::before {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Mobile Large (481-768px) - Balanced performance */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Simplified animations */
+  .modal,
+  .popover,
+  .workspace-drawer.mod-left,
+  .workspace-drawer.mod-right {
+    animation: fadeIn 0.2s ease-out;
+    backdrop-filter: blur(8px);
+  }
+
+  /* Fast transitions */
+  .clickable-icon,
+  .nav-file-title,
+  .nav-folder-title,
+  .tree-item-inner,
+  .menu-item,
+  .suggestion-item,
+  .workspace-tab-header {
+    transition: all 0.15s ease;
+  }
+
+  /* Simplified slide animation */
+  .anim-slide-in-up {
+    animation: slideInUp 0.2s ease-out;
+  }
+
+  /* Reduced ripple effect */
+  .mod-cta:active::before,
+  .button:active::before {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Lighter blur effects */
+  .suggestion-container,
+  .menu {
+    backdrop-filter: blur(4px);
+  }
+}
+
+/* Tablet (769-1024px) - Enhanced animations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Standard animations */
+  .modal,
+  .popover,
+  .workspace-drawer.mod-left,
+  .workspace-drawer.mod-right {
+    animation: blurIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Smooth transitions */
+  .clickable-icon,
+  .nav-file-title,
+  .nav-folder-title,
+  .tree-item-inner {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Enhanced hover effects - disabled for mobile performance */
+
+
+
+  /* Full ripple effect */
+  .mod-cta:active::before,
+  .button:active::before {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Desktop (1025px+) - Full animations */
+@media (min-width: 1025px) {
+  /* Full animation suite */
+  .modal,
+  .popover,
+  .workspace-drawer.mod-left,
+  .workspace-drawer.mod-right {
+    animation: blurIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+
+
+  /* Advanced animations */
+  .workspace-leaf:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Full ripple effect */
+  .mod-cta:active::before,
+  .button:active::before {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* ========================================================================== */
+/*                         PERFORMANCE OPTIMIZATIONS                         */
+/* ========================================================================== */
+
+
+/* Optimize will-change for animations - DISABLED on mobile to prevent auto-scroll */
+@media (min-width: 1025px) {
+  .modal,
+  .popover,
+  .workspace-drawer.mod-left,
+  .workspace-drawer.mod-right {
+    will-change: transform, opacity;
+  }
+
+  .clickable-icon:hover,
+  .nav-file-title:hover,
+  .nav-folder-title:hover {
+    will-change: transform;
+  }
+}
+
+/* ========================================================================== */
+/*                         ACCESSIBILITY IMPROVEMENTS                        */
+/* ========================================================================== */
+
+/* High contrast mode - remove decorative animations */
+@media (prefers-contrast: high) {
+  .modal,
+  .popover,
+  .workspace-drawer.mod-left,
+  .workspace-drawer.mod-right {
+    backdrop-filter: none;
+    background: var(--background-secondary);
+    border: 2px solid var(--text-muted);
+  }
+
+  .mod-cta::before,
+  .button::before {
+    display: none;
+  }
+}
+
+/* ========================================================================== */
+/*                            BATTERY OPTIMIZATION                           */
+/* ========================================================================== */
+
+/* Reduce animations on low battery */
+@media (max-width: 768px) {
+  /* Disable animations on low-resolution displays (often indicates low-end devices) */
+  @media (max-resolution: 150dpi) {
+
+    .modal,
+    .popover,
+    .workspace-drawer.mod-left,
+    .workspace-drawer.mod-right {
+      backdrop-filter: none;
+    }
+
+    .mod-cta::before,
+    .button::before {
+      display: none;
+    }
+  }
+}
+
+/* ========================================================================== */
+/*                            CUSTOM ANIMATIONS                              */
+/* ========================================================================== */
+
+/* Smooth zoom-in for important elements */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.anim-zoom-in {
+  animation: zoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Gentle bounce for notifications */
+@keyframes gentleBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-4px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+.anim-bounce {
+  animation: gentleBounce 0.6s;
+}
+
+/* Pulse animation for loading states */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.anim-pulse {
+  animation: pulse 1.5s infinite;
+}
+
+/* Mobile-specific animations */
+@media (max-width: 768px) {
+  /* Simplified zoom-in */
+  .anim-zoom-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  /* Disable bounce on mobile */
+  .anim-bounce {
+    animation: none;
+  }
+
+  /* Faster pulse */
+  .anim-pulse {
+    animation: pulse 1s infinite;
+  }
+}
+
+/* ========================================================================== */
+/*                           INTERACTION FEEDBACK                            */
+/* ========================================================================== */
+
+/* Touch feedback for mobile */
+@media (max-width: 768px) {
+  .clickable-icon:active,
+  .nav-file-title:active,
+  .nav-folder-title:active,
+  .menu-item:active,
+  .suggestion-item:active,
+  .workspace-tab-header:active {
+    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+    transition: background-color 0.05s ease;
+  }
+
+  /* Visual feedback for buttons */
+  .mod-cta:active {
+    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.9);
+    transition: background-color 0.05s ease;
+  }
+}
+
+/* Desktop hover feedback */
+@media (min-width: 1025px) {
+  .clickable-icon:hover,
+  .nav-file-title:hover,
+  .nav-folder-title:hover {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Smooth button hover */
+  .mod-cta:hover {
+    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 1.1);
+    box-shadow: 0 4px 12px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+  }
+}
+
+
+/* ========================================================================== */
+/*                           LOADING STATES                                  */
+/* ========================================================================== */
+
+/* Skeleton loading animation */
+@keyframes skeletonLoading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton-loading {
+  background: linear-gradient(
+    90deg,
+    var(--background-secondary) 25%,
+    rgba(var(--text-muted-rgb), 0.1) 50%,
+    var(--background-secondary) 75%
+  );
+  background-size: 200px 100%;
+  animation: skeletonLoading 1.5s infinite;
+}
+
+/* Mobile skeleton optimization */
+@media (max-width: 768px) {
+  .skeleton-loading {
+    animation: skeletonLoading 1s infinite;
+    background-size: 150px 100%;
+  }
+}

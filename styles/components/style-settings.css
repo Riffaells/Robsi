@@ -1,0 +1,19 @@
+/* ========================================================================== */
+/*                              STYLE SETTINGS                               */
+/* ========================================================================== */
+
+/* Style Settings Container */
+.style-settings-container .themed-color-wrapper {
+  display: flex;
+  gap: var(--size-4-2);
+}
+
+.style-settings-container .themed-color-wrapper>div+div {
+  margin-top: 0;
+}
+
+.style-settings-container {
+  margin-left: var(--size-4-1);
+  padding-left: var(--size-4-8);
+  border-left: 1px solid var(--divider-color);
+}

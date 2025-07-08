@@ -1,0 +1,37 @@
+body {
+  /* Typography */
+  --line-height-normal: 1.6;
+  --line-height-theme: 1.6;
+
+  /* Links */
+  --link-decoration: underline;
+  --link-unresolved-decoration-style: dotted;
+  --link-unresolved-decoration-color: var(----link-unresolved-color);
+
+  /* Lists */
+  --checkbox-marker-color: var(--background-secondary);
+
+  /* Blockquotes */
+  --blockquote-border-color: var(--text-muted);
+  --blockquote-color: var(--text-muted);
+
+  /* Inline Code */
+  --code-background: rgba(var(--mono-rgb-100), 0.05);
+
+  /* Workspace & Modal Backgrounds */
+  --workspace-background-translucent: rgba(
+    var(--mono-rgb-0),
+    var(--background-opacity, 0.5)
+  );
+  --modal-background: var(--background-secondary);
+  --titlebar-background-focused: var(--background-primary);
+
+  /* Dividers */
+  --divider-color: transparent !important;
+}
+
+@media (min-width: 769px) {
+  :not(.mod-windows).theme-dark {
+    --background-primary: transparent;
+  }
+}

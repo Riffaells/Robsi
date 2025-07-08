@@ -1,0 +1,45 @@
+/* ========================================================================== */
+/*                          STATUS BAR & PROGRESS                            */
+/* ========================================================================== */
+
+/* Simple Status Bar */
+.status-bar {
+  background: transparent !important;
+  border: none !important;
+  transition: opacity 0.2s ease;
+}
+
+.status-bar-item {
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+
+  opacity: 0.4;
+  background: rgba(var(--bg-secondary-rgb), 0.3);
+  color: var(--text-muted);
+}
+
+.status-bar-item:hover {
+  opacity: 1;
+  color: var(--text-normal);
+  background: rgba(var(--bg-secondary-rgb), 0.8);
+}
+
+/* Status bar deemphasize - make elements even more transparent */
+.deemphasize-status-bar .status-bar-item {
+  opacity: 0.2;
+}
+
+.deemphasize-status-bar .status-bar-item:hover {
+  opacity: 0.8;
+}
+
+/* Mobile status bar */
+@media (max-width: 768px) {
+  .status-bar-item {
+    padding: 4px 6px;
+    font-size: 12px;
+    opacity: 0.5;
+  }
+}
