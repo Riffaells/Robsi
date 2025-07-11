@@ -5,24 +5,27 @@
 */
 
 /* Hide tab bar dynamically if only one tab */
-.hide-tab-bar-dynamic
+/* .hide-tab-bar-dynamic
   .mod-root
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header-container {
   opacity: 1;
   overflow: hidden;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, max-height 0.2s ease;
   width: auto;
   min-width: var(--tab-min-width);
+  max-height: 40px;
 }
 
 .hide-tab-bar-dynamic
   .mod-root
   .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-container:only-child {
+  .workspace-tab-header-container:has(:only-child) {
   max-height: 0;
   opacity: 0;
-}
+  padding: 0;
+  margin: 0;
+} */
 
 /* Always hide tab bar */
 .hide-tab-bar-always .mod-root .workspace-tabs .workspace-tab-header-container {
