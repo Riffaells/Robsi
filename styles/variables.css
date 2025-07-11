@@ -117,14 +117,13 @@
   --tab-text-color-focused-active-current: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 
   /* Tab background variables */
-  --tab-container-background: var(--bg);
+  --tab-container-background: var(--background-primary);
   --tab-background: var(--bg_dark2);
   --tab-background-active: var(--bg_highlight_dark);
   --tab-background-hover: var(--bg_highlight_dark);
   --workspace-background-translucent: rgba(var(--bg_dark2_x), 0.9);
-  --titlebar-background: var(--bg_dark2);
   --titlebar-background-focused: var(--bg_highlight_dark);
-
+  --frame-right-space: 80px;
   /* ======================================================================== */
   /*                              FILE MARGINS                               */
   /* ======================================================================== */
@@ -185,6 +184,12 @@
   /* RGB versions for rgba() usage */
   --magenta-rgb: var(--magenta_x);
   --magenta-light-rgb: var(--magenta-light_x);
+
+  /* Background RGB variables for blur effects */
+  --background-primary-rgb: var(--bg_x);
+  --background-secondary-rgb: var(--bg_dark_x);
+  --background-modifier-hover-rgb: var(--bg_highlight_x);
+  --menu-background-rgb: var(--bg_dark_x);
 
   --interactive-normal: var(--bg_dark);
   --interactive-hover: var(--bg);

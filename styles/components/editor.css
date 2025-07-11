@@ -333,26 +333,6 @@ span.cm-hmd-frontmatter.cm-meta {
   color: var(--text-faint);
   width: max-content;
 }
-
-.HyperMD-header-1 .cm-fold-indicator .collapse-indicator::before {
-  content: "H1";
-}
-.HyperMD-header-2 .cm-fold-indicator .collapse-indicator::before {
-  content: "H2";
-}
-.HyperMD-header-3 .cm-fold-indicator .collapse-indicator::before {
-  content: "H3";
-}
-.HyperMD-header-4 .cm-fold-indicator .collapse-indicator::before {
-  content: "H4";
-}
-.HyperMD-header-5 .cm-fold-indicator .collapse-indicator::before {
-  content: "H5";
-}
-.HyperMD-header-6 .cm-fold-indicator .collapse-indicator::before {
-  content: "H6";
-}
-
 .view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
   padding: 16px;
 }

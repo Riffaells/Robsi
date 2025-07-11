@@ -1,7 +1,7 @@
 /*
 Robsi Theme - A modern theme for Obsidian.
 By Riffaells - 2024
-Built: 2025-07-09T00:21:50.509595
+Built: 2025-07-11T22:50:33.686563
 Files included: 24
 */
 
@@ -125,14 +125,13 @@ Files included: 24
   --tab-text-color-focused-active-current: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 
   /* Tab background variables */
-  --tab-container-background: var(--bg);
+  --tab-container-background: var(--background-primary);
   --tab-background: var(--bg_dark2);
   --tab-background-active: var(--bg_highlight_dark);
   --tab-background-hover: var(--bg_highlight_dark);
   --workspace-background-translucent: rgba(var(--bg_dark2_x), 0.9);
-  --titlebar-background: var(--bg_dark2);
   --titlebar-background-focused: var(--bg_highlight_dark);
-
+  --frame-right-space: 80px;
   /* ======================================================================== */
   /*                              FILE MARGINS                               */
   /* ======================================================================== */
@@ -193,6 +192,12 @@ Files included: 24
   /* RGB versions for rgba() usage */
   --magenta-rgb: var(--magenta_x);
   --magenta-light-rgb: var(--magenta-light_x);
+
+  /* Background RGB variables for blur effects */
+  --background-primary-rgb: var(--bg_x);
+  --background-secondary-rgb: var(--bg_dark_x);
+  --background-modifier-hover-rgb: var(--bg_highlight_x);
+  --menu-background-rgb: var(--bg_dark_x);
 
   --interactive-normal: var(--bg_dark);
   --interactive-hover: var(--bg);
@@ -1100,26 +1105,6 @@ span.cm-hmd-frontmatter.cm-meta {
   color: var(--text-faint);
   width: max-content;
 }
-
-.HyperMD-header-1 .cm-fold-indicator .collapse-indicator::before {
-  content: "H1";
-}
-.HyperMD-header-2 .cm-fold-indicator .collapse-indicator::before {
-  content: "H2";
-}
-.HyperMD-header-3 .cm-fold-indicator .collapse-indicator::before {
-  content: "H3";
-}
-.HyperMD-header-4 .cm-fold-indicator .collapse-indicator::before {
-  content: "H4";
-}
-.HyperMD-header-5 .cm-fold-indicator .collapse-indicator::before {
-  content: "H5";
-}
-.HyperMD-header-6 .cm-fold-indicator .collapse-indicator::before {
-  content: "H6";
-}
-
 .view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
   padding: 16px;
 }
@@ -1766,9 +1751,9 @@ blockquote blockquote::before {
 
   /* Touch-friendly suggestion items */
   .suggestion-item {
-    min-height: 48px;
-    padding: 12px 16px;
-    margin: 2px 0;
+    min-height: 12px;
+    padding: 8px 8px;
+    margin: 4px 0;
   }
 
   .suggestion-item:first-child {
@@ -2458,7 +2443,6 @@ blockquote blockquote::before {
 /*                           FOLDER NOTES STYLING                            */
 /* ========================================================================== */
 
-/* Folder notes - папки с заметками */
 .folder-note-cursive .has-folder-note .nav-folder-title-content,
 .folder-note-cursive-path .has-folder-note.view-header-breadcrumb {
   color: var(--folder-note-color);
@@ -2466,18 +2450,15 @@ blockquote blockquote::before {
   font-weight: 450;
 }
 
-/* Тонкое подчеркивание для папок с заметками */
 .folder-note-cursive .has-folder-note .nav-folder-title-content {
   border-bottom: 1px solid rgba(var(--folder-note-color_x), 0.3);
 }
 
-/* Hover эффект для папок с заметками */
 .folder-note-cursive .has-folder-note .nav-folder-title:hover .nav-folder-title-content {
   color: var(--magenta-light);
   border-bottom-color: rgba(var(--folder-note-color_x), 0.8);
 }
 
-/* Breadcrumb стилизация для папок с заметками */
 .folder-note-cursive-path .has-folder-note.view-header-breadcrumb {
   background: rgba(var(--folder-note-color_x), 0.08);
   border-bottom: 1px solid rgba(var(--folder-note-color_x), 0.2);
@@ -2488,9 +2469,9 @@ blockquote blockquote::before {
   border-bottom-color: rgba(var(--folder-note-color_x), 0.5);
 }
 
-/* ========================================================================== */
-/*                            NAVIGATION STRUCTURE                           */
-/* ========================================================================== */
+.tree-item-self.mod-collapsible {
+    padding: 2px 8px 2px 28px;
+}
 
 
 /* ================================================= */
@@ -2842,20 +2823,17 @@ pre:hover::-webkit-scrollbar-thumb {
   transition: opacity 0.2s ease;
 }
 
-/* Simple Status Bar Items - Полупрозрачные элементы */
 .status-bar-item {
   padding: 4px 8px;
   border-radius: 6px;
   transition: opacity 0.2s ease;
   cursor: pointer;
 
-  /* Полупрозрачный по умолчанию */
   opacity: 0.4;
   background: rgba(var(--bg-secondary-rgb), 0.3);
   color: var(--text-muted);
 }
 
-/* Видимый при наведении */
 .status-bar-item:hover {
   opacity: 1;
   color: var(--text-normal);
@@ -2879,7 +2857,6 @@ pre:hover::-webkit-scrollbar-thumb {
     opacity: 0.5;
   }
 }
-
 
 
 /* ================================================= */
@@ -2932,7 +2909,7 @@ pre:hover::-webkit-scrollbar-thumb {
 }
 
 .titlebar-button-container.mod-right .titlebar-button:hover {
-  background: rgba(var(--text-normal-rgb), 0.25);
+  background: rgba(var(--text-normal-rgb), 0.6);
   border-color: rgba(var(--text-normal-rgb), 0.2);
 }
 
@@ -2971,6 +2948,8 @@ pre:hover::-webkit-scrollbar-thumb {
 .mod-windows .titlebar-button {
   display: flex;
   align-items: center;
+  height: auto !important;
+  min-height: 24px;
 }
 
 
@@ -3111,10 +3090,6 @@ a.external-link:hover::after {
   min-width: var(--tab-min-width);
 }
 
-.is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
-    padding-right: 0;
-}
-
 .hide-tab-bar-dynamic
   .mod-root
   .workspace-tabs:not(.mod-stacked)
@@ -3227,10 +3202,7 @@ a.external-link:hover::after {
   border-bottom: 1px solid rgba(40, 40, 40, 0.3);
 }
 
-.titlebar.is-focused {
-  background: var(--titlebar-background-focused);
-  border-bottom-color: rgba(60, 60, 60, 0.4);
-}
+
 
 /* Workspace background */
 .workspace {
@@ -3280,7 +3252,7 @@ a.external-link:hover::after {
 .workspace-split .workspace-leaf-content[data-type="outgoing-link"] .nav-header,
 .workspace-split .workspace-leaf-content[data-type="backlink"] .nav-header,
 .workspace-split .workspace-leaf-content[data-type="outline"] .nav-header {
-  padding: var(--size-4-1) var(--size-4-2);
+  padding: var(--size-4-1) 0;
   opacity: 1;
   height: auto;
   transition: opacity 0.2s ease, padding 0.2s ease;
@@ -3448,7 +3420,7 @@ a.external-link:hover::after {
 
 /* Optimize complex selectors */
 .workspace-split .workspace-leaf-content[data-type] .nav-header {
-  padding: var(--size-4-1) var(--size-4-2);
+  padding: var(--size-4-1) 0;
   opacity: 1;
   height: auto;
   transition: opacity 0.2s ease, padding 0.2s ease;
@@ -3500,9 +3472,6 @@ a.external-link:hover::after {
   border-bottom: 1px solid var(--border-color);
 }
 
-.titlebar.is-focused {
-  border-bottom-color: var(--border-color-hover);
-}
 
 /* ========================================================================== */
 /*                            NAVIGATION STYLING                             */
@@ -3525,7 +3494,9 @@ a.external-link:hover::after {
 /* ========================================================================== */
 
   .modal {
-    background-color: var(--background-secondary);
+    background-color: rgba(var(--background-secondary-rgb), 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border: 1px solid var(--background-modifier-border);
     border-radius: 8px;
   }
@@ -3535,19 +3506,25 @@ a.external-link:hover::after {
   /* ========================================================================== */
 
   .menu {
-    background-color: var(--background-secondary);
+    background-color: rgba(var(--background-secondary-rgb), 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--background-modifier-border);
     border-radius: 6px;
   }
 
   .menu-item:hover,
   .suggestion-item:hover {
-    background-color: var(--background-modifier-hover);
+    background-color: rgba(var(--background-modifier-hover-rgb), 0.95);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
 
   .suggestion-container {
-  background-color: var(--menu-background);
-  border: 1px solid var(--menu-border-color);
+  background-color: rgba(var(--background-secondary-rgb), 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--background-modifier-border);
   border-radius: 6px;
 }
 
@@ -3614,14 +3591,6 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 }
 
 
-
-/* Smooth scale animations for interactive elements */
-.clickable-icon,
-.nav-file-title,
-.nav-folder-title,
-.tree-item-inner {
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 /* Fade in/out animations */
 .workspace-leaf-content,
@@ -3990,12 +3959,6 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 /* Desktop hover feedback */
 @media (min-width: 1025px) {
-  .clickable-icon:hover,
-  .nav-file-title:hover,
-  .nav-folder-title:hover {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
   /* Smooth button hover */
   .mod-cta:hover {
     background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 1.1);
@@ -5136,8 +5099,6 @@ a:hover {
   --text-normal: #d0d0d0;
   --text-muted: #888;
 
-  /* Tab and workspace background variables */
-  --tab-container-background: rgba(8, 8, 8, 0.95);
   --tab-background: rgba(2, 2, 2, 0.9);
   --tab-background-active: rgba(25, 25, 25, 0.95);
   --tab-background-hover: rgba(18, 18, 18, 0.8);
@@ -5147,7 +5108,7 @@ a:hover {
   --tab-outline-color-active: rgba(80, 80, 80, 0.8);
   --shadow-color: rgba(0, 0, 0, 0.3);
   --workspace-background-translucent: rgba(2, 2, 2, 0.9);
-  --titlebar-background: rgba(8, 8, 8, 0.98);
+  --titlebar-background: var(--background-primary);
   --titlebar-background-focused: rgba(15, 15, 15, 0.98);
   --titlebar-text-color: #e8e8e8;
   --titlebar-text-color-focused: #ffffff;

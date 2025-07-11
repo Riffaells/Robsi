@@ -52,14 +52,6 @@
 
 
 
-/* Smooth scale animations for interactive elements */
-.clickable-icon,
-.nav-file-title,
-.nav-folder-title,
-.tree-item-inner {
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 /* Fade in/out animations */
 .workspace-leaf-content,
 .markdown-preview-view,
@@ -427,12 +419,6 @@
 
 /* Desktop hover feedback */
 @media (min-width: 1025px) {
-  .clickable-icon:hover,
-  .nav-file-title:hover,
-  .nav-folder-title:hover {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
   /* Smooth button hover */
   .mod-cta:hover {
     background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 1.1);

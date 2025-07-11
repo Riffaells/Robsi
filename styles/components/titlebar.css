@@ -21,7 +21,7 @@
 }
 
 .titlebar-button-container.mod-right .titlebar-button:hover {
-  background: rgba(var(--text-normal-rgb), 0.25);
+  background: rgba(var(--text-normal-rgb), 0.6);
   border-color: rgba(var(--text-normal-rgb), 0.2);
 }
 
@@ -60,4 +60,6 @@
 .mod-windows .titlebar-button {
   display: flex;
   align-items: center;
+  height: auto !important;
+  min-height: 24px;
 }

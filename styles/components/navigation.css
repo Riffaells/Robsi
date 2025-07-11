@@ -502,3 +502,7 @@
   background: rgba(var(--folder-note-color_x), 0.15);
   border-bottom-color: rgba(var(--folder-note-color_x), 0.5);
 }
+
+.tree-item-self.mod-collapsible {
+    padding: 2px 8px 2px 28px;
+}
