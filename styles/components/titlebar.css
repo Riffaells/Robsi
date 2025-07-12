@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease;
+  transition: none;
   background: rgba(var(--text-normal-rgb), 0.15);
   border: 1px solid rgba(var(--text-normal-rgb), 0.1);
   padding: 0px !important;

@@ -29,10 +29,7 @@
   padding: 0;
   opacity: 0;
   height: 0;
-  transition:
-    opacity 0.3s ease,
-    height 0.3s ease,
-    padding 0.3s ease;
+  transition: none;
 }
 
 .workspace-split:hover .workspace-leaf-content[data-type="tag"] .nav-header,
@@ -153,7 +150,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.15s ease, opacity 0.15s ease;
+    transition: none;
 }
 
 .nav-folder-collapse-indicator:hover {
@@ -359,11 +356,11 @@
     .nav-folder,
     .nav-file-title,
     .nav-folder-title {
-        transition-duration: 0.1s;
+        transition-duration: 0s;
     }
 
     .nav-folder-collapse-indicator {
-        transition-duration: 0.1s;
+        transition-duration: 0s;
     }
 }
 
@@ -385,7 +382,7 @@
 
 /* GPU acceleration for smooth scrolling */
 .nav-files-container {
-  transform: translateZ(0);
+  transform: none;
   -webkit-overflow-scrolling: auto;
 }
 
@@ -412,7 +409,7 @@
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: none;
     width: 3px;
     height: 12px;
     background-color: var(--interactive-accent);

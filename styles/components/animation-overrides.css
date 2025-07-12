@@ -93,7 +93,7 @@ button:hover,
   .menu-item:hover,
   .suggestion-item:hover,
   .clickable-icon:hover {
-    transition: background-color 0.1s ease !important;
+    transition: none !important;
   }
 }
 
@@ -105,7 +105,7 @@ button:hover,
 .workspace-split.mod-vertical .workspace-leaf,
 .workspace-split.mod-horizontal .workspace-leaf {
   transform: none !important;
-  transition: opacity 0.1s ease;
+  transition: none;
 }
 
 /* Override backdrop-filter animations on low-end devices */

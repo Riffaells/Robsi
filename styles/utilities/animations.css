@@ -5,17 +5,17 @@
 }
 
 .anim-fade-in {
-  animation: fadeIn 0.3s ease-in-out;
+  animation: none;
 }
 
 /* A slide-in animation */
 @keyframes slideInUp {
   from {
-    transform: translateY(20px);
+    transform: none;
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: none;
     opacity: 1;
   }
 }
@@ -41,12 +41,12 @@
   from {
     backdrop-filter: blur(0px);
     opacity: 0;
-    transform: scale(0.98);
+    transform: none;
   }
   to {
     backdrop-filter: blur(16px);
     opacity: 1;
-    transform: scale(1);
+    transform: none;
   }
 }
 
@@ -56,7 +56,7 @@
 .workspace-leaf-content,
 .markdown-preview-view,
 .markdown-source-view {
-  animation: fadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: none;
 }
 
 /* Ripple effect for buttons */
@@ -76,8 +76,8 @@
   height: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s;
+  transform: none;
+  transition: none;
 }
 
 .mod-cta:active::before,
@@ -120,7 +120,7 @@
   .menu-item,
   .suggestion-item,
   .workspace-tab-header {
-    transition: background-color 0.1s ease, color 0.1s ease;
+    transition: none;
   }
 
   /* Disable ripple effect on mobile */
@@ -150,7 +150,7 @@
   }
 
   .tree-item-inner {
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: none;
   }
 
   /* Full ripple effect */
@@ -180,12 +180,12 @@
   .menu-item,
   .suggestion-item,
   .workspace-tab-header {
-    transition: all 0.15s ease;
+    transition: none;
   }
 
   /* Simplified slide animation */
   .anim-slide-in-up {
-    animation: slideInUp 0.2s ease-out;
+    animation: none;
   }
 
   /* Reduced ripple effect */
@@ -209,7 +209,7 @@
   .popover,
   .workspace-drawer.mod-left,
   .workspace-drawer.mod-right {
-    animation: blurIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: none;
   }
 
   /* Smooth transitions */
@@ -239,7 +239,7 @@
   .popover,
   .workspace-drawer.mod-left,
   .workspace-drawer.mod-right {
-    animation: blurIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: none;
   }
 
 
@@ -268,13 +268,13 @@
   .popover,
   .workspace-drawer.mod-left,
   .workspace-drawer.mod-right {
-    will-change: transform, opacity;
+    will-change: auto;
   }
 
   .clickable-icon:hover,
   .nav-file-title:hover,
   .nav-folder-title:hover {
-    will-change: transform;
+    will-change: auto;
   }
 }
 
@@ -329,34 +329,34 @@
 /* Smooth zoom-in for important elements */
 @keyframes zoomIn {
   from {
-    transform: scale(0.95);
+    transform: none;
     opacity: 0;
   }
   to {
-    transform: scale(1);
+    transform: none;
     opacity: 1;
   }
 }
 
 .anim-zoom-in {
-  animation: zoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: none;
 }
 
 /* Gentle bounce for notifications */
 @keyframes gentleBounce {
   0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
+    transform: none;
   }
   40% {
-    transform: translateY(-4px);
+    transform: none;
   }
   60% {
-    transform: translateY(-2px);
+    transform: none;
   }
 }
 
 .anim-bounce {
-  animation: gentleBounce 0.6s;
+  animation: none;
 }
 
 /* Pulse animation for loading states */
@@ -373,14 +373,14 @@
 }
 
 .anim-pulse {
-  animation: pulse 1.5s infinite;
+  animation: none;
 }
 
 /* Mobile-specific animations */
 @media (max-width: 768px) {
   /* Simplified zoom-in */
   .anim-zoom-in {
-    animation: fadeIn 0.2s ease-out;
+    animation: none;
   }
 
   /* Disable bounce on mobile */
@@ -390,7 +390,7 @@
 
   /* Faster pulse */
   .anim-pulse {
-    animation: pulse 1s infinite;
+    animation: none;
   }
 }
 
@@ -407,13 +407,13 @@
   .suggestion-item:active,
   .workspace-tab-header:active {
     background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
-    transition: background-color 0.05s ease;
+    transition: none;
   }
 
   /* Visual feedback for buttons */
   .mod-cta:active {
     background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.9);
-    transition: background-color 0.05s ease;
+    transition: none;
   }
 }
 
@@ -449,13 +449,13 @@
     var(--background-secondary) 75%
   );
   background-size: 200px 100%;
-  animation: skeletonLoading 1.5s infinite;
+  animation: none;
 }
 
 /* Mobile skeleton optimization */
 @media (max-width: 768px) {
   .skeleton-loading {
-    animation: skeletonLoading 1s infinite;
+    animation: none;
     background-size: 150px 100%;
   }
 }

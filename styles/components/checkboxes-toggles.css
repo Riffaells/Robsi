@@ -53,7 +53,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: opacity 0.15s ease;
+    transition: none;
 }
 
 .extra-setting-button:hover {
@@ -84,7 +84,7 @@
     border-radius: 10px;
     background-color: var(--background-modifier-border);
     cursor: pointer;
-    transition: background-color 0.15s ease;
+    transition: none;
     position: relative;
     outline: none;
     flex-shrink: 0;
@@ -104,7 +104,6 @@
     background-color: var(--background-primary);
     top: 2px;
     left: 2px;
-    transition: transform 0.15s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -176,12 +175,12 @@
 @media (max-width: 768px) {
     .checkbox-container input[type="checkbox"],
     .checkbox-container input[type="checkbox"]::before {
-        transition-duration: 0.15s;
+        transition-duration: 0s;
     }
 
     .setting-item.mod-toggle::before,
     .extra-setting-button::before {
-        transition-duration: 0.1s;
+        transition-duration: 0s;
     }
 }
 

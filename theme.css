@@ -1,7 +1,7 @@
 /*
 Robsi Theme - A modern theme for Obsidian.
 By Riffaells - 2024
-Built: 2025-07-13T00:19:20.439215
+Built: 2025-07-13T00:27:59.599813
 Files included: 24
 */
 
@@ -455,7 +455,7 @@ button:hover,
   .menu-item:hover,
   .suggestion-item:hover,
   .clickable-icon:hover {
-    transition: background-color 0.1s ease !important;
+    transition: none !important;
   }
 }
 
@@ -467,7 +467,7 @@ button:hover,
 .workspace-split.mod-vertical .workspace-leaf,
 .workspace-split.mod-horizontal .workspace-leaf {
   transform: none !important;
-  transition: opacity 0.1s ease;
+  transition: none;
 }
 
 /* Override backdrop-filter animations on low-end devices */
@@ -540,7 +540,7 @@ button:hover,
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: opacity 0.15s ease;
+    transition: none;
 }
 
 .extra-setting-button:hover {
@@ -571,7 +571,7 @@ button:hover,
     border-radius: 10px;
     background-color: var(--background-modifier-border);
     cursor: pointer;
-    transition: background-color 0.15s ease;
+    transition: none;
     position: relative;
     outline: none;
     flex-shrink: 0;
@@ -591,7 +591,6 @@ button:hover,
     background-color: var(--background-primary);
     top: 2px;
     left: 2px;
-    transition: transform 0.15s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -663,12 +662,12 @@ button:hover,
 @media (max-width: 768px) {
     .checkbox-container input[type="checkbox"],
     .checkbox-container input[type="checkbox"]::before {
-        transition-duration: 0.15s;
+        transition-duration: 0s;
     }
 
     .setting-item.mod-toggle::before,
     .extra-setting-button::before {
-        transition-duration: 0.1s;
+        transition-duration: 0s;
     }
 }
 
@@ -1104,7 +1103,7 @@ span.cm-hmd-frontmatter.cm-meta {
   font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.1px;
-  transition: box-shadow 0.15s ease;
+  transition: none;
 }
 
 .mod-cta:hover {
@@ -1123,7 +1122,7 @@ input[type="password"],
 textarea {
   border-radius: 12px;
   border: 2px solid rgba(var(--text-muted-rgb), 0.2);
-  transition: border-color 0.15s ease;
+  transition: none;
 }
 
 input[type="text"]:focus,
@@ -1141,7 +1140,7 @@ textarea:focus {
   border-radius: 8px;
   border: 1px solid rgba(var(--text-muted-rgb), 0.3);
   padding: 8px 12px;
-  transition: border-color 0.15s ease;
+  transition: none;
   min-height: 36px;
   font-size: 14px;
   color: var(--text-normal);
@@ -1442,7 +1441,7 @@ textarea.success,
 /* Header Folding Indicators */
 .cm-fold-indicator .collapse-indicator {
   color: var(--text-muted) !important;
-  transition: color 0.2s ease;
+  transition: none;
 }
 
 .cm-fold-indicator:hover .collapse-indicator {
@@ -1500,7 +1499,7 @@ mark,
   padding: 2px 4px;
   border-radius: 3px;
   font-weight: 500;
-  transition: background-color 0.15s ease;
+  transition: none;
 }
 
 mark:hover,
@@ -1623,7 +1622,7 @@ blockquote {
   font-style: normal;
   position: relative;
   box-shadow: 0 2px 8px rgba(var(--cyan_x), 0.1);
-  transition: all 0.15s ease;
+  transition: none;
 }
 
 /* Beautiful quote mark */
@@ -1762,9 +1761,7 @@ blockquote blockquote::before {
   min-height: 20px;
   display: flex;
   align-items: center;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease;
+  transition: none;
 }
 
 .menu-item:hover {
@@ -1931,7 +1928,7 @@ blockquote blockquote::before {
   .workspace-tab-header,
   .nav-file-title,
   .nav-folder-title {
-    transition-duration: 0.1s;
+    transition-duration: 0s;
   }
 
   /* Disable complex backdrop filters on low-end devices */
@@ -2065,10 +2062,7 @@ blockquote blockquote::before {
   padding: 0;
   opacity: 0;
   height: 0;
-  transition:
-    opacity 0.3s ease,
-    height 0.3s ease,
-    padding 0.3s ease;
+  transition: none;
 }
 
 .workspace-split:hover .workspace-leaf-content[data-type="tag"] .nav-header,
@@ -2189,7 +2183,7 @@ blockquote blockquote::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.15s ease, opacity 0.15s ease;
+    transition: none;
 }
 
 .nav-folder-collapse-indicator:hover {
@@ -2395,11 +2389,11 @@ blockquote blockquote::before {
     .nav-folder,
     .nav-file-title,
     .nav-folder-title {
-        transition-duration: 0.1s;
+        transition-duration: 0s;
     }
 
     .nav-folder-collapse-indicator {
-        transition-duration: 0.1s;
+        transition-duration: 0s;
     }
 }
 
@@ -2421,7 +2415,7 @@ blockquote blockquote::before {
 
 /* GPU acceleration for smooth scrolling */
 .nav-files-container {
-  transform: translateZ(0);
+  transform: none;
   -webkit-overflow-scrolling: auto;
 }
 
@@ -2448,7 +2442,7 @@ blockquote blockquote::before {
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: none;
     width: 3px;
     height: 12px;
     background-color: var(--interactive-accent);
@@ -2590,7 +2584,7 @@ blockquote blockquote::before {
 .cm-scroller::-webkit-scrollbar-thumb {
   background: transparent;
   border-radius: 4px;
-  transition: background-color 0.2s ease;
+  transition: none;
 }
 
 /* Show scrollbars only on hover */
@@ -2867,7 +2861,7 @@ pre:hover::-webkit-scrollbar-thumb {
   .markdown-source-view::-webkit-scrollbar-thumb,
   .markdown-preview-view::-webkit-scrollbar-thumb,
   .cm-scroller::-webkit-scrollbar-thumb {
-    will-change: background-color;
+    will-change: auto;
   }
 
   .workspace-leaf-content:not(:hover)::-webkit-scrollbar-thumb,
@@ -2890,13 +2884,13 @@ pre:hover::-webkit-scrollbar-thumb {
 .status-bar {
   background: transparent !important;
   border: none !important;
-  transition: opacity 0.2s ease;
+  transition: none;
 }
 
 .status-bar-item {
   padding: 4px 8px;
   border-radius: 6px;
-  transition: opacity 0.2s ease;
+  transition: none;
   cursor: pointer;
 
   opacity: 0.4;
@@ -2972,7 +2966,7 @@ pre:hover::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease;
+  transition: none;
   background: rgba(var(--text-normal-rgb), 0.15);
   border: 1px solid rgba(var(--text-normal-rgb), 0.1);
   padding: 0px !important;
@@ -3088,7 +3082,7 @@ a.internal-link,
 .internal-link {
   color: var(--link-color);
   text-decoration: none !important;
-  transition: all 0.15s ease;
+  transition: none;
 }
 
 a.internal-link:hover,
@@ -3108,7 +3102,7 @@ a.external-link::after {
   display: inline-block;
   vertical-align: text-top;
   opacity: 0.7;
-  transition: opacity 0.15s ease;
+  transition: none;
   border-bottom: none !important;
 }
 
@@ -3159,7 +3153,7 @@ a.external-link:hover::after {
   background-color: var(--interactive-accent);
   color: var(--text-on-accent);
   border: none;
-  transition: background-color 0.15s ease;
+  transition: none;
 }
 
 .mod-cta:hover {
@@ -3184,7 +3178,7 @@ a.external-link:hover::after {
   .workspace-tab-header-container {
   opacity: 1;
   overflow: hidden;
-  transition: opacity 0.2s ease, max-height 0.2s ease;
+  transition: none;
   width: auto;
   min-width: var(--tab-min-width);
   max-height: 40px;
@@ -3222,7 +3216,7 @@ a.external-link:hover::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.15s ease;
+  transition: none;
 }
 
 .view-header-nav-buttons .clickable-icon:hover {
@@ -3246,7 +3240,7 @@ a.external-link:hover::after {
 .view-header-title-container {
   -webkit-app-region: drag;
   border-radius: 8px;
-  transition: background-color 0.15s ease;
+  transition: none;
 }
 
 
@@ -3285,7 +3279,7 @@ a.external-link:hover::after {
 .workspace-tab-header {
   background: var(--tab-background);
   border-radius: 8px 8px 0 0;
-  transition: all 0.2s ease;
+  transition: none;
   border: none;
   margin: 2px;
 }
@@ -3330,7 +3324,7 @@ a.external-link:hover::after {
 .sidebar-toggle-button.mod-left {
   display: flex;
   opacity: 0.7;
-  transition: opacity 0.15s ease;
+  transition: none;
 }
 
 .sidebar-toggle-button.mod-right:hover,
@@ -3342,7 +3336,7 @@ a.external-link:hover::after {
 .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
   display: flex !important;
   opacity: 0.7;
-  transition: opacity 0.15s ease;
+  transition: none;
 }
 
 .workspace-sidedock-vault-profile:hover .workspace-drawer-vault-actions {
@@ -3357,7 +3351,7 @@ a.external-link:hover::after {
   padding: var(--size-4-1) 0;
   opacity: 1;
   height: auto;
-  transition: opacity 0.2s ease, padding 0.2s ease;
+  transition: none;
 }
 
 .workspace-leaf-content[data-type="file-explorer"]:hover .nav-header {
@@ -3369,7 +3363,7 @@ a.external-link:hover::after {
   .workspace-tab-header-container-inner
   [data-type="localgraph"] {
   opacity: 0.8;
-  transition: opacity 0.2s ease;
+  transition: none;
 }
 
 .workspace-tab-header-container:hover
@@ -3404,7 +3398,7 @@ a.external-link:hover::after {
 .view-header-title-container {
   -webkit-app-region: drag;
   border-radius: 8px;
-  transition: background-color 0.15s ease;
+  transition: none;
 }
 
 
@@ -3440,7 +3434,7 @@ a.external-link:hover::after {
   .view-header-title-container,
   .sidebar-toggle-button.mod-right,
   .sidebar-toggle-button.mod-left {
-    transition-duration: 0.1s;
+    transition-duration: 0s;
   }
 }
 
@@ -3525,7 +3519,7 @@ a.external-link:hover::after {
   padding: var(--size-4-1) 0;
   opacity: 1;
   height: auto;
-  transition: opacity 0.2s ease, padding 0.2s ease;
+  transition: none;
 }
 
 /* Consolidated hover states */
@@ -3536,7 +3530,7 @@ a.external-link:hover::after {
 /* Simplified navigation container */
 .workspace-tab-header-container .workspace-tab-header-container-inner [data-type] {
   opacity: 0.8;
-  transition: opacity 0.2s ease;
+  transition: none;
 }
 
 .workspace-tab-header-container:hover .workspace-tab-header-container-inner [data-type] {
@@ -3647,17 +3641,17 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 }
 
 .anim-fade-in {
-  animation: fadeIn 0.3s ease-in-out;
+  animation: none;
 }
 
 /* A slide-in animation */
 @keyframes slideInUp {
   from {
-    transform: translateY(20px);
+    transform: none;
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: none;
     opacity: 1;
   }
 }
@@ -3683,12 +3677,12 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   from {
     backdrop-filter: blur(0px);
     opacity: 0;
-    transform: scale(0.98);
+    transform: none;
   }
   to {
     backdrop-filter: blur(16px);
     opacity: 1;
-    transform: scale(1);
+    transform: none;
   }
 }
 
@@ -3698,7 +3692,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 .workspace-leaf-content,
 .markdown-preview-view,
 .markdown-source-view {
-  animation: fadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: none;
 }
 
 /* Ripple effect for buttons */
@@ -3718,8 +3712,8 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   height: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s;
+  transform: none;
+  transition: none;
 }
 
 .mod-cta:active::before,
@@ -3762,7 +3756,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   .menu-item,
   .suggestion-item,
   .workspace-tab-header {
-    transition: background-color 0.1s ease, color 0.1s ease;
+    transition: none;
   }
 
   /* Disable ripple effect on mobile */
@@ -3792,7 +3786,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   }
 
   .tree-item-inner {
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: none;
   }
 
   /* Full ripple effect */
@@ -3822,12 +3816,12 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   .menu-item,
   .suggestion-item,
   .workspace-tab-header {
-    transition: all 0.15s ease;
+    transition: none;
   }
 
   /* Simplified slide animation */
   .anim-slide-in-up {
-    animation: slideInUp 0.2s ease-out;
+    animation: none;
   }
 
   /* Reduced ripple effect */
@@ -3851,7 +3845,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   .popover,
   .workspace-drawer.mod-left,
   .workspace-drawer.mod-right {
-    animation: blurIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: none;
   }
 
   /* Smooth transitions */
@@ -3881,7 +3875,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   .popover,
   .workspace-drawer.mod-left,
   .workspace-drawer.mod-right {
-    animation: blurIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: none;
   }
 
 
@@ -3910,13 +3904,13 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   .popover,
   .workspace-drawer.mod-left,
   .workspace-drawer.mod-right {
-    will-change: transform, opacity;
+    will-change: auto;
   }
 
   .clickable-icon:hover,
   .nav-file-title:hover,
   .nav-folder-title:hover {
-    will-change: transform;
+    will-change: auto;
   }
 }
 
@@ -3971,34 +3965,34 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 /* Smooth zoom-in for important elements */
 @keyframes zoomIn {
   from {
-    transform: scale(0.95);
+    transform: none;
     opacity: 0;
   }
   to {
-    transform: scale(1);
+    transform: none;
     opacity: 1;
   }
 }
 
 .anim-zoom-in {
-  animation: zoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: none;
 }
 
 /* Gentle bounce for notifications */
 @keyframes gentleBounce {
   0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
+    transform: none;
   }
   40% {
-    transform: translateY(-4px);
+    transform: none;
   }
   60% {
-    transform: translateY(-2px);
+    transform: none;
   }
 }
 
 .anim-bounce {
-  animation: gentleBounce 0.6s;
+  animation: none;
 }
 
 /* Pulse animation for loading states */
@@ -4015,14 +4009,14 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 }
 
 .anim-pulse {
-  animation: pulse 1.5s infinite;
+  animation: none;
 }
 
 /* Mobile-specific animations */
 @media (max-width: 768px) {
   /* Simplified zoom-in */
   .anim-zoom-in {
-    animation: fadeIn 0.2s ease-out;
+    animation: none;
   }
 
   /* Disable bounce on mobile */
@@ -4032,7 +4026,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
   /* Faster pulse */
   .anim-pulse {
-    animation: pulse 1s infinite;
+    animation: none;
   }
 }
 
@@ -4049,13 +4043,13 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   .suggestion-item:active,
   .workspace-tab-header:active {
     background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
-    transition: background-color 0.05s ease;
+    transition: none;
   }
 
   /* Visual feedback for buttons */
   .mod-cta:active {
     background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.9);
-    transition: background-color 0.05s ease;
+    transition: none;
   }
 }
 
@@ -4091,13 +4085,13 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
     var(--background-secondary) 75%
   );
   background-size: 200px 100%;
-  animation: skeletonLoading 1.5s infinite;
+  animation: none;
 }
 
 /* Mobile skeleton optimization */
 @media (max-width: 768px) {
   .skeleton-loading {
-    animation: skeletonLoading 1s infinite;
+    animation: none;
     background-size: 150px 100%;
   }
 }

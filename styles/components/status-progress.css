@@ -6,13 +6,13 @@
 .status-bar {
   background: transparent !important;
   border: none !important;
-  transition: opacity 0.2s ease;
+  transition: none;
 }
 
 .status-bar-item {
   padding: 4px 8px;
   border-radius: 6px;
-  transition: opacity 0.2s ease;
+  transition: none;
   cursor: pointer;
 
   opacity: 0.4;

@@ -41,7 +41,7 @@
 .cm-scroller::-webkit-scrollbar-thumb {
   background: transparent;
   border-radius: 4px;
-  transition: background-color 0.2s ease;
+  transition: none;
 }
 
 /* Show scrollbars only on hover */
@@ -318,7 +318,7 @@ pre:hover::-webkit-scrollbar-thumb {
   .markdown-source-view::-webkit-scrollbar-thumb,
   .markdown-preview-view::-webkit-scrollbar-thumb,
   .cm-scroller::-webkit-scrollbar-thumb {
-    will-change: background-color;
+    will-change: auto;
   }
 
   .workspace-leaf-content:not(:hover)::-webkit-scrollbar-thumb,

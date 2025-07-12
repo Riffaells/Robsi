@@ -11,7 +11,7 @@
   .workspace-tab-header-container {
   opacity: 1;
   overflow: hidden;
-  transition: opacity 0.2s ease, max-height 0.2s ease;
+  transition: none;
   width: auto;
   min-width: var(--tab-min-width);
   max-height: 40px;
@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.15s ease;
+  transition: none;
 }
 
 .view-header-nav-buttons .clickable-icon:hover {
@@ -73,7 +73,7 @@
 .view-header-title-container {
   -webkit-app-region: drag;
   border-radius: 8px;
-  transition: background-color 0.15s ease;
+  transition: none;
 }
 
 
@@ -112,7 +112,7 @@
 .workspace-tab-header {
   background: var(--tab-background);
   border-radius: 8px 8px 0 0;
-  transition: all 0.2s ease;
+  transition: none;
   border: none;
   margin: 2px;
 }
@@ -157,7 +157,7 @@
 .sidebar-toggle-button.mod-left {
   display: flex;
   opacity: 0.7;
-  transition: opacity 0.15s ease;
+  transition: none;
 }
 
 .sidebar-toggle-button.mod-right:hover,
@@ -169,7 +169,7 @@
 .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
   display: flex !important;
   opacity: 0.7;
-  transition: opacity 0.15s ease;
+  transition: none;
 }
 
 .workspace-sidedock-vault-profile:hover .workspace-drawer-vault-actions {
@@ -184,7 +184,7 @@
   padding: var(--size-4-1) 0;
   opacity: 1;
   height: auto;
-  transition: opacity 0.2s ease, padding 0.2s ease;
+  transition: none;
 }
 
 .workspace-leaf-content[data-type="file-explorer"]:hover .nav-header {
@@ -196,7 +196,7 @@
   .workspace-tab-header-container-inner
   [data-type="localgraph"] {
   opacity: 0.8;
-  transition: opacity 0.2s ease;
+  transition: none;
 }
 
 .workspace-tab-header-container:hover
@@ -231,7 +231,7 @@
 .view-header-title-container {
   -webkit-app-region: drag;
   border-radius: 8px;
-  transition: background-color 0.15s ease;
+  transition: none;
 }
 
 
@@ -267,7 +267,7 @@
   .view-header-title-container,
   .sidebar-toggle-button.mod-right,
   .sidebar-toggle-button.mod-left {
-    transition-duration: 0.1s;
+    transition-duration: 0s;
   }
 }
 
@@ -352,7 +352,7 @@
   padding: var(--size-4-1) 0;
   opacity: 1;
   height: auto;
-  transition: opacity 0.2s ease, padding 0.2s ease;
+  transition: none;
 }
 
 /* Consolidated hover states */
@@ -363,7 +363,7 @@
 /* Simplified navigation container */
 .workspace-tab-header-container .workspace-tab-header-container-inner [data-type] {
   opacity: 0.8;
-  transition: opacity 0.2s ease;
+  transition: none;
 }
 
 .workspace-tab-header-container:hover .workspace-tab-header-container-inner [data-type] {

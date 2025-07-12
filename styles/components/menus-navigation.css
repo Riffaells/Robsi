@@ -19,9 +19,7 @@
   min-height: 20px;
   display: flex;
   align-items: center;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease;
+  transition: none;
 }
 
 .menu-item:hover {
@@ -188,7 +186,7 @@
   .workspace-tab-header,
   .nav-file-title,
   .nav-folder-title {
-    transition-duration: 0.1s;
+    transition-duration: 0s;
   }
 
   /* Disable complex backdrop filters on low-end devices */

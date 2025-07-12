@@ -9,7 +9,7 @@
   font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.1px;
-  transition: box-shadow 0.15s ease;
+  transition: none;
 }
 
 .mod-cta:hover {
@@ -28,7 +28,7 @@ input[type="password"],
 textarea {
   border-radius: 12px;
   border: 2px solid rgba(var(--text-muted-rgb), 0.2);
-  transition: border-color 0.15s ease;
+  transition: none;
 }
 
 input[type="text"]:focus,
@@ -46,7 +46,7 @@ textarea:focus {
   border-radius: 8px;
   border: 1px solid rgba(var(--text-muted-rgb), 0.3);
   padding: 8px 12px;
-  transition: border-color 0.15s ease;
+  transition: none;
   min-height: 36px;
   font-size: 14px;
   color: var(--text-normal);
