@@ -15,7 +15,7 @@ settings:
     type: variable-themed-color
     format: hsl-split
     opacity: false
-    default-light: '#0F87CC'
+    default-light: '#0078B4'
     default-dark: '#80D0FF'
   -
     id: Extended-colors
@@ -29,7 +29,7 @@ settings:
     type: variable-themed-color
     format: rgb
     opacity: false
-    default-light: 'rgb(115, 42, 56)'
+    default-light: 'rgb(180, 30, 50)'
     default-dark: 'rgb(219, 75, 75)'
   -
     id: red1
@@ -37,7 +37,7 @@ settings:
     type: variable-themed-color
     format: rgb
     opacity: false
-    default-light: 'rgb(140, 67, 81)'
+    default-light: 'rgb(200, 50, 70)'
     default-dark: 'rgb(255, 117, 127)'
   -
     id: green
@@ -45,7 +45,7 @@ settings:
     type: variable-themed-color
     format: rgb
     opacity: false
-    default-light: 'rgb(51, 99, 92)'
+    default-light: 'rgb(20, 140, 80)'
     default-dark: 'rgb(158, 206, 106)'
   -
     id: cyan
@@ -53,7 +53,7 @@ settings:
     type: variable-themed-color
     format: rgb
     opacity: false
-    default-light: 'rgb(15, 75, 110)'
+    default-light: 'rgb(0, 120, 180)'
     default-dark: 'rgb(125, 207, 255)'
   -
     id: blue
@@ -61,7 +61,7 @@ settings:
     type: variable-themed-color
     format: rgb
     opacity: false
-    default-light: 'rgb(52, 84, 138)'
+    default-light: 'rgb(30, 70, 160)'
     default-dark: 'rgb(122, 162, 247)'
   -
     id: yellow
@@ -69,7 +69,7 @@ settings:
     type: variable-themed-color
     format: rgb
     opacity: false
-    default-light: 'rgb(143, 94, 21)'
+    default-light: 'rgb(180, 120, 0)'
     default-dark: 'rgb(224, 175, 104)'
   -
     id: orange
@@ -77,7 +77,7 @@ settings:
     type: variable-themed-color
     format: rgb
     opacity: false
-    default-light: 'rgb(150, 80, 39)'
+    default-light: 'rgb(220, 100, 20)'
     default-dark: 'rgb(255, 158, 100)'
   -
     id: magenta
@@ -85,7 +85,7 @@ settings:
     type: variable-themed-color
     format: rgb
     opacity: false
-    default-light: 'rgb(90, 74, 120)'
+    default-light: 'rgb(160, 30, 140)'
     default-dark: 'rgb(187, 154, 247)'
   -
     id: pink
@@ -93,7 +93,7 @@ settings:
     type: variable-themed-color
     format: rgb
     opacity: false
-    default-light: 'rgb(109, 74, 120)'
+    default-light: 'rgb(200, 30, 140)'
     default-dark: 'rgb(217, 0, 105)'
   -
     id: lists-heading
@@ -126,7 +126,7 @@ settings:
 		type: variable-themed-color
 		format: rgb
 		opacity: false
-		default-light: 'rgb(90, 74, 120)'
+		default-light: 'rgb(160, 30, 140)'
 		default-dark: 'rgb(187, 154, 247)'
   -
 		id: list-marker-color-hover
@@ -135,7 +135,7 @@ settings:
 		type: variable-themed-color
 		format: rgb
 		opacity: false
-		default-light: 'rgb(15, 75, 110)'
+		default-light: 'rgb(0, 120, 180)'
 		default-dark: 'rgb(125, 207, 255)'
   -
 		id: list-marker-color-collapsed
@@ -144,7 +144,7 @@ settings:
 		type: variable-themed-color
 		format: rgb
 		opacity: false
-		default-light: 'rgb(150, 153, 163)'
+		default-light: 'rgb(120, 125, 135)'
 		default-dark: 'rgb(86, 95, 137)'
   -
     id: ordered-lists-heading
@@ -159,7 +159,7 @@ settings:
 		type: variable-themed-color
 		format: rgb
 		opacity: false
-		default-light: 'rgb(90, 74, 120)'
+		default-light: 'rgb(160, 30, 140)'
 		default-dark: 'rgb(187, 154, 247)'
   -
 		id: list-number-color-hover
@@ -168,7 +168,7 @@ settings:
 		type: variable-themed-color
 		format: rgb
 		opacity: false
-		default-light: 'rgb(15, 75, 110)'
+		default-light: 'rgb(0, 120, 180)'
 		default-dark: 'rgb(125, 207, 255)'
 
 */

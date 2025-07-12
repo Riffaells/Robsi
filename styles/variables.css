@@ -92,7 +92,6 @@
 
   --checkbox-radius: var(--radius-s);
   --checkbox-size: 16px;
-  --checkbox-marker-color: var(--text-on-accent);
 
   /* ======================================================================== */
   /*                               TABLES                                    */
@@ -121,7 +120,7 @@
   --tab-background: var(--bg_dark2);
   --tab-background-active: var(--bg_highlight_dark);
   --tab-background-hover: var(--bg_highlight_dark);
-  --workspace-background-translucent: rgba(var(--bg_dark2_x), 0.9);
+  --workspace-background-translucent: var(--background-primary);
   --titlebar-background-focused: var(--bg_highlight_dark);
   --frame-right-space: 80px;
   /* ======================================================================== */
@@ -130,22 +129,33 @@
 
   --file-margins: clamp(5px, 4vw, 20px);
 
-  --color_red_rgb: var(--red_x);
+  /* ======================================================================== */
+  /*                              COLOR PALETTE                               */
+  /* ======================================================================== */
+
+  /* Standard Colors */
   --color-red: var(--red);
-  --color_purple_rgb: var(--magenta_x);
   --color-purple: var(--magenta);
-  --color_green_rgb: var(--green_x);
   --color-green: var(--green);
-  --color_cyan_rgb: var(--cyan_x);
   --color-cyan: var(--cyan);
-  --color_blue_rgb: var(--blue_x);
   --color-blue: var(--blue);
-  --color_yellow_rgb: var(--yellow_x);
   --color-yellow: var(--yellow);
-  --color_orange_rgb: var(--orange_x);
   --color-orange: var(--orange);
-  --color_pink_rgb: var(--magenta_x);
   --color-pink: var(--magenta);
+
+  /* RGB Versions for rgba() */
+  --color-red-rgb: var(--red_x);
+  --color-purple-rgb: var(--magenta_x);
+  --color-green-rgb: var(--green_x);
+  --color-cyan-rgb: var(--cyan_x);
+  --color-blue-rgb: var(--blue_x);
+  --color-yellow-rgb: var(--yellow_x);
+  --color-orange-rgb: var(--orange_x);
+  --color-pink-rgb: var(--magenta_x);
+
+  /* ======================================================================== */
+  /*                           BACKGROUND & TEXT                            */
+  /* ======================================================================== */
 
   --background-primary: var(--bg);
   --background-primary-alt: var(--bg);
@@ -217,8 +227,10 @@
 
   --link-color: var(--magenta);
   --link-color-hover: var(--cyan);
-  --link-external-color: var(--magenta);
+  --link-external-color: var(--purple);
   --link-external-color-hover: var(--cyan);
+  --link-external-color-rgb: var(--purple_x);
+  --link-external-color-hover-rgb: var(--cyan_x);
 
   --checkbox-color: var(--green);
   --checkbox-color-hover: var(--green);
@@ -255,9 +267,11 @@
   --callout-quote: var(--fg_dark_x);
 
   --icon-color-hover: var(--blue);
-  --icon-color-focused: var(--magenta);
-  --icon-color-active: var(--magenta);
+  --icon-color-focused: var(--purple);
+  --icon-color-active: var(--purple);
 
+
+  --nav-item-parent-padding: 4px 16px 4px 8px;
   --nav-item-color: rgba(255, 255, 255, 0.9);
   --nav-item-color-hover: var(--fg);
   --nav-item-background-hover: var(--bg_highlight);

@@ -5,33 +5,47 @@
 /* Tooltips */
 .tooltip {
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(var(--text-muted-rgb), 0.2);
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  color: var(--fg);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: var(--text-normal);
+  background: rgba(var(--background-primary-rgb), 0.8);
 }
 
-
+.theme-dark .tooltip {
+  background: rgba(var(--background-secondary-rgb), 0.8);
+}
 
 /* External Links */
-.cm-url,
-.cm-string.cm-url.external-link {
-  color: var(--link-external-color);
-  text-decoration: underline;
-  text-decoration-color: rgba(var(--link-external-color-rgb), 0.3);
+.external-link,
+.cm-link:not(.internal-link),
+.cm-url {
+  color: var(--link-external-color) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(var(--link-external-color-rgb), 0.5);
+  padding-inline-end: 0;
+  background: none;
 }
 
-a.external-link {
-  color: var(--link-external-color);
-  text-decoration: underline;
-  text-decoration-color: rgba(var(--link-external-color-rgb), 0.2);
-  transition: all 0.15s ease;
-  margin: 0 2px;
+.external-link:hover,
+.cm-link:not(.internal-link):hover,
+.cm-url:hover {
+  color: var(--link-external-color-hover) !important;
+  border-bottom-color: rgba(var(--link-external-color-hover-rgb), 0.7);
+  text-decoration: none !important;
 }
 
-a.external-link:hover {
-  color: var(--link-external-color-hover);
-  text-decoration-color: rgba(var(--link-external-color-rgb), 0.6);
+/* Force disable filter on external links */
+.cm-s-obsidian span.cm-formatting-link.cm-url,
+.cm-s-obsidian span.cm-url,
+.external-link {
+  filter: none !important;
+}
+
+/* Remove underline from child 'a' tags */
+.cm-link:not(.internal-link) a.cm-underline,
+.cm-url a.cm-underline {
+    text-decoration: none !important;
 }
 
 /* Internal Links - NO underline anywhere */
@@ -44,6 +58,7 @@ a.internal-link,
 .markdown-preview-view .internal-link,
 .markdown-source-view .internal-link,
 .internal-link {
+  color: var(--link-color);
   text-decoration: none !important;
   transition: all 0.15s ease;
 }
@@ -57,17 +72,16 @@ a.internal-link:hover,
 }
 
 a.external-link::after {
-  content: '';
+  content: ' ';
   width: 12px;
   height: 12px;
-  margin-left: 4px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15,3 21,3 21,9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+  background-image: linear-gradient(transparent, transparent), url(public/images/6155340132a851f6089e.svg);
   background-size: contain;
   display: inline-block;
   vertical-align: text-top;
-  filter: var(--link-external-filter);
   opacity: 0.7;
   transition: opacity 0.15s ease;
+  border-bottom: none !important;
 }
 
 a.external-link:hover::after {
@@ -76,17 +90,18 @@ a.external-link:hover::after {
 
 /* Notices */
 .notice {
-  border-radius: 12px;
+  border-radius: var(--radius-l);
   backdrop-filter: blur(16px);
-  background: rgba(var(--bg-secondary-rgb), 0.95);
-  border: 1px solid rgba(var(--text-muted-rgb), 0.2);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background: rgba(var(--background-secondary-rgb), 0.9);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  color: var(--text-normal);
 }
 
 /* Additional notice style */
 .notice {
-  background-color: var(--bg_dark);
-  border: 2px solid var(--bg_highlight);
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
 }
 
 /* Tree Item Flair */
@@ -101,11 +116,25 @@ a.external-link:hover::after {
 
 /* Suggestion Items */
 .suggestion-item.is-selected {
-  color: var(--accent-color);
-  border-radius: 8px;
-  
+  color: var(--text-on-accent);
+  background-color: var(--interactive-accent);
+  border-radius: var(--radius-m);
 }
 .suggestion-item.is-selected:hover {
-  color: var(--accent-color);
-  border-radius: 8px;
+  color: var(--text-on-accent);
+  background-color: var(--interactive-accent-hover);
+  border-radius: var(--radius-m);
+}
+
+/* Buttons */
+.mod-cta {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+  transition: background-color 0.15s ease;
+}
+
+.mod-cta:hover {
+  background-color: var(--interactive-accent-hover);
+  color: var(--text-on-accent);
 }
