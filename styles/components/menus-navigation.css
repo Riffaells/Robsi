@@ -2,11 +2,14 @@
 /*                           MENUS & NAVIGATION                              */
 /* ========================================================================== */
 
-/* Menu styling - optimized for performance */
+/* Menu styling with blur effects */
 .suggestion-container,
 .menu {
-    background: var(--background-secondary);
+    background: rgba(var(--bg-secondary-rgb), 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--background-modifier-border);
     border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(var(--text-normal), 0.3);
 }
 
 

@@ -1,7 +1,7 @@
 /*
 Robsi Theme - A modern theme for Obsidian.
 By Riffaells - 2024
-Built: 2025-07-22T01:16:59.265858
+Built: 2025-07-22T02:10:10.406681
 Files included: 24
 */
 
@@ -382,16 +382,6 @@ button:hover,
     .workspace-leaf:hover {
         box-shadow: none;
         transform: none;
-    }
-}
-
-/* Disable animations for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-
-    .menu-item:hover,
-    .suggestion-item:hover,
-    .clickable-icon:hover {
-        transition: none;
     }
 }
 
@@ -1805,11 +1795,14 @@ blockquote p {
 /*                           MENUS & NAVIGATION                              */
 /* ========================================================================== */
 
-/* Menu styling - optimized for performance */
+/* Menu styling with blur effects */
 .suggestion-container,
 .menu {
-    background: var(--background-secondary);
+    background: rgba(var(--bg-secondary-rgb), 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--background-modifier-border);
     border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(var(--text-normal), 0.3);
 }
 
 
@@ -3554,35 +3547,6 @@ a.external-link:hover::after {
     border-radius: 8px;
 }
 
-/* ========================================================================== */
-/*                             MENU STYLING                                  */
-/* ========================================================================== */
-
-.menu {
-    background-color: var(--background-secondary);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 6px;
-}
-
-/* .menu-item:hover,
-  .suggestion-item:hover {
-    background-color: rgba(var(--background-modifier-hover-rgb), 0.95);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-  } */
-
-.suggestion-container {
-    background-color: var(--background-secondary);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 6px;
-}
-
-
-body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
-    background: none !important;
-    border: none;
-}
-
 
 /* ================================================= */
 
@@ -3985,7 +3949,6 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   .menu-item:active,
   .suggestion-item:active,
   .workspace-tab-header:active {
-    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
     transition: none;
   }
 
@@ -5568,18 +5531,6 @@ a:hover {
 /*                      LIGHT THEME COMPONENT STYLING                        */
 /* ======================================================================== */
 
-/* Menu and dropdown styling */
-.theme-light .menu,
-.theme-light .dropdown {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.theme-light .menu-item:hover {
-    background: rgba(0, 120, 180, 0.08);
-    color: #1a202c;
-}
 
 /* Status bar */
 .theme-light .status-bar {

@@ -360,32 +360,3 @@
     border: 1px solid var(--background-modifier-border);
     border-radius: 8px;
 }
-
-/* ========================================================================== */
-/*                             MENU STYLING                                  */
-/* ========================================================================== */
-
-.menu {
-    background-color: var(--background-secondary);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 6px;
-}
-
-/* .menu-item:hover,
-  .suggestion-item:hover {
-    background-color: rgba(var(--background-modifier-hover-rgb), 0.95);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-  } */
-
-.suggestion-container {
-    background-color: var(--background-secondary);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 6px;
-}
-
-
-body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
-    background: none !important;
-    border: none;
-}

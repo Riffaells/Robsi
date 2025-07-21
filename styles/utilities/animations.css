@@ -396,7 +396,6 @@
   .menu-item:active,
   .suggestion-item:active,
   .workspace-tab-header:active {
-    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
     transition: none;
   }
 

@@ -34,13 +34,3 @@ button:hover,
         transform: none;
     }
 }
-
-/* Disable animations for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-
-    .menu-item:hover,
-    .suggestion-item:hover,
-    .clickable-icon:hover {
-        transition: none;
-    }
-}

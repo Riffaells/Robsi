@@ -264,18 +264,6 @@
 /*                      LIGHT THEME COMPONENT STYLING                        */
 /* ======================================================================== */
 
-/* Menu and dropdown styling */
-.theme-light .menu,
-.theme-light .dropdown {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.theme-light .menu-item:hover {
-    background: rgba(0, 120, 180, 0.08);
-    color: #1a202c;
-}
 
 /* Status bar */
 .theme-light .status-bar {
