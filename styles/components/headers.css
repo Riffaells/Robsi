@@ -15,6 +15,7 @@
     content: "▍";
     opacity: 0.8;
 }
+
 .HyperMD-header {
     font-weight: normal;
 }
@@ -23,37 +24,37 @@
 .markdown-preview-view h1::before,
 .cm-formatting-header.cm-header-1::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-1:not(.cm-active)::before {
-  color: var(--h1-color);
+    color: var(--h1-color);
 }
 
 .markdown-preview-view h2::before,
 .cm-formatting-header.cm-header-2::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-2:not(.cm-active)::before {
-  color: var(--h2-color);
+    color: var(--h2-color);
 }
 
 .markdown-preview-view h3::before,
 .cm-formatting-header.cm-header-3::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-3:not(.cm-active)::before {
-  color: var(--h3-color);
+    color: var(--h3-color);
 }
 
 .markdown-preview-view h4::before,
 .cm-formatting-header.cm-header-4::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-4:not(.cm-active)::before {
-  color: var(--h4-color);
+    color: var(--h4-color);
 }
 
 .markdown-preview-view h5::before,
 .cm-formatting-header.cm-header-5::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-5:not(.cm-active)::before {
-  color: var(--h5-color);
+    color: var(--h5-color);
 }
 
 .markdown-preview-view h6::before,
 .cm-formatting-header.cm-header-6::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-6:not(.cm-active)::before {
-  color: var(--h6-color);
+    color: var(--h6-color);
 }
 
 /* Remove indicators from bold/italic formatting inside headers */
@@ -71,8 +72,8 @@
 .HyperMD-header-4 .cm-formatting-em::before,
 .HyperMD-header-5 .cm-formatting-em::before,
 .HyperMD-header-6 .cm-formatting-em::before {
-  content: none !important;
-  display: none !important;
+    content: none !important;
+    display: none !important;
 }
 
 
@@ -83,36 +84,40 @@
 .markdown-preview-view h4,
 .markdown-preview-view h5,
 .markdown-preview-view h6 {
-  position: relative;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  margin-left: 8px; /* Small left margin for beauty */
-  line-height: 1.3;
-  font-family: var(--font-family-heading);
-  font-weight: 400;
+    position: relative;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    margin-left: 8px;
+    /* Small left margin for beauty */
+    line-height: 1.3;
+    font-family: var(--font-family-heading);
+    font-weight: 400;
 }
 
 /* underlines for headers */
-.markdown-preview-view h1::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, var(--h1-color), transparent);
-  margin-top: 8px;
+.markdown-preview-view h1::after,
+.HyperMD-header-1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--h1-color), transparent);
+    margin-top: 8px;
 }
 
-.markdown-preview-view h2::after {
-  content: "";
-  display: block;
-  width: 90%;
-  height: 2px;
-  background: linear-gradient(to right, var(--h2-color), transparent);
-  margin-top: 6px;
-  opacity: 0.8;
+.markdown-preview-view h2::after,
+.HyperMD-header-2::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to right, var(--h2-color), transparent);
+    margin-top: 6px;
+    opacity: 0.8;
 }
 
-.markdown-preview-view h3::after {
+.markdown-preview-view h3::after,
+.HyperMD-header-3::after {
     content: "";
     display: block;
     width: 75%;
@@ -120,71 +125,71 @@
     background: linear-gradient(to right, var(--h3-color), transparent);
     margin-top: 4px;
     opacity: 0.7;
-  }
+}
 
 /* Outline Enhancement */
 .outline .tree-item-self {
-  position: relative;
-  padding-left: 1.5em;
+    position: relative;
+    padding-left: 1.5em;
 }
 
 .outline .tree-item-self::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 3px;
-  height: 60%;
-  border-radius: 2px;
-  opacity: 0.6;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 60%;
+    border-radius: 2px;
+    opacity: 0.6;
 }
 
 .outline .tree-item-self:hover::before {
-  opacity: 1;
-  width: 4px;
+    opacity: 1;
+    width: 4px;
 }
 
 .outline .tree-item-self.is-active::before {
-  opacity: 1;
-  width: 4px;
+    opacity: 1;
+    width: 4px;
 }
 
 /* Navigation Breadcrumbs */
 .breadcrumb {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1em;
-  font-size: 0.9em;
-  color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    font-size: 0.9em;
+    color: var(--text-muted);
 }
 
 .breadcrumb-item {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .breadcrumb-item:not(:last-child)::after {
-  content: "▶";
-  margin: 0 8px;
-  color: var(--text-faint);
-  font-size: 0.7em;
+    content: "▶";
+    margin: 0 8px;
+    color: var(--text-faint);
+    font-size: 0.7em;
 }
 
 
 .markdown-preview-view .toc li::before {
-  content: "→";
-  color: var(--accent-color);
-  margin-right: 8px;
+    content: "→";
+    color: var(--accent-color);
+    margin-right: 8px;
 }
 
 /* Header Folding Indicators */
 .cm-fold-indicator .collapse-indicator {
-  color: var(--text-muted) !important;
-  transition: none;
+    color: var(--text-muted) !important;
+    transition: none;
 }
 
 .cm-fold-indicator:hover .collapse-indicator {
-  color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
 }
 
 /* ========================================================================== */
@@ -195,18 +200,18 @@
 .cm-strong,
 strong,
 b {
-  color: var(--cyan) !important;
-  font-weight: 700 !important;
-  text-shadow: 0 0 1px rgba(var(--cyan_x), 0.3);
+    color: var(--cyan) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 1px rgba(var(--cyan_x), 0.3);
 }
 
 /* Italic text (emphasis) */
 .cm-em,
 em,
 i {
-  color: var(--blue) !important;
-  font-style: italic;
-  text-shadow: 0 0 1px rgba(var(--blue_x), 0.2);
+    color: var(--blue) !important;
+    font-style: italic;
+    text-shadow: 0 0 1px rgba(var(--blue_x), 0.2);
 }
 
 /* Combined bold and italic */
@@ -215,55 +220,102 @@ strong em,
 em strong,
 b i,
 i b {
-  color: var(--orange) !important;
-  font-weight: 700;
-  font-style: italic;
-  text-shadow: 0 0 2px rgba(var(--orange_x), 0.4);
+    color: var(--orange) !important;
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: 0 0 2px rgba(var(--orange_x), 0.4);
 }
 
 /* Header colors - optimized */
-.markdown-preview-view h1, .markdown-preview-view h1 *, .HyperMD-header-1, .HyperMD-header-1 *, .cm-header-1, .cm-header-1 * { color: var(--h1-color) !important; }
-.markdown-preview-view h2, .markdown-preview-view h2 *, .HyperMD-header-2, .HyperMD-header-2 *, .cm-header-2, .cm-header-2 * { color: var(--h2-color) !important; }
-.markdown-preview-view h3, .markdown-preview-view h3 *, .HyperMD-header-3, .HyperMD-header-3 *, .cm-header-3, .cm-header-3 * { color: var(--h3-color) !important; }
-.markdown-preview-view h4, .markdown-preview-view h4 *, .HyperMD-header-4, .HyperMD-header-4 *, .cm-header-4, .cm-header-4 * { color: var(--h4-color) !important; }
-.markdown-preview-view h5, .markdown-preview-view h5 *, .HyperMD-header-5, .HyperMD-header-5 *, .cm-header-5, .cm-header-5 * { color: var(--h5-color) !important; }
-.markdown-preview-view h6, .markdown-preview-view h6 *, .HyperMD-header-6, .HyperMD-header-6 *, .cm-header-6, .cm-header-6 * { color: var(--h6-color) !important; }
+.markdown-preview-view h1,
+.markdown-preview-view h1 *,
+.HyperMD-header-1,
+.HyperMD-header-1 *,
+.cm-header-1,
+.cm-header-1 * {
+    color: var(--h1-color) !important;
+}
+
+.markdown-preview-view h2,
+.markdown-preview-view h2 *,
+.HyperMD-header-2,
+.HyperMD-header-2 *,
+.cm-header-2,
+.cm-header-2 * {
+    color: var(--h2-color) !important;
+}
+
+.markdown-preview-view h3,
+.markdown-preview-view h3 *,
+.HyperMD-header-3,
+.HyperMD-header-3 *,
+.cm-header-3,
+.cm-header-3 * {
+    color: var(--h3-color) !important;
+}
+
+.markdown-preview-view h4,
+.markdown-preview-view h4 *,
+.HyperMD-header-4,
+.HyperMD-header-4 *,
+.cm-header-4,
+.cm-header-4 * {
+    color: var(--h4-color) !important;
+}
+
+.markdown-preview-view h5,
+.markdown-preview-view h5 *,
+.HyperMD-header-5,
+.HyperMD-header-5 *,
+.cm-header-5,
+.cm-header-5 * {
+    color: var(--h5-color) !important;
+}
+
+.markdown-preview-view h6,
+.markdown-preview-view h6 *,
+.HyperMD-header-6,
+.HyperMD-header-6 *,
+.cm-header-6,
+.cm-header-6 * {
+    color: var(--h6-color) !important;
+}
 
 /* Strikethrough text */
 .cm-strikethrough,
 s,
 del {
-  color: var(--red) !important;
-  text-decoration: line-through;
-  opacity: 0.8;
+    color: var(--red) !important;
+    text-decoration: line-through;
+    opacity: 0.8;
 }
 
 /* Highlighted text (mark) - Simple and clean */
 mark,
 .cm-highlight {
-  background: var(--text-highlight-bg);
-  color: var(--text-normal) !important;
-  padding: 2px 4px;
-  border-radius: 3px;
-  font-weight: 500;
-  transition: none;
+    background: var(--text-highlight-bg);
+    color: var(--text-normal) !important;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 500;
+    transition: none;
 }
 
 mark:hover,
 .cm-highlight:hover {
-  background: rgba(var(--orange_x), 0.35);
+    background: rgba(var(--orange_x), 0.35);
 }
 
 /* Highlighted text inside callouts - adapt to callout color */
 .callout mark,
 .callout .cm-highlight {
-  background: rgba(var(--text-normal-rgb), 0.15);
-  border-radius: 3px;
+    background: rgba(var(--text-normal-rgb), 0.15);
+    border-radius: 3px;
 }
 
 .callout mark:hover,
 .callout .cm-highlight:hover {
-  background: rgba(var(--text-normal-rgb), 0.25);
+    background: rgba(var(--text-normal-rgb), 0.25);
 }
 
 /* ======================================================================== */
@@ -274,13 +326,13 @@ mark:hover,
 .theme-light .cm-strong,
 .theme-light strong,
 .theme-light b {
-  text-shadow: none;
+    text-shadow: none;
 }
 
 .theme-light .cm-em,
 .theme-light em,
 .theme-light i {
-  text-shadow: none;
+    text-shadow: none;
 }
 
 .theme-light .cm-strong.cm-em,
@@ -288,61 +340,63 @@ mark:hover,
 .theme-light em strong,
 .theme-light b i,
 .theme-light i b {
-  text-shadow: none;
+    text-shadow: none;
 }
 
 /* Light theme highlighted text */
 .theme-light mark,
 .theme-light .cm-highlight {
-  background: var(--text-highlight-bg);
+    background: var(--text-highlight-bg);
 }
 
 .theme-light mark:hover,
 .theme-light .cm-highlight:hover {
-  background: rgba(var(--orange_x), 0.25);
+    background: rgba(var(--orange_x), 0.25);
 }
 
 /* Light theme callout highlights */
 .theme-light .callout mark,
 .theme-light .callout .cm-highlight {
-  background: rgba(var(--fg_x), 0.1);
-  color: var(--text-normal) !important;
+    background: rgba(var(--fg_x), 0.1);
+    color: var(--text-normal) !important;
 }
 
 .theme-light .callout mark:hover,
 .theme-light .callout .cm-highlight:hover {
-  background: rgba(var(--fg_x), 0.15);
+    background: rgba(var(--fg_x), 0.15);
 }
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
-  mark,
-  .cm-highlight {
-    padding: 1px 3px;
-    border-radius: 2px;
-  }
+
+    mark,
+    .cm-highlight {
+        padding: 1px 3px;
+        border-radius: 2px;
+    }
 }
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  mark,
-  .cm-highlight {
-    background: rgba(var(--orange_x), 0.4) !important;
-    color: #1e252e !important;
-    font-weight: 600;
-  }
 
-  .callout mark,
-  .callout .cm-highlight {
-    background: rgba(var(--text-normal-rgb), 0.3) !important;
-  }
+    mark,
+    .cm-highlight {
+        background: rgba(var(--orange_x), 0.4) !important;
+        color: #1e252e !important;
+        font-weight: 600;
+    }
 
-  .theme-light mark,
-  .theme-light .cm-highlight {
-    background: rgba(var(--orange_x), 0.4) !important;
-    color: var(--text-normal) !important;
-    font-weight: 600;
-  }
+    .callout mark,
+    .callout .cm-highlight {
+        background: rgba(var(--text-normal-rgb), 0.3) !important;
+    }
+
+    .theme-light mark,
+    .theme-light .cm-highlight {
+        background: rgba(var(--orange_x), 0.4) !important;
+        color: var(--text-normal) !important;
+        font-weight: 600;
+    }
 }
 
 /* ========================================================================== */
@@ -352,70 +406,43 @@ mark:hover,
 /* Style formatting elements in live preview */
 .cm-formatting.cm-formatting-quote,
 .cm-formatting.cm-formatting-quote-1 {
-  color: var(--blockquote-accent) !important;
-  font-weight: 600;
-  opacity: 0.8;
+    color: var(--blockquote-accent) !important;
+    font-weight: 600;
+    opacity: 0.8;
 }
 
 /* Beautiful blockquote styling for both reading and live preview */
 blockquote {
-  border: none;
-  border-left: 3px solid var(--blockquote-border);
-  background: var(--blockquote-bg);
-  padding: 20px 24px;
-  margin: 20px 0;
-  border-radius: 6px;
-  color: var(--blockquote-color);
-  font-style: normal;
-  position: relative;
-  box-shadow: 0 2px 8px rgba(var(--cyan_x), 0.1);
-  transition: none;
+    border: none;
+    border-left: 2px solid var(--blockquote-border);
+    background: var(--blockquote-bg);
+    padding: 200px 204px;
+    margin: 20px 0;
+    border-radius: 6px;
+    color: var(--blockquote-color);
+    font-style: normal;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(var(--cyan_x), 0.1);
+    overflow: none;
+    width: auto;
+    max-width: none;
 }
 
 /* Beautiful quote mark */
 blockquote::before {
-  content: "⸨";
-  font-size: 2.5em;
-  color: var(--blockquote-quote-mark);
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  line-height: 1;
-  font-family: 'Georgia', serif;
-  z-index: 1;
+    content: "𒀭";
+    color: var(--blockquote-quote-mark);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    line-height: 1;
+    font-family: 'Georgia', serif;
+    z-index: 1;
 }
 
 /* Content styling */
 blockquote p {
-  margin: 0;
-  padding-left: 16px;
-  position: relative;
-  z-index: 2;
-  line-height: 1.6;
-}
-
-blockquote p:not(:first-child) {
-  margin-top: 12px;
-}
-
-/* Special styling for nested blockquotes */
-blockquote blockquote {
-  margin: 12px 0;
-  padding: 12px 16px;
-  border-left-width: 2px;
-  background: rgba(var(--cyan_x), 0.03);
-}
-
-/* Remove quote mark from nested blockquotes */
-blockquote blockquote::before {
-  display: none;
-}
-
-/* Light theme blockquote adjustments */
-.theme-light blockquote {
-  box-shadow: 0 2px 8px rgba(0, 120, 180, 0.08);
-}
-
-.theme-light blockquote blockquote {
-  background: rgba(0, 120, 180, 0.02);
+    padding-left: 16px;
+    position: relative;
+    z-index: 2;
 }

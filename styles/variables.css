@@ -78,8 +78,8 @@
     /*                                 LISTS                                   */
     /* ======================================================================== */
 
-    --list-marker-color: var(--magenta);
-    --list-marker-color-hover: var(--magenta-light);
+    --list-marker-color: var(--purple);
+    --list-marker-color-hover: var(--purple-light);
     --list-marker-color-collapsed: var(--text-muted);
     --list-number-color: var(--magenta);
     --list-number-color-hover: var(--magenta-light);
@@ -188,7 +188,6 @@
     --text-error-hover: var(--red);
     --text-on-accent: var(--bg);
     --text-highlight-bg: rgba(var(--orange_x), 0.25);
-    --text-selection: rgba(var(--purple_x), 0.15);
     --bold-color: var(--cyan);
     --italic-color: var(--blue);
 
@@ -215,7 +214,7 @@
     --scrollbar-width: 0px;
 
     --h1-color: var(--red);
-    --h2-color: var(--magenta);
+    --h2-color: var(--purple);
     --h3-color: var(--green);
     --h4-color: var(--cyan);
     --h5-color: var(--blue);
@@ -226,15 +225,15 @@
     --tag-color-hover: var(--cyan);
     --tag-background-hover: rgba(var(--cyan_x), 0.15);
 
-    --link-color: var(--magenta);
+    --link-color: var(--purple);
     --link-color-hover: var(--cyan);
+    --internal-link-color: var(--green);
+    --internal-link-color-hover: var(--blue);
     --link-external-color: var(--purple);
     --link-external-color-hover: var(--cyan);
     --link-external-color-rgb: var(--purple_x);
     --link-external-color-hover-rgb: var(--cyan_x);
 
-    --checkbox-color: var(--green);
-    --checkbox-color-hover: var(--green);
     --checkbox-border-color: var(--comment);
     --checkbox-border-color-hover: var(--comment);
 
@@ -243,9 +242,6 @@
 
     --flashing-background: rgba(var(--blue0_x), 0.3);
 
-    --code-normal: var(--fg);
-    --code-background: var(--bg_highlight_dark);
-    --code-comment: var(--code-comment);
 
     --mermaid-note: var(--blue0);
     --mermaid-actor: var(--fg_dark);
@@ -310,6 +306,4 @@
     --blockquote-color: var(--fg_dark);
     --blockquote-bg: rgba(var(--cyan_x), 0.08);
     --blockquote-border: var(--cyan);
-    --blockquote-accent: var(--magenta);
-    --blockquote-quote-mark: rgba(var(--cyan_x), 0.4);
 }

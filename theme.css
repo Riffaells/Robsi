@@ -1,7 +1,7 @@
 /*
 Robsi Theme - A modern theme for Obsidian.
 By Riffaells - 2024
-Built: 2025-07-21T22:41:47.017124
+Built: 2025-07-22T01:16:59.265858
 Files included: 24
 */
 
@@ -86,8 +86,8 @@ Files included: 24
     /*                                 LISTS                                   */
     /* ======================================================================== */
 
-    --list-marker-color: var(--magenta);
-    --list-marker-color-hover: var(--magenta-light);
+    --list-marker-color: var(--purple);
+    --list-marker-color-hover: var(--purple-light);
     --list-marker-color-collapsed: var(--text-muted);
     --list-number-color: var(--magenta);
     --list-number-color-hover: var(--magenta-light);
@@ -196,7 +196,6 @@ Files included: 24
     --text-error-hover: var(--red);
     --text-on-accent: var(--bg);
     --text-highlight-bg: rgba(var(--orange_x), 0.25);
-    --text-selection: rgba(var(--purple_x), 0.15);
     --bold-color: var(--cyan);
     --italic-color: var(--blue);
 
@@ -223,7 +222,7 @@ Files included: 24
     --scrollbar-width: 0px;
 
     --h1-color: var(--red);
-    --h2-color: var(--magenta);
+    --h2-color: var(--purple);
     --h3-color: var(--green);
     --h4-color: var(--cyan);
     --h5-color: var(--blue);
@@ -234,15 +233,15 @@ Files included: 24
     --tag-color-hover: var(--cyan);
     --tag-background-hover: rgba(var(--cyan_x), 0.15);
 
-    --link-color: var(--magenta);
+    --link-color: var(--purple);
     --link-color-hover: var(--cyan);
+    --internal-link-color: var(--green);
+    --internal-link-color-hover: var(--blue);
     --link-external-color: var(--purple);
     --link-external-color-hover: var(--cyan);
     --link-external-color-rgb: var(--purple_x);
     --link-external-color-hover-rgb: var(--cyan_x);
 
-    --checkbox-color: var(--green);
-    --checkbox-color-hover: var(--green);
     --checkbox-border-color: var(--comment);
     --checkbox-border-color-hover: var(--comment);
 
@@ -251,9 +250,6 @@ Files included: 24
 
     --flashing-background: rgba(var(--blue0_x), 0.3);
 
-    --code-normal: var(--fg);
-    --code-background: var(--bg_highlight_dark);
-    --code-comment: var(--code-comment);
 
     --mermaid-note: var(--blue0);
     --mermaid-actor: var(--fg_dark);
@@ -318,8 +314,6 @@ Files included: 24
     --blockquote-color: var(--fg_dark);
     --blockquote-bg: rgba(var(--cyan_x), 0.08);
     --blockquote-border: var(--cyan);
-    --blockquote-accent: var(--magenta);
-    --blockquote-quote-mark: rgba(var(--cyan_x), 0.4);
 }
 
 
@@ -327,30 +321,28 @@ Files included: 24
 
 /* base.css */
 body {
-  /* Typography */
-  --line-height-normal: 1.6;
-  --line-height-theme: 1.6;
+    /* Typography */
+    --line-height-normal: 1.6;
+    --line-height-theme: 1.6;
 
-  /* Links */
-  --link-decoration: underline;
-  --link-unresolved-decoration-style: dotted;
-  --link-unresolved-decoration-color: var(----link-unresolved-color);
-
-
-  /* Blockquotes */
-  --blockquote-border-color: var(--text-muted);
-  --blockquote-color: var(--text-muted);
+    /* Links */
+    --link-decoration: underline;
+    --link-unresolved-decoration-style: dotted;
+    --link-unresolved-decoration-color: var(----link-unresolved-color);
 
 
-  /* Workspace & Modal Backgrounds */
+    /* Blockquotes */
+    --blockquote-border-color: var(--purple);
+    --blockquote-color: var(--purple);
 
-  --modal-background: var(--background-secondary);
 
-  /* Dividers */
-  --divider-color: transparent !important;
+    /* Workspace & Modal Backgrounds */
+
+    --modal-background: var(--background-primary);
+
+    /* Dividers */
+    --divider-color: transparent !important;
 }
-
-
 
 
 /* ================================================= */
@@ -926,37 +918,32 @@ span.cm-hmd-frontmatter.cm-meta {
     color: var(--text-faint);
 }
 
-/*
- * ╭─────────────────────────────────────────────────────────╮
- * │               Metadata & Document Display               │
- * ╰─────────────────────────────────────────────────────────╯
-*/
 
-.cm-hmd-internal-link,
-.cm-hmd-internal-link a,
-.HyperMD-header .cm-hmd-internal-link a,
-.cm-link,
-.cm-link .cm-hmd-internal-link,
-.markdown-preview-view .internal-link,
-.markdown-source-view .internal-link {
-    text-decoration: none;
-}
 
 /*
  * ╭─────────────────────────────────────────────────────────╮
  * │       Header Spacing Between Header and Paragraph       │
  * ╰─────────────────────────────────────────────────────────╯
 */
+/* Согласование отступов заголовков между режимом редактирования и просмотра */
 .HyperMD-header-1,
 .HyperMD-header-2 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
     padding-bottom: 0.125em;
 }
 
 .HyperMD-header-3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
     padding-bottom: 0.1em;
 }
 
-.HyperMD-header-4 {
+.HyperMD-header-4,
+.HyperMD-header-5,
+.HyperMD-header-6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
     padding-bottom: 0.075em;
 }
 
@@ -1014,6 +1001,90 @@ span.cm-hmd-frontmatter.cm-meta {
 ─────────────────────────────────────────────── */
 .multi-select-pill {
     line-height: normal;
+}
+
+/* ========================================================================== */
+/*                           CODE BLOCK STYLING                              */
+/* ========================================================================== */
+
+/* Syntax highlighting for code blocks */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: var(--code-comment);
+}
+
+.token.punctuation {
+    color: var(--text-muted);
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: var(--code-property);
+}
+
+.token.boolean,
+.token.number {
+    color: var(--code-number);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: var(--code-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+    color: var(--code-operator);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+    color: var(--code-function);
+}
+
+.token.keyword {
+    color: var(--code-keyword);
+}
+
+.token.regex,
+.token.important {
+    color: var(--code-number);
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+/* Mobile optimizations for code blocks */
+@media (max-width: 768px) {
+    .cm-line {
+        padding: 0 2px;
+    }
+
+
+    .cm-inline-code {
+        font-size: 0.85em;
+    }
 }
 
 
@@ -1246,6 +1317,7 @@ textarea.success,
     content: "▍";
     opacity: 0.8;
 }
+
 .HyperMD-header {
     font-weight: normal;
 }
@@ -1254,37 +1326,37 @@ textarea.success,
 .markdown-preview-view h1::before,
 .cm-formatting-header.cm-header-1::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-1:not(.cm-active)::before {
-  color: var(--h1-color);
+    color: var(--h1-color);
 }
 
 .markdown-preview-view h2::before,
 .cm-formatting-header.cm-header-2::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-2:not(.cm-active)::before {
-  color: var(--h2-color);
+    color: var(--h2-color);
 }
 
 .markdown-preview-view h3::before,
 .cm-formatting-header.cm-header-3::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-3:not(.cm-active)::before {
-  color: var(--h3-color);
+    color: var(--h3-color);
 }
 
 .markdown-preview-view h4::before,
 .cm-formatting-header.cm-header-4::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-4:not(.cm-active)::before {
-  color: var(--h4-color);
+    color: var(--h4-color);
 }
 
 .markdown-preview-view h5::before,
 .cm-formatting-header.cm-header-5::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-5:not(.cm-active)::before {
-  color: var(--h5-color);
+    color: var(--h5-color);
 }
 
 .markdown-preview-view h6::before,
 .cm-formatting-header.cm-header-6::before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-6:not(.cm-active)::before {
-  color: var(--h6-color);
+    color: var(--h6-color);
 }
 
 /* Remove indicators from bold/italic formatting inside headers */
@@ -1302,8 +1374,8 @@ textarea.success,
 .HyperMD-header-4 .cm-formatting-em::before,
 .HyperMD-header-5 .cm-formatting-em::before,
 .HyperMD-header-6 .cm-formatting-em::before {
-  content: none !important;
-  display: none !important;
+    content: none !important;
+    display: none !important;
 }
 
 
@@ -1314,36 +1386,40 @@ textarea.success,
 .markdown-preview-view h4,
 .markdown-preview-view h5,
 .markdown-preview-view h6 {
-  position: relative;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  margin-left: 8px; /* Small left margin for beauty */
-  line-height: 1.3;
-  font-family: var(--font-family-heading);
-  font-weight: 400;
+    position: relative;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    margin-left: 8px;
+    /* Small left margin for beauty */
+    line-height: 1.3;
+    font-family: var(--font-family-heading);
+    font-weight: 400;
 }
 
 /* underlines for headers */
-.markdown-preview-view h1::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, var(--h1-color), transparent);
-  margin-top: 8px;
+.markdown-preview-view h1::after,
+.HyperMD-header-1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--h1-color), transparent);
+    margin-top: 8px;
 }
 
-.markdown-preview-view h2::after {
-  content: "";
-  display: block;
-  width: 90%;
-  height: 2px;
-  background: linear-gradient(to right, var(--h2-color), transparent);
-  margin-top: 6px;
-  opacity: 0.8;
+.markdown-preview-view h2::after,
+.HyperMD-header-2::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to right, var(--h2-color), transparent);
+    margin-top: 6px;
+    opacity: 0.8;
 }
 
-.markdown-preview-view h3::after {
+.markdown-preview-view h3::after,
+.HyperMD-header-3::after {
     content: "";
     display: block;
     width: 75%;
@@ -1351,71 +1427,71 @@ textarea.success,
     background: linear-gradient(to right, var(--h3-color), transparent);
     margin-top: 4px;
     opacity: 0.7;
-  }
+}
 
 /* Outline Enhancement */
 .outline .tree-item-self {
-  position: relative;
-  padding-left: 1.5em;
+    position: relative;
+    padding-left: 1.5em;
 }
 
 .outline .tree-item-self::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 3px;
-  height: 60%;
-  border-radius: 2px;
-  opacity: 0.6;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 60%;
+    border-radius: 2px;
+    opacity: 0.6;
 }
 
 .outline .tree-item-self:hover::before {
-  opacity: 1;
-  width: 4px;
+    opacity: 1;
+    width: 4px;
 }
 
 .outline .tree-item-self.is-active::before {
-  opacity: 1;
-  width: 4px;
+    opacity: 1;
+    width: 4px;
 }
 
 /* Navigation Breadcrumbs */
 .breadcrumb {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1em;
-  font-size: 0.9em;
-  color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    font-size: 0.9em;
+    color: var(--text-muted);
 }
 
 .breadcrumb-item {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .breadcrumb-item:not(:last-child)::after {
-  content: "▶";
-  margin: 0 8px;
-  color: var(--text-faint);
-  font-size: 0.7em;
+    content: "▶";
+    margin: 0 8px;
+    color: var(--text-faint);
+    font-size: 0.7em;
 }
 
 
 .markdown-preview-view .toc li::before {
-  content: "→";
-  color: var(--accent-color);
-  margin-right: 8px;
+    content: "→";
+    color: var(--accent-color);
+    margin-right: 8px;
 }
 
 /* Header Folding Indicators */
 .cm-fold-indicator .collapse-indicator {
-  color: var(--text-muted) !important;
-  transition: none;
+    color: var(--text-muted) !important;
+    transition: none;
 }
 
 .cm-fold-indicator:hover .collapse-indicator {
-  color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
 }
 
 /* ========================================================================== */
@@ -1426,18 +1502,18 @@ textarea.success,
 .cm-strong,
 strong,
 b {
-  color: var(--cyan) !important;
-  font-weight: 700 !important;
-  text-shadow: 0 0 1px rgba(var(--cyan_x), 0.3);
+    color: var(--cyan) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 1px rgba(var(--cyan_x), 0.3);
 }
 
 /* Italic text (emphasis) */
 .cm-em,
 em,
 i {
-  color: var(--blue) !important;
-  font-style: italic;
-  text-shadow: 0 0 1px rgba(var(--blue_x), 0.2);
+    color: var(--blue) !important;
+    font-style: italic;
+    text-shadow: 0 0 1px rgba(var(--blue_x), 0.2);
 }
 
 /* Combined bold and italic */
@@ -1446,55 +1522,102 @@ strong em,
 em strong,
 b i,
 i b {
-  color: var(--orange) !important;
-  font-weight: 700;
-  font-style: italic;
-  text-shadow: 0 0 2px rgba(var(--orange_x), 0.4);
+    color: var(--orange) !important;
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: 0 0 2px rgba(var(--orange_x), 0.4);
 }
 
 /* Header colors - optimized */
-.markdown-preview-view h1, .markdown-preview-view h1 *, .HyperMD-header-1, .HyperMD-header-1 *, .cm-header-1, .cm-header-1 * { color: var(--h1-color) !important; }
-.markdown-preview-view h2, .markdown-preview-view h2 *, .HyperMD-header-2, .HyperMD-header-2 *, .cm-header-2, .cm-header-2 * { color: var(--h2-color) !important; }
-.markdown-preview-view h3, .markdown-preview-view h3 *, .HyperMD-header-3, .HyperMD-header-3 *, .cm-header-3, .cm-header-3 * { color: var(--h3-color) !important; }
-.markdown-preview-view h4, .markdown-preview-view h4 *, .HyperMD-header-4, .HyperMD-header-4 *, .cm-header-4, .cm-header-4 * { color: var(--h4-color) !important; }
-.markdown-preview-view h5, .markdown-preview-view h5 *, .HyperMD-header-5, .HyperMD-header-5 *, .cm-header-5, .cm-header-5 * { color: var(--h5-color) !important; }
-.markdown-preview-view h6, .markdown-preview-view h6 *, .HyperMD-header-6, .HyperMD-header-6 *, .cm-header-6, .cm-header-6 * { color: var(--h6-color) !important; }
+.markdown-preview-view h1,
+.markdown-preview-view h1 *,
+.HyperMD-header-1,
+.HyperMD-header-1 *,
+.cm-header-1,
+.cm-header-1 * {
+    color: var(--h1-color) !important;
+}
+
+.markdown-preview-view h2,
+.markdown-preview-view h2 *,
+.HyperMD-header-2,
+.HyperMD-header-2 *,
+.cm-header-2,
+.cm-header-2 * {
+    color: var(--h2-color) !important;
+}
+
+.markdown-preview-view h3,
+.markdown-preview-view h3 *,
+.HyperMD-header-3,
+.HyperMD-header-3 *,
+.cm-header-3,
+.cm-header-3 * {
+    color: var(--h3-color) !important;
+}
+
+.markdown-preview-view h4,
+.markdown-preview-view h4 *,
+.HyperMD-header-4,
+.HyperMD-header-4 *,
+.cm-header-4,
+.cm-header-4 * {
+    color: var(--h4-color) !important;
+}
+
+.markdown-preview-view h5,
+.markdown-preview-view h5 *,
+.HyperMD-header-5,
+.HyperMD-header-5 *,
+.cm-header-5,
+.cm-header-5 * {
+    color: var(--h5-color) !important;
+}
+
+.markdown-preview-view h6,
+.markdown-preview-view h6 *,
+.HyperMD-header-6,
+.HyperMD-header-6 *,
+.cm-header-6,
+.cm-header-6 * {
+    color: var(--h6-color) !important;
+}
 
 /* Strikethrough text */
 .cm-strikethrough,
 s,
 del {
-  color: var(--red) !important;
-  text-decoration: line-through;
-  opacity: 0.8;
+    color: var(--red) !important;
+    text-decoration: line-through;
+    opacity: 0.8;
 }
 
 /* Highlighted text (mark) - Simple and clean */
 mark,
 .cm-highlight {
-  background: var(--text-highlight-bg);
-  color: var(--text-normal) !important;
-  padding: 2px 4px;
-  border-radius: 3px;
-  font-weight: 500;
-  transition: none;
+    background: var(--text-highlight-bg);
+    color: var(--text-normal) !important;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 500;
+    transition: none;
 }
 
 mark:hover,
 .cm-highlight:hover {
-  background: rgba(var(--orange_x), 0.35);
+    background: rgba(var(--orange_x), 0.35);
 }
 
 /* Highlighted text inside callouts - adapt to callout color */
 .callout mark,
 .callout .cm-highlight {
-  background: rgba(var(--text-normal-rgb), 0.15);
-  border-radius: 3px;
+    background: rgba(var(--text-normal-rgb), 0.15);
+    border-radius: 3px;
 }
 
 .callout mark:hover,
 .callout .cm-highlight:hover {
-  background: rgba(var(--text-normal-rgb), 0.25);
+    background: rgba(var(--text-normal-rgb), 0.25);
 }
 
 /* ======================================================================== */
@@ -1505,13 +1628,13 @@ mark:hover,
 .theme-light .cm-strong,
 .theme-light strong,
 .theme-light b {
-  text-shadow: none;
+    text-shadow: none;
 }
 
 .theme-light .cm-em,
 .theme-light em,
 .theme-light i {
-  text-shadow: none;
+    text-shadow: none;
 }
 
 .theme-light .cm-strong.cm-em,
@@ -1519,61 +1642,63 @@ mark:hover,
 .theme-light em strong,
 .theme-light b i,
 .theme-light i b {
-  text-shadow: none;
+    text-shadow: none;
 }
 
 /* Light theme highlighted text */
 .theme-light mark,
 .theme-light .cm-highlight {
-  background: var(--text-highlight-bg);
+    background: var(--text-highlight-bg);
 }
 
 .theme-light mark:hover,
 .theme-light .cm-highlight:hover {
-  background: rgba(var(--orange_x), 0.25);
+    background: rgba(var(--orange_x), 0.25);
 }
 
 /* Light theme callout highlights */
 .theme-light .callout mark,
 .theme-light .callout .cm-highlight {
-  background: rgba(var(--fg_x), 0.1);
-  color: var(--text-normal) !important;
+    background: rgba(var(--fg_x), 0.1);
+    color: var(--text-normal) !important;
 }
 
 .theme-light .callout mark:hover,
 .theme-light .callout .cm-highlight:hover {
-  background: rgba(var(--fg_x), 0.15);
+    background: rgba(var(--fg_x), 0.15);
 }
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
-  mark,
-  .cm-highlight {
-    padding: 1px 3px;
-    border-radius: 2px;
-  }
+
+    mark,
+    .cm-highlight {
+        padding: 1px 3px;
+        border-radius: 2px;
+    }
 }
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  mark,
-  .cm-highlight {
-    background: rgba(var(--orange_x), 0.4) !important;
-    color: #1e252e !important;
-    font-weight: 600;
-  }
 
-  .callout mark,
-  .callout .cm-highlight {
-    background: rgba(var(--text-normal-rgb), 0.3) !important;
-  }
+    mark,
+    .cm-highlight {
+        background: rgba(var(--orange_x), 0.4) !important;
+        color: #1e252e !important;
+        font-weight: 600;
+    }
 
-  .theme-light mark,
-  .theme-light .cm-highlight {
-    background: rgba(var(--orange_x), 0.4) !important;
-    color: var(--text-normal) !important;
-    font-weight: 600;
-  }
+    .callout mark,
+    .callout .cm-highlight {
+        background: rgba(var(--text-normal-rgb), 0.3) !important;
+    }
+
+    .theme-light mark,
+    .theme-light .cm-highlight {
+        background: rgba(var(--orange_x), 0.4) !important;
+        color: var(--text-normal) !important;
+        font-weight: 600;
+    }
 }
 
 /* ========================================================================== */
@@ -1583,72 +1708,45 @@ mark:hover,
 /* Style formatting elements in live preview */
 .cm-formatting.cm-formatting-quote,
 .cm-formatting.cm-formatting-quote-1 {
-  color: var(--blockquote-accent) !important;
-  font-weight: 600;
-  opacity: 0.8;
+    color: var(--blockquote-accent) !important;
+    font-weight: 600;
+    opacity: 0.8;
 }
 
 /* Beautiful blockquote styling for both reading and live preview */
 blockquote {
-  border: none;
-  border-left: 3px solid var(--blockquote-border);
-  background: var(--blockquote-bg);
-  padding: 20px 24px;
-  margin: 20px 0;
-  border-radius: 6px;
-  color: var(--blockquote-color);
-  font-style: normal;
-  position: relative;
-  box-shadow: 0 2px 8px rgba(var(--cyan_x), 0.1);
-  transition: none;
+    border: none;
+    border-left: 2px solid var(--blockquote-border);
+    background: var(--blockquote-bg);
+    padding: 200px 204px;
+    margin: 20px 0;
+    border-radius: 6px;
+    color: var(--blockquote-color);
+    font-style: normal;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(var(--cyan_x), 0.1);
+    overflow: none;
+    width: auto;
+    max-width: none;
 }
 
 /* Beautiful quote mark */
 blockquote::before {
-  content: "⸨";
-  font-size: 2.5em;
-  color: var(--blockquote-quote-mark);
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  line-height: 1;
-  font-family: 'Georgia', serif;
-  z-index: 1;
+    content: "𒀭";
+    color: var(--blockquote-quote-mark);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    line-height: 1;
+    font-family: 'Georgia', serif;
+    z-index: 1;
 }
 
 /* Content styling */
 blockquote p {
-  margin: 0;
-  padding-left: 16px;
-  position: relative;
-  z-index: 2;
-  line-height: 1.6;
-}
-
-blockquote p:not(:first-child) {
-  margin-top: 12px;
-}
-
-/* Special styling for nested blockquotes */
-blockquote blockquote {
-  margin: 12px 0;
-  padding: 12px 16px;
-  border-left-width: 2px;
-  background: rgba(var(--cyan_x), 0.03);
-}
-
-/* Remove quote mark from nested blockquotes */
-blockquote blockquote::before {
-  display: none;
-}
-
-/* Light theme blockquote adjustments */
-.theme-light blockquote {
-  box-shadow: 0 2px 8px rgba(0, 120, 180, 0.08);
-}
-
-.theme-light blockquote blockquote {
-  background: rgba(0, 120, 180, 0.02);
+    padding-left: 16px;
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -1693,6 +1791,10 @@ blockquote blockquote::before {
 .workspace-leaf-content .view-content,
 .nav-files-container {
     overflow: auto;
+}
+
+.markdown-rendered p {
+    margin-block-end: 0;
 }
 
 
@@ -3010,7 +3112,7 @@ a.internal-link,
 .markdown-preview-view .internal-link,
 .markdown-source-view .internal-link,
 .internal-link {
-  color: var(--link-color);
+  color: var(--internal-link-color);
   text-decoration: none !important;
   transition: none;
 }
@@ -3019,7 +3121,7 @@ a.internal-link:hover,
 .cm-hmd-internal-link:hover,
 .cm-hmd-internal-link a:hover,
 .internal-link:hover {
-  color: var(--link-color-hover);
+  color: var(--internal-link-color-hover);
   text-decoration: none !important;
 }
 
@@ -4518,45 +4620,6 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
     display: block;
 }
 
-@media (max-width: 768px) {
-    .mobile-only {
-        display: block;
-    }
-
-    .desktop-only {
-        display: none;
-    }
-
-    /* Mobile-specific blockquote styling */
-    .theme-light blockquote {
-        background-color: rgba(var(--background-secondary-rgb), 0.5);
-        border-left: 3px solid var(--accent-color);
-    }
-
-    /* Mobile-specific code styling */
-    .theme-light code {
-        background: rgba(var(--background-modifier-border-rgb), 0.3);
-    }
-
-    /* Mobile-specific table styling */
-    .theme-light table thead tr {
-        background: rgba(var(--background-secondary-rgb), 0.8);
-    }
-}
-
-/* Container queries support (future-proofing) */
-@supports (container-type: inline-size) {
-    .workspace-leaf {
-        container-type: inline-size;
-    }
-
-    @container (max-width: 400px) {
-        .workspace-leaf .workspace-tab-header {
-            height: 30px;
-            font-size: 11px;
-        }
-    }
-}
 
 
 /* ================================================= */
@@ -4569,7 +4632,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 */
 .font-monospace,
 .font-monospace * {
-  font-family: var(--font-family-monospace) !important;
+    font-family: var(--font-family-monospace) !important;
 }
 
 /*
@@ -4578,31 +4641,31 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
  * ╰─────────────────────────────────────────────────────────╯
 */
 .font-thin {
-  font-weight: 100;
+    font-weight: 100;
 }
 
 .font-light {
-  font-weight: 300;
+    font-weight: 300;
 }
 
 .font-normal {
-  font-weight: 400;
+    font-weight: 400;
 }
 
 .font-medium {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 .font-semibold {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .font-bold {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .font-black {
-  font-weight: 900;
+    font-weight: 900;
 }
 
 /*
@@ -4611,19 +4674,19 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
  * ╰─────────────────────────────────────────────────────────╯
 */
 .text-uppercase {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .text-lowercase {
-  text-transform: lowercase;
+    text-transform: lowercase;
 }
 
 .text-capitalize {
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 .text-normal-case {
-  text-transform: none;
+    text-transform: none;
 }
 
 /*
@@ -4632,19 +4695,19 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
  * ╰─────────────────────────────────────────────────────────╯
 */
 .text-left {
-  text-align: start;
+    text-align: start;
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 .text-right {
-  text-align: end;
+    text-align: end;
 }
 
 .text-justify {
-  text-align: justify;
+    text-align: justify;
 }
 
 /*
@@ -4653,23 +4716,23 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
  * ╰─────────────────────────────────────────────────────────╯
 */
 .text-accent {
-  color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .text-muted {
-  color: var(--text-muted);
+    color: var(--text-muted);
 }
 
 .text-error {
-  color: var(--text-error);
+    color: var(--text-error);
 }
 
 .text-success {
-  color: var(--text-success);
+    color: var(--text-success);
 }
 
 .text-warning {
-  color: var(--text-warning);
+    color: var(--text-warning);
 }
 
 /*
@@ -4707,19 +4770,19 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
  * ╰─────────────────────────────────────────────────────────╯
 */
 .leading-tight {
-  line-height: 1.25;
+    line-height: 1.25;
 }
 
 .leading-normal {
-  line-height: 1.5;
+    line-height: 1.5;
 }
 
 .leading-relaxed {
-  line-height: 1.625;
+    line-height: 1.625;
 }
 
 .leading-loose {
-  line-height: 2;
+    line-height: 2;
 }
 
 /*
@@ -4728,19 +4791,19 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
  * ╰─────────────────────────────────────────────────────────╯
 */
 .tracking-tight {
-  letter-spacing: -0.025em;
+    letter-spacing: -0.025em;
 }
 
 .tracking-normal {
-  letter-spacing: 0;
+    letter-spacing: 0;
 }
 
 .tracking-wide {
-  letter-spacing: 0.025em;
+    letter-spacing: 0.025em;
 }
 
 .tracking-wider {
-  letter-spacing: 0.05em;
+    letter-spacing: 0.05em;
 }
 
 /*
@@ -4749,15 +4812,15 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
  * ╰─────────────────────────────────────────────────────────╯
 */
 .no-underline {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .underline {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .line-through {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 /*
@@ -4765,14 +4828,19 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
  * │                       Typography improvements                      │
  * ╰─────────────────────────────────────────────────────────╯
 */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
 }
 
 p {
-  line-height: var(--line-height-theme);
+    line-height: var(--line-height-theme);
 }
 
 /*
@@ -4782,9 +4850,9 @@ p {
 */
 code,
 .cm-inline-code {
-  font-family: var(--font-family-monospace);
-  font-size: 0.9em;
-  font-weight: 500;
+    font-family: var(--font-family-monospace);
+    font-size: 0.9em;
+    font-weight: 500;
 }
 
 /*
@@ -4793,11 +4861,11 @@ code,
  * ╰─────────────────────────────────────────────────────────╯
 */
 a {
-  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a:hover {
-  color: var(--link-color-hover);
+    color: var(--link-color-hover);
 }
 
 /* ========================================================================== */
@@ -4812,26 +4880,33 @@ a:hover {
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-  }
 
-  p, li {
-    font-weight: 500;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700;
+    }
 
-  code {
-    font-weight: 600;
-    border: 1px solid var(--text-muted);
-  }
+    p,
+    li {
+        font-weight: 500;
+    }
+
+    code {
+        font-weight: 600;
+        border: 1px solid var(--text-muted);
+    }
 }
 
 /* Reduced motion - disable text animations */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    text-decoration-style: solid !important;
-    text-decoration-skip-ink: none !important;
-  }
+    * {
+        text-decoration-style: solid !important;
+        text-decoration-skip-ink: none !important;
+    }
 }
 
 /* ========================================================================== */
@@ -4841,124 +4916,105 @@ a:hover {
 /* Optimize text for reading */
 .markdown-preview-view,
 .markdown-source-view {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Better text selection */
 ::selection {
-  background: var(--text-selection);
+    background: var(--text-selection);
+    color: var(--text-normal);
 }
 
 /* Additional selection styles for different contexts */
-.markdown-preview-view ::selection,
-.markdown-source-view ::selection,
-.cm-editor ::selection {
-  background: rgba(var(--magenta_x), 0.5);
-  color: var(--text-normal);
+.theme-dark .markdown-preview-view ::selection,
+.theme-dark .markdown-source-view ::selection,
+.theme-dark .cm-editor ::selection {
+    background: rgba(var(--magenta_x), 0.5);
+    color: var(--text-normal);
+}
+
+/* Light theme selection styles */
+.theme-light .markdown-preview-view ::selection,
+.theme-light .markdown-source-view ::selection,
+.theme-light .cm-editor ::selection {
+    background: var(--text-selection);
+    color: var(--text-normal);
 }
 
 /* Prevent text overflow */
 .markdown-preview-view p,
-.markdown-preview-view li,
-.markdown-preview-view blockquote {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
+.markdown-preview-view li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
-/* ========================================================================== */
-/*                            PERFORMANCE OPTIMIZATIONS                      */
-/* ========================================================================== */
-
-/* Optimize font loading */
-@media (max-width: 768px) {
-  /* Use system fonts for better performance on mobile */
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  }
-
-  /* Simplify font features */
-  h1, h2, h3, h4, h5, h6 {
-    font-feature-settings: normal;
-    font-variant-ligatures: none;
-  }
-
-  /* Reduce font weights on mobile */
-  .font-thin {
-    font-weight: 300;
-  }
-
-  .font-light {
-    font-weight: 400;
-  }
-
-  .font-black {
-    font-weight: 700;
-  }
-}
 
 /* ========================================================================== */
 /*                            PRINT OPTIMIZATIONS                            */
 /* ========================================================================== */
 
 @media print {
-  /* Optimize typography for print */
-  body {
-    font-size: 12pt;
-    line-height: 1.4;
-    color: #000000;
-  }
 
-  h1 {
-    font-size: 18pt;
-    page-break-after: avoid;
-  }
+    /* Optimize typography for print */
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000000;
+    }
 
-  h2 {
-    font-size: 16pt;
-    page-break-after: avoid;
-  }
+    h1 {
+        font-size: 18pt;
+        page-break-after: avoid;
+    }
 
-  h3 {
-    font-size: 14pt;
-    page-break-after: avoid;
-  }
+    h2 {
+        font-size: 16pt;
+        page-break-after: avoid;
+    }
 
-  h4, h5, h6 {
-    font-size: 12pt;
-    page-break-after: avoid;
-  }
+    h3 {
+        font-size: 14pt;
+        page-break-after: avoid;
+    }
 
-  p {
-    font-size: 12pt;
-    line-height: 1.4;
-    orphans: 3;
-    widows: 3;
-  }
+    h4,
+    h5,
+    h6 {
+        font-size: 12pt;
+        page-break-after: avoid;
+    }
 
-  /* Ensure code is readable in print */
-  code {
-    font-size: 10pt;
-    background: #f5f5f5;
-    padding: 2px 4px;
-    border: 1px solid #ddd;
-  }
+    p {
+        font-size: 12pt;
+        line-height: 1.4;
+        orphans: 3;
+        widows: 3;
+    }
 
-  pre code {
-    font-size: 9pt;
-    line-height: 1.3;
-  }
+    /* Ensure code is readable in print */
+    code {
+        font-size: 10pt;
+        background: #f5f5f5;
+        padding: 2px 4px;
+        border: 1px solid #ddd;
+    }
 
-  /* Print-friendly quotes */
-  blockquote {
-    font-size: 11pt;
-    font-style: italic;
-    border-left: 3px solid #000;
-    padding-left: 12pt;
-    margin: 12pt 0;
-  }
+    pre code {
+        font-size: 9pt;
+        line-height: 1.3;
+    }
+
+    /* Print-friendly quotes */
+    blockquote {
+        font-size: 11pt;
+        font-style: italic;
+        border-left: 3px solid #000;
+        padding-left: 12pt;
+        margin: 12pt 0;
+    }
 }
 
 
@@ -4967,10 +5023,17 @@ a:hover {
 /* themes\dark.css */
 .theme-dark {
     color-scheme: dark;
+
+    /* ======================================================================== */
+    /*                           THEME ACCENT COLORS                           */
+    /* ======================================================================== */
     --accent-h: 202;
     --accent-s: 100%;
     --accent-l: 75%;
 
+    /* ======================================================================== */
+    /*                           BACKGROUND COLORS                             */
+    /* ======================================================================== */
     --bg_dark2_x: 2, 2, 2;
     --bg_dark2: rgb(var(--bg_dark2_x));
     --bg_dark_x: 8, 8, 8;
@@ -4981,8 +5044,17 @@ a:hover {
     --bg_highlight: rgb(var(--bg_highlight_x));
     --bg_highlight_dark_x: 18, 18, 18;
     --bg_highlight_dark: rgb(var(--bg_highlight_dark_x));
-    --terminal_black_x: 65, 72, 104;
-    --terminal_black: rgb(var(--terminal_black_x));
+
+    /* Standard background variables */
+    --background-primary: #020202;
+    --background-secondary: #0a0a0a;
+    --bg-primary-rgb: 2, 2, 2;
+    --bg-primary: #020202;
+    --bg-secondary-rgb: 8, 8, 8;
+
+    /* ======================================================================== */
+    /*                              TEXT COLORS                                */
+    /* ======================================================================== */
     --fg_x: 220, 220, 220;
     --fg: rgb(var(--fg_x));
     --fg_dark_x: 180, 180, 180;
@@ -4991,55 +5063,84 @@ a:hover {
     --comment: rgb(var(--comment_x));
     --code-comment_x: 115, 125, 165;
     --code-comment: rgb(var(--code-comment_x));
+
+    /* Standard text variables */
+    --text-normal: #d0d0d0;
+    --text-muted: #888;
+    --text-faint: var(--fg_dark);
+    --text-on-accent: #ffffff;
+    --text-error: var(--red);
+    --text-error-hover: var(--red1);
+
+    /* ======================================================================== */
+    /*                             COLOR PALETTE                               */
+    /* ======================================================================== */
+    /* Blues */
     --blue0_x: 61, 89, 161;
     --blue0: rgb(var(--blue0_x));
     --blue_x: 122, 162, 247;
     --blue: rgb(var(--blue_x));
+
+    /* Cyans */
     --cyan_hsl: 202 100% 75%;
     --cyan_x: 125, 207, 255;
     --cyan: rgb(var(--cyan_x));
+
+    /* Purples */
     --purple_x: 187, 154, 247;
     --purple: rgb(var(--purple_x));
+    --purple-light_x: 210, 180, 255;
+    --purple-light: rgb(var(--purple-light_x));
+
+    /* Magentas */
     --magent_hsl: 261 85% 79%;
     --magenta_x: 187, 154, 247;
     --magenta: rgb(var(--magenta_x));
     --magenta-light_x: 210, 190, 255;
     --magenta-light: rgb(var(--magenta-light_x));
 
-    /* Special colors for folder notes - purple mixed with white */
-    --folder-note-color_x: 220, 200, 250;
-    --folder-note-color: rgb(var(--folder-note-color_x));
+    /* Pinks */
     --pink_hsl: 331 100% 43%;
     --pink_x: 217, 0, 105;
     --pink: rgb(var(--pink_x));
+
+    /* Warm colors */
     --orange_x: 255, 158, 100;
     --orange: rgb(var(--orange_x));
     --yellow_x: 224, 175, 104;
     --yellow: rgb(var(--yellow_x));
+
+    /* Greens */
     --green_x: 158, 206, 106;
     --green: rgb(var(--green_x));
     --teal_x: 26, 188, 156;
     --teal: rgb(var(--teal_x));
+
+    /* Reds */
     --red_x: 255, 117, 127;
     --red: rgb(var(--red_x));
     --red1_x: 219, 75, 75;
     --red1: rgb(var(--red1_x));
+
+    /* Special colors */
+    --terminal_black_x: 65, 72, 104;
+    --terminal_black: rgb(var(--terminal_black_x));
     --unknown: #ffffff;
 
-    --link-color: var(--magenta);
-    --link-color-hover: var(--cyan);
-    --link-external-color: var(--purple);
-    --link-external-color-hover: var(--cyan);
-    --link-external-color-rgb: var(--purple_x);
-    --link-external-color-hover-rgb: var(--cyan_x);
+    /* Folder notes */
+    --folder-note-color_x: 220, 200, 250;
+    --folder-note-color: rgb(var(--folder-note-color_x));
+
+    /* ======================================================================== */
+    /*                                LINKS                                    */
+    /* ======================================================================== */
 
     --link-external-filter: invert(35%) sepia(28%) saturate(681%) hue-rotate(192deg) brightness(94%) contrast(85%);
 
-    --background-primary: #020202;
-    --background-secondary: #0a0a0a;
-    --text-normal: #d0d0d0;
-    --text-muted: #888;
-
+    /* ======================================================================== */
+    /*                            UI COMPONENTS                                */
+    /* ======================================================================== */
+    /* Tabs */
     --tab-background: rgba(2, 2, 2, 0.9);
     --tab-background-active: rgba(25, 25, 25, 0.95);
     --tab-background-hover: rgba(18, 18, 18, 0.8);
@@ -5047,102 +5148,70 @@ a:hover {
     --tab-divider-color: rgba(40, 40, 40, 0.3);
     --tab-outline-color: rgba(60, 60, 60, 0.5);
     --tab-outline-color-active: rgba(80, 80, 80, 0.8);
+    --tab-text-color-focused-active: rgba(var(--fg_x), 0.9);
+    --tab-text-color-focused-active-current: var(--text-normal);
+
+    /* Workspace */
     --shadow-color: rgba(0, 0, 0, 0.3);
     --workspace-background-translucent: rgba(2, 2, 2, 0.9);
+
+    /* Titlebar */
     --titlebar-background: var(--background-primary);
     --titlebar-text-color: #e8e8e8;
     --titlebar-text-color-focused: #ffffff;
     --titlebar-text-color-inactive: #666;
 
-    --bg-primary-rgb: 2, 2, 2;
-    --bg-primary: #020202;
-    --bg-secondary-rgb: 8, 8, 8;
-    --text-on-accent: #ffffff;
-
-    /* Special colors for folder notes */
-    --folder-note-color_x: 220, 200, 250;
-    --folder-note-color: rgb(var(--folder-note-color_x));
-
-    /* Missing variables for consistency with light theme */
-    --text-faint: var(--fg_dark);
-    --text-on-accent: #ffffff;
-
-    /* Scrollbars for dark theme */
-    --scrollbar-bg: rgba(255, 255, 255, 0.05);
-    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.2);
-    --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.4);
-
-    /* Tables for dark theme */
-    --table-border-color: var(--bg_highlight);
-
-    /* Modals and overlays for dark theme */
-    --modal-border-color: var(--bg_highlight);
-    --prompt-border-color: var(--bg_highlight);
-    --background-modifier-box-shadow: rgba(0, 0, 0, 0.5);
-    --background-modifier-cover: rgba(2, 2, 2, 0.8);
-
-    /* Graph colors for dark theme */
-    --graph-line: var(--comment);
-    --graph-node: var(--fg);
-    --graph-node-tag: var(--orange);
-    --graph-node-attachment: var(--blue);
-
-    /* Selection and highlighting for dark theme */
-    --text-selection: rgba(var(--purple_x), 0.25);
-    --text-highlight-bg: rgba(var(--orange_x), 0.25);
-    --flashing-background: rgba(var(--cyan_x), 0.2);
-
-    /* Date elements for dark theme */
-    --date-color: var(--blue);
-    --date-background-color: rgba(var(--blue_x), 0.15);
-
-    /* Blockquotes for dark theme */
-    --blockquote-color: var(--fg_dark);
-    --blockquote-bg: rgba(var(--cyan_x), 0.08);
-    --blockquote-border: var(--cyan);
-    --blockquote-accent: var(--magenta);
-    --blockquote-quote-mark: rgba(var(--cyan_x), 0.4);
-
-    /* Navigation colors for dark theme */
-    --nav-item-color: rgba(255, 255, 255, 0.9);
-    --nav-item-color-hover: var(--fg);
-    --nav-item-background-hover: var(--bg_highlight);
-    --nav-item-color-active: var(--cyan);
-    --nav-item-background-active: var(--bg_highlight);
-    --nav-file-tag: rgba(var(--yellow_x), 0.9);
-
-    /* Interactive elements for dark theme */
+    /* ======================================================================== */
+    /*                           INTERACTIVE ELEMENTS                          */
+    /* ======================================================================== */
     --interactive-normal: var(--bg_dark);
     --interactive-hover: var(--bg_highlight);
     --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
     --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
 
-    /* Backgrounds for dark theme */
+    /* Background modifiers */
     --background-modifier-hover: rgba(var(--cyan_x), 0.08);
     --background-modifier-active-hover: rgba(var(--cyan_x), 0.12);
     --background-modifier-border: var(--bg_highlight);
     --background-modifier-border-hover: var(--bg_highlight_dark);
     --background-modifier-border-focus: var(--interactive-accent);
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.5);
+    --background-modifier-cover: rgba(2, 2, 2, 0.8);
 
-    /* Code and syntax highlighting for dark theme */
-    --code-background: var(--bg_highlight_dark);
+    /* ======================================================================== */
+    /*                           CONTENT ELEMENTS                              */
+    /* ======================================================================== */
+    /* Selection and highlighting */
+    --text-selection: rgba(var(--purple_x), 0.25);
+    --text-highlight-bg: rgba(var(--orange_x), 0.25);
+    --flashing-background: rgba(var(--cyan_x), 0.2);
+
+    /* Code blocks */
+    --code-background: rgb(var(--purple_x), 0.05);
     --code-normal: var(--fg_dark);
     --text-on-code: var(--fg);
     --code-selection-bg: rgba(var(--cyan_x), 0.2);
 
-    /* Checkboxes and form elements for dark theme */
-    --checkbox-color: var(--green);
-    --checkbox-color-hover: var(--teal);
-    --checkbox-border-color: var(--comment);
-    --checkbox-border-color-hover: var(--green);
+    /* Code syntax highlighting */
+    /* --code-keyword: var(--purple);
+    --code-function: var(--yellow);
+    --code-string: var(--green);
+    --code-number: var(--orange);
+    --code-comment: var(--comment);
+    --code-property: var(--red);
+    --code-tag: var(--red);
+    --code-operator: var(--cyan);
+    --code-class: var(--yellow);
+    --code-variable: var(--cyan); */
 
-    /* Tags for dark theme */
-    --tag-color: var(--magenta);
-    --tag-background: rgba(var(--magenta_x), 0.15);
-    --tag-color-hover: var(--cyan);
-    --tag-background-hover: rgba(var(--cyan_x), 0.15);
+    /* Blockquotes */
+    --blockquote-color: var(--fg_dark);
+    --blockquote-bg: rgba(var(--cyan_x), 0.08);
+    --blockquote-border: var(--cyan);
+    --blockquote-accent: var(--magenta);
+    --blockquote-quote-mark: rgba(var(--purple_x), 0.7);
 
-    /* Headers for dark theme */
+    /* Headers */
     --h1-color: var(--red);
     --h2-color: var(--magenta);
     --h3-color: var(--green);
@@ -5150,7 +5219,52 @@ a:hover {
     --h5-color: var(--blue);
     --h6-color: var(--orange);
 
-    /* Callouts for dark theme */
+    /* Tags */
+    --tag-color: var(--magenta);
+    --tag-background: rgba(var(--magenta_x), 0.15);
+    --tag-color-hover: var(--cyan);
+    --tag-background-hover: rgba(var(--cyan_x), 0.15);
+
+    /* Tables */
+    --table-border-color: var(--bg_highlight);
+    --table-header-background: var(--bg_highlight);
+    --table-header-background-hover: var(--bg_highlight_dark);
+
+    /* Scrollbars */
+    --scrollbar-bg: rgba(255, 255, 255, 0.05);
+    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.2);
+    --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.4);
+
+    /* Date elements */
+    --date-color: var(--blue);
+    --date-background-color: rgba(var(--blue_x), 0.15);
+
+    /* ======================================================================== */
+    /*                             NAVIGATION                                  */
+    /* ======================================================================== */
+    --nav-item-color: rgba(255, 255, 255, 0.9);
+    --nav-item-color-hover: var(--fg);
+    --nav-item-background-hover: var(--bg_highlight);
+    --nav-item-color-active: var(--cyan);
+    --nav-item-background-active: var(--bg_highlight);
+    --nav-file-tag: rgba(var(--yellow_x), 0.9);
+
+    /* ======================================================================== */
+    /*                           FORM ELEMENTS                                 */
+    /* ======================================================================== */
+    /* Checkboxes */
+    --checkbox-color: var(--green);
+    --checkbox-color-hover: var(--blue);
+    --checkbox-border-color: var(--comment);
+    --checkbox-border-color-hover: var(--green);
+
+    /* Modals */
+    --modal-border-color: var(--bg_highlight);
+    --prompt-border-color: var(--bg_highlight);
+
+    /* ======================================================================== */
+    /*                              CALLOUTS                                   */
+    /* ======================================================================== */
     --callout-default: var(--blue_x);
     --callout-info: var(--blue_x);
     --callout-summary: var(--cyan_x);
@@ -5165,6 +5279,14 @@ a:hover {
     --callout-question: var(--yellow_x);
     --callout-warning: var(--orange_x);
     --callout-quote: var(--fg_dark_x);
+
+    /* ======================================================================== */
+    /*                               GRAPHS                                    */
+    /* ======================================================================== */
+    --graph-line: var(--comment);
+    --graph-node: var(--fg);
+    --graph-node-tag: var(--orange);
+    --graph-node-attachment: var(--blue);
 }
 
 
@@ -5172,15 +5294,25 @@ a:hover {
     --background-primary: transparent;
 }
 
+/* ======================================================================== */
+/*                           CODE BLOCK STYLING                            */
+/* ======================================================================== */
+
 
 /* ================================================= */
 
 /* themes\light.css */
 .theme-light {
+    /* ======================================================================== */
+    /*                           THEME ACCENT COLORS                           */
+    /* ======================================================================== */
     --accent-h: 265;
     --accent-s: 60%;
     --accent-l: 55%;
 
+    /* ======================================================================== */
+    /*                           BACKGROUND COLORS                             */
+    /* ======================================================================== */
     --bg_dark2_x: 230, 232, 236;
     --bg_dark2: rgb(var(--bg_dark2_x));
     --bg_dark_x: 240, 242, 246;
@@ -5191,8 +5323,14 @@ a:hover {
     --bg_highlight: rgb(var(--bg_highlight_x));
     --bg_highlight_dark_x: 235, 238, 242;
     --bg_highlight_dark: rgb(var(--bg_highlight_dark_x));
-    --terminal_black_x: 15, 15, 20;
-    --terminal_black: rgb(var(--terminal_black_x));
+
+    /* Standard background variables */
+    --background-primary: #f8fafc;
+    --background-secondary: #ffffff;
+
+    /* ======================================================================== */
+    /*                              TEXT COLORS                                */
+    /* ======================================================================== */
     --fg_x: 30, 35, 42;
     --fg: rgb(var(--fg_x));
     --fg_dark_x: 75, 85, 95;
@@ -5201,49 +5339,182 @@ a:hover {
     --comment: rgb(var(--comment_x));
     --code-comment_x: 110, 115, 125;
     --code-comment: rgb(var(--code-comment_x));
+
+    /* Standard text variables */
+    --text-normal: #1e252e;
+    --text-muted: #64748b;
+    --text-faint: #94a3b8;
+    --text-accent: var(--purple);
+    --text-accent-hover: var(--cyan);
+    --text-error: var(--red);
+    --text-error-hover: var(--red1);
+    --text-on-accent: #ffffff;
+
+    /* ======================================================================== */
+    /*                             COLOR PALETTE                               */
+    /* ======================================================================== */
+    /* Blues */
     --blue0_x: 25, 55, 100;
     --blue0: rgb(var(--blue0_x));
     --blue_x: 30, 70, 160;
     --blue: rgb(var(--blue_x));
+
+    /* Cyans */
     --cyan_x: 0, 120, 180;
     --cyan: rgb(var(--cyan_x));
-    --purple_x: 120, 85, 200;
+
+    /* Purples */
+    --purple_x: 102, 63, 191;
     --purple: rgb(var(--purple_x));
+    --purple-light_x: 140, 100, 220;
+    --purple-light: rgb(var(--purple-light_x));
+
+    /* Magentas */
     --magent_hsl: 261 65% 50%;
     --magenta_x: 160, 30, 140;
     --magenta: rgb(var(--magenta_x));
     --magenta-light_x: 180, 60, 200;
     --magenta-light: rgb(var(--magenta-light_x));
+
+    /* Pinks */
     --pink_hsl: 320 65% 50%;
     --pink_x: 200, 30, 140;
     --pink: rgb(var(--pink_x));
+
+    /* Warm colors */
     --orange_x: 220, 100, 20;
     --orange: rgb(var(--orange_x));
     --yellow_x: 180, 120, 0;
     --yellow: rgb(var(--yellow_x));
+
+    /* Greens */
     --green_x: 20, 140, 80;
     --green: rgb(var(--green_x));
     --teal_x: 0, 140, 160;
     --teal: rgb(var(--teal_x));
+
+    /* Reds */
     --red_x: 200, 50, 70;
     --red: rgb(var(--red_x));
     --red1_x: 180, 30, 50;
     --red1: rgb(var(--red1_x));
+
+    /* Special colors */
+    --terminal_black_x: 15, 15, 20;
+    --terminal_black: rgb(var(--terminal_black_x));
     --unknown: #000000;
+
+    /* Folder notes */
+    --folder-note-color_x: 120, 85, 200;
+    --folder-note-color: rgb(var(--folder-note-color_x));
+
+    /* ======================================================================== */
+    /*                                LINKS                                    */
+    /* ======================================================================== */
 
     --link-external-filter: invert(45%) sepia(85%) saturate(2000%) hue-rotate(190deg) brightness(95%) contrast(95%);
 
-    --background-primary: #f8fafc;
-    --background-secondary: #ffffff;
-    --text-normal: #1e252e;
-    --text-muted: #64748b;
-    --text-faint: #94a3b8;
+    /* ======================================================================== */
+    /*                            UI COMPONENTS                                */
+    /* ======================================================================== */
+    /* Tabs */
+    --tab-background: rgba(240, 242, 246, 0.9);
+    --tab-background-active: rgba(255, 255, 255, 0.95);
+    --tab-background-hover: rgba(248, 250, 252, 0.8);
+    --tab-background-unfocused: rgba(235, 238, 242, 0.7);
+    --tab-divider-color: rgba(200, 205, 210, 0.4);
+    --tab-outline-color: rgba(180, 185, 190, 0.6);
+    --tab-outline-color-active: rgba(120, 125, 135, 0.8);
+    --tab-text-color-focused-active: rgba(var(--fg_x), 0.7);
+    --tab-text-color-focused-active-current: var(--text-normal);
+
+    /* Titlebar */
+    --titlebar-background: var(--background-primary);
+    --titlebar-text-color: #475569;
+    --titlebar-text-color-focused: #1e252e;
+    --titlebar-text-color-inactive: #94a3b8;
 
     /* ======================================================================== */
-    /*                     LIGHT THEME SPECIFIC OVERRIDES                     */
+    /*                           INTERACTIVE ELEMENTS                          */
     /* ======================================================================== */
+    --interactive-normal: #e2e8f0;
+    --interactive-hover: #cbd5e1;
+    --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
 
-    /* Navigation colors */
+    /* Background modifiers */
+    --background-modifier-hover: rgba(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 5%), 0.08);
+    --background-modifier-active-hover: rgba(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 5%), 0.12);
+    --background-modifier-border: #e2e8f0;
+    --background-modifier-border-hover: #cbd5e1;
+    --background-modifier-border-focus: var(--interactive-accent);
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
+    --background-modifier-cover: rgba(248, 250, 252, 0.8);
+
+    /* ======================================================================== */
+    /*                           CONTENT ELEMENTS                              */
+    /* ======================================================================== */
+    /* Selection and highlighting */
+    --text-selection: rgba(var(--purple_x), 0.15);
+    --text-highlight-bg: rgba(220, 100, 20, 0.15);
+    --flashing-background: rgba(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+
+    /* Code blocks */
+    --code-background: rgb(var(--purple_x), 0.05);
+    --code-normal: var(--text-muted);
+    --text-on-code: var(--text-normal);
+    --code-selection-bg: rgba(var(--purple_x), 0.15);
+
+    /* Code syntax highlighting */
+    /* --code-keyword: var(--purple);
+    --code-function: var(--orange);
+    --code-string: var(--green);
+    --code-number: var(--red);
+    --code-comment: var(--comment);
+    --code-property: var(--cyan);
+    --code-tag: var(--red);
+    --code-operator: var(--magenta);
+    --code-class: var(--blue);
+    --code-variable: var(--teal); */
+
+    /* Blockquotes */
+    --blockquote-color: var(--text-muted);
+    --blockquote-bg: rgba(var(--cyan_x), 0.05);
+    --blockquote-border: var(--cyan);
+    --blockquote-accent: var(--purple);
+    --blockquote-quote-mark: rgba(var(--purple_x), 0.7);
+
+    /* Headers */
+    --h1-color: var(--red);
+    --h2-color: var(--purple);
+    --h3-color: var(--green);
+    --h4-color: var(--cyan);
+    --h5-color: var(--blue);
+    --h6-color: var(--orange);
+
+    /* Tags */
+    --tag-color: var(--purple);
+    --tag-background: rgba(var(--purple_x), 0.1);
+    --tag-color-hover: var(--cyan);
+    --tag-background-hover: rgba(var(--cyan_x), 0.1);
+
+    /* Tables */
+    --table-header-background: #f8fafc;
+    --table-header-background-hover: #f1f5f9;
+    --table-border-color: #e2e8f0;
+
+    /* Scrollbars */
+    --scrollbar-bg: rgba(0, 0, 0, 0.05);
+    --scrollbar-thumb-bg: rgba(0, 0, 0, 0.2);
+    --scrollbar-active-thumb-bg: rgba(0, 0, 0, 0.4);
+
+    /* Date elements */
+    --date-color: var(--blue);
+    --date-background-color: rgba(30, 70, 160, 0.1);
+
+    /* ======================================================================== */
+    /*                             NAVIGATION                                  */
+    /* ======================================================================== */
     --nav-item-color: #2d3748;
     --nav-item-color-hover: #1a202c;
     --nav-item-background-hover: rgba(0, 120, 180, 0.08);
@@ -5251,78 +5522,22 @@ a:hover {
     --nav-item-background-active: var(--cyan);
     --nav-file-tag: rgba(180, 120, 0, 0.9);
 
-    /* Text colors */
-    --text-accent: var(--magenta);
-    --text-accent-hover: var(--cyan);
-    --text-error: var(--red);
-    --text-error-hover: var(--red1);
-    --text-on-accent: #ffffff;
-
-    /* Interactive elements */
-    --interactive-normal: #e2e8f0;
-    --interactive-hover: #cbd5e1;
-    --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-    --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
-
-    /* Backgrounds */
-    --background-modifier-hover: rgba(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 5%), 0.08);
-    --background-modifier-active-hover: rgba(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 5%), 0.12);
-    --background-modifier-border: #e2e8f0;
-    --background-modifier-border-hover: #cbd5e1;
-    --background-modifier-border-focus: var(--interactive-accent);
-
-    /* Code and syntax highlighting */
-    --code-background: rgba(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 5%), 0.08);
-    --code-normal: var(--text-muted);
-    --text-on-code: var(--text-normal);
-    --code-selection-bg: rgba(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
-
-    /* Checkboxes and form elements */
+    /* ======================================================================== */
+    /*                           FORM ELEMENTS                                 */
+    /* ======================================================================== */
+    /* Checkboxes */
     --checkbox-color: var(--green);
-    --checkbox-color-hover: var(--teal);
+    --checkbox-color-hover: var(--blue);
     --checkbox-border-color: #cbd5e1;
     --checkbox-border-color-hover: var(--green);
 
-    /* Links */
-    --link-color: var(--magenta);
-    --link-color-hover: var(--cyan);
-    --link-external-color: var(--purple);
-    --link-external-color-hover: var(--cyan);
-    --link-external-color-rgb: var(--purple_x);
-    --link-external-color-hover-rgb: var(--cyan_x);
+    /* Modals */
+    --modal-border-color: #e2e8f0;
+    --prompt-border-color: #e2e8f0;
 
-    /* Tags */
-    --tag-color: var(--magenta);
-    --tag-background: rgba(var(--magenta_x), 0.1);
-    --tag-color-hover: var(--cyan);
-    --tag-background-hover: rgba(var(--cyan_x), 0.1);
-
-    /* Headers - consistent with the overall theme */
-    --h1-color: var(--red);
-    --h2-color: var(--magenta);
-    --h3-color: var(--green);
-    --h4-color: var(--cyan);
-    --h5-color: var(--blue);
-    --h6-color: var(--orange);
-
-    /* Blockquotes */
-    --blockquote-color: var(--text-muted);
-    --blockquote-bg: rgba(var(--cyan_x), 0.05);
-    --blockquote-border: var(--cyan);
-    --blockquote-accent: var(--magenta);
-    --blockquote-quote-mark: rgba(var(--cyan_x), 0.3);
-
-    /* Scrollbars */
-    --scrollbar-bg: rgba(0, 0, 0, 0.05);
-    --scrollbar-thumb-bg: rgba(0, 0, 0, 0.2);
-    --scrollbar-active-thumb-bg: rgba(0, 0, 0, 0.4);
-
-    /* Tables */
-    --table-header-background: #f8fafc;
-    --table-header-background-hover: #f1f5f9;
-    --table-border-color: #e2e8f0;
-
-    /* Callouts */
+    /* ======================================================================== */
+    /*                              CALLOUTS                                   */
+    /* ======================================================================== */
     --callout-default: var(--blue_x);
     --callout-info: var(--blue_x);
     --callout-summary: var(--cyan_x);
@@ -5338,53 +5553,20 @@ a:hover {
     --callout-warning: var(--orange_x);
     --callout-quote: var(--fg_dark_x);
 
-
-    /* Modals and overlays */
-    --modal-border-color: #e2e8f0;
-    --prompt-border-color: #e2e8f0;
-    --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
-    --background-modifier-cover: rgba(248, 250, 252, 0.8);
-
-    /* Graph colors */
+    /* ======================================================================== */
+    /*                               GRAPHS                                    */
+    /* ======================================================================== */
     --graph-line: #cbd5e1;
     --graph-node: var(--fg);
     --graph-node-tag: var(--orange);
     --graph-node-attachment: var(--blue);
-
-    /* Selection and highlighting */
-    --text-selection: rgba(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
-    --text-highlight-bg: rgba(220, 100, 20, 0.15);
-    --flashing-background: rgba(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
-
-    /* Date elements */
-    --date-color: var(--blue);
-    --date-background-color: rgba(30, 70, 160, 0.1);
-
-    /* Tab text colors - darker for better contrast in light theme */
-    --tab-text-color-focused-active: rgba(var(--fg_x), 0.7);
-    --tab-text-color-focused-active-current: var(--text-normal);
-
-    /* Tab background variables - consistent with light theme */
-    --tab-background: rgba(240, 242, 246, 0.9);
-    --tab-background-active: rgba(255, 255, 255, 0.95);
-    --tab-background-hover: rgba(248, 250, 252, 0.8);
-    --tab-background-unfocused: rgba(235, 238, 242, 0.7);
-    --tab-divider-color: rgba(200, 205, 210, 0.4);
-    --tab-outline-color: rgba(180, 185, 190, 0.6);
-    --tab-outline-color-active: rgba(120, 125, 135, 0.8);
-
-    /* Titlebar variables for consistency */
-    --titlebar-background: var(--background-primary);
-    --titlebar-text-color: #475569;
-    --titlebar-text-color-focused: #1e252e;
-    --titlebar-text-color-inactive: #94a3b8;
-
-    /* Special colors for folder notes */
-    --folder-note-color_x: 120, 85, 200;
-    --folder-note-color: rgb(var(--folder-note-color_x));
 }
 
 
+
+/* ======================================================================== */
+/*                      LIGHT THEME COMPONENT STYLING                        */
+/* ======================================================================== */
 
 /* Menu and dropdown styling */
 .theme-light .menu,
@@ -5412,69 +5594,8 @@ a:hover {
     border-bottom: 1px solid #e2e8f0;
 }
 
-.theme-light .workspace-tab-header-inner {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-}
-
-.theme-light .workspace-tab-header-inner:hover {
-    background: #f8fafc;
-}
-
-.theme-light .workspace-tab-header-inner.is-active {
-    background: #ffffff;
-    border-color: var(--interactive-accent);
-}
-
-/* Make tab text darker and improve hover state */
-.theme-light .workspace-tab-header-inner {
-    color: #475569;
-    /* Darker text for inactive tabs */
-}
-
-.theme-light .workspace-tab-header-inner:hover {
-    color: #1a202c;
-    /* Ensure high contrast on hover */
-}
-
-.theme-light .workspace-tab-header-inner.is-active {
-    color: var(--interactive-accent);
-    /* Active tab color */
-}
-
-/* Code block styling */
-.theme-light .cm-s-obsidian pre.HyperMD-codeblock,
-.theme-light .markdown-rendered pre {
-    background-color: var(--code-background);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: var(--radius-m);
-    padding: 1em;
-}
-
-.theme-light code {
-    background-color: var(--code-background);
-    color: var(--text-on-code);
-    padding: 0.2em 0.4em;
-    border-radius: var(--radius-s);
-    font-size: 0.9em;
-}
-
-.theme-light .markdown-rendered pre code {
-    font-size: inherit;
-    padding: 0;
-    background-color: transparent;
-    color: inherit;
-}
-
-.theme-light .cm-s-obsidian span.cm-inline-code {
-    color: var(--text-on-code);
-}
-
-.theme-light .cm-s-obsidian span.cm-inline-code.cm-selecting {
-    background-color: var(--code-selection-bg);
-}
-
 /* Settings and configuration panels */
+/*
 .theme-light .vertical-tab-header {
     background: #f8fafc;
     border-right: 1px solid #e2e8f0;
@@ -5497,7 +5618,7 @@ a:hover {
     background: rgba(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
     color: var(--interactive-accent);
     border-right: 2px solid var(--interactive-accent);
-}
+} */
 
 
 /* ================================================= */

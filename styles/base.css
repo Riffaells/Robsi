@@ -1,25 +1,23 @@
 body {
-  /* Typography */
-  --line-height-normal: 1.6;
-  --line-height-theme: 1.6;
+    /* Typography */
+    --line-height-normal: 1.6;
+    --line-height-theme: 1.6;
 
-  /* Links */
-  --link-decoration: underline;
-  --link-unresolved-decoration-style: dotted;
-  --link-unresolved-decoration-color: var(----link-unresolved-color);
-
-
-  /* Blockquotes */
-  --blockquote-border-color: var(--text-muted);
-  --blockquote-color: var(--text-muted);
+    /* Links */
+    --link-decoration: underline;
+    --link-unresolved-decoration-style: dotted;
+    --link-unresolved-decoration-color: var(----link-unresolved-color);
 
 
-  /* Workspace & Modal Backgrounds */
+    /* Blockquotes */
+    --blockquote-border-color: var(--purple);
+    --blockquote-color: var(--purple);
 
-  --modal-background: var(--background-secondary);
 
-  /* Dividers */
-  --divider-color: transparent !important;
+    /* Workspace & Modal Backgrounds */
+
+    --modal-background: var(--background-primary);
+
+    /* Dividers */
+    --divider-color: transparent !important;
 }
-
-

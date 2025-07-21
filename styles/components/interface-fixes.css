@@ -37,3 +37,7 @@
 .nav-files-container {
     overflow: auto;
 }
+
+.markdown-rendered p {
+    margin-block-end: 0;
+}

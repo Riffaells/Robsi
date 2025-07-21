@@ -55,6 +55,7 @@ styles/
 ![Screenshot 3](assets/img3.png)
 ![Screenshot 4](assets/img4.png)
 ![Screenshot 5](assets/img5.png)
+![Screenshot 6](assets/img6.png)
 
 ## 🤝 Contributing
 
