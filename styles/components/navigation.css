@@ -4,21 +4,14 @@
  * ╰─────────────────────────────────────────────────────────╯
 */
 
-/* Hide left/right sidebar toggle buttons */
-.sidebar-toggle-button.mod-right,
-.sidebar-toggle-button.mod-left {
-  display: none;
-}
-
 .workspace-sidedock-vault-profile:hover .workspace-drawer-vault-switcher,
-.workspace-sidedock-vault-profile
-  .workspace-drawer-vault-switcher.has-active-menu {
-  opacity: 1;
+.workspace-sidedock-vault-profile .workspace-drawer-vault-switcher.has-active-menu {
+    opacity: 1;
 }
 
 /* Hide vault action buttons (help, settings) */
 .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
-  display: none !important;
+    display: none !important;
 }
 
 /* Hide tag, backlinks, outgoing links, and outline headers unless hovered */
@@ -26,31 +19,21 @@
 .workspace-split .workspace-leaf-content[data-type="outgoing-link"] .nav-header,
 .workspace-split .workspace-leaf-content[data-type="backlink"] .nav-header,
 .workspace-split .workspace-leaf-content[data-type="outline"] .nav-header {
-  padding: 0;
-  opacity: 0;
-  height: 0;
-  transition: none;
+    padding: 0;
+    opacity: 0;
+    height: 0;
+    transition: none;
 }
 
 .workspace-split:hover .workspace-leaf-content[data-type="tag"] .nav-header,
-.workspace-split:hover
-  .workspace-leaf-content[data-type="outgoing-link"]
-  .nav-header,
-.workspace-split:hover
-  .workspace-leaf-content[data-type="backlink"]
-  .nav-header,
-.workspace-split:hover
-  .workspace-leaf-content[data-type="outline"]
-  .nav-header {
-  opacity: 1;
-  height: 1.75em;
+.workspace-split:hover .workspace-leaf-content[data-type="outgoing-link"] .nav-header,
+.workspace-split:hover .workspace-leaf-content[data-type="backlink"] .nav-header,
+.workspace-split:hover .workspace-leaf-content[data-type="outline"] .nav-header {
+    opacity: 1;
+    height: 1.75em;
 }
 
-.mod-left-split
-  .mod-top-left-space
-  .workspace-tab-header-container-inner:hover {
-  opacity: 1;
-}
+
 
 /* Add softer blur to sidebars */
 .workspace-drawer.mod-left::before,
@@ -74,7 +57,7 @@
 /* Navigation Item Colors */
 .nav-file-title,
 .nav-folder-title {
-  color: var(--nav-item-color);
+    color: var(--nav-item-color);
 }
 
 /* Remove default ellipsis from navigation titles */
@@ -121,7 +104,7 @@
 /* ========================================================================== */
 
 /* Folder collapse/expand */
-.nav-folder.mod-root > .nav-folder-title {
+.nav-folder.mod-root>.nav-folder-title {
     font-weight: 600;
     color: var(--text-normal);
     font-size: 13px;
@@ -211,6 +194,7 @@
 
 /* Mobile touch targets */
 @media (max-width: 768px) {
+
     .nav-file-title,
     .nav-folder-title {
         font-size: 14px;
@@ -249,6 +233,8 @@
         background-color: transparent;
         transition: none;
     }
+
+
 }
 
 /* Tablet optimizations */
@@ -319,6 +305,7 @@
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
+
     .nav-file-title,
     .nav-folder-title {
         border: 1px solid var(--background-modifier-border);
@@ -336,6 +323,7 @@
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
     .nav-file,
     .nav-folder,
     .nav-file-title,
@@ -352,6 +340,7 @@
 
 /* Optimize animations for mobile */
 @media (max-width: 768px) {
+
     .nav-file,
     .nav-folder,
     .nav-file-title,
@@ -366,6 +355,7 @@
 
 /* Remove complex effects on low-end devices */
 @media (max-width: 480px) and (max-resolution: 150dpi) {
+
     .nav-file,
     .nav-folder,
     .nav-file-title,
@@ -382,22 +372,12 @@
 
 /* GPU acceleration for smooth scrolling */
 .nav-files-container {
-  transform: none;
-  -webkit-overflow-scrolling: auto;
+    transform: none;
 }
 
 /* ========================================================================== */
 /*                            CUSTOM ENHANCEMENTS                            */
 /* ========================================================================== */
-
-/* Enhanced folder structure visualization */
-.nav-folder-children .nav-folder-children {
-    border-left-color: var(--background-modifier-border-hover);
-}
-
-.nav-folder-children .nav-folder-children .nav-folder-children {
-    border-left-color: var(--background-modifier-border-focus);
-}
 
 /* Recent files highlighting */
 .nav-file.is-recent {
@@ -454,17 +434,6 @@
 /*                           THEME INTEGRATION                               */
 /* ========================================================================== */
 
-/* Dark theme adjustments */
-.theme-dark .nav-file-title-content,
-.theme-dark .nav-folder-title-content {
-    color: var(--text-normal);
-}
-
-/* Light theme adjustments */
-.theme-light .nav-file-title-content,
-.theme-light .nav-folder-title-content {
-    color: var(--text-normal);
-}
 
 .theme-light .nav-file.is-active {
     background-color: var(--background-modifier-active-hover);
@@ -476,28 +445,36 @@
 
 .folder-note-cursive .has-folder-note .nav-folder-title-content,
 .folder-note-cursive-path .has-folder-note.view-header-breadcrumb {
-  color: var(--folder-note-color);
-  font-style: italic;
-  font-weight: 450;
+    color: var(--folder-note-color);
+    font-style: italic;
+    font-weight: 450;
 }
 
-.folder-note-cursive .has-folder-note .nav-folder-title-content {
-  border-bottom: 1px solid rgba(var(--folder-note-color_x), 0.3);
+.folder-note-cursive .has-folder-note .nav-folder-title-content,
+.view-header .view-header-breadcrumb.has-folder-note {
+    border-bottom: 1px solid rgba(var(--folder-note-color_x), 0.3);
+}
+
+.view-header .view-header-breadcrumb.has-folder-note {
+    color: var(--folder-note-color);
+    font-style: italic;
+    font-weight: 450;
+    text-decoration: none;
 }
 
 .folder-note-cursive .has-folder-note .nav-folder-title:hover .nav-folder-title-content {
-  color: var(--magenta-light);
-  border-bottom-color: rgba(var(--folder-note-color_x), 0.8);
+    color: var(--magenta-light);
+    border-bottom-color: rgba(var(--folder-note-color_x), 0.8);
 }
 
 .folder-note-cursive-path .has-folder-note.view-header-breadcrumb {
-  background: rgba(var(--folder-note-color_x), 0.08);
-  border-bottom: 1px solid rgba(var(--folder-note-color_x), 0.2);
+    background: rgba(var(--folder-note-color_x), 0.08);
+    border-bottom: 1px solid rgba(var(--folder-note-color_x), 0.2);
 }
 
 .folder-note-cursive-path .has-folder-note.view-header-breadcrumb:hover {
-  background: rgba(var(--folder-note-color_x), 0.15);
-  border-bottom-color: rgba(var(--folder-note-color_x), 0.5);
+    background: rgba(var(--folder-note-color_x), 0.15);
+    border-bottom-color: rgba(var(--folder-note-color_x), 0.5);
 }
 
 .tree-item-self.mod-collapsible {

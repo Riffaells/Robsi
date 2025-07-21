@@ -2,47 +2,77 @@
 /*                               HEADERS                                     */
 /* ========================================================================== */
 
-/* Header Indicators - for Preview and Editor */
+/* Header Indicators - optimized with shared styles */
+
+/* Base indicator style */
 .markdown-preview-view h1::before,
-.markdown-source-view.mod-cm6 .cm-header-1:not(.cm-formatting)::before {
-  content: "▍";
+.markdown-preview-view h2::before,
+.markdown-preview-view h3::before,
+.markdown-preview-view h4::before,
+.markdown-preview-view h5::before,
+.markdown-preview-view h6::before,
+.HyperMD-header::before {
+    content: "▍";
+    opacity: 0.8;
+}
+.HyperMD-header {
+    font-weight: normal;
+}
+
+/* Individual header colors */
+.markdown-preview-view h1::before,
+.cm-formatting-header.cm-header-1::before,
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-1:not(.cm-active)::before {
   color: var(--h1-color);
-  opacity: 0.8;
 }
 
 .markdown-preview-view h2::before,
-.markdown-source-view.mod-cm6 .cm-header-2:not(.cm-formatting)::before {
-  content: "▍";
+.cm-formatting-header.cm-header-2::before,
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-2:not(.cm-active)::before {
   color: var(--h2-color);
-  opacity: 0.8;
 }
 
 .markdown-preview-view h3::before,
-.markdown-source-view.mod-cm6 .cm-header-3:not(.cm-formatting)::before {
-  content: "▍";
+.cm-formatting-header.cm-header-3::before,
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-3:not(.cm-active)::before {
   color: var(--h3-color);
-  opacity: 0.8;
 }
 
 .markdown-preview-view h4::before,
-.markdown-source-view.mod-cm6 .cm-header-4:not(.cm-formatting)::before {
-  content: "▍";
+.cm-formatting-header.cm-header-4::before,
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-4:not(.cm-active)::before {
   color: var(--h4-color);
-  opacity: 0.8;
 }
 
 .markdown-preview-view h5::before,
-.markdown-source-view.mod-cm6 .cm-header-5:not(.cm-formatting)::before {
-  content: "▍";
+.cm-formatting-header.cm-header-5::before,
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-5:not(.cm-active)::before {
   color: var(--h5-color);
-  opacity: 0.8;
 }
 
 .markdown-preview-view h6::before,
-.markdown-source-view.mod-cm6 .cm-header-6:not(.cm-formatting)::before {
-  content: "▍";
+.cm-formatting-header.cm-header-6::before,
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-6:not(.cm-active)::before {
   color: var(--h6-color);
-  opacity: 0.8;
+}
+
+/* Remove indicators from bold/italic formatting inside headers */
+.cm-formatting-strong.cm-header::before,
+.cm-formatting-em.cm-header::before,
+.HyperMD-header-1 .cm-formatting-strong::before,
+.HyperMD-header-2 .cm-formatting-strong::before,
+.HyperMD-header-3 .cm-formatting-strong::before,
+.HyperMD-header-4 .cm-formatting-strong::before,
+.HyperMD-header-5 .cm-formatting-strong::before,
+.HyperMD-header-6 .cm-formatting-strong::before,
+.HyperMD-header-1 .cm-formatting-em::before,
+.HyperMD-header-2 .cm-formatting-em::before,
+.HyperMD-header-3 .cm-formatting-em::before,
+.HyperMD-header-4 .cm-formatting-em::before,
+.HyperMD-header-5 .cm-formatting-em::before,
+.HyperMD-header-6 .cm-formatting-em::before {
+  content: none !important;
+  display: none !important;
 }
 
 
@@ -59,14 +89,15 @@
   margin-left: 8px; /* Small left margin for beauty */
   line-height: 1.3;
   font-family: var(--font-family-heading);
+  font-weight: 400;
 }
 
-/* Optional underlines for headers */
+/* underlines for headers */
 .markdown-preview-view h1::after {
   content: "";
   display: block;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: linear-gradient(to right, var(--h1-color), transparent);
   margin-top: 8px;
 }
@@ -74,11 +105,22 @@
 .markdown-preview-view h2::after {
   content: "";
   display: block;
-  width: 80%;
-  height: 1px;
+  width: 90%;
+  height: 2px;
   background: linear-gradient(to right, var(--h2-color), transparent);
   margin-top: 6px;
+  opacity: 0.8;
 }
+
+.markdown-preview-view h3::after {
+    content: "";
+    display: block;
+    width: 75%;
+    height: 1px;
+    background: linear-gradient(to right, var(--h3-color), transparent);
+    margin-top: 4px;
+    opacity: 0.7;
+  }
 
 /* Outline Enhancement */
 .outline .tree-item-self {
@@ -154,7 +196,7 @@
 strong,
 b {
   color: var(--cyan) !important;
-  font-weight: 700;
+  font-weight: 700 !important;
   text-shadow: 0 0 1px rgba(var(--cyan_x), 0.3);
 }
 
@@ -178,6 +220,14 @@ i b {
   font-style: italic;
   text-shadow: 0 0 2px rgba(var(--orange_x), 0.4);
 }
+
+/* Header colors - optimized */
+.markdown-preview-view h1, .markdown-preview-view h1 *, .HyperMD-header-1, .HyperMD-header-1 *, .cm-header-1, .cm-header-1 * { color: var(--h1-color) !important; }
+.markdown-preview-view h2, .markdown-preview-view h2 *, .HyperMD-header-2, .HyperMD-header-2 *, .cm-header-2, .cm-header-2 * { color: var(--h2-color) !important; }
+.markdown-preview-view h3, .markdown-preview-view h3 *, .HyperMD-header-3, .HyperMD-header-3 *, .cm-header-3, .cm-header-3 * { color: var(--h3-color) !important; }
+.markdown-preview-view h4, .markdown-preview-view h4 *, .HyperMD-header-4, .HyperMD-header-4 *, .cm-header-4, .cm-header-4 * { color: var(--h4-color) !important; }
+.markdown-preview-view h5, .markdown-preview-view h5 *, .HyperMD-header-5, .HyperMD-header-5 *, .cm-header-5, .cm-header-5 * { color: var(--h5-color) !important; }
+.markdown-preview-view h6, .markdown-preview-view h6 *, .HyperMD-header-6, .HyperMD-header-6 *, .cm-header-6, .cm-header-6 * { color: var(--h6-color) !important; }
 
 /* Strikethrough text */
 .cm-strikethrough,
@@ -255,13 +305,13 @@ mark:hover,
 /* Light theme callout highlights */
 .theme-light .callout mark,
 .theme-light .callout .cm-highlight {
-  background: rgba(30, 35, 42, 0.1);
-  color: #1e252e !important;
+  background: rgba(var(--fg_x), 0.1);
+  color: var(--text-normal) !important;
 }
 
 .theme-light .callout mark:hover,
 .theme-light .callout .cm-highlight:hover {
-  background: rgba(30, 35, 42, 0.15);
+  background: rgba(var(--fg_x), 0.15);
 }
 
 /* Mobile optimizations */
@@ -290,7 +340,7 @@ mark:hover,
   .theme-light mark,
   .theme-light .cm-highlight {
     background: rgba(var(--orange_x), 0.4) !important;
-    color: #1e252e !important;
+    color: var(--text-normal) !important;
     font-weight: 600;
   }
 }

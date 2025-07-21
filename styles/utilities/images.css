@@ -30,7 +30,7 @@
 .image-blur-md img,
 .image-blur-lg img,
 .image-blur-xl img {
-  transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: none;
   filter: grayscale(var(--grayscale, 0)) sepia(var(--sepia, 0))
     invert(var(--invert, 0)) blur(var(--blur, 0));
 }
@@ -98,15 +98,14 @@
 .workspace-leaf-content[data-mode="source"] .image-hover-scale-lg .image-embed,
 .workspace-leaf-content[data-mode="preview"] .image-hover-scale-xl img,
 .workspace-leaf-content[data-mode="source"] .image-hover-scale-xl .image-embed {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: none;
 }
 
 .workspace-leaf-content[data-mode="preview"] .image-hover-scale-xs img:hover,
 .workspace-leaf-content[data-mode="source"]
   .image-hover-scale-xs
   .image-embed:hover {
-  transform: scale(1.05);
+  transform: none;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
@@ -114,7 +113,7 @@
 .workspace-leaf-content[data-mode="source"]
   .image-hover-scale-sm
   .image-embed:hover {
-  transform: scale(1.1);
+  transform: none;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
 }
 
@@ -122,7 +121,7 @@
 .workspace-leaf-content[data-mode="source"]
   .image-hover-scale-md
   .image-embed:hover {
-  transform: scale(1.15);
+  transform: none;
   box-shadow: 0 16px 64px rgba(0, 0, 0, 0.18);
 }
 
@@ -130,7 +129,7 @@
 .workspace-leaf-content[data-mode="source"]
   .image-hover-scale-lg
   .image-embed:hover {
-  transform: scale(1.2);
+  transform: none;
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.2);
 }
 
@@ -138,7 +137,7 @@
 .workspace-leaf-content[data-mode="source"]
   .image-hover-scale-xl
   .image-embed:hover {
-  transform: scale(1.25);
+  transform: none;
   box-shadow: 0 24px 96px rgba(0, 0, 0, 0.25);
 }
 
@@ -173,7 +172,7 @@
   .workspace-leaf-content[data-mode="source"] .image-hover-scale-lg .image-embed,
   .workspace-leaf-content[data-mode="preview"] .image-hover-scale-xl img,
   .workspace-leaf-content[data-mode="source"] .image-hover-scale-xl .image-embed {
-    transition: opacity 0.2s ease;
+    transition: none;
   }
 
   /* Disable filter animations on mobile */

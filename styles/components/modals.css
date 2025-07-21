@@ -5,16 +5,14 @@
 :not(.mod-windows) .graph-controls,
 :not(.mod-windows) .lt-predictions-container,
 :not(.mod-windows) .vertical-tab-content {
-  background-color: var(--modal-background) !important;
+    background-color: var(--modal-background) !important;
 }
 
-/* Add blur to modals */
+/* Add blur to modals - disabled for mobile performance */
 .modal {
-    backdrop-filter: blur(4px);
-
+    background-color: var(--modal-background);
 }
 
 .modal-bg {
-    background-color: transparent;
-    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.3);
 }

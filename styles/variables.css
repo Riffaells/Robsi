@@ -4,311 +4,312 @@
 
 /* Root fonts and basic variables */
 :root {
-  --font-family-theme: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-family-monospace: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
-  --font-size-theme: 16px;
-  --line-height-theme: 1.6;
+    --font-family-theme: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-family-monospace: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+    --font-size-theme: 16px;
+    --line-height-theme: 1.6;
 }
 
 /* Common variables for both themes */
 .theme-dark,
 .theme-light {
-  /* ======================================================================== */
-  /*                               TYPOGRAPHY                                */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                               TYPOGRAPHY                                */
+    /* ======================================================================== */
 
-  --font-text-size: var(--font-size-theme);
-  --line-height-normal: var(--line-height-theme);
+    --font-text-size: var(--font-size-theme);
+    --line-height-normal: var(--line-height-theme);
 
-  /* ======================================================================== */
-  /*                                BORDERS                                  */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                                BORDERS                                  */
+    /* ======================================================================== */
 
-  --border-width: 1px;
-  --border-radius: 8px;
-  --radius-s: 6px;
-  --radius-m: 8px;
-  --radius-l: 12px;
-  --radius-xl: 16px;
+    --border-width: 1px;
+    --border-radius: 8px;
+    --radius-s: 6px;
+    --radius-m: 8px;
+    --radius-l: 12px;
+    --radius-xl: 16px;
 
-  /* ======================================================================== */
-  /*                                SPACING                                  */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                                SPACING                                  */
+    /* ======================================================================== */
 
-  --size-2-1: 2px;
-  --size-2-2: 4px;
-  --size-2-3: 6px;
-  --size-4-1: 8px;
-  --size-4-2: 12px;
-  --size-4-3: 16px;
-  --size-4-4: 20px;
-  --size-4-5: 24px;
-  --size-4-6: 28px;
+    --size-2-1: 2px;
+    --size-2-2: 4px;
+    --size-2-3: 6px;
+    --size-4-1: 8px;
+    --size-4-2: 12px;
+    --size-4-3: 16px;
+    --size-4-4: 20px;
+    --size-4-5: 24px;
+    --size-4-6: 28px;
 
-  /* ======================================================================== */
-  /*                              TRANSITIONS                                */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                              TRANSITIONS                                */
+    /* ======================================================================== */
 
-  --motion-duration-fast: 0.15s;
-  --motion-duration-medium: 0.25s;
-  --motion-duration-slow: 0.35s;
-  --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --motion-easing-decelerate: cubic-bezier(0.0, 0, 0.2, 1);
-  --motion-easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+    --motion-duration-fast: 0.15s;
+    --motion-duration-medium: 0.25s;
+    --motion-duration-slow: 0.35s;
+    --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+    --motion-easing-decelerate: cubic-bezier(0.0, 0, 0.2, 1);
+    --motion-easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
 
-  /* ======================================================================== */
-  /*                               SHADOWS                                   */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                               SHADOWS                                   */
+    /* ======================================================================== */
 
-  --shadow-s: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  --shadow-m: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
-  --shadow-l: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.10);
-  --shadow-xl: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
+    --shadow-s: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --shadow-m: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+    --shadow-l: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.10);
+    --shadow-xl: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
 
-  /* ======================================================================== */
-  /*                               CALLOUTS                                  */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                               CALLOUTS                                  */
+    /* ======================================================================== */
 
-  --callout-radius: var(--radius-m);
-  --callout-padding: 8px;
-  --callout-title-padding: 0;
-  --callout-content-padding: 0;
+    --callout-radius: var(--radius-m);
+    --callout-padding: 8px;
+    --callout-title-padding: 0;
+    --callout-content-padding: 0;
 
-  /* ======================================================================== */
-  /*                                 LISTS                                   */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                                 LISTS                                   */
+    /* ======================================================================== */
 
-  --list-marker-color: var(--magenta);
-  --list-marker-color-hover: var(--magenta-light);
-  --list-marker-color-collapsed: var(--text-muted);
-  --list-number-color: var(--magenta);
-  --list-number-color-hover: var(--magenta-light);
-  --list-indent: 1.5em;
-  --list-spacing: 0;
+    --list-marker-color: var(--magenta);
+    --list-marker-color-hover: var(--magenta-light);
+    --list-marker-color-collapsed: var(--text-muted);
+    --list-number-color: var(--magenta);
+    --list-number-color-hover: var(--magenta-light);
+    --list-indent: 1.5em;
+    --list-spacing: 0;
 
-  /* ======================================================================== */
-  /*                              CHECKBOXES                                 */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                              CHECKBOXES                                 */
+    /* ======================================================================== */
 
-  --checkbox-radius: var(--radius-s);
-  --checkbox-size: 16px;
+    --checkbox-radius: var(--radius-s);
+    --checkbox-size: 16px;
 
-  /* ======================================================================== */
-  /*                               TABLES                                    */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                               TABLES                                    */
+    /* ======================================================================== */
 
-  --table-border-width: 1px;
-  --table-border-color: var(--border-color);
-  --table-header-background: var(--background-secondary);
-  --table-header-background-hover: var(--background-secondary-alt);
+    --table-border-width: 1px;
+    --table-border-color: var(--border-color);
+    --table-header-background: var(--background-secondary);
+    --table-header-background-hover: var(--background-secondary-alt);
 
-  /* ======================================================================== */
-  /*                              WORKSPACE                                  */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                              WORKSPACE                                  */
+    /* ======================================================================== */
 
-  --tab-radius: var(--radius-m);
-  --tab-outline-width: 2px;
-  --titlebar-height: 40px;
-  --tab-width: 120px;
-  --tab-min-width: 80px;
-  --tab-max-width: 200px;
-  --tab-text-color-focused-active: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.8);
-  --tab-text-color-focused-active-current: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    --tab-radius: var(--radius-m);
+    --tab-outline-width: 2px;
+    --titlebar-height: 40px;
+    --tab-width: 120px;
+    --tab-min-width: 80px;
+    --tab-max-width: 200px;
+    --tab-text-color-focused-active: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.8);
+    --tab-text-color-focused-active-current: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 
-  /* Tab background variables */
-  --tab-container-background: var(--background-primary);
-  --tab-background: var(--bg_dark2);
-  --tab-background-active: var(--bg_highlight_dark);
-  --tab-background-hover: var(--bg_highlight_dark);
-  --workspace-background-translucent: var(--background-primary);
-  --titlebar-background-focused: var(--bg_highlight_dark);
-  --frame-right-space: 80px;
-  /* ======================================================================== */
-  /*                              FILE MARGINS                               */
-  /* ======================================================================== */
+    /* Tab background variables */
+    --tab-container-background-focused: var(--background-primary);
+    --tab-container-background: var(--background-primary);
+    --tab-background: var(--bg_dark2);
+    --tab-background-active: var(--bg_highlight_dark);
+    --tab-background-hover: var(--bg_highlight_dark);
+    --workspace-background-translucent: var(--background-primary);
+    --titlebar-background-focused: var(--background-primary);
+    --frame-right-space: 80px;
+    /* ======================================================================== */
+    /*                              FILE MARGINS                               */
+    /* ======================================================================== */
 
-  --file-margins: clamp(5px, 4vw, 20px);
+    --file-margins: clamp(5px, 4vw, 20px);
 
-  /* ======================================================================== */
-  /*                              COLOR PALETTE                               */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                              COLOR PALETTE                               */
+    /* ======================================================================== */
 
-  /* Standard Colors */
-  --color-red: var(--red);
-  --color-purple: var(--magenta);
-  --color-green: var(--green);
-  --color-cyan: var(--cyan);
-  --color-blue: var(--blue);
-  --color-yellow: var(--yellow);
-  --color-orange: var(--orange);
-  --color-pink: var(--magenta);
+    /* Standard Colors */
+    --color-red: var(--red);
+    --color-purple: var(--magenta);
+    --color-green: var(--green);
+    --color-cyan: var(--cyan);
+    --color-blue: var(--blue);
+    --color-yellow: var(--yellow);
+    --color-orange: var(--orange);
+    --color-pink: var(--magenta);
 
-  /* RGB Versions for rgba() */
-  --color-red-rgb: var(--red_x);
-  --color-purple-rgb: var(--magenta_x);
-  --color-green-rgb: var(--green_x);
-  --color-cyan-rgb: var(--cyan_x);
-  --color-blue-rgb: var(--blue_x);
-  --color-yellow-rgb: var(--yellow_x);
-  --color-orange-rgb: var(--orange_x);
-  --color-pink-rgb: var(--magenta_x);
+    /* RGB Versions for rgba() */
+    --color-red-rgb: var(--red_x);
+    --color-purple-rgb: var(--magenta_x);
+    --color-green-rgb: var(--green_x);
+    --color-cyan-rgb: var(--cyan_x);
+    --color-blue-rgb: var(--blue_x);
+    --color-yellow-rgb: var(--yellow_x);
+    --color-orange-rgb: var(--orange_x);
+    --color-pink-rgb: var(--magenta_x);
 
-  /* ======================================================================== */
-  /*                           BACKGROUND & TEXT                            */
-  /* ======================================================================== */
+    /* ======================================================================== */
+    /*                           BACKGROUND & TEXT                            */
+    /* ======================================================================== */
 
-  --background-primary: var(--bg);
-  --background-primary-alt: var(--bg);
-  --background-secondary: var(--bg_dark);
-  --background-secondary-alt: var(--bg_dark);
+    --background-primary: var(--bg);
+    --background-primary-alt: var(--bg);
+    --background-secondary: var(--bg_dark);
+    --background-secondary-alt: var(--bg_dark);
 
-  --background-modifier-border: var(--bg_highlight);
-  --background-modifier-border-focus: var(--bg_highlight);
-  --background-modifier-border-hover: var(--bg_highlight);
-  --background-modifier-form-field: var(--bg_dark);
-  --background-modifier-form-field-highlighted: var(--bg_dark);
-  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
-  --background-modifier-success: var(--green);
-  --background-modifier-error: var(--red1);
-  --background-modifier-error-hover: var(--red);
-  --background-modifier-cover: rgba(var(--bg_dark_x), 0.8);
-  --background-modifier-hover: var(--bg_highlight);
-  --background-modifier-message: rgba(var(--bg_highlight_x), 0.9);
-  --background-modifier-active-hover: var(--bg_highlight);
+    --background-modifier-border: var(--bg_highlight);
+    --background-modifier-border-focus: var(--bg_highlight);
+    --background-modifier-border-hover: var(--bg_highlight);
+    --background-modifier-form-field: var(--bg_dark);
+    --background-modifier-form-field-highlighted: var(--bg_dark);
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+    --background-modifier-success: var(--green);
+    --background-modifier-error: var(--red1);
+    --background-modifier-error-hover: var(--red);
+    --background-modifier-cover: rgba(var(--bg_dark_x), 0.8);
+    --background-modifier-hover: var(--bg_highlight);
+    --background-modifier-message: rgba(var(--bg_highlight_x), 0.9);
+    --background-modifier-active-hover: var(--bg_highlight);
 
-  --text-normal: var(--fg);
-  --text-faint: var(--fg_dark);
-  --text-muted: var(--fg_dark);
-  --text-muted-rgb: var(--fg_dark_x);
-  --text-error: var(--red);
-  --text-accent: var(--magenta);
-  --text-accent-hover: var(--cyan);
-  --text-error: var(--red1);
-  --text-error-hover: var(--red);
-  --text-on-accent: var(--bg);
-  --text-highlight-bg: rgba(var(--orange_x), 0.25);
-  --text-selection: rgba(var(--purple_x), 0.15);
-  --bold-color: var(--cyan);
-  --italic-color: var(--blue);
+    --text-normal: var(--fg);
+    --text-faint: var(--fg_dark);
+    --text-muted: var(--fg_dark);
+    --text-muted-rgb: var(--fg_dark_x);
+    --text-error: var(--red);
+    --text-accent: var(--magenta);
+    --text-accent-hover: var(--cyan);
+    --text-error: var(--red1);
+    --text-error-hover: var(--red);
+    --text-on-accent: var(--bg);
+    --text-highlight-bg: rgba(var(--orange_x), 0.25);
+    --text-selection: rgba(var(--purple_x), 0.15);
+    --bold-color: var(--cyan);
+    --italic-color: var(--blue);
 
-  /* RGB versions for rgba() usage */
-  --magenta-rgb: var(--magenta_x);
-  --magenta-light-rgb: var(--magenta-light_x);
+    /* RGB versions for rgba() usage */
+    --magenta-rgb: var(--magenta_x);
+    --magenta-light-rgb: var(--magenta-light_x);
 
-  /* Background RGB variables for blur effects */
-  --background-primary-rgb: var(--bg_x);
-  --background-secondary-rgb: var(--bg_dark_x);
-  --background-modifier-hover-rgb: var(--bg_highlight_x);
-  --menu-background-rgb: var(--bg_dark_x);
+    /* Background RGB variables for blur effects */
+    --background-primary-rgb: var(--bg_x);
+    --background-secondary-rgb: var(--bg_dark_x);
+    --background-modifier-hover-rgb: var(--bg_highlight_x);
+    --menu-background-rgb: var(--bg_dark_x);
 
-  --interactive-normal: var(--bg_dark);
-  --interactive-hover: var(--bg);
-  --interactive-success: var(--green);
-  --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-  --interactive-accent-hover: var(--blue);
-  --accent-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    --interactive-normal: var(--bg_dark);
+    --interactive-hover: var(--bg);
+    --interactive-success: var(--green);
+    --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    --interactive-accent-hover: var(--blue);
+    --accent-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 
-  --scrollbar-bg: var(--bg_dark2);
-  --scrollbar-thumb-bg: var(--comment);
-  --scrollbar-active-thumb-bg: var(--bg_dark);
-  --scrollbar-width: 0px;
+    --scrollbar-bg: var(--bg_dark2);
+    --scrollbar-thumb-bg: var(--comment);
+    --scrollbar-active-thumb-bg: var(--bg_dark);
+    --scrollbar-width: 0px;
 
-  --h1-color: var(--red);
-  --h2-color: var(--magenta);
-  --h3-color: var(--green);
-  --h4-color: var(--cyan);
-  --h5-color: var(--blue);
-  --h6-color: var(--yellow);
+    --h1-color: var(--red);
+    --h2-color: var(--magenta);
+    --h3-color: var(--green);
+    --h4-color: var(--cyan);
+    --h5-color: var(--blue);
+    --h6-color: var(--yellow);
 
-  --tag-color: var(--magenta);
-  --tag-background: rgba(var(--magenta_x), 0.15);
-  --tag-color-hover: var(--cyan);
-  --tag-background-hover: rgba(var(--cyan_x), 0.15);
+    --tag-color: var(--magenta);
+    --tag-background: rgba(var(--magenta_x), 0.15);
+    --tag-color-hover: var(--cyan);
+    --tag-background-hover: rgba(var(--cyan_x), 0.15);
 
-  --link-color: var(--magenta);
-  --link-color-hover: var(--cyan);
-  --link-external-color: var(--purple);
-  --link-external-color-hover: var(--cyan);
-  --link-external-color-rgb: var(--purple_x);
-  --link-external-color-hover-rgb: var(--cyan_x);
+    --link-color: var(--magenta);
+    --link-color-hover: var(--cyan);
+    --link-external-color: var(--purple);
+    --link-external-color-hover: var(--cyan);
+    --link-external-color-rgb: var(--purple_x);
+    --link-external-color-hover-rgb: var(--cyan_x);
 
-  --checkbox-color: var(--green);
-  --checkbox-color-hover: var(--green);
-  --checkbox-border-color: var(--comment);
-  --checkbox-border-color-hover: var(--comment);
+    --checkbox-color: var(--green);
+    --checkbox-color-hover: var(--green);
+    --checkbox-border-color: var(--comment);
+    --checkbox-border-color-hover: var(--comment);
 
-  --table-header-background: var(--bg_dark2);
-  --table-header-background-hover: var(--bg_dark2);
+    --table-header-background: var(--bg_dark2);
+    --table-header-background-hover: var(--bg_dark2);
 
-  --flashing-background: rgba(var(--blue0_x), 0.3);
+    --flashing-background: rgba(var(--blue0_x), 0.3);
 
-  --code-normal: var(--fg);
-  --code-background: var(--bg_highlight_dark);
-  --code-comment: var(--code-comment);
+    --code-normal: var(--fg);
+    --code-background: var(--bg_highlight_dark);
+    --code-comment: var(--code-comment);
 
-  --mermaid-note: var(--blue0);
-  --mermaid-actor: var(--fg_dark);
-  --mermaid-loopline: var(--blue);
+    --mermaid-note: var(--blue0);
+    --mermaid-actor: var(--fg_dark);
+    --mermaid-loopline: var(--blue);
 
-  --blockquote-background-color: var(--bg_dark);
-  --callout-default: var(--blue_x);
-  --callout-info: var(--blue_x);
-  --callout-summary: var(--cyan_x);
-  --callout-tip: var(--cyan_x);
-  --callout-todo: var(--cyan_x);
-  --callout-bug: var(--red_x);
-  --callout-error: var(--red1_x);
-  --callout-fail: var(--red1_x);
-  --callout-example: var(--magenta_x);
-  --callout-important: var(--green_x);
-  --callout-success: var(--teal_x);
-  --callout-question: var(--yellow_x);
-  --callout-warning: var(--orange_x);
-  --callout-quote: var(--fg_dark_x);
+    --blockquote-background-color: var(--bg_dark);
+    --callout-default: var(--blue_x);
+    --callout-info: var(--blue_x);
+    --callout-summary: var(--cyan_x);
+    --callout-tip: var(--cyan_x);
+    --callout-todo: var(--cyan_x);
+    --callout-bug: var(--red_x);
+    --callout-error: var(--red1_x);
+    --callout-fail: var(--red1_x);
+    --callout-example: var(--magenta_x);
+    --callout-important: var(--green_x);
+    --callout-success: var(--teal_x);
+    --callout-question: var(--yellow_x);
+    --callout-warning: var(--orange_x);
+    --callout-quote: var(--fg_dark_x);
 
-  --icon-color-hover: var(--blue);
-  --icon-color-focused: var(--purple);
-  --icon-color-active: var(--purple);
-
-
-  --nav-item-parent-padding: 4px 16px 4px 8px;
-  --nav-item-color: rgba(255, 255, 255, 0.9);
-  --nav-item-color-hover: var(--fg);
-  --nav-item-background-hover: var(--bg_highlight);
-  --nav-item-color-active: var(--red);
-  --nav-item-background-active: var(--bg_highlight);
-  --nav-file-tag: rgba(var(--yellow_x), 0.9);
-  --nav-indentation-guide-color: var(--bg_highlight);
+    --icon-color-hover: var(--blue);
+    --icon-color-focused: var(--purple);
+    --icon-color-active: var(--purple);
 
 
-  --indentation-guide-color: var(--comment);
-  --indentation-guide-color-active: var(--comment);
+    --nav-item-parent-padding: 4px 16px 4px 8px;
+    --nav-item-color: rgba(255, 255, 255, 0.9);
+    --nav-item-color-hover: var(--fg);
+    --nav-item-background-hover: var(--bg_highlight);
+    --nav-item-color-active: var(--red);
+    --nav-item-background-active: var(--bg_highlight);
+    --nav-file-tag: rgba(var(--yellow_x), 0.9);
+    --nav-indentation-guide-color: var(--bg_highlight);
 
-  --graph-line: var(--comment);
-  --graph-node: var(--fg);
-  --graph-node-tag: var(--orange);
-  --graph-node-attachment: var(--blue);
 
-  --modal-border-color: var(--bg_highlight);
-  --prompt-border-color: var(--bg_highlight);
-  --slider-track-background: var(--bg_highlight);
+    --indentation-guide-color: var(--comment);
+    --indentation-guide-color-active: var(--comment);
 
-  --embed-background: var(--bg_dark);
-  --embed-padding: 1.5rem 1.5rem 0.5rem;
+    --graph-line: var(--comment);
+    --graph-node: var(--fg);
+    --graph-node-tag: var(--orange);
+    --graph-node-attachment: var(--blue);
 
-  --canvas-color: var(--bg_highlight_x);
+    --modal-border-color: var(--bg_highlight);
+    --prompt-border-color: var(--bg_highlight);
+    --slider-track-background: var(--bg_highlight);
 
-  --toggle-thumb-color: var(--bg);
+    --embed-background: var(--bg_dark);
+    --embed-padding: 1.5rem 1.5rem 0.5rem;
 
-  --image-radius: 0px;
+    --canvas-color: var(--bg_highlight_x);
 
-  --date-color: var(--blue);
-  --date-background-color: var(--bg_highlight);
+    --toggle-thumb-color: var(--bg);
 
-  /* Blockquote colors */
-  --blockquote-color: var(--fg_dark);
-  --blockquote-bg: rgba(var(--cyan_x), 0.08);
-  --blockquote-border: var(--cyan);
-  --blockquote-accent: var(--magenta);
-  --blockquote-quote-mark: rgba(var(--cyan_x), 0.4);
+    --image-radius: 0px;
+
+    --date-color: var(--blue);
+    --date-background-color: var(--bg_highlight);
+
+    /* Blockquote colors */
+    --blockquote-color: var(--fg_dark);
+    --blockquote-bg: rgba(var(--cyan_x), 0.08);
+    --blockquote-border: var(--cyan);
+    --blockquote-accent: var(--magenta);
+    --blockquote-quote-mark: rgba(var(--cyan_x), 0.4);
 }

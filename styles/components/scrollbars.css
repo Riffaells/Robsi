@@ -89,7 +89,6 @@
   .markdown-source-view,
   .cm-scroller {
     scroll-behavior: auto;
-    -webkit-overflow-scrolling: auto;
     scrollbar-width: none;
   }
 

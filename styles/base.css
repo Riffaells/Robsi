@@ -17,14 +17,9 @@ body {
   /* Workspace & Modal Backgrounds */
 
   --modal-background: var(--background-secondary);
-  --titlebar-background-focused: var(--background-primary);
 
   /* Dividers */
   --divider-color: transparent !important;
 }
 
-@media (min-width: 769px) {
-  :not(.mod-windows).theme-dark {
-    --background-primary: transparent;
-  }
-}
+

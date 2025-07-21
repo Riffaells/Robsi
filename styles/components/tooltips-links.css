@@ -12,9 +12,6 @@
   background: rgba(var(--background-primary-rgb), 0.8);
 }
 
-.theme-dark .tooltip {
-  background: rgba(var(--background-secondary-rgb), 0.8);
-}
 
 /* External Links */
 .external-link,
@@ -116,13 +113,7 @@ a.external-link:hover::after {
 
 /* Suggestion Items */
 .suggestion-item.is-selected {
-  color: var(--text-on-accent);
-  background-color: var(--interactive-accent);
-  border-radius: var(--radius-m);
-}
-.suggestion-item.is-selected:hover {
-  color: var(--text-on-accent);
-  background-color: var(--interactive-accent-hover);
+  background-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
   border-radius: var(--radius-m);
 }
 

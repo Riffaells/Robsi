@@ -1,104 +1,206 @@
 .theme-dark {
-  color-scheme: dark;
-  --accent-h: 202;
-  --accent-s: 100%;
-  --accent-l: 75%;
+    color-scheme: dark;
+    --accent-h: 202;
+    --accent-s: 100%;
+    --accent-l: 75%;
 
-  --bg_dark2_x: 2, 2, 2;
-  --bg_dark2: rgb(var(--bg_dark2_x));
-  --bg_dark_x: 8, 8, 8;
-  --bg_dark: rgb(var(--bg_dark_x));
-  --bg_x: 15, 15, 15;
-  --bg: rgb(var(--bg_x));
-  --bg_highlight_x: 25, 25, 25;
-  --bg_highlight: rgb(var(--bg_highlight_x));
-  --bg_highlight_dark_x: 18, 18, 18;
-  --bg_highlight_dark: rgb(var(--bg_highlight_dark_x));
-  --terminal_black_x: 65, 72, 104;
-  --terminal_black: rgb(var(--terminal_black_x));
-  --fg_x: 220, 220, 220;
-  --fg: rgb(var(--fg_x));
-  --fg_dark_x: 180, 180, 180;
-  --fg_dark: rgb(var(--fg_dark_x));
-  --comment_x: 120, 120, 120;
-  --comment: rgb(var(--comment_x));
-  --code-comment_x: 115, 125, 165;
-  --code-comment: rgb(var(--code-comment_x));
-  --blue0_x: 61, 89, 161;
-  --blue0: rgb(var(--blue0_x));
-  --blue_x: 122, 162, 247;
-  --blue: rgb(var(--blue_x));
-  --cyan_hsl: 202 100% 75%;
-  --cyan_x: 125, 207, 255;
-  --cyan: rgb(var(--cyan_x));
-  --purple_x: 187, 154, 247;
-  --purple: rgb(var(--purple_x));
-  --magent_hsl: 261 85% 79%;
-  --magenta_x: 187, 154, 247;
-  --magenta: rgb(var(--magenta_x));
-  --magenta-light_x: 210, 190, 255;
-  --magenta-light: rgb(var(--magenta-light_x));
+    --bg_dark2_x: 2, 2, 2;
+    --bg_dark2: rgb(var(--bg_dark2_x));
+    --bg_dark_x: 8, 8, 8;
+    --bg_dark: rgb(var(--bg_dark_x));
+    --bg_x: 15, 15, 15;
+    --bg: rgb(var(--bg_x));
+    --bg_highlight_x: 25, 25, 25;
+    --bg_highlight: rgb(var(--bg_highlight_x));
+    --bg_highlight_dark_x: 18, 18, 18;
+    --bg_highlight_dark: rgb(var(--bg_highlight_dark_x));
+    --terminal_black_x: 65, 72, 104;
+    --terminal_black: rgb(var(--terminal_black_x));
+    --fg_x: 220, 220, 220;
+    --fg: rgb(var(--fg_x));
+    --fg_dark_x: 180, 180, 180;
+    --fg_dark: rgb(var(--fg_dark_x));
+    --comment_x: 120, 120, 120;
+    --comment: rgb(var(--comment_x));
+    --code-comment_x: 115, 125, 165;
+    --code-comment: rgb(var(--code-comment_x));
+    --blue0_x: 61, 89, 161;
+    --blue0: rgb(var(--blue0_x));
+    --blue_x: 122, 162, 247;
+    --blue: rgb(var(--blue_x));
+    --cyan_hsl: 202 100% 75%;
+    --cyan_x: 125, 207, 255;
+    --cyan: rgb(var(--cyan_x));
+    --purple_x: 187, 154, 247;
+    --purple: rgb(var(--purple_x));
+    --magent_hsl: 261 85% 79%;
+    --magenta_x: 187, 154, 247;
+    --magenta: rgb(var(--magenta_x));
+    --magenta-light_x: 210, 190, 255;
+    --magenta-light: rgb(var(--magenta-light_x));
 
-  /* Special colors for folder notes - purple mixed with white */
-  --folder-note-color_x: 220, 200, 250;
-  --folder-note-color: rgb(var(--folder-note-color_x));
-  --pink_hsl: 331 100% 43%;
-  --pink_x: 217, 0, 105;
-  --pink: rgb(var(--pink_x));
-  --orange_x: 255, 158, 100;
-  --orange: rgb(var(--orange_x));
-  --yellow_x: 224, 175, 104;
-  --yellow: rgb(var(--yellow_x));
-  --green_x: 158, 206, 106;
-  --green: rgb(var(--green_x));
-  --teal_x: 26, 188, 156;
-  --teal: rgb(var(--teal_x));
-  --red_x: 255, 117, 127;
-  --red: rgb(var(--red_x));
-  --red1_x: 219, 75, 75;
-  --red1: rgb(var(--red1_x));
-  --unknown: #ffffff;
+    /* Special colors for folder notes - purple mixed with white */
+    --folder-note-color_x: 220, 200, 250;
+    --folder-note-color: rgb(var(--folder-note-color_x));
+    --pink_hsl: 331 100% 43%;
+    --pink_x: 217, 0, 105;
+    --pink: rgb(var(--pink_x));
+    --orange_x: 255, 158, 100;
+    --orange: rgb(var(--orange_x));
+    --yellow_x: 224, 175, 104;
+    --yellow: rgb(var(--yellow_x));
+    --green_x: 158, 206, 106;
+    --green: rgb(var(--green_x));
+    --teal_x: 26, 188, 156;
+    --teal: rgb(var(--teal_x));
+    --red_x: 255, 117, 127;
+    --red: rgb(var(--red_x));
+    --red1_x: 219, 75, 75;
+    --red1: rgb(var(--red1_x));
+    --unknown: #ffffff;
 
-  --link-color: var(--magenta);
-  --link-color-hover: var(--cyan);
-  --link-external-color: var(--purple);
-  --link-external-color-hover: var(--cyan);
-  --link-external-color-rgb: var(--purple_x);
-  --link-external-color-hover-rgb: var(--cyan_x);
+    --link-color: var(--magenta);
+    --link-color-hover: var(--cyan);
+    --link-external-color: var(--purple);
+    --link-external-color-hover: var(--cyan);
+    --link-external-color-rgb: var(--purple_x);
+    --link-external-color-hover-rgb: var(--cyan_x);
 
-  --link-external-filter: invert(35%) sepia(28%) saturate(681%) hue-rotate(192deg) brightness(94%) contrast(85%);
+    --link-external-filter: invert(35%) sepia(28%) saturate(681%) hue-rotate(192deg) brightness(94%) contrast(85%);
 
-  --background-primary: #020202;
-  --background-secondary: #0a0a0a;
-  --text-normal: #d0d0d0;
-  --text-muted: #888;
+    --background-primary: #020202;
+    --background-secondary: #0a0a0a;
+    --text-normal: #d0d0d0;
+    --text-muted: #888;
 
-  --tab-background: rgba(2, 2, 2, 0.9);
-  --tab-background-active: rgba(25, 25, 25, 0.95);
-  --tab-background-hover: rgba(18, 18, 18, 0.8);
-  --tab-background-unfocused: rgba(8, 8, 8, 0.7);
-  --tab-divider-color: rgba(40, 40, 40, 0.3);
-  --tab-outline-color: rgba(60, 60, 60, 0.5);
-  --tab-outline-color-active: rgba(80, 80, 80, 0.8);
-  --shadow-color: rgba(0, 0, 0, 0.3);
-  --workspace-background-translucent: rgba(2, 2, 2, 0.9);
-  --titlebar-background: var(--background-primary);
-  --titlebar-background-focused: rgba(15, 15, 15, 0.98);
-  --titlebar-text-color: #e8e8e8;
-  --titlebar-text-color-focused: #ffffff;
-  --titlebar-text-color-inactive: #666;
+    --tab-background: rgba(2, 2, 2, 0.9);
+    --tab-background-active: rgba(25, 25, 25, 0.95);
+    --tab-background-hover: rgba(18, 18, 18, 0.8);
+    --tab-background-unfocused: rgba(8, 8, 8, 0.7);
+    --tab-divider-color: rgba(40, 40, 40, 0.3);
+    --tab-outline-color: rgba(60, 60, 60, 0.5);
+    --tab-outline-color-active: rgba(80, 80, 80, 0.8);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --workspace-background-translucent: rgba(2, 2, 2, 0.9);
+    --titlebar-background: var(--background-primary);
+    --titlebar-text-color: #e8e8e8;
+    --titlebar-text-color-focused: #ffffff;
+    --titlebar-text-color-inactive: #666;
 
-  --bg-primary-rgb: 2, 2, 2;
-  --bg-primary: #020202;
-  --bg-secondary-rgb: 8, 8, 8;
-  --text-on-accent: #ffffff;
+    --bg-primary-rgb: 2, 2, 2;
+    --bg-primary: #020202;
+    --bg-secondary-rgb: 8, 8, 8;
+    --text-on-accent: #ffffff;
 
-  /* Special colors for folder notes */
-  --folder-note-color_x: 220, 200, 250;
-  --folder-note-color: rgb(var(--folder-note-color_x));
+    /* Special colors for folder notes */
+    --folder-note-color_x: 220, 200, 250;
+    --folder-note-color: rgb(var(--folder-note-color_x));
+
+    /* Missing variables for consistency with light theme */
+    --text-faint: var(--fg_dark);
+    --text-on-accent: #ffffff;
+
+    /* Scrollbars for dark theme */
+    --scrollbar-bg: rgba(255, 255, 255, 0.05);
+    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.2);
+    --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.4);
+
+    /* Tables for dark theme */
+    --table-border-color: var(--bg_highlight);
+
+    /* Modals and overlays for dark theme */
+    --modal-border-color: var(--bg_highlight);
+    --prompt-border-color: var(--bg_highlight);
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.5);
+    --background-modifier-cover: rgba(2, 2, 2, 0.8);
+
+    /* Graph colors for dark theme */
+    --graph-line: var(--comment);
+    --graph-node: var(--fg);
+    --graph-node-tag: var(--orange);
+    --graph-node-attachment: var(--blue);
+
+    /* Selection and highlighting for dark theme */
+    --text-selection: rgba(var(--purple_x), 0.25);
+    --text-highlight-bg: rgba(var(--orange_x), 0.25);
+    --flashing-background: rgba(var(--cyan_x), 0.2);
+
+    /* Date elements for dark theme */
+    --date-color: var(--blue);
+    --date-background-color: rgba(var(--blue_x), 0.15);
+
+    /* Blockquotes for dark theme */
+    --blockquote-color: var(--fg_dark);
+    --blockquote-bg: rgba(var(--cyan_x), 0.08);
+    --blockquote-border: var(--cyan);
+    --blockquote-accent: var(--magenta);
+    --blockquote-quote-mark: rgba(var(--cyan_x), 0.4);
+
+    /* Navigation colors for dark theme */
+    --nav-item-color: rgba(255, 255, 255, 0.9);
+    --nav-item-color-hover: var(--fg);
+    --nav-item-background-hover: var(--bg_highlight);
+    --nav-item-color-active: var(--cyan);
+    --nav-item-background-active: var(--bg_highlight);
+    --nav-file-tag: rgba(var(--yellow_x), 0.9);
+
+    /* Interactive elements for dark theme */
+    --interactive-normal: var(--bg_dark);
+    --interactive-hover: var(--bg_highlight);
+    --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
+
+    /* Backgrounds for dark theme */
+    --background-modifier-hover: rgba(var(--cyan_x), 0.08);
+    --background-modifier-active-hover: rgba(var(--cyan_x), 0.12);
+    --background-modifier-border: var(--bg_highlight);
+    --background-modifier-border-hover: var(--bg_highlight_dark);
+    --background-modifier-border-focus: var(--interactive-accent);
+
+    /* Code and syntax highlighting for dark theme */
+    --code-background: var(--bg_highlight_dark);
+    --code-normal: var(--fg_dark);
+    --text-on-code: var(--fg);
+    --code-selection-bg: rgba(var(--cyan_x), 0.2);
+
+    /* Checkboxes and form elements for dark theme */
+    --checkbox-color: var(--green);
+    --checkbox-color-hover: var(--teal);
+    --checkbox-border-color: var(--comment);
+    --checkbox-border-color-hover: var(--green);
+
+    /* Tags for dark theme */
+    --tag-color: var(--magenta);
+    --tag-background: rgba(var(--magenta_x), 0.15);
+    --tag-color-hover: var(--cyan);
+    --tag-background-hover: rgba(var(--cyan_x), 0.15);
+
+    /* Headers for dark theme */
+    --h1-color: var(--red);
+    --h2-color: var(--magenta);
+    --h3-color: var(--green);
+    --h4-color: var(--cyan);
+    --h5-color: var(--blue);
+    --h6-color: var(--orange);
+
+    /* Callouts for dark theme */
+    --callout-default: var(--blue_x);
+    --callout-info: var(--blue_x);
+    --callout-summary: var(--cyan_x);
+    --callout-tip: var(--cyan_x);
+    --callout-todo: var(--cyan_x);
+    --callout-bug: var(--red_x);
+    --callout-error: var(--red1_x);
+    --callout-fail: var(--red1_x);
+    --callout-example: var(--magenta_x);
+    --callout-important: var(--green_x);
+    --callout-success: var(--teal_x);
+    --callout-question: var(--yellow_x);
+    --callout-warning: var(--orange_x);
+    --callout-quote: var(--fg_dark_x);
 }
 
 
 :not(.mod-windows).theme-dark {
-  --background-primary: transparent;
+    --background-primary: transparent;
 }

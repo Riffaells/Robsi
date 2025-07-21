@@ -142,12 +142,6 @@
     transform: none;
   }
 
-  /* Disable complex blur effects */
-  .suggestion-container,
-  .menu {
-    backdrop-filter: none;
-    background: var(--background-secondary);
-  }
 
   .tree-item-inner {
     transition: none;
@@ -195,11 +189,7 @@
     height: 200px;
   }
 
-  /* Lighter blur effects */
-  .suggestion-container,
-  .menu {
-    backdrop-filter: blur(4px);
-  }
+
 }
 
 /* Tablet (769-1024px) - Enhanced animations */
@@ -406,7 +396,7 @@
   .menu-item:active,
   .suggestion-item:active,
   .workspace-tab-header:active {
-    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
     transition: none;
   }
 

@@ -91,7 +91,7 @@
 }
 
 .checkbox-container input[type="checkbox"]:focus {
-    box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+    box-shadow: 0 0 0 1px var(--background-modifier-border-focus);
 }
 
 /* Checkbox slider - simplified */

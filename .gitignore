@@ -1,5 +1,7 @@
 # vscode
-.vscode 
+.vscode
+.kiro
+.history
 
 # Intellij
 *.iml

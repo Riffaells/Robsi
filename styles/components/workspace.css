@@ -4,65 +4,42 @@
  * ╰─────────────────────────────────────────────────────────╯
 */
 
-/* Hide tab bar dynamically if only one tab */
-/* .hide-tab-bar-dynamic
-  .mod-root
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-container {
-  opacity: 1;
-  overflow: hidden;
-  transition: none;
-  width: auto;
-  min-width: var(--tab-min-width);
-  max-height: 40px;
-}
-
-.hide-tab-bar-dynamic
-  .mod-root
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-container:has(:only-child) {
-  max-height: 0;
-  opacity: 0;
-  padding: 0;
-  margin: 0;
-} */
-
 /* Always hide tab bar */
 .hide-tab-bar-always .mod-root .workspace-tabs .workspace-tab-header-container {
-  display: none;
+    display: none;
 }
 
 
 
 /* Show navigation buttons in view header */
 .view-header-nav-buttons {
-  display: flex;
-  gap: 4px;
-  align-items: center;
+    display: flex;
+    gap: 4px;
+    align-items: center;
 }
 
 /* Simple navigation button styling */
 .view-header-nav-buttons .clickable-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: none;
 }
 
 .view-header-nav-buttons .clickable-icon:hover {
-  background-color: var(--background-modifier-hover);
+    background-color: var(--background-modifier-hover);
 }
 
 .view-header-nav-buttons .clickable-icon svg {
-  width: 16px;
-  height: 16px;
+    width: 16px;
+    height: 16px;
 }
 
 .view-header-nav-buttons .clickable-icon:hover svg {
-  opacity: 1;
+    opacity: 1;
 }
 
 /*
@@ -71,26 +48,16 @@
  * ╰─────────────────────────────────────────────────────────╯
 */
 .view-header-title-container {
-  -webkit-app-region: drag;
-  border-radius: 8px;
-  transition: none;
+    -webkit-app-region: drag;
+    border-radius: 8px;
+    transition: none;
 }
 
 
 .view-header-title-container div {
-  -webkit-app-region: no-drag;
+    -webkit-app-region: no-drag;
 }
 
-/*
- * ╭─────────────────────────────────────────────────────────╮
- * │               Stacked Tabs Background Fix               │
- * ╰─────────────────────────────────────────────────────────╯
-*/
-.mod-stacked
-  .workspace-tab-container
-  > div:not(:nth-of-type(1)):not(:nth-of-type(2)) {
-  --background-primary: var(--bg-primary);
-}
 
 /* ========================================================================== */
 /*                               SIDEBARS                                     */
@@ -98,82 +65,77 @@
 
 /* Tab container background */
 .workspace-tabs {
-  background: var(--tab-container-background);
-  border-radius: 8px;
+    border-radius: 8px;
 }
 
 .workspace-tab-header-container {
-  background: var(--tab-container-background);
-  border-radius: 8px 8px 0 0;
-  border-bottom: 1px solid rgba(40, 40, 40, 0.2);
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid rgba(40, 40, 40, 0.2);
 }
 
 /* Individual tab styling */
 .workspace-tab-header {
-  background: var(--tab-background);
-  border-radius: 8px 8px 0 0;
-  transition: none;
-  border: none;
-  margin: 2px;
+    background: var(--tab-background);
+    border-radius: 8px 8px 0 0;
+    transition: none;
+    border: none;
+    margin: 2px;
 }
 
 .workspace-tab-header:hover:not(.is-active) {
-  background: var(--tab-background-hover);
+    background: var(--tab-background-hover);
 }
 
 .workspace-tab-header.is-active {
-  background: var(--tab-background-active);
+    background: var(--tab-background-active);
 }
 
 /* Titlebar styling */
 .titlebar {
-  background: var(--titlebar-background);
-  border-bottom: 1px solid rgba(40, 40, 40, 0.3);
+    background: var(--titlebar-background);
+    border-bottom: 1px solid rgba(40, 40, 40, 0.3);
 }
 
 
 
-/* Workspace background */
-.workspace {
-  background: var(--workspace-background-translucent);
-}
+
 
 /* Workspace split and additional elements */
 .workspace-tabs .workspace-leaf {
-  background: var(--workspace-background-translucent);
+    background: var(--workspace-background-translucent);
 }
 
 .workspace-leaf-resize-handle {
-  background: var(--workspace-background-translucent);
+    background: var(--workspace-background-translucent);
 }
 
 .workspace-ribbon {
-  background: none !important;
+    background: none !important;
 }
 
 
 /* Sidebar Toggle Buttons - Always show by default */
 .sidebar-toggle-button.mod-right,
 .sidebar-toggle-button.mod-left {
-  display: flex;
-  opacity: 0.7;
-  transition: none;
+    display: flex;
+    opacity: 0.7;
+    transition: none;
 }
 
 .sidebar-toggle-button.mod-right:hover,
 .sidebar-toggle-button.mod-left:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* Vault Actions - Always show by default */
 .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
-  display: flex !important;
-  opacity: 0.7;
-  transition: none;
+    display: flex !important;
+    opacity: 0.7;
+    transition: none;
 }
 
 .workspace-sidedock-vault-profile:hover .workspace-drawer-vault-actions {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* Navigation Headers - Always show by default */
@@ -181,29 +143,12 @@
 .workspace-split .workspace-leaf-content[data-type="outgoing-link"] .nav-header,
 .workspace-split .workspace-leaf-content[data-type="backlink"] .nav-header,
 .workspace-split .workspace-leaf-content[data-type="outline"] .nav-header {
-  padding: var(--size-4-1) 0;
-  opacity: 1;
-  height: auto;
-  transition: none;
+    padding: var(--size-4-1) 0;
+    opacity: 1;
+    height: auto;
+    transition: none;
 }
 
-.workspace-leaf-content[data-type="file-explorer"]:hover .nav-header {
-  opacity: 1;
-}
-
-/* Tab Headers - Always show but with subtle styling */
-.workspace-tab-header-container
-  .workspace-tab-header-container-inner
-  [data-type="localgraph"] {
-  opacity: 0.8;
-  transition: none;
-}
-
-.workspace-tab-header-container:hover
-  .workspace-tab-header-container-inner
-  [data-type="localgraph"] {
-  opacity: 1;
-}
 
 /* ========================================================================== */
 /*                           MATERIAL DESIGN 3                               */
@@ -211,16 +156,18 @@
 
 /* Enhanced workspace styling with Material Design 3 principles */
 .workspace-leaf {
-  border-radius: 12px;
-  overflow: hidden;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .workspace .mod-root .workspace-tab-header {
-  /* Простая гибкая система */
-  min-width: var(--tab-min-width);  /* Минимум 80px */
-  max-width: var(--tab-max-width);  /* Максимум 200px */
-  position: relative;
-  overflow: hidden;
+    /* Простая гибкая система */
+    min-width: var(--tab-min-width);
+    /* Минимум 80px */
+    max-width: var(--tab-max-width);
+    /* Максимум 200px */
+    position: relative;
+    overflow: hidden;
 }
 
 /* ========================================================================== */
@@ -229,14 +176,14 @@
 
 /* Draggable title container */
 .view-header-title-container {
-  -webkit-app-region: drag;
-  border-radius: 8px;
-  transition: none;
+    -webkit-app-region: drag;
+    border-radius: 8px;
+    transition: none;
 }
 
 
 .view-header-title-container div {
-  -webkit-app-region: no-drag;
+    -webkit-app-region: no-drag;
 }
 
 /* ========================================================================== */
@@ -245,41 +192,41 @@
 
 /* Mobile workspace adjustments */
 @media (max-width: 768px) {
-  .workspace-leaf {
-    border-radius: 8px;
-  }
+    .workspace-leaf {
+        border-radius: 8px;
+    }
 
-  .workspace-tab-header {
-    border-radius: 6px 6px 0 0;
-  }
+    .workspace-tab-header {
+        border-radius: 6px 6px 0 0;
+    }
 
+    /* Mobile sidebar optimizations - improved touch targets */
+    .sidebar-toggle-button.mod-right,
+    .sidebar-toggle-button.mod-left {
+        display: flex;
+        min-width: 44px;
+        min-height: 44px;
+        opacity: 1;
+    }
 
-
-  /* Mobile sidebar optimizations */
-  .sidebar-toggle-button.mod-right,
-  .sidebar-toggle-button.mod-left {
-    min-width: 44px;
-    min-height: 44px;
-  }
-
-  /* Faster transitions on mobile */
-  .workspace-tab-header-container,
-  .view-header-title-container,
-  .sidebar-toggle-button.mod-right,
-  .sidebar-toggle-button.mod-left {
-    transition-duration: 0s;
-  }
+    /* Faster transitions on mobile */
+    .workspace-tab-header-container,
+    .view-header-title-container,
+    .sidebar-toggle-button.mod-right,
+    .sidebar-toggle-button.mod-left {
+        transition-duration: 0s;
+    }
 }
 
 /* Tablet optimizations */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .workspace-leaf {
-    border-radius: 10px;
-  }
+    .workspace-leaf {
+        border-radius: 10px;
+    }
 
-  .workspace-tab-header {
-    border-radius: 7px 7px 0 0;
-  }
+    .workspace-tab-header {
+        border-radius: 7px 7px 0 0;
+    }
 
 }
 
@@ -289,31 +236,33 @@
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  .workspace-tab-header,
-  .workspace-leaf {
-    border: 1px solid var(--background-modifier-border);
-  }
 
-  .view-header-nav-buttons .clickable-icon {
-    border: 1px solid var(--background-modifier-border);
-  }
+    .workspace-tab-header,
+    .workspace-leaf {
+        border: 1px solid var(--background-modifier-border);
+    }
 
-  .sidebar-toggle-button.mod-right,
-  .sidebar-toggle-button.mod-left {
-    border: 1px solid var(--background-modifier-border);
-  }
+    .view-header-nav-buttons .clickable-icon {
+        border: 1px solid var(--background-modifier-border);
+    }
+
+    .sidebar-toggle-button.mod-right,
+    .sidebar-toggle-button.mod-left {
+        border: 1px solid var(--background-modifier-border);
+    }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .workspace-tab-header-container,
-  .view-header-title-container,
-  .sidebar-toggle-button.mod-right,
-  .sidebar-toggle-button.mod-left,
-  .workspace-sidedock-vault-profile .workspace-drawer-vault-actions,
-  .view-header-nav-buttons .clickable-icon {
-    transition: none !important;
-  }
+
+    .workspace-tab-header-container,
+    .view-header-title-container,
+    .sidebar-toggle-button.mod-right,
+    .sidebar-toggle-button.mod-left,
+    .workspace-sidedock-vault-profile .workspace-drawer-vault-actions,
+    .view-header-nav-buttons .clickable-icon {
+        transition: none !important;
+    }
 
 }
 
@@ -325,22 +274,22 @@
 @media (max-width: 480px) and (max-resolution: 150dpi) {
 
 
-  .workspace-leaf {
-    border-radius: 6px;
-  }
+    .workspace-leaf {
+        border-radius: 6px;
+    }
 
-  .workspace-tab-header {
-    border-radius: 4px 4px 0 0;
-  }
+    .workspace-tab-header {
+        border-radius: 4px 4px 0 0;
+    }
 
-  /* Disable transitions on low-end devices */
-  .workspace-tab-header-container,
-  .view-header-title-container,
-  .sidebar-toggle-button.mod-right,
-  .sidebar-toggle-button.mod-left,
-  .view-header-nav-buttons .clickable-icon {
-    transition: none;
-  }
+    /* Disable transitions on low-end devices */
+    .workspace-tab-header-container,
+    .view-header-title-container,
+    .sidebar-toggle-button.mod-right,
+    .sidebar-toggle-button.mod-left,
+    .view-header-nav-buttons .clickable-icon {
+        transition: none;
+    }
 }
 
 /* ========================================================================== */
@@ -349,56 +298,40 @@
 
 /* Optimize complex selectors */
 .workspace-split .workspace-leaf-content[data-type] .nav-header {
-  padding: var(--size-4-1) 0;
-  opacity: 1;
-  height: auto;
-  transition: none;
+    padding: var(--size-4-1) 0;
+    opacity: 1;
+    height: auto;
+    transition: none;
 }
-
-/* Consolidated hover states */
-.workspace-leaf-content[data-type]:hover .nav-header {
-  opacity: 1;
-}
-
-/* Simplified navigation container */
-.workspace-tab-header-container .workspace-tab-header-container-inner [data-type] {
-  opacity: 0.8;
-  transition: none;
-}
-
-.workspace-tab-header-container:hover .workspace-tab-header-container-inner [data-type] {
-  opacity: 1;
-}
-
 
 
 /* Workspace leaf content */
 .workspace-leaf-content {
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
 }
 
 .workspace-leaf:hover .workspace-leaf-content {
-  border-color: var(--border-color-hover);
+    border-color: var(--border-color-hover);
 }
 
 /* Sidebar drawers */
 .workspace-drawer {
-  border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
 }
 
 .workspace-drawer:hover {
-  border-color: var(--border-color-hover);
+    border-color: var(--border-color-hover);
 }
 
 /* Status bar */
 .status-bar {
-  border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
 }
 
 /* Title bar */
 .titlebar {
-  border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 
@@ -409,52 +342,46 @@
 /* Navigation hover effects */
 .nav-file-title:hover,
 .nav-folder-title:hover {
-  background-color: var(--background-modifier-hover);
-  border-left: 2px solid var(--border-color-active);
+    background-color: var(--background-modifier-hover);
+    border-left: 2px solid var(--border-color-active);
 }
 
 .nav-file.is-active .nav-file-title {
-  background-color: var(--background-modifier-active-hover);
-  border-left: 3px solid var(--interactive-accent);
+    background-color: var(--background-modifier-active-hover);
+    border-left: 3px solid var(--interactive-accent);
 }
 
 /* ========================================================================== */
 /*                             MODAL STYLING                                 */
 /* ========================================================================== */
 
-  .modal {
-    background-color: rgba(var(--background-secondary-rgb), 0.95);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+.modal {
+    background-color: var(--background-secondary);
     border: 1px solid var(--background-modifier-border);
     border-radius: 8px;
-  }
+}
 
-  /* ========================================================================== */
-  /*                             MENU STYLING                                  */
-  /* ========================================================================== */
+/* ========================================================================== */
+/*                             MENU STYLING                                  */
+/* ========================================================================== */
 
-  .menu {
-    background-color: rgba(var(--background-secondary-rgb), 0.9);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+.menu {
+    background-color: var(--background-secondary);
     border: 1px solid var(--background-modifier-border);
     border-radius: 6px;
-  }
+}
 
-  .menu-item:hover,
+/* .menu-item:hover,
   .suggestion-item:hover {
     background-color: rgba(var(--background-modifier-hover-rgb), 0.95);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-  }
+  } */
 
-  .suggestion-container {
-  background-color: rgba(var(--background-secondary-rgb), 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--background-modifier-border);
-  border-radius: 6px;
+.suggestion-container {
+    background-color: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 6px;
 }
 
 
