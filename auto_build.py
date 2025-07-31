@@ -149,6 +149,7 @@ def main():
     parser = argparse.ArgumentParser(description="Robsidian Theme Auto-Builder")
     parser.add_argument("-t", "--target", help="Target directory for theme.css", type=str)
     parser.add_argument("-l", "--list", help="List found CSS files and exit", action="store_true")
+    parser.add_argument("--once", help="Build once and exit (no watching)", action="store_true")
     args = parser.parse_args()
 
     if not Path("styles").exists():
@@ -161,12 +162,27 @@ def main():
         builder.list_files()
         return
 
+    console.print("🎨 [bold]Robsi Theme Auto-Builder[/bold]")
+
+    if args.once:
+        console.print("🔨 Building once...")
+        if args.target:
+            console.print(f"📂 Target directory: [cyan]{args.target}")
+        console.print()
+        success = builder.build_theme()
+        if success:
+            console.print(f"✅ Build completed successfully!")
+        else:
+            console.print(f"❌ Build failed!")
+            sys.exit(1)
+        return
+
+    # Watch mode
     event_handler = ThemeWatcher(builder)
     observer = Observer()
     watching_dir = str(Path("styles").resolve())
     observer.schedule(event_handler, watching_dir, recursive=True)
 
-    console.print("🎨 [bold]Robsi Theme Auto-Builder[/bold]")
     console.print(f"👀 Watching: [cyan]{watching_dir}")
     if args.target:
         console.print(f"📂 Target directory: [cyan]{args.target}")
