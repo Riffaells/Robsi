@@ -24,7 +24,7 @@
 
     /* Standard background variables */
     --background-primary: #020202;
-    --background-secondary: #0a0a0a;
+    --background-secondary: #020202;
     --bg-primary-rgb: 2, 2, 2;
     --bg-primary: #020202;
     --bg-secondary-rgb: 8, 8, 8;
@@ -222,7 +222,7 @@
     --nav-item-color: rgba(255, 255, 255, 0.9);
     --nav-item-color-hover: var(--fg);
     --nav-item-background-hover: var(--bg_highlight);
-    --nav-item-color-active: var(--cyan);
+    --nav-item-color-active: var(--purple);
     --nav-item-background-active: var(--bg_highlight);
     --nav-file-tag: rgba(var(--yellow_x), 0.9);
 
@@ -236,8 +236,8 @@
     --checkbox-border-color-hover: var(--green);
 
     /* Modals */
-    --modal-border-color: var(--bg_highlight);
-    --prompt-border-color: var(--bg_highlight);
+    --modal-border-color: var(--background-modifier-border);
+    --prompt-border-color: var(--background-modifier-border);
 
     /* ======================================================================== */
     /*                              CALLOUTS                                   */

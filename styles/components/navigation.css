@@ -35,23 +35,12 @@
 
 
 
-/* Add softer blur to sidebars */
-.workspace-drawer.mod-left::before,
-.workspace-drawer.mod-right::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(var(--bg_x), 0.9);
-    z-index: -1;
-}
-
+/* Add beautiful blur to sidebars */
 .workspace-drawer.mod-left,
 .workspace-drawer.mod-right {
-    background-color: transparent;
-    border: none;
+    background-color: rgba(var(--bg_x), 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(var(--background-modifier-border-rgb), 0.3);
 }
 
 /* Navigation Item Colors */
@@ -435,9 +424,7 @@
 /* ========================================================================== */
 
 
-.theme-light .nav-file.is-active {
-    background-color: var(--background-modifier-active-hover);
-}
+
 
 /* ========================================================================== */
 /*                           FOLDER NOTES STYLING                            */

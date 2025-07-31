@@ -44,6 +44,10 @@
     border-width: 1px;
 }
 
+.markdown-source-view.mod-cm6 .callout {
+    margin: 8px 0;
+}
+
 
 
 
@@ -68,62 +72,6 @@
     border-radius: 12px;
 }
 
-/* ========================================================================== */
-/*                         TOUCH-FRIENDLY IMPROVEMENTS                       */
-/* ========================================================================== */
-
-/* Ensure minimum touch target size */
-@media (max-width: 768px) {
-
-
-    /* Touch-friendly suggestion items */
-    .suggestion-item {
-        min-height: 12px;
-        padding: 8px 8px;
-        margin: 4px 0;
-    }
-
-    .suggestion-item:first-child {
-        margin-top: 0;
-    }
-
-    .suggestion-item:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Touch-friendly menu separators */
-    .menu-separator {
-        height: 1px;
-        margin: 8px 0;
-        background: rgba(var(--text-muted-rgb), 0.2);
-    }
-
-
-
-    /* Touch-friendly toggle buttons */
-    .setting-item.mod-toggle {
-        min-height: 60px;
-        padding: 12px 16px;
-    }
-
-    .setting-item-control {
-        min-height: 44px;
-    }
-
-    /* Touch-friendly status bar */
-    .status-bar-item {
-        min-height: 32px;
-        padding: 8px 12px;
-        margin: 2px;
-        border-radius: 8px;
-    }
-
-    /* Touch-friendly breadcrumbs */
-    .breadcrumb-item {
-        min-height: 32px;
-        padding: 6px 8px;
-    }
-}
 
 /* ========================================================================== */
 /*                          ACCESSIBILITY IMPROVEMENTS                       */
@@ -194,14 +142,7 @@
         transition-duration: 0s;
     }
 
-    /* Disable complex effects on all mobile devices for better performance */
-    .suggestion-container,
-    .menu,
-    .workspace-leaf-content,
-    .markdown-preview-view,
-    .markdown-source-view {
-        backdrop-filter: none;
-    }
+    /* Keep blur effects on mobile for better visual appeal */
 }
 
 /* Optimize for touch scrolling - DISABLED smooth scroll to prevent auto-scroll */

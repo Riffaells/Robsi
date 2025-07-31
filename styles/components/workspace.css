@@ -350,13 +350,3 @@
     background-color: var(--background-modifier-active-hover);
     border-left: 3px solid var(--interactive-accent);
 }
-
-/* ========================================================================== */
-/*                             MODAL STYLING                                 */
-/* ========================================================================== */
-
-.modal {
-    background-color: var(--background-secondary);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 8px;
-}

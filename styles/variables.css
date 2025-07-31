@@ -37,13 +37,13 @@
 
     --size-2-1: 2px;
     --size-2-2: 4px;
-    --size-2-3: 6px;
-    --size-4-1: 8px;
-    --size-4-2: 12px;
-    --size-4-3: 16px;
-    --size-4-4: 20px;
-    --size-4-5: 24px;
-    --size-4-6: 28px;
+    --size-2-3: 5px;
+    --size-4-1: 6px;
+    --size-4-2: 8px;
+    --size-4-3: 12px;
+    --size-4-4: 18px;
+    --size-4-5: 20px;
+    --size-4-6: 24px;
 
     /* ======================================================================== */
     /*                              TRANSITIONS                                */
@@ -272,7 +272,6 @@
     --nav-item-color: rgba(255, 255, 255, 0.9);
     --nav-item-color-hover: var(--fg);
     --nav-item-background-hover: var(--bg_highlight);
-    --nav-item-color-active: var(--red);
     --nav-item-background-active: var(--bg_highlight);
     --nav-file-tag: rgba(var(--yellow_x), 0.9);
     --nav-indentation-guide-color: var(--bg_highlight);
@@ -295,7 +294,7 @@
 
     --canvas-color: var(--bg_highlight_x);
 
-    --toggle-thumb-color: var(--bg);
+    --toggle-thumb-color: var(--background-primary);
 
     --image-radius: 0px;
 

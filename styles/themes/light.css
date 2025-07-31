@@ -22,7 +22,7 @@
 
     /* Standard background variables */
     --background-primary: #f8fafc;
-    --background-secondary: #ffffff;
+    --background-secondary: #f8fafc;
 
     /* ======================================================================== */
     /*                              TEXT COLORS                                */
@@ -214,7 +214,7 @@
     --nav-item-color: #2d3748;
     --nav-item-color-hover: #1a202c;
     --nav-item-background-hover: rgba(0, 120, 180, 0.08);
-    --nav-item-color-active: #ffffff;
+    --nav-item-color-active: var(--purple);
     --nav-item-background-active: var(--cyan);
     --nav-file-tag: rgba(180, 120, 0, 0.9);
 
@@ -228,8 +228,8 @@
     --checkbox-border-color-hover: var(--green);
 
     /* Modals */
-    --modal-border-color: #e2e8f0;
-    --prompt-border-color: #e2e8f0;
+    --modal-border-color: var(--background-modifier-border);
+    --prompt-border-color: var(--background-modifier-border);
 
     /* ======================================================================== */
     /*                              CALLOUTS                                   */
@@ -278,28 +278,55 @@
     border-bottom: 1px solid #e2e8f0;
 }
 
-/* Settings and configuration panels */
-/*
-.theme-light .vertical-tab-header {
-    background: #f8fafc;
-    border-right: 1px solid #e2e8f0;
+/* ======================================================================== */
+/*                      TEXT FORMATTING ADJUSTMENTS                        */
+/* ======================================================================== */
+
+/* Light theme specific text formatting adjustments */
+.theme-light .cm-strong,
+.theme-light strong,
+.theme-light b {
+    text-shadow: none;
 }
 
-.theme-light .vertical-tab-header-group-title {
-    color: #475569;
+.theme-light .cm-em,
+.theme-light em,
+.theme-light i {
+    text-shadow: none;
 }
 
-.theme-light .vertical-tab-nav-item {
-    color: #64748b;
+.theme-light .cm-strong.cm-em,
+.theme-light strong em,
+.theme-light em strong,
+.theme-light b i,
+.theme-light i b {
+    text-shadow: none;
 }
 
-.theme-light .vertical-tab-nav-item:hover {
-    background: rgba(var(--accent-h), var(--accent-s), var(--accent-l), 0.08);
-    color: #1a202c;
+/* Light theme highlighted text */
+.theme-light mark,
+.theme-light .cm-highlight {
+    background: var(--text-highlight-bg);
 }
 
-.theme-light .vertical-tab-nav-item.is-active {
-    background: rgba(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-    color: var(--interactive-accent);
-    border-right: 2px solid var(--interactive-accent);
-} */
+.theme-light mark:hover,
+.theme-light .cm-highlight:hover {
+    background: rgba(var(--orange_x), 0.25);
+}
+
+/* Light theme callout highlights */
+.theme-light .callout mark,
+.theme-light .callout .cm-highlight {
+    background: rgba(var(--fg_x), 0.1);
+    color: var(--text-normal);
+}
+
+.theme-light .callout mark:hover,
+.theme-light .callout .cm-highlight:hover {
+    background: rgba(var(--fg_x), 0.15);
+}
+
+/* Navigation active file styling */
+.theme-light .nav-file.is-active {
+    background-color: var(--background-modifier-active-hover);
+}

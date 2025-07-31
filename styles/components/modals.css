@@ -1,18 +1,75 @@
-/* Styles for modals and popovers */
-:not(.mod-windows) .prompt,
-:not(.mod-windows) .popover,
-:not(.mod-windows) .suggestion,
-:not(.mod-windows) .graph-controls,
-:not(.mod-windows) .lt-predictions-container,
-:not(.mod-windows) .vertical-tab-content {
-    background-color: var(--modal-background) !important;
-}
+/* ======================================================================== */
+/*                              MODAL STYLES                               */
+/* ======================================================================== */
 
-/* Add blur to modals - disabled for mobile performance */
-.modal {
-    background-color: var(--modal-background);
-}
-
+/* Modal backdrop with blur effect */
 .modal-bg {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--background-modifier-cover);
+    backdrop-filter: blur(8px);
+}
+
+/* Main modal container */
+.modal {
+    background-color: rgba(var(--background-primary-rgb), 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--modal-border-color);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-xl);
+}
+.horizontal-tab-content, .vertical-tab-content, .vertical-tab-header {
+    background-color: transparent;
+}
+/* Prompt dialogs */
+.prompt {
+    background-color: rgba(var(--background-primary-rgb), 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--prompt-border-color);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Modal content areas */
+.modal-content {
+    background: transparent;
+}
+
+/* Modal header */
+.modal-header {
+    border-bottom: 1px solid var(--background-modifier-border);
+    background: transparent;
+}
+
+/* Modal close button */
+.modal-close-button {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    transition: all var(--motion-duration-fast) var(--motion-easing-standard);
+    border-radius: var(--radius-s);
+}
+
+.modal-close-button:hover {
+    color: var(--text-normal);
+    background: var(--background-modifier-hover);
+}
+
+
+/* Community plugins and other modals */
+.community-modal-info,
+.modal-form {
+    background: transparent;
+}
+
+/* Suggestion container (command palette, etc.) */
+.suggestion-container {
+    background-color: rgba(var(--background-primary-rgb), 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-l);
+}
+
+/* Hotkey settings modal */
+.hotkey-settings-container {
+    background: transparent;
 }

@@ -71,40 +71,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 32px;
-    height: 24px;
     flex-shrink: 0;
-}
-
-/* Checkbox input styling - simplified */
-.checkbox-container input[type="checkbox"] {
-    appearance: none;
-    width: 44px;
-    height: 20px;
-    border-radius: 10px;
-    background-color: var(--background-modifier-border);
     cursor: pointer;
-    transition: none;
-    position: relative;
-    outline: none;
-    flex-shrink: 0;
 }
 
-.checkbox-container input[type="checkbox"]:focus {
-    box-shadow: 0 0 0 1px var(--background-modifier-border-focus);
-}
-
-/* Checkbox slider - simplified */
-.checkbox-container input[type="checkbox"]::before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: var(--background-primary);
-    top: 2px;
-    left: 2px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+.checkbox-container:after {
+    margin: 0;
 }
 
 /* Enabled state - simplified */
@@ -168,113 +140,9 @@
 }
 
 /* ========================================================================== */
-/*                        PERFORMANCE OPTIMIZATIONS                          */
-/* ========================================================================== */
-
-/* Optimize animations for mobile */
-@media (max-width: 768px) {
-    .checkbox-container input[type="checkbox"],
-    .checkbox-container input[type="checkbox"]::before {
-        transition-duration: 0s;
-    }
-
-    .setting-item.mod-toggle::before,
-    .extra-setting-button::before {
-        transition-duration: 0s;
-    }
-}
-
-/* Remove complex animations on low-end devices */
-@media (max-width: 480px) and (max-resolution: 150dpi) {
-    .setting-item.mod-toggle::before,
-    .extra-setting-button::before {
-        display: none;
-    }
-
-    .checkbox-container input[type="checkbox"],
-    .checkbox-container input[type="checkbox"]::before {
-        transition: none;
-    }
-}
-
-/* ========================================================================== */
-/*                           LEGACY SIZE CLASSES                             */
-/* ========================================================================== */
-
-/* Small size toggles */
-.checkbox-container.size-small {
-    min-width: 40px;
-    height: 20px;
-}
-
-.checkbox-container.size-small input[type="checkbox"] {
-    width: 36px;
-    height: 20px;
-    border-radius: 10px;
-}
-
-.checkbox-container.size-small input[type="checkbox"]::before {
-    width: 16px;
-    height: 16px;
-    top: 2px;
-    left: 2px;
-}
-
-.checkbox-container.size-small input[type="checkbox"]:checked::before {
-    transform: translateX(16px);
-}
-
-/* Medium size (default) */
-.checkbox-container.size-medium {
-    min-width: 48px;
-    height: 24px;
-}
-
-.checkbox-container.size-medium input[type="checkbox"] {
-    width: 44px;
-    height: 24px;
-    border-radius: 12px;
-}
-
-.checkbox-container.size-medium input[type="checkbox"]::before {
-    width: 20px;
-    height: 20px;
-    top: 2px;
-    left: 2px;
-}
-
-.checkbox-container.size-medium input[type="checkbox"]:checked::before {
-    transform: translateX(20px);
-}
-
-/* Large size toggles */
-.checkbox-container.size-large {
-    min-width: 54px;
-    height: 28px;
-}
-
-.checkbox-container.size-large input[type="checkbox"] {
-    width: 50px;
-    height: 28px;
-    border-radius: 14px;
-}
-
-.checkbox-container.size-large input[type="checkbox"]::before {
-    width: 24px;
-    height: 24px;
-    top: 2px;
-    left: 2px;
-}
-
-.checkbox-container.size-large input[type="checkbox"]:checked::before {
-    transform: translateX(22px);
-}
-
-/* ========================================================================== */
 /*                           ENHANCED TYPOGRAPHY                             */
 /* ========================================================================== */
 
-/* Material Design 3 typography improvements */
 .setting-item-name {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', system-ui, sans-serif;
     font-weight: 500;

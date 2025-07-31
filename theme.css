@@ -1,7 +1,7 @@
 /*
 Robsi Theme - A modern theme for Obsidian.
 By Riffaells - 2024
-Built: 2025-07-22T02:10:10.406681
+Built: 2025-07-31T15:42:02.716367
 Files included: 24
 */
 
@@ -45,13 +45,13 @@ Files included: 24
 
     --size-2-1: 2px;
     --size-2-2: 4px;
-    --size-2-3: 6px;
-    --size-4-1: 8px;
-    --size-4-2: 12px;
-    --size-4-3: 16px;
-    --size-4-4: 20px;
-    --size-4-5: 24px;
-    --size-4-6: 28px;
+    --size-2-3: 5px;
+    --size-4-1: 6px;
+    --size-4-2: 8px;
+    --size-4-3: 12px;
+    --size-4-4: 18px;
+    --size-4-5: 20px;
+    --size-4-6: 24px;
 
     /* ======================================================================== */
     /*                              TRANSITIONS                                */
@@ -280,7 +280,6 @@ Files included: 24
     --nav-item-color: rgba(255, 255, 255, 0.9);
     --nav-item-color-hover: var(--fg);
     --nav-item-background-hover: var(--bg_highlight);
-    --nav-item-color-active: var(--red);
     --nav-item-background-active: var(--bg_highlight);
     --nav-file-tag: rgba(var(--yellow_x), 0.9);
     --nav-indentation-guide-color: var(--bg_highlight);
@@ -303,7 +302,7 @@ Files included: 24
 
     --canvas-color: var(--bg_highlight_x);
 
-    --toggle-thumb-color: var(--bg);
+    --toggle-thumb-color: var(--background-primary);
 
     --image-radius: 0px;
 
@@ -462,40 +461,12 @@ button:hover,
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 32px;
-    height: 24px;
     flex-shrink: 0;
-}
-
-/* Checkbox input styling - simplified */
-.checkbox-container input[type="checkbox"] {
-    appearance: none;
-    width: 44px;
-    height: 20px;
-    border-radius: 10px;
-    background-color: var(--background-modifier-border);
     cursor: pointer;
-    transition: none;
-    position: relative;
-    outline: none;
-    flex-shrink: 0;
 }
 
-.checkbox-container input[type="checkbox"]:focus {
-    box-shadow: 0 0 0 1px var(--background-modifier-border-focus);
-}
-
-/* Checkbox slider - simplified */
-.checkbox-container input[type="checkbox"]::before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: var(--background-primary);
-    top: 2px;
-    left: 2px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+.checkbox-container:after {
+    margin: 0;
 }
 
 /* Enabled state - simplified */
@@ -559,113 +530,9 @@ button:hover,
 }
 
 /* ========================================================================== */
-/*                        PERFORMANCE OPTIMIZATIONS                          */
-/* ========================================================================== */
-
-/* Optimize animations for mobile */
-@media (max-width: 768px) {
-    .checkbox-container input[type="checkbox"],
-    .checkbox-container input[type="checkbox"]::before {
-        transition-duration: 0s;
-    }
-
-    .setting-item.mod-toggle::before,
-    .extra-setting-button::before {
-        transition-duration: 0s;
-    }
-}
-
-/* Remove complex animations on low-end devices */
-@media (max-width: 480px) and (max-resolution: 150dpi) {
-    .setting-item.mod-toggle::before,
-    .extra-setting-button::before {
-        display: none;
-    }
-
-    .checkbox-container input[type="checkbox"],
-    .checkbox-container input[type="checkbox"]::before {
-        transition: none;
-    }
-}
-
-/* ========================================================================== */
-/*                           LEGACY SIZE CLASSES                             */
-/* ========================================================================== */
-
-/* Small size toggles */
-.checkbox-container.size-small {
-    min-width: 40px;
-    height: 20px;
-}
-
-.checkbox-container.size-small input[type="checkbox"] {
-    width: 36px;
-    height: 20px;
-    border-radius: 10px;
-}
-
-.checkbox-container.size-small input[type="checkbox"]::before {
-    width: 16px;
-    height: 16px;
-    top: 2px;
-    left: 2px;
-}
-
-.checkbox-container.size-small input[type="checkbox"]:checked::before {
-    transform: translateX(16px);
-}
-
-/* Medium size (default) */
-.checkbox-container.size-medium {
-    min-width: 48px;
-    height: 24px;
-}
-
-.checkbox-container.size-medium input[type="checkbox"] {
-    width: 44px;
-    height: 24px;
-    border-radius: 12px;
-}
-
-.checkbox-container.size-medium input[type="checkbox"]::before {
-    width: 20px;
-    height: 20px;
-    top: 2px;
-    left: 2px;
-}
-
-.checkbox-container.size-medium input[type="checkbox"]:checked::before {
-    transform: translateX(20px);
-}
-
-/* Large size toggles */
-.checkbox-container.size-large {
-    min-width: 54px;
-    height: 28px;
-}
-
-.checkbox-container.size-large input[type="checkbox"] {
-    width: 50px;
-    height: 28px;
-    border-radius: 14px;
-}
-
-.checkbox-container.size-large input[type="checkbox"]::before {
-    width: 24px;
-    height: 24px;
-    top: 2px;
-    left: 2px;
-}
-
-.checkbox-container.size-large input[type="checkbox"]:checked::before {
-    transform: translateX(22px);
-}
-
-/* ========================================================================== */
 /*                           ENHANCED TYPOGRAPHY                             */
 /* ========================================================================== */
 
-/* Material Design 3 typography improvements */
 .setting-item-name {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', system-ui, sans-serif;
     font-weight: 500;
@@ -1065,18 +932,6 @@ span.cm-hmd-frontmatter.cm-meta {
     font-style: italic;
 }
 
-/* Mobile optimizations for code blocks */
-@media (max-width: 768px) {
-    .cm-line {
-        padding: 0 2px;
-    }
-
-
-    .cm-inline-code {
-        font-size: 0.85em;
-    }
-}
-
 
 /* ================================================= */
 
@@ -1110,7 +965,7 @@ input[type="email"],
 input[type="password"],
 textarea {
   border-radius: 12px;
-  border: 2px solid rgba(var(--text-muted-rgb), 0.2);
+  border: 1px solid rgba(var(--text-muted-rgb), 0.2);
   transition: none;
 }
 
@@ -1120,8 +975,6 @@ input[type="email"]:focus,
 input[type="password"]:focus,
 textarea:focus {
   background: var(--background-secondary);
-  outline: none;
-  box-shadow: 0 0 0 3px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 
 /* Enhanced Dropdowns */
@@ -1144,32 +997,6 @@ textarea:focus {
 
 .dropdown:hover {
   border-color: rgba(var(--text-muted-rgb), 0.5);
-}
-
-/* ========================================================================== */
-/*                          MOBILE OPTIMIZATIONS                             */
-/* ========================================================================== */
-
-/* Mobile form elements - touch-friendly */
-@media (max-width: 768px) {
-  .mod-cta {
-    min-height: 44px;
-    padding: 12px 16px;
-    font-size: 14px;
-    border-radius: 12px;
-  }
-
-  .dropdown {
-    min-height: 44px;
-    padding: 12px 16px;
-    font-size: 16px;
-    border-radius: 8px;
-  }
-
-  /* Remove expensive effects on mobile */
-  .mod-cta:hover {
-    box-shadow: none;
-  }
 }
 
 /* ========================================================================== */
@@ -1228,15 +1055,6 @@ textarea.error,
 .dropdown.error {
   border-color: var(--text-error);
   background: rgba(var(--text-error-rgb), 0.05);
-}
-
-input[type="text"].error:focus,
-input[type="search"].error:focus,
-input[type="email"].error:focus,
-input[type="password"].error:focus,
-textarea.error:focus,
-.dropdown.error:focus {
-  box-shadow: 0 0 0 3px rgba(var(--text-error-rgb), 0.2);
 }
 
 /* Success states */
@@ -1614,59 +1432,7 @@ mark:hover,
 /*                        LIGHT THEME ADJUSTMENTS                          */
 /* ======================================================================== */
 
-/* Light theme specific text formatting adjustments */
-.theme-light .cm-strong,
-.theme-light strong,
-.theme-light b {
-    text-shadow: none;
-}
 
-.theme-light .cm-em,
-.theme-light em,
-.theme-light i {
-    text-shadow: none;
-}
-
-.theme-light .cm-strong.cm-em,
-.theme-light strong em,
-.theme-light em strong,
-.theme-light b i,
-.theme-light i b {
-    text-shadow: none;
-}
-
-/* Light theme highlighted text */
-.theme-light mark,
-.theme-light .cm-highlight {
-    background: var(--text-highlight-bg);
-}
-
-.theme-light mark:hover,
-.theme-light .cm-highlight:hover {
-    background: rgba(var(--orange_x), 0.25);
-}
-
-/* Light theme callout highlights */
-.theme-light .callout mark,
-.theme-light .callout .cm-highlight {
-    background: rgba(var(--fg_x), 0.1);
-    color: var(--text-normal) !important;
-}
-
-.theme-light .callout mark:hover,
-.theme-light .callout .cm-highlight:hover {
-    background: rgba(var(--fg_x), 0.15);
-}
-
-/* Mobile optimizations */
-@media (max-width: 768px) {
-
-    mark,
-    .cm-highlight {
-        padding: 1px 3px;
-        border-radius: 2px;
-    }
-}
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
@@ -1683,8 +1449,8 @@ mark:hover,
         background: rgba(var(--text-normal-rgb), 0.3) !important;
     }
 
-    .theme-light mark,
-    .theme-light .cm-highlight {
+    mark,
+    .cm-highlight {
         background: rgba(var(--orange_x), 0.4) !important;
         color: var(--text-normal) !important;
         font-weight: 600;
@@ -1837,6 +1603,10 @@ blockquote p {
     border-width: 1px;
 }
 
+.markdown-source-view.mod-cm6 .callout {
+    margin: 8px 0;
+}
+
 
 
 
@@ -1861,62 +1631,6 @@ blockquote p {
     border-radius: 12px;
 }
 
-/* ========================================================================== */
-/*                         TOUCH-FRIENDLY IMPROVEMENTS                       */
-/* ========================================================================== */
-
-/* Ensure minimum touch target size */
-@media (max-width: 768px) {
-
-
-    /* Touch-friendly suggestion items */
-    .suggestion-item {
-        min-height: 12px;
-        padding: 8px 8px;
-        margin: 4px 0;
-    }
-
-    .suggestion-item:first-child {
-        margin-top: 0;
-    }
-
-    .suggestion-item:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Touch-friendly menu separators */
-    .menu-separator {
-        height: 1px;
-        margin: 8px 0;
-        background: rgba(var(--text-muted-rgb), 0.2);
-    }
-
-
-
-    /* Touch-friendly toggle buttons */
-    .setting-item.mod-toggle {
-        min-height: 60px;
-        padding: 12px 16px;
-    }
-
-    .setting-item-control {
-        min-height: 44px;
-    }
-
-    /* Touch-friendly status bar */
-    .status-bar-item {
-        min-height: 32px;
-        padding: 8px 12px;
-        margin: 2px;
-        border-radius: 8px;
-    }
-
-    /* Touch-friendly breadcrumbs */
-    .breadcrumb-item {
-        min-height: 32px;
-        padding: 6px 8px;
-    }
-}
 
 /* ========================================================================== */
 /*                          ACCESSIBILITY IMPROVEMENTS                       */
@@ -1987,14 +1701,7 @@ blockquote p {
         transition-duration: 0s;
     }
 
-    /* Disable complex effects on all mobile devices for better performance */
-    .suggestion-container,
-    .menu,
-    .workspace-leaf-content,
-    .markdown-preview-view,
-    .markdown-source-view {
-        backdrop-filter: none;
-    }
+    /* Keep blur effects on mobile for better visual appeal */
 }
 
 /* Optimize for touch scrolling - DISABLED smooth scroll to prevent auto-scroll */
@@ -2060,23 +1767,80 @@ blockquote p {
 /* ================================================= */
 
 /* components\modals.css */
-/* Styles for modals and popovers */
-:not(.mod-windows) .prompt,
-:not(.mod-windows) .popover,
-:not(.mod-windows) .suggestion,
-:not(.mod-windows) .graph-controls,
-:not(.mod-windows) .lt-predictions-container,
-:not(.mod-windows) .vertical-tab-content {
-    background-color: var(--modal-background) !important;
-}
+/* ======================================================================== */
+/*                              MODAL STYLES                               */
+/* ======================================================================== */
 
-/* Add blur to modals - disabled for mobile performance */
-.modal {
-    background-color: var(--modal-background);
-}
-
+/* Modal backdrop with blur effect */
 .modal-bg {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--background-modifier-cover);
+    backdrop-filter: blur(8px);
+}
+
+/* Main modal container */
+.modal {
+    background-color: rgba(var(--background-primary-rgb), 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--modal-border-color);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-xl);
+}
+.horizontal-tab-content, .vertical-tab-content, .vertical-tab-header {
+    background-color: transparent;
+}
+/* Prompt dialogs */
+.prompt {
+    background-color: rgba(var(--background-primary-rgb), 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--prompt-border-color);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Modal content areas */
+.modal-content {
+    background: transparent;
+}
+
+/* Modal header */
+.modal-header {
+    border-bottom: 1px solid var(--background-modifier-border);
+    background: transparent;
+}
+
+/* Modal close button */
+.modal-close-button {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    transition: all var(--motion-duration-fast) var(--motion-easing-standard);
+    border-radius: var(--radius-s);
+}
+
+.modal-close-button:hover {
+    color: var(--text-normal);
+    background: var(--background-modifier-hover);
+}
+
+
+/* Community plugins and other modals */
+.community-modal-info,
+.modal-form {
+    background: transparent;
+}
+
+/* Suggestion container (command palette, etc.) */
+.suggestion-container {
+    background-color: rgba(var(--background-primary-rgb), 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-l);
+}
+
+/* Hotkey settings modal */
+.hotkey-settings-container {
+    background: transparent;
 }
 
 
@@ -2120,23 +1884,12 @@ blockquote p {
 
 
 
-/* Add softer blur to sidebars */
-.workspace-drawer.mod-left::before,
-.workspace-drawer.mod-right::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(var(--bg_x), 0.9);
-    z-index: -1;
-}
-
+/* Add beautiful blur to sidebars */
 .workspace-drawer.mod-left,
 .workspace-drawer.mod-right {
-    background-color: transparent;
-    border: none;
+    background-color: rgba(var(--bg_x), 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(var(--background-modifier-border-rgb), 0.3);
 }
 
 /* Navigation Item Colors */
@@ -2520,9 +2273,7 @@ blockquote p {
 /* ========================================================================== */
 
 
-.theme-light .nav-file.is-active {
-    background-color: var(--background-modifier-active-hover);
-}
+
 
 /* ========================================================================== */
 /*                           FOLDER NOTES STYLING                            */
@@ -3537,44 +3288,40 @@ a.external-link:hover::after {
     border-left: 3px solid var(--interactive-accent);
 }
 
-/* ========================================================================== */
-/*                             MODAL STYLING                                 */
-/* ========================================================================== */
-
-.modal {
-    background-color: var(--background-secondary);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 8px;
-}
-
 
 /* ================================================= */
 
 /* utilities\animations.css */
 /* A simple fade-in animation */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .anim-fade-in {
-  animation: none;
+    animation: none;
 }
 
 /* A slide-in animation */
 @keyframes slideInUp {
-  from {
-    transform: none;
-    opacity: 0;
-  }
-  to {
-    transform: none;
-    opacity: 1;
-  }
+    from {
+        transform: none;
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
 }
 
 .anim-slide-in-up {
-  animation: slideInUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: slideInUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* ========================================================================== */
@@ -3587,20 +3334,21 @@ a.external-link:hover::after {
 .popover,
 .workspace-drawer.mod-left,
 .workspace-drawer.mod-right {
-  animation: blurIn 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: blurIn 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes blurIn {
-  from {
-    backdrop-filter: blur(0px);
-    opacity: 0;
-    transform: none;
-  }
-  to {
-    backdrop-filter: blur(16px);
-    opacity: 1;
-    transform: none;
-  }
+    from {
+        backdrop-filter: blur(0px);
+        opacity: 0;
+        transform: none;
+    }
+
+    to {
+        backdrop-filter: blur(16px);
+        opacity: 1;
+        transform: none;
+    }
 }
 
 
@@ -3609,34 +3357,34 @@ a.external-link:hover::after {
 .workspace-leaf-content,
 .markdown-preview-view,
 .markdown-source-view {
-  animation: none;
+    animation: none;
 }
 
 /* Ripple effect for buttons */
 .mod-cta,
 .button {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .mod-cta::before,
 .button::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  transform: none;
-  transition: none;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: none;
+    transition: none;
 }
 
 .mod-cta:active::before,
 .button:active::before {
-  width: 300px;
-  height: 300px;
+    width: 300px;
+    height: 300px;
 }
 
 /* ========================================================================== */
@@ -3645,159 +3393,162 @@ a.external-link:hover::after {
 
 /* Mobile Small (0-480px) - Minimal animations for performance */
 @media (max-width: 480px) {
-  /* Disable complex animations */
-  .modal,
-  .popover,
-  .workspace-drawer.mod-left,
-  .workspace-drawer.mod-right {
-    animation: none;
-    backdrop-filter: none;
-    background: var(--background-secondary);
-  }
 
-  /* Simplified fade-in */
-  .anim-fade-in {
-    animation: fadeIn 0.15s ease-out;
-  }
+    /* Disable complex animations */
+    .modal,
+    .popover,
+    .workspace-drawer.mod-left,
+    .workspace-drawer.mod-right {
+        animation: none;
+    }
 
-  /* Remove slide animations */
-  .anim-slide-in-up {
-    animation: fadeIn 0.15s ease-out;
-  }
+    /* Simplified fade-in */
+    .anim-fade-in {
+        animation: fadeIn 0.15s ease-out;
+    }
 
-  /* Ultra-fast transitions */
-  .clickable-icon,
-  .nav-file-title,
-  .nav-folder-title,
-  .tree-item-inner,
-  .menu-item,
-  .suggestion-item,
-  .workspace-tab-header {
-    transition: none;
-  }
+    /* Remove slide animations */
+    .anim-slide-in-up {
+        animation: fadeIn 0.15s ease-out;
+    }
 
-  /* Disable ripple effect on mobile */
-  .mod-cta::before,
-  .button::before {
-    display: none;
-  }
-  /* Disable transform animations */
-  .workspace-leaf-content,
-  .markdown-preview-view,
-  .markdown-source-view {
-    opacity: 1;
-  }
+    /* Ultra-fast transitions */
+    .clickable-icon,
+    .nav-file-title,
+    .nav-folder-title,
+    .tree-item-inner,
+    .menu-item,
+    .suggestion-item,
+    .workspace-tab-header {
+        transition: none;
+    }
 
-  /* Remove hover transforms */
-  .clickable-icon:hover,
-  .nav-file-title:hover,
-  .nav-folder-title:hover {
-    transform: none;
-  }
+    /* Disable ripple effect on mobile */
+    .mod-cta::before,
+    .button::before {
+        display: none;
+    }
+
+    /* Disable transform animations */
+    .workspace-leaf-content,
+    .markdown-preview-view,
+    .markdown-source-view {
+        opacity: 1;
+    }
+
+    /* Remove hover transforms */
+    .clickable-icon:hover,
+    .nav-file-title:hover,
+    .nav-folder-title:hover {
+        transform: none;
+    }
 
 
-  .tree-item-inner {
-    transition: none;
-  }
+    .tree-item-inner {
+        transition: none;
+    }
 
-  /* Full ripple effect */
-  .mod-cta:active::before,
-  .button:active::before {
-    width: 300px;
-    height: 300px;
-  }
+    /* Full ripple effect */
+    .mod-cta:active::before,
+    .button:active::before {
+        width: 300px;
+        height: 300px;
+    }
 }
 
 /* Mobile Large (481-768px) - Balanced performance */
 @media (min-width: 481px) and (max-width: 768px) {
-  /* Simplified animations */
-  .modal,
-  .popover,
-  .workspace-drawer.mod-left,
-  .workspace-drawer.mod-right {
-    animation: fadeIn 0.2s ease-out;
-    backdrop-filter: blur(8px);
-  }
 
-  /* Fast transitions */
-  .clickable-icon,
-  .nav-file-title,
-  .nav-folder-title,
-  .tree-item-inner,
-  .menu-item,
-  .suggestion-item,
-  .workspace-tab-header {
-    transition: none;
-  }
+    /* Simplified animations */
+    .modal,
+    .popover,
+    .workspace-drawer.mod-left,
+    .workspace-drawer.mod-right {
+        animation: fadeIn 0.2s ease-out;
+        backdrop-filter: blur(8px);
+    }
 
-  /* Simplified slide animation */
-  .anim-slide-in-up {
-    animation: none;
-  }
+    /* Fast transitions */
+    .clickable-icon,
+    .nav-file-title,
+    .nav-folder-title,
+    .tree-item-inner,
+    .menu-item,
+    .suggestion-item,
+    .workspace-tab-header {
+        transition: none;
+    }
 
-  /* Reduced ripple effect */
-  .mod-cta:active::before,
-  .button:active::before {
-    width: 200px;
-    height: 200px;
-  }
+    /* Simplified slide animation */
+    .anim-slide-in-up {
+        animation: none;
+    }
+
+    /* Reduced ripple effect */
+    .mod-cta:active::before,
+    .button:active::before {
+        width: 200px;
+        height: 200px;
+    }
 
 
 }
 
 /* Tablet (769-1024px) - Enhanced animations */
 @media (min-width: 769px) and (max-width: 1024px) {
-  /* Standard animations */
-  .modal,
-  .popover,
-  .workspace-drawer.mod-left,
-  .workspace-drawer.mod-right {
-    animation: none;
-  }
 
-  /* Smooth transitions */
-  .clickable-icon,
-  .nav-file-title,
-  .nav-folder-title,
-  .tree-item-inner {
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+    /* Standard animations */
+    .modal,
+    .popover,
+    .workspace-drawer.mod-left,
+    .workspace-drawer.mod-right {
+        animation: none;
+    }
 
-  /* Enhanced hover effects - disabled for mobile performance */
+    /* Smooth transitions */
+    .clickable-icon,
+    .nav-file-title,
+    .nav-folder-title,
+    .tree-item-inner {
+        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Enhanced hover effects - disabled for mobile performance */
 
 
 
-  /* Full ripple effect */
-  .mod-cta:active::before,
-  .button:active::before {
-    width: 300px;
-    height: 300px;
-  }
+    /* Full ripple effect */
+    .mod-cta:active::before,
+    .button:active::before {
+        width: 300px;
+        height: 300px;
+    }
 }
 
 /* Desktop (1025px+) - Full animations */
 @media (min-width: 1025px) {
-  /* Full animation suite */
-  .modal,
-  .popover,
-  .workspace-drawer.mod-left,
-  .workspace-drawer.mod-right {
-    animation: none;
-  }
+
+    /* Full animation suite */
+    .modal,
+    .popover,
+    .workspace-drawer.mod-left,
+    .workspace-drawer.mod-right {
+        animation: none;
+    }
 
 
 
-  /* Advanced animations */
-  .workspace-leaf:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
+    /* Advanced animations */
+    .workspace-leaf:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-  /* Full ripple effect */
-  .mod-cta:active::before,
-  .button:active::before {
-    width: 400px;
-    height: 400px;
-  }
+    /* Full ripple effect */
+    .mod-cta:active::before,
+    .button:active::before {
+        width: 400px;
+        height: 400px;
+    }
 }
 
 /* ========================================================================== */
@@ -3807,18 +3558,19 @@ a.external-link:hover::after {
 
 /* Optimize will-change for animations - DISABLED on mobile to prevent auto-scroll */
 @media (min-width: 1025px) {
-  .modal,
-  .popover,
-  .workspace-drawer.mod-left,
-  .workspace-drawer.mod-right {
-    will-change: auto;
-  }
 
-  .clickable-icon:hover,
-  .nav-file-title:hover,
-  .nav-folder-title:hover {
-    will-change: auto;
-  }
+    .modal,
+    .popover,
+    .workspace-drawer.mod-left,
+    .workspace-drawer.mod-right {
+        will-change: auto;
+    }
+
+    .clickable-icon:hover,
+    .nav-file-title:hover,
+    .nav-folder-title:hover {
+        will-change: auto;
+    }
 }
 
 /* ========================================================================== */
@@ -3827,42 +3579,18 @@ a.external-link:hover::after {
 
 /* High contrast mode - remove decorative animations */
 @media (prefers-contrast: high) {
-  .modal,
-  .popover,
-  .workspace-drawer.mod-left,
-  .workspace-drawer.mod-right {
-    backdrop-filter: none;
-    background: var(--background-secondary);
-    border: 2px solid var(--text-muted);
-  }
-
-  .mod-cta::before,
-  .button::before {
-    display: none;
-  }
-}
-
-/* ========================================================================== */
-/*                            BATTERY OPTIMIZATION                           */
-/* ========================================================================== */
-
-/* Reduce animations on low battery */
-@media (max-width: 768px) {
-  /* Disable animations on low-resolution displays (often indicates low-end devices) */
-  @media (max-resolution: 150dpi) {
 
     .modal,
     .popover,
     .workspace-drawer.mod-left,
     .workspace-drawer.mod-right {
-      backdrop-filter: none;
+        border: 2px solid var(--text-muted);
     }
 
     .mod-cta::before,
     .button::before {
-      display: none;
+        display: none;
     }
-  }
 }
 
 /* ========================================================================== */
@@ -3871,70 +3599,81 @@ a.external-link:hover::after {
 
 /* Smooth zoom-in for important elements */
 @keyframes zoomIn {
-  from {
-    transform: none;
-    opacity: 0;
-  }
-  to {
-    transform: none;
-    opacity: 1;
-  }
+    from {
+        transform: none;
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
 }
 
 .anim-zoom-in {
-  animation: none;
+    animation: none;
 }
 
 /* Gentle bounce for notifications */
 @keyframes gentleBounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: none;
-  }
-  40% {
-    transform: none;
-  }
-  60% {
-    transform: none;
-  }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: none;
+    }
+
+    40% {
+        transform: none;
+    }
+
+    60% {
+        transform: none;
+    }
 }
 
 .anim-bounce {
-  animation: none;
+    animation: none;
 }
 
 /* Pulse animation for loading states */
 @keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .anim-pulse {
-  animation: none;
+    animation: none;
 }
 
 /* Mobile-specific animations */
 @media (max-width: 768px) {
-  /* Simplified zoom-in */
-  .anim-zoom-in {
-    animation: none;
-  }
 
-  /* Disable bounce on mobile */
-  .anim-bounce {
-    animation: none;
-  }
+    /* Simplified zoom-in */
+    .anim-zoom-in {
+        animation: none;
+    }
 
-  /* Faster pulse */
-  .anim-pulse {
-    animation: none;
-  }
+    /* Disable bounce on mobile */
+    .anim-bounce {
+        animation: none;
+    }
+
+    /* Faster pulse */
+    .anim-pulse {
+        animation: none;
+    }
 }
 
 /* ========================================================================== */
@@ -3943,29 +3682,31 @@ a.external-link:hover::after {
 
 /* Touch feedback for mobile */
 @media (max-width: 768px) {
-  .clickable-icon:active,
-  .nav-file-title:active,
-  .nav-folder-title:active,
-  .menu-item:active,
-  .suggestion-item:active,
-  .workspace-tab-header:active {
-    transition: none;
-  }
 
-  /* Visual feedback for buttons */
-  .mod-cta:active {
-    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.9);
-    transition: none;
-  }
+    .clickable-icon:active,
+    .nav-file-title:active,
+    .nav-folder-title:active,
+    .menu-item:active,
+    .suggestion-item:active,
+    .workspace-tab-header:active {
+        transition: none;
+    }
+
+    /* Visual feedback for buttons */
+    .mod-cta:active {
+        background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.9);
+        transition: none;
+    }
 }
 
 /* Desktop hover feedback */
 @media (min-width: 1025px) {
-  /* Smooth button hover */
-  .mod-cta:hover {
-    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 1.1);
-    box-shadow: 0 4px 12px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
-  }
+
+    /* Smooth button hover */
+    .mod-cta:hover {
+        background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 1.1);
+        box-shadow: 0 4px 12px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+    }
 }
 
 
@@ -3975,31 +3716,30 @@ a.external-link:hover::after {
 
 /* Skeleton loading animation */
 @keyframes skeletonLoading {
-  0% {
-    background-position: -200px 0;
-  }
-  100% {
-    background-position: calc(200px + 100%) 0;
-  }
+    0% {
+        background-position: -200px 0;
+    }
+
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
 }
 
 .skeleton-loading {
-  background: linear-gradient(
-    90deg,
-    var(--background-secondary) 25%,
-    rgba(var(--text-muted-rgb), 0.1) 50%,
-    var(--background-secondary) 75%
-  );
-  background-size: 200px 100%;
-  animation: none;
+    background: linear-gradient(90deg,
+            var(--background-secondary) 25%,
+            rgba(var(--text-muted-rgb), 0.1) 50%,
+            var(--background-secondary) 75%);
+    background-size: 200px 100%;
+    animation: none;
 }
 
 /* Mobile skeleton optimization */
 @media (max-width: 768px) {
-  .skeleton-loading {
-    animation: none;
-    background-size: 150px 100%;
-  }
+    .skeleton-loading {
+        animation: none;
+        background-size: 150px 100%;
+    }
 }
 
 
@@ -4283,17 +4023,6 @@ a.external-link:hover::after {
         font-size: 11px;
     }
 
-
-    /* Compact checkboxes */
-    .checkbox-container input[type="checkbox"] {
-        width: 24px;
-        height: 16px;
-    }
-
-    .checkbox-container input[type="checkbox"]::before {
-        width: 12px;
-        height: 12px;
-    }
 
     /* Compact suggestions */
     .suggestion-item {
@@ -4582,7 +4311,6 @@ a.external-link:hover::after {
 .desktop-only {
     display: block;
 }
-
 
 
 /* ================================================= */
@@ -5010,7 +4738,7 @@ a:hover {
 
     /* Standard background variables */
     --background-primary: #020202;
-    --background-secondary: #0a0a0a;
+    --background-secondary: #020202;
     --bg-primary-rgb: 2, 2, 2;
     --bg-primary: #020202;
     --bg-secondary-rgb: 8, 8, 8;
@@ -5208,7 +4936,7 @@ a:hover {
     --nav-item-color: rgba(255, 255, 255, 0.9);
     --nav-item-color-hover: var(--fg);
     --nav-item-background-hover: var(--bg_highlight);
-    --nav-item-color-active: var(--cyan);
+    --nav-item-color-active: var(--purple);
     --nav-item-background-active: var(--bg_highlight);
     --nav-file-tag: rgba(var(--yellow_x), 0.9);
 
@@ -5222,8 +4950,8 @@ a:hover {
     --checkbox-border-color-hover: var(--green);
 
     /* Modals */
-    --modal-border-color: var(--bg_highlight);
-    --prompt-border-color: var(--bg_highlight);
+    --modal-border-color: var(--background-modifier-border);
+    --prompt-border-color: var(--background-modifier-border);
 
     /* ======================================================================== */
     /*                              CALLOUTS                                   */
@@ -5289,7 +5017,7 @@ a:hover {
 
     /* Standard background variables */
     --background-primary: #f8fafc;
-    --background-secondary: #ffffff;
+    --background-secondary: #f8fafc;
 
     /* ======================================================================== */
     /*                              TEXT COLORS                                */
@@ -5481,7 +5209,7 @@ a:hover {
     --nav-item-color: #2d3748;
     --nav-item-color-hover: #1a202c;
     --nav-item-background-hover: rgba(0, 120, 180, 0.08);
-    --nav-item-color-active: #ffffff;
+    --nav-item-color-active: var(--purple);
     --nav-item-background-active: var(--cyan);
     --nav-file-tag: rgba(180, 120, 0, 0.9);
 
@@ -5495,8 +5223,8 @@ a:hover {
     --checkbox-border-color-hover: var(--green);
 
     /* Modals */
-    --modal-border-color: #e2e8f0;
-    --prompt-border-color: #e2e8f0;
+    --modal-border-color: var(--background-modifier-border);
+    --prompt-border-color: var(--background-modifier-border);
 
     /* ======================================================================== */
     /*                              CALLOUTS                                   */
@@ -5545,31 +5273,58 @@ a:hover {
     border-bottom: 1px solid #e2e8f0;
 }
 
-/* Settings and configuration panels */
-/*
-.theme-light .vertical-tab-header {
-    background: #f8fafc;
-    border-right: 1px solid #e2e8f0;
+/* ======================================================================== */
+/*                      TEXT FORMATTING ADJUSTMENTS                        */
+/* ======================================================================== */
+
+/* Light theme specific text formatting adjustments */
+.theme-light .cm-strong,
+.theme-light strong,
+.theme-light b {
+    text-shadow: none;
 }
 
-.theme-light .vertical-tab-header-group-title {
-    color: #475569;
+.theme-light .cm-em,
+.theme-light em,
+.theme-light i {
+    text-shadow: none;
 }
 
-.theme-light .vertical-tab-nav-item {
-    color: #64748b;
+.theme-light .cm-strong.cm-em,
+.theme-light strong em,
+.theme-light em strong,
+.theme-light b i,
+.theme-light i b {
+    text-shadow: none;
 }
 
-.theme-light .vertical-tab-nav-item:hover {
-    background: rgba(var(--accent-h), var(--accent-s), var(--accent-l), 0.08);
-    color: #1a202c;
+/* Light theme highlighted text */
+.theme-light mark,
+.theme-light .cm-highlight {
+    background: var(--text-highlight-bg);
 }
 
-.theme-light .vertical-tab-nav-item.is-active {
-    background: rgba(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-    color: var(--interactive-accent);
-    border-right: 2px solid var(--interactive-accent);
-} */
+.theme-light mark:hover,
+.theme-light .cm-highlight:hover {
+    background: rgba(var(--orange_x), 0.25);
+}
+
+/* Light theme callout highlights */
+.theme-light .callout mark,
+.theme-light .callout .cm-highlight {
+    background: rgba(var(--fg_x), 0.1);
+    color: var(--text-normal);
+}
+
+.theme-light .callout mark:hover,
+.theme-light .callout .cm-highlight:hover {
+    background: rgba(var(--fg_x), 0.15);
+}
+
+/* Navigation active file styling */
+.theme-light .nav-file.is-active {
+    background-color: var(--background-modifier-active-hover);
+}
 
 
 /* ================================================= */

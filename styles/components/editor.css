@@ -382,15 +382,3 @@ span.cm-hmd-frontmatter.cm-meta {
 .token.italic {
     font-style: italic;
 }
-
-/* Mobile optimizations for code blocks */
-@media (max-width: 768px) {
-    .cm-line {
-        padding: 0 2px;
-    }
-
-
-    .cm-inline-code {
-        font-size: 0.85em;
-    }
-}

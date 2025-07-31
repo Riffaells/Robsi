@@ -27,7 +27,7 @@ input[type="email"],
 input[type="password"],
 textarea {
   border-radius: 12px;
-  border: 2px solid rgba(var(--text-muted-rgb), 0.2);
+  border: 1px solid rgba(var(--text-muted-rgb), 0.2);
   transition: none;
 }
 
@@ -37,8 +37,6 @@ input[type="email"]:focus,
 input[type="password"]:focus,
 textarea:focus {
   background: var(--background-secondary);
-  outline: none;
-  box-shadow: 0 0 0 3px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 
 /* Enhanced Dropdowns */
@@ -61,32 +59,6 @@ textarea:focus {
 
 .dropdown:hover {
   border-color: rgba(var(--text-muted-rgb), 0.5);
-}
-
-/* ========================================================================== */
-/*                          MOBILE OPTIMIZATIONS                             */
-/* ========================================================================== */
-
-/* Mobile form elements - touch-friendly */
-@media (max-width: 768px) {
-  .mod-cta {
-    min-height: 44px;
-    padding: 12px 16px;
-    font-size: 14px;
-    border-radius: 12px;
-  }
-
-  .dropdown {
-    min-height: 44px;
-    padding: 12px 16px;
-    font-size: 16px;
-    border-radius: 8px;
-  }
-
-  /* Remove expensive effects on mobile */
-  .mod-cta:hover {
-    box-shadow: none;
-  }
 }
 
 /* ========================================================================== */
@@ -145,15 +117,6 @@ textarea.error,
 .dropdown.error {
   border-color: var(--text-error);
   background: rgba(var(--text-error-rgb), 0.05);
-}
-
-input[type="text"].error:focus,
-input[type="search"].error:focus,
-input[type="email"].error:focus,
-input[type="password"].error:focus,
-textarea.error:focus,
-.dropdown.error:focus {
-  box-shadow: 0 0 0 3px rgba(var(--text-error-rgb), 0.2);
 }
 
 /* Success states */
