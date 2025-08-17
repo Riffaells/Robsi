@@ -17,16 +17,9 @@
 .menu-item {
     border-radius: 6px;
     color: var(--text-normal);
-    padding: 2px 8px;
-    min-height: 20px;
+    padding: 4px;
     display: flex;
     align-items: center;
-    transition: none;
-}
-
-.menu-item:hover {
-    transform: none !important;
-    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
 }
 
 .menu-item.is-selected,
@@ -38,15 +31,12 @@
 
 /* Callout Styling */
 .callout {
-    --callout-padding: 16px;
     padding: var(--callout-padding);
     border-radius: 12px;
     border-width: 1px;
+    margin: 0.5em 0;
 }
 
-.markdown-source-view.mod-cm6 .callout {
-    margin: 8px 0;
-}
 
 
 
@@ -55,15 +45,6 @@
     background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
 }
 
-.workspace-tab-header.is-active {
-    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
-    border-bottom: 2px solid var(--accent-color);
-}
-
-.workspace-split.mod-root .workspace-tab-header.is-active::before,
-.workspace-split.mod-root .workspace-tab-header.is-active::after {
-    box-shadow: none;
-}
 
 /* Enhanced Card Design */
 .workspace-leaf-content,
@@ -97,8 +78,7 @@
     }
 
     .menu-item.is-selected,
-    .suggestion-item.is-selected,
-    .workspace-tab-header.is-active {
+    .suggestion-item.is-selected {
         border-color: var(--accent-color);
         border-width: 1px;
     }
@@ -177,12 +157,6 @@
     .modal {
         max-height: 70vh;
         margin: 16px;
-    }
-
-    /* Compact callouts in landscape */
-    .callout {
-        --callout-padding: 12px;
-        margin: 6px 0;
     }
 }
 

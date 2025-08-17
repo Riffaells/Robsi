@@ -1,17 +1,18 @@
 /* Hide all scrollbars by default */
 ::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-  display: none;
+    width: 0px;
+    height: 0px;
+    display: none;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
+    border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 4px;
+    background: transparent;
+    border-radius: 2px;
 }
 
 /* ========================================================================== */
@@ -23,25 +24,27 @@
 .markdown-source-view::-webkit-scrollbar,
 .markdown-preview-view::-webkit-scrollbar,
 .cm-scroller::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  display: block;
+    width: 3px;
+    height: 3px;
+    display: block;
 }
 
 .workspace-leaf-content::-webkit-scrollbar-track,
 .markdown-source-view::-webkit-scrollbar-track,
 .markdown-preview-view::-webkit-scrollbar-track,
 .cm-scroller::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
+    border-radius: 2px;
+    margin: 1px;
 }
 
 .workspace-leaf-content::-webkit-scrollbar-thumb,
 .markdown-source-view::-webkit-scrollbar-thumb,
 .markdown-preview-view::-webkit-scrollbar-thumb,
 .cm-scroller::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 4px;
-  transition: none;
+    background: transparent;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
 }
 
 /* Show scrollbars only on hover */
@@ -49,22 +52,22 @@
 .markdown-source-view:hover::-webkit-scrollbar-thumb,
 .markdown-preview-view:hover::-webkit-scrollbar-thumb,
 .cm-scroller:hover::-webkit-scrollbar-thumb {
-  background: rgba(var(--text-muted-rgb), 0.2);
+    background: var(--scrollbar-thumb-bg);
 }
 
 .workspace-leaf-content:hover::-webkit-scrollbar-thumb:hover,
 .markdown-source-view:hover::-webkit-scrollbar-thumb:hover,
 .markdown-preview-view:hover::-webkit-scrollbar-thumb:hover,
 .cm-scroller:hover::-webkit-scrollbar-thumb:hover {
-  background: rgba(var(--text-muted-rgb), 0.4);
+    background: var(--scrollbar-active-thumb-bg);
 }
 
-/* Show scrollbars when content is focused */
+/* Show scrollbars when content is focused - keep subtle */
 .workspace-leaf-content:focus-within::-webkit-scrollbar-thumb,
 .markdown-source-view:focus-within::-webkit-scrollbar-thumb,
 .markdown-preview-view:focus-within::-webkit-scrollbar-thumb,
 .cm-scroller:focus-within::-webkit-scrollbar-thumb {
-  background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+    background: var(--scrollbar-thumb-bg);
 }
 
 /* ========================================================================== */
@@ -73,30 +76,31 @@
 
 /* Mobile - hide all scrollbars completely */
 @media (max-width: 768px) {
-  ::-webkit-scrollbar,
-  .workspace-leaf-content::-webkit-scrollbar,
-  .markdown-source-view::-webkit-scrollbar,
-  .markdown-preview-view::-webkit-scrollbar,
-  .cm-scroller::-webkit-scrollbar {
-    width: 0px !important;
-    height: 0px !important;
-    display: none !important;
-  }
 
-  /* Ensure smooth scrolling on mobile - DISABLED to prevent auto-scroll */
-  .workspace-leaf-content,
-  .markdown-preview-view,
-  .markdown-source-view,
-  .cm-scroller {
-    scroll-behavior: auto;
-    scrollbar-width: none;
-  }
+    ::-webkit-scrollbar,
+    .workspace-leaf-content::-webkit-scrollbar,
+    .markdown-source-view::-webkit-scrollbar,
+    .markdown-preview-view::-webkit-scrollbar,
+    .cm-scroller::-webkit-scrollbar {
+        width: 0px !important;
+        height: 0px !important;
+        display: none !important;
+    }
 
-  /* Hide all scrollbar elements */
-  ::-webkit-scrollbar-track,
-  ::-webkit-scrollbar-thumb {
-    display: none !important;
-  }
+    /* Ensure smooth scrolling on mobile - DISABLED to prevent auto-scroll */
+    .workspace-leaf-content,
+    .markdown-preview-view,
+    .markdown-source-view,
+    .cm-scroller {
+        scroll-behavior: auto;
+        scrollbar-width: none;
+    }
+
+    /* Hide all scrollbar elements */
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb {
+        display: none !important;
+    }
 }
 
 /* ========================================================================== */
@@ -105,38 +109,39 @@
 
 /* Desktop - subtle scrollbars on hover */
 @media (min-width: 769px) {
-  /* Main content scrollbars */
-.workspace-leaf-content::-webkit-scrollbar,
-.markdown-source-view::-webkit-scrollbar,
-  .markdown-preview-view::-webkit-scrollbar,
-  .cm-scroller::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
 
-  /* Default state - invisible */
-  .workspace-leaf-content::-webkit-scrollbar-thumb,
-  .markdown-source-view::-webkit-scrollbar-thumb,
-  .markdown-preview-view::-webkit-scrollbar-thumb,
-  .cm-scroller::-webkit-scrollbar-thumb {
-    background: transparent;
-  }
+    /* Main content scrollbars */
+    .workspace-leaf-content::-webkit-scrollbar,
+    .markdown-source-view::-webkit-scrollbar,
+    .markdown-preview-view::-webkit-scrollbar,
+    .cm-scroller::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
 
-  /* Hover state - barely visible */
-  .workspace-leaf-content:hover::-webkit-scrollbar-thumb,
-  .markdown-source-view:hover::-webkit-scrollbar-thumb,
-  .markdown-preview-view:hover::-webkit-scrollbar-thumb,
-  .cm-scroller:hover::-webkit-scrollbar-thumb {
-    background: rgba(var(--text-muted-rgb), 0.15);
-  }
+    /* Default state - invisible */
+    .workspace-leaf-content::-webkit-scrollbar-thumb,
+    .markdown-source-view::-webkit-scrollbar-thumb,
+    .markdown-preview-view::-webkit-scrollbar-thumb,
+    .cm-scroller::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
 
-  /* Scrollbar thumb hover - more visible */
-  .workspace-leaf-content:hover::-webkit-scrollbar-thumb:hover,
-  .markdown-source-view:hover::-webkit-scrollbar-thumb:hover,
-  .markdown-preview-view:hover::-webkit-scrollbar-thumb:hover,
-  .cm-scroller:hover::-webkit-scrollbar-thumb:hover {
-    background: rgba(var(--text-muted-rgb), 0.35);
-  }
+    /* Hover state - barely visible */
+    .workspace-leaf-content:hover::-webkit-scrollbar-thumb,
+    .markdown-source-view:hover::-webkit-scrollbar-thumb,
+    .markdown-preview-view:hover::-webkit-scrollbar-thumb,
+    .cm-scroller:hover::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb-bg);
+    }
+
+    /* Scrollbar thumb hover - more visible */
+    .workspace-leaf-content:hover::-webkit-scrollbar-thumb:hover,
+    .markdown-source-view:hover::-webkit-scrollbar-thumb:hover,
+    .markdown-preview-view:hover::-webkit-scrollbar-thumb:hover,
+    .cm-scroller:hover::-webkit-scrollbar-thumb:hover {
+        background: var(--scrollbar-active-thumb-bg);
+    }
 }
 
 /* ========================================================================== */
@@ -157,9 +162,9 @@
 .view-action::-webkit-scrollbar,
 .setting-item::-webkit-scrollbar,
 .checkbox-container::-webkit-scrollbar {
-  width: 0px !important;
-  height: 0px !important;
-  display: none !important;
+    width: 0px !important;
+    height: 0px !important;
+    display: none !important;
 }
 
 /* ========================================================================== */
@@ -169,57 +174,57 @@
 /* Modals and popups - minimal scrollbars */
 .modal::-webkit-scrollbar,
 .popover::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+    width: 3px;
+    height: 3px;
 }
 
 .modal::-webkit-scrollbar-thumb,
 .popover::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 3px;
+    background: transparent;
+    border-radius: 2px;
 }
 
 .modal:hover::-webkit-scrollbar-thumb,
 .popover:hover::-webkit-scrollbar-thumb {
-  background: rgba(var(--text-muted-rgb), 0.3);
+    background: var(--scrollbar-thumb-bg);
 }
 
 /* Suggestion containers - no scrollbars */
 .suggestion-container::-webkit-scrollbar,
 .menu::-webkit-scrollbar {
-  width: 0px !important;
-  height: 0px !important;
-  display: none !important;
+    width: 0px !important;
+    height: 0px !important;
+    display: none !important;
 }
 
 /* Code blocks - minimal horizontal scrollbar */
 pre::-webkit-scrollbar {
-  width: 0px;
-  height: 4px;
+    width: 0px;
+    height: 3px;
 }
 
 pre::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 2px;
+    background: transparent;
+    border-radius: 2px;
 }
 
 pre:hover::-webkit-scrollbar-thumb {
-  background: rgba(var(--text-muted-rgb), 0.3);
+    background: var(--scrollbar-thumb-bg);
 }
 
 /* Tables - horizontal scrollbar only */
 .table-wrapper::-webkit-scrollbar {
-  width: 0px;
-  height: 6px;
+    width: 0px;
+    height: 3px;
 }
 
 .table-wrapper::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 3px;
+    background: transparent;
+    border-radius: 2px;
 }
 
 .table-wrapper:hover::-webkit-scrollbar-thumb {
-  background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+    background: var(--scrollbar-active-thumb-bg);
 }
 
 /* ========================================================================== */
@@ -228,68 +233,62 @@ pre:hover::-webkit-scrollbar-thumb {
 
 /* High contrast mode - always visible scrollbars */
 @media (prefers-contrast: high) {
-  .workspace-leaf-content::-webkit-scrollbar-thumb,
-  .markdown-source-view::-webkit-scrollbar-thumb,
-  .markdown-preview-view::-webkit-scrollbar-thumb,
-  .cm-scroller::-webkit-scrollbar-thumb {
-    background: rgba(var(--text-normal-rgb), 0.3) !important;
-    border: 1px solid var(--background-primary);
-  }
 
-  .workspace-leaf-content::-webkit-scrollbar-track,
-  .markdown-source-view::-webkit-scrollbar-track,
-  .markdown-preview-view::-webkit-scrollbar-track,
-  .cm-scroller::-webkit-scrollbar-track {
-    background: var(--background-secondary);
-    border: 1px solid var(--text-muted);
-  }
+    .workspace-leaf-content::-webkit-scrollbar-thumb,
+    .markdown-source-view::-webkit-scrollbar-thumb,
+    .markdown-preview-view::-webkit-scrollbar-thumb,
+    .cm-scroller::-webkit-scrollbar-thumb {
+        background: rgba(var(--text-normal-rgb), 0.3) !important;
+        border: 1px solid var(--background-primary);
+    }
+
+    .workspace-leaf-content::-webkit-scrollbar-track,
+    .markdown-source-view::-webkit-scrollbar-track,
+    .markdown-preview-view::-webkit-scrollbar-track,
+    .cm-scroller::-webkit-scrollbar-track {
+        background: var(--background-secondary);
+        border: 1px solid var(--text-muted);
+    }
 }
 
 /* Reduced motion - no hover transitions */
 @media (prefers-reduced-motion: reduce) {
-  .workspace-leaf-content::-webkit-scrollbar-thumb,
-  .markdown-source-view::-webkit-scrollbar-thumb,
-  .markdown-preview-view::-webkit-scrollbar-thumb,
-  .cm-scroller::-webkit-scrollbar-thumb {
-    transition: none !important;
-  }
+
+    .workspace-leaf-content::-webkit-scrollbar-thumb,
+    .markdown-source-view::-webkit-scrollbar-thumb,
+    .markdown-preview-view::-webkit-scrollbar-thumb,
+    .cm-scroller::-webkit-scrollbar-thumb {
+        transition: none !important;
+    }
 }
 
+
+
+
 /* ========================================================================== */
-/*                         FIREFOX SUPPORT                                   */
+/*                           FIREFOX SCROLLBARS                              */
 /* ========================================================================== */
 
 /* Firefox - hide scrollbars by default */
 * {
-  scrollbar-width: none;
+    scrollbar-width: none;
 }
 
+/* Firefox - show thin scrollbars on main content */
 .workspace-leaf-content,
 .markdown-source-view,
 .markdown-preview-view,
 .cm-scroller {
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
 }
 
-/* Show Firefox scrollbars on hover (limited support) */
-@media (min-width: 769px) {
-  .workspace-leaf-content:hover,
-  .markdown-source-view:hover,
-  .markdown-preview-view:hover,
-  .cm-scroller:hover {
-    scrollbar-color: rgba(var(--text-muted-rgb), 0.2) transparent;
-  }
-}
-
-/* Mobile Firefox - completely hidden */
-@media (max-width: 768px) {
-  .workspace-leaf-content,
-  .markdown-source-view,
-  .markdown-preview-view,
-  .cm-scroller {
-    scrollbar-width: none !important;
-  }
+/* Firefox - show scrollbars on hover */
+.workspace-leaf-content:hover,
+.markdown-source-view:hover,
+.markdown-preview-view:hover,
+.cm-scroller:hover {
+    scrollbar-color: var(--scrollbar-thumb-bg) transparent;
 }
 
 /* ========================================================================== */
@@ -298,32 +297,16 @@ pre:hover::-webkit-scrollbar-thumb {
 
 /* Disable scrollbars on low-end devices */
 @media (max-width: 480px) and (max-resolution: 150dpi) {
-  ::-webkit-scrollbar,
-  .workspace-leaf-content::-webkit-scrollbar,
-  .markdown-source-view::-webkit-scrollbar,
-  .markdown-preview-view::-webkit-scrollbar,
-  .cm-scroller::-webkit-scrollbar {
-    display: none !important;
-  }
 
-  * {
-    scrollbar-width: none !important;
-  }
-}
+    ::-webkit-scrollbar,
+    .workspace-leaf-content::-webkit-scrollbar,
+    .markdown-source-view::-webkit-scrollbar,
+    .markdown-preview-view::-webkit-scrollbar,
+    .cm-scroller::-webkit-scrollbar {
+        display: none !important;
+    }
 
-/* GPU acceleration for scrollbar animations */
-@media (min-width: 769px) {
-  .workspace-leaf-content::-webkit-scrollbar-thumb,
-  .markdown-source-view::-webkit-scrollbar-thumb,
-  .markdown-preview-view::-webkit-scrollbar-thumb,
-  .cm-scroller::-webkit-scrollbar-thumb {
-    will-change: auto;
-  }
-
-  .workspace-leaf-content:not(:hover)::-webkit-scrollbar-thumb,
-  .markdown-source-view:not(:hover)::-webkit-scrollbar-thumb,
-  .markdown-preview-view:not(:hover)::-webkit-scrollbar-thumb,
-  .cm-scroller:not(:hover)::-webkit-scrollbar-thumb {
-    will-change: auto;
-  }
+    * {
+        scrollbar-width: none !important;
+    }
 }

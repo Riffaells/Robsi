@@ -2,27 +2,13 @@
 /*                             INTERFACE FIXES                               */
 /* ========================================================================== */
 
-/* ========================================================================== */
-/*                           NAVIGATION ARROWS                               */
-/* ========================================================================== */
-
-/* Navigation buttons container */
-.view-header-nav-buttons {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-}
-
 
 
 .view-action:hover {
     background: var(--background-modifier-hover);
 }
 
-/* Hide only when disabled/unavailable */
-.view-header-nav-buttons .clickable-icon[aria-disabled="true"] {
-    display: none;
-}
+
 /* ========================================================================== */
 /*                             OVERFLOW FIXES                                */
 /* ========================================================================== */

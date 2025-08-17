@@ -66,7 +66,7 @@ class ThemeBuilder:
 
             header = f"""/*
 Robsi Theme - A modern theme for Obsidian.
-By Riffaells - 2024
+By Riffaells - {datetime.now().year}
 Built: {datetime.now().isoformat()}
 Files included: {len(css_files)}
 */\n\n"""

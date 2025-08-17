@@ -121,8 +121,6 @@
     --tab-divider-color: rgba(200, 205, 210, 0.4);
     --tab-outline-color: rgba(180, 185, 190, 0.6);
     --tab-outline-color-active: rgba(120, 125, 135, 0.8);
-    --tab-text-color-focused-active: rgba(var(--fg_x), 0.7);
-    --tab-text-color-focused-active-current: var(--text-normal);
 
     /* Titlebar */
     --titlebar-background: var(--background-primary);
@@ -139,7 +137,6 @@
     --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
 
     /* Background modifiers */
-    --background-modifier-hover: rgba(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 5%), 0.08);
     --background-modifier-active-hover: rgba(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 5%), 0.12);
     --background-modifier-border: #e2e8f0;
     --background-modifier-border-hover: #cbd5e1;
@@ -200,9 +197,9 @@
     --table-border-color: #e2e8f0;
 
     /* Scrollbars */
-    --scrollbar-bg: rgba(0, 0, 0, 0.05);
-    --scrollbar-thumb-bg: rgba(0, 0, 0, 0.2);
-    --scrollbar-active-thumb-bg: rgba(0, 0, 0, 0.4);
+    --scrollbar-bg: rgba(0, 0, 0, 0.03);
+    --scrollbar-thumb-bg: rgba(0, 0, 0, 0.15);
+    --scrollbar-active-thumb-bg: rgba(0, 0, 0, 0.3);
 
     /* Date elements */
     --date-color: var(--blue);
@@ -301,32 +298,4 @@
 .theme-light b i,
 .theme-light i b {
     text-shadow: none;
-}
-
-/* Light theme highlighted text */
-.theme-light mark,
-.theme-light .cm-highlight {
-    background: var(--text-highlight-bg);
-}
-
-.theme-light mark:hover,
-.theme-light .cm-highlight:hover {
-    background: rgba(var(--orange_x), 0.25);
-}
-
-/* Light theme callout highlights */
-.theme-light .callout mark,
-.theme-light .callout .cm-highlight {
-    background: rgba(var(--fg_x), 0.1);
-    color: var(--text-normal);
-}
-
-.theme-light .callout mark:hover,
-.theme-light .callout .cm-highlight:hover {
-    background: rgba(var(--fg_x), 0.15);
-}
-
-/* Navigation active file styling */
-.theme-light .nav-file.is-active {
-    background-color: var(--background-modifier-active-hover);
 }

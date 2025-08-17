@@ -18,15 +18,18 @@
     align-items: center;
 }
 
+/* Hide only when disabled/unavailable */
+.view-header-nav-buttons .clickable-icon[aria-disabled="true"] {
+    display: none;
+}
+
 /* Simple navigation button styling */
 .view-header-nav-buttons .clickable-icon {
-    width: 24px;
-    height: 24px;
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: none;
+
 }
 
 .view-header-nav-buttons .clickable-icon:hover {
@@ -77,17 +80,13 @@
 .workspace-tab-header {
     background: var(--tab-background);
     border-radius: 8px 8px 0 0;
-    transition: none;
+    transition: background-color 0.15s ease;
     border: none;
     margin: 2px;
 }
 
 .workspace-tab-header:hover:not(.is-active) {
     background: var(--tab-background-hover);
-}
-
-.workspace-tab-header.is-active {
-    background: var(--tab-background-active);
 }
 
 /* Titlebar styling */
@@ -119,7 +118,7 @@
 .sidebar-toggle-button.mod-left {
     display: flex;
     opacity: 0.7;
-    transition: none;
+    transition: opacity 0.15s ease;
 }
 
 .sidebar-toggle-button.mod-right:hover,
@@ -131,23 +130,14 @@
 .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
     display: flex !important;
     opacity: 0.7;
-    transition: none;
+    transition: opacity 0.15s ease;
 }
 
 .workspace-sidedock-vault-profile:hover .workspace-drawer-vault-actions {
     opacity: 1;
 }
 
-/* Navigation Headers - Always show by default */
-.workspace-split .workspace-leaf-content[data-type="tag"] .nav-header,
-.workspace-split .workspace-leaf-content[data-type="outgoing-link"] .nav-header,
-.workspace-split .workspace-leaf-content[data-type="backlink"] .nav-header,
-.workspace-split .workspace-leaf-content[data-type="outline"] .nav-header {
-    padding: var(--size-4-1) 0;
-    opacity: 1;
-    height: auto;
-    transition: none;
-}
+
 
 
 /* ========================================================================== */
@@ -168,22 +158,6 @@
     /* Максимум 200px */
     position: relative;
     overflow: hidden;
-}
-
-/* ========================================================================== */
-/*                            TITLE CONTAINER                                */
-/* ========================================================================== */
-
-/* Draggable title container */
-.view-header-title-container {
-    -webkit-app-region: drag;
-    border-radius: 8px;
-    transition: none;
-}
-
-
-.view-header-title-container div {
-    -webkit-app-region: no-drag;
 }
 
 /* ========================================================================== */
@@ -214,7 +188,7 @@
     .view-header-title-container,
     .sidebar-toggle-button.mod-right,
     .sidebar-toggle-button.mod-left {
-        transition-duration: 0s;
+        transition-duration: 0.1s;
     }
 }
 
@@ -230,27 +204,6 @@
 
 }
 
-/* ========================================================================== */
-/*                         ACCESSIBILITY SUPPORT                             */
-/* ========================================================================== */
-
-/* High contrast mode */
-@media (prefers-contrast: high) {
-
-    .workspace-tab-header,
-    .workspace-leaf {
-        border: 1px solid var(--background-modifier-border);
-    }
-
-    .view-header-nav-buttons .clickable-icon {
-        border: 1px solid var(--background-modifier-border);
-    }
-
-    .sidebar-toggle-button.mod-right,
-    .sidebar-toggle-button.mod-left {
-        border: 1px solid var(--background-modifier-border);
-    }
-}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {

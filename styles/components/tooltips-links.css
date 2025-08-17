@@ -55,7 +55,7 @@ a.internal-link,
 .markdown-preview-view .internal-link,
 .markdown-source-view .internal-link,
 .internal-link {
-  color: var(--internal-link-color);
+  color: var(--internal-link-color) !important;
   text-decoration: none !important;
   transition: none;
 }
@@ -64,7 +64,7 @@ a.internal-link:hover,
 .cm-hmd-internal-link:hover,
 .cm-hmd-internal-link a:hover,
 .internal-link:hover {
-  color: var(--internal-link-color-hover);
+  color: var(--internal-link-color-hover) !important;
   text-decoration: none !important;
 }
 

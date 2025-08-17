@@ -1,36 +1,5 @@
-/* Remove hover transforms from interactive elements */
-.mod-cta:hover,
-button:hover,
-.clickable-icon:hover,
-.nav-action-button:hover,
-.tree-item-self:hover,
-.workspace-tab-header:hover,
-.suggestion-item:hover,
-.menu-item:hover {
-    transform: none;
-}
-
-/* Enhanced button hover effects */
-.mod-cta:hover {
-    box-shadow: 0 4px 16px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.4);
-}
 
 .mod-cta:active {
     transform: none;
     box-shadow: 0 2px 8px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
-}
-
-/* Mobile performance overrides */
-@media (max-width: 768px) {
-
-    .mod-cta::before,
-    button::before {
-        display: none;
-    }
-
-    .mod-cta:hover,
-    .workspace-leaf:hover {
-        box-shadow: none;
-        transform: none;
-    }
 }

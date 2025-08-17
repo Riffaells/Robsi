@@ -14,26 +14,6 @@
     display: none !important;
 }
 
-/* Hide tag, backlinks, outgoing links, and outline headers unless hovered */
-.workspace-split .workspace-leaf-content[data-type="tag"] .nav-header,
-.workspace-split .workspace-leaf-content[data-type="outgoing-link"] .nav-header,
-.workspace-split .workspace-leaf-content[data-type="backlink"] .nav-header,
-.workspace-split .workspace-leaf-content[data-type="outline"] .nav-header {
-    padding: 0;
-    opacity: 0;
-    height: 0;
-    transition: none;
-}
-
-.workspace-split:hover .workspace-leaf-content[data-type="tag"] .nav-header,
-.workspace-split:hover .workspace-leaf-content[data-type="outgoing-link"] .nav-header,
-.workspace-split:hover .workspace-leaf-content[data-type="backlink"] .nav-header,
-.workspace-split:hover .workspace-leaf-content[data-type="outline"] .nav-header {
-    opacity: 1;
-    height: 1.75em;
-}
-
-
 
 /* Add beautiful blur to sidebars */
 .workspace-drawer.mod-left,
@@ -108,11 +88,11 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    transition: none;
+    transition: background-color 0.15s ease;
 }
 
 .nav-folder-title:hover {
-    background-color: transparent;
+    background-color: var(--background-modifier-hover);
 }
 
 /* Folder icons */
@@ -122,13 +102,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: none;
+    transition: transform 0.15s ease;
 }
-
-.nav-folder-collapse-indicator:hover {
-    opacity: 1;
-}
-
 
 /* Folder children */
 .nav-folder-children {
@@ -149,12 +124,12 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    transition: none;
+    transition: background-color 0.15s ease;
     min-height: 22px;
 }
 
 .nav-file-title:hover {
-    background-color: transparent;
+    background-color: var(--background-modifier-hover);
 }
 
 /* File content */

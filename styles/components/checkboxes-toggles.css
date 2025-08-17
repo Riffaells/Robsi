@@ -53,16 +53,10 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: none;
 }
 
 .extra-setting-button:hover {
     opacity: 1;
-}
-
-.extra-setting-button .svg-icon {
-    width: 16px;
-    height: 16px;
 }
 
 /* Checkbox container - simplified */
@@ -87,7 +81,6 @@
 
 .checkbox-container.is-enabled input[type="checkbox"]::before,
 .checkbox-container input[type="checkbox"]:checked::before {
-    transform: translateX(20px);
     background-color: var(--text-on-accent);
 }
 
@@ -106,37 +99,6 @@
     border-radius: 6px;
     padding: 8px 12px;
     margin-bottom: 4px;
-}
-
-
-/* ========================================================================== */
-/*                         ACCESSIBILITY IMPROVEMENTS                        */
-/* ========================================================================== */
-
-/* High contrast mode */
-@media (prefers-contrast: high) {
-    .checkbox-container input[type="checkbox"] {
-        border: 2px solid var(--text-muted);
-    }
-
-    .checkbox-container input[type="checkbox"]:checked {
-        border: 2px solid var(--interactive-accent);
-    }
-
-    .checkbox-container input[type="checkbox"]::before {
-        border: 1px solid var(--text-muted);
-    }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .checkbox-container input[type="checkbox"],
-    .checkbox-container input[type="checkbox"]::before,
-    .setting-item.mod-toggle,
-    .extra-setting-button {
-        transition: none !important;
-        animation: none !important;
-    }
 }
 
 /* ========================================================================== */

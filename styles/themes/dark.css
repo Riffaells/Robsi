@@ -125,8 +125,6 @@
     --tab-divider-color: rgba(40, 40, 40, 0.3);
     --tab-outline-color: rgba(60, 60, 60, 0.5);
     --tab-outline-color-active: rgba(80, 80, 80, 0.8);
-    --tab-text-color-focused-active: rgba(var(--fg_x), 0.9);
-    --tab-text-color-focused-active-current: var(--text-normal);
 
     /* Workspace */
     --shadow-color: rgba(0, 0, 0, 0.3);
@@ -147,7 +145,6 @@
     --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
 
     /* Background modifiers */
-    --background-modifier-hover: rgba(var(--cyan_x), 0.08);
     --background-modifier-active-hover: rgba(var(--cyan_x), 0.12);
     --background-modifier-border: var(--bg_highlight);
     --background-modifier-border-hover: var(--bg_highlight_dark);
@@ -159,7 +156,7 @@
     /*                           CONTENT ELEMENTS                              */
     /* ======================================================================== */
     /* Selection and highlighting */
-    --text-selection: rgba(var(--purple_x), 0.25);
+    --text-selection: rgba(var(--purple_x), 0.15);
     --text-highlight-bg: rgba(var(--orange_x), 0.25);
     --flashing-background: rgba(var(--cyan_x), 0.2);
 
@@ -208,9 +205,9 @@
     --table-header-background-hover: var(--bg_highlight_dark);
 
     /* Scrollbars */
-    --scrollbar-bg: rgba(255, 255, 255, 0.05);
-    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.2);
-    --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.4);
+    --scrollbar-bg: rgba(255, 255, 255, 0.03);
+    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.15);
+    --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.3);
 
     /* Date elements */
     --date-color: var(--blue);

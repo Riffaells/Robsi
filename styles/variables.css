@@ -41,9 +41,9 @@
     --size-4-1: 6px;
     --size-4-2: 8px;
     --size-4-3: 12px;
-    --size-4-4: 18px;
-    --size-4-5: 20px;
-    --size-4-6: 24px;
+    --size-4-4: 14px;
+    --size-4-5: 16px;
+    --size-4-6: 18px;
 
     /* ======================================================================== */
     /*                              TRANSITIONS                                */
@@ -70,7 +70,7 @@
     /* ======================================================================== */
 
     --callout-radius: var(--radius-m);
-    --callout-padding: 8px;
+    --callout-padding: 14px;
     --callout-title-padding: 0;
     --callout-content-padding: 0;
 
@@ -114,7 +114,7 @@
     --tab-max-width: 200px;
     --tab-text-color-focused-active: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.8);
     --tab-text-color-focused-active-current: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-
+    --tab-text-color-active: var(--accent-color);
     /* Tab background variables */
     --tab-container-background-focused: var(--background-primary);
     --tab-container-background: var(--background-primary);
@@ -173,7 +173,7 @@
     --background-modifier-error: var(--red1);
     --background-modifier-error-hover: var(--red);
     --background-modifier-cover: rgba(var(--bg_dark_x), 0.8);
-    --background-modifier-hover: var(--bg_highlight);
+    --background-modifier-hover: rgba(var(--bg_highlight_x), 0.4);
     --background-modifier-message: rgba(var(--bg_highlight_x), 0.9);
     --background-modifier-active-hover: var(--bg_highlight);
 
@@ -201,6 +201,9 @@
     --background-modifier-hover-rgb: var(--bg_highlight_x);
     --menu-background-rgb: var(--bg_dark_x);
 
+    --dropdown-background: rgba(var(--bg_dark_x), 0.3);
+
+
     --interactive-normal: var(--bg_dark);
     --interactive-hover: var(--bg);
     --interactive-success: var(--green);
@@ -208,10 +211,10 @@
     --interactive-accent-hover: var(--blue);
     --accent-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 
-    --scrollbar-bg: var(--bg_dark2);
-    --scrollbar-thumb-bg: var(--comment);
-    --scrollbar-active-thumb-bg: var(--bg_dark);
-    --scrollbar-width: 0px;
+    --scrollbar-bg: transparent;
+    --scrollbar-thumb-bg: rgba(var(--text-muted-rgb), 0.15);
+    --scrollbar-active-thumb-bg: rgba(var(--text-muted-rgb), 0.3);
+    --scrollbar-width: 3px;
 
     --h1-color: var(--red);
     --h2-color: var(--purple);
@@ -263,7 +266,7 @@
     --callout-warning: var(--orange_x);
     --callout-quote: var(--fg_dark_x);
 
-    --icon-color-hover: var(--blue);
+    --icon-color-hover: var(--purple);
     --icon-color-focused: var(--purple);
     --icon-color-active: var(--purple);
 
