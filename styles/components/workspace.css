@@ -108,10 +108,6 @@
     background: var(--workspace-background-translucent);
 }
 
-.workspace-ribbon {
-    background: none !important;
-}
-
 
 /* Sidebar Toggle Buttons - Always show by default */
 .sidebar-toggle-button.mod-right,
@@ -151,11 +147,8 @@
 }
 
 .workspace .mod-root .workspace-tab-header {
-    /* Простая гибкая система */
     min-width: var(--tab-min-width);
-    /* Минимум 80px */
     max-width: var(--tab-max-width);
-    /* Максимум 200px */
     position: relative;
     overflow: hidden;
 }
@@ -302,4 +295,21 @@
 .nav-file.is-active .nav-file-title {
     background-color: var(--background-modifier-active-hover);
     border-left: 3px solid var(--interactive-accent);
+}
+.popover.hover-popover {
+    transform: scale(0.8); /* makes the content smaller */
+    max-height: 500px;    /* was 300 */
+    min-height: 100px;
+    width: 500px;     /* was 400 */
+}
+.popover, .suggestion-container {
+    background-color: transparent;
+}
+
+.markdown-embed {
+    background-color: rgba(var(--background-primary-rgb), 0.5);
+    backdrop-filter: blur(18px);
+}
+body:not(.is-ios):not(.is-android) input[type='date'], body:not(.is-ios):not(.is-android) input[type='datetime-local'] {
+    padding-inline-start: 24px;
 }

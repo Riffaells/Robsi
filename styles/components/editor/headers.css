@@ -57,25 +57,6 @@
     color: var(--h6-color);
 }
 
-/* Remove indicators from bold/italic formatting inside headers */
-.cm-formatting-strong.cm-header::before,
-.cm-formatting-em.cm-header::before,
-.HyperMD-header-1 .cm-formatting-strong::before,
-.HyperMD-header-2 .cm-formatting-strong::before,
-.HyperMD-header-3 .cm-formatting-strong::before,
-.HyperMD-header-4 .cm-formatting-strong::before,
-.HyperMD-header-5 .cm-formatting-strong::before,
-.HyperMD-header-6 .cm-formatting-strong::before,
-.HyperMD-header-1 .cm-formatting-em::before,
-.HyperMD-header-2 .cm-formatting-em::before,
-.HyperMD-header-3 .cm-formatting-em::before,
-.HyperMD-header-4 .cm-formatting-em::before,
-.HyperMD-header-5 .cm-formatting-em::before,
-.HyperMD-header-6 .cm-formatting-em::before {
-    content: none !important;
-    display: none !important;
-}
-
 
 /* Enhanced Header Styling with left margins */
 .markdown-preview-view h1,
@@ -83,20 +64,24 @@
 .markdown-preview-view h3,
 .markdown-preview-view h4,
 .markdown-preview-view h5,
-.markdown-preview-view h6 {
+.markdown-preview-view h6,
+.HyperMD-header-1,
+.HyperMD-header-2,
+.HyperMD-header-3,
+.HyperMD-header-4,
+.HyperMD-header-5,
+.HyperMD-header-6 {
     position: relative;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    margin-left: 8px;
+    margin-left: 4px;
     font-family: var(--font-family-heading);
     font-weight: 400;
-
+    pointer-events: auto;
+    cursor: text;
+    z-index: 1;
 }
 
-
-.cm-line.HyperMD-header-1::after {
-    margin-bottom: 0.5em;
-}
 
 /* underlines for headers */
 .markdown-preview-view h1::after,
@@ -135,6 +120,10 @@
 .outline .tree-item-self {
     position: relative;
     padding-left: 1.5em;
+}
+
+.tree-item-self.has-active-menu {
+    box-shadow: none;
 }
 
 .outline .tree-item-self::before {
@@ -228,6 +217,17 @@ i b {
     font-style: italic;
     text-shadow: 0 0 2px rgba(var(--orange_x), 0.4);
 }
+
+/* insertion */
+ins,
+.cm-ins {
+    text-decoration: none;
+    border-bottom: 2px solid var(--insertion-color);
+}
+
+
+
+
 
 /* Header colors - optimized */
 .markdown-preview-view h1,
@@ -336,19 +336,16 @@ blockquote {
     border: none;
     border-left: 2px solid var(--blockquote-border);
     background: var(--blockquote-bg);
-    padding: 200px 204px;
+    padding: 12px 16px;
     margin: 20px 0;
     border-radius: 6px;
     color: var(--blockquote-color);
     font-style: normal;
     position: relative;
     box-shadow: 0 2px 8px rgba(var(--cyan_x), 0.1);
-    overflow: none;
-    width: auto;
-    max-width: none;
 }
 
-/* Beautiful quote mark */
+/* Beautiful quote mark - positioned to not interfere with text selection */
 blockquote::before {
     content: "𒀭";
     color: var(--blockquote-quote-mark);
@@ -357,12 +354,14 @@ blockquote::before {
     left: 8px;
     line-height: 1;
     font-family: 'Georgia', serif;
-    z-index: 1;
+    pointer-events: none;
+    z-index: 0;
 }
 
-/* Content styling */
+/* Content styling - ensure text is selectable */
 blockquote p {
     padding-left: 16px;
     position: relative;
-    z-index: 2;
+    z-index: 1;
+    pointer-events: auto;
 }

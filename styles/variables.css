@@ -110,7 +110,7 @@
     --tab-outline-width: 2px;
     --titlebar-height: 40px;
     --tab-width: 120px;
-    --tab-min-width: 80px;
+    --tab-min-width: 40px;
     --tab-max-width: 200px;
     --tab-text-color-focused-active: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.8);
     --tab-text-color-focused-active-current: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
@@ -124,6 +124,11 @@
     --workspace-background-translucent: var(--background-primary);
     --titlebar-background-focused: var(--background-primary);
     --frame-right-space: 80px;
+
+    --popover-width: 500px;
+    --popover-height: 500px;
+
+
     /* ======================================================================== */
     /*                              FILE MARGINS                               */
     /* ======================================================================== */
@@ -173,7 +178,8 @@
     --background-modifier-error: var(--red1);
     --background-modifier-error-hover: var(--red);
     --background-modifier-cover: rgba(var(--bg_dark_x), 0.8);
-    --background-modifier-hover: rgba(var(--bg_highlight_x), 0.4);
+    --background-modifier: rgba(var(--bg_highlight_x), 0.5);
+    --background-modifier-hover: rgba(var(--bg_highlight_x), 0.7);
     --background-modifier-message: rgba(var(--bg_highlight_x), 0.9);
     --background-modifier-active-hover: var(--bg_highlight);
 
@@ -190,6 +196,7 @@
     --text-highlight-bg: rgba(var(--orange_x), 0.25);
     --bold-color: var(--cyan);
     --italic-color: var(--blue);
+    --insertion-color: var(--orange);
 
     /* RGB versions for rgba() usage */
     --magenta-rgb: var(--magenta_x);

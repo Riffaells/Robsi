@@ -26,7 +26,6 @@
 .cm-scroller::-webkit-scrollbar {
     width: 3px;
     height: 3px;
-    display: block;
 }
 
 .workspace-leaf-content::-webkit-scrollbar-track,
@@ -160,8 +159,7 @@
 .status-bar-item::-webkit-scrollbar,
 .sidebar-toggle-button::-webkit-scrollbar,
 .view-action::-webkit-scrollbar,
-.setting-item::-webkit-scrollbar,
-.checkbox-container::-webkit-scrollbar {
+.setting-item::-webkit-scrollbar {
     width: 0px !important;
     height: 0px !important;
     display: none !important;

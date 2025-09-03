@@ -4,28 +4,32 @@
 
 /* Modal backdrop with blur effect */
 .modal-bg {
-    background-color: var(--background-modifier-cover);
+    background: rgba(var(--background-modifier-cover), 0.6);
     backdrop-filter: blur(8px);
     opacity: 1 !important;
 }
 
 
 .horizontal-tab-content, .vertical-tab-content, .vertical-tab-header {
-    background-color: transparent;
+    background: rgba(var(--bg_dark_x), 0.6);
 }
 
 .prompt,
 .modal {
-    background-color: rgba(var(--background-primary-rgb), 0.2);
+    background-color: rgba(var(--background-primary-rgb), 0.5) !important;
     backdrop-filter: blur(8px);
     border: 1px solid var(--prompt-border-color);
     border-radius: var(--radius-l);
-    box-shadow: var(--shadow-xl);
 }
 
 /* Modal content areas */
-.modal-content {
+.modal-content,
+.modal-sidebar {
     background: transparent;
+}
+.community-item {
+    background-color: rgba(var(--background-primary-rgb), 0.4);
+
 }
 
 /* Modal header */
@@ -34,19 +38,6 @@
     background: transparent;
 }
 
-/* Modal close button */
-.modal-close-button {
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
-    transition: all var(--motion-duration-fast) var(--motion-easing-standard);
-    border-radius: var(--radius-s);
-}
-
-.modal-close-button:hover {
-    color: var(--text-normal);
-    background: var(--background-modifier-hover);
-}
 
 
 /* Community plugins and other modals */

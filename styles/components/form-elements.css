@@ -20,7 +20,6 @@
 }
 
 /* Enhanced Input Fields */
-input[type="text"],
 input[type="search"],
 input[type="email"],
 input[type="password"],
@@ -29,7 +28,6 @@ textarea {
   border: 1px solid rgba(var(--text-muted-rgb), 0.2);
 }
 
-input[type="text"]:focus,
 input[type="search"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,

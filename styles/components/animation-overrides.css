@@ -1,5 +1,0 @@
-
-.mod-cta:active {
-    transform: none;
-    box-shadow: 0 2px 8px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
-}

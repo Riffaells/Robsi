@@ -1,0 +1,96 @@
+/* ========================================================================== */
+/*                               SPOILERS                                    */
+/* ========================================================================== */
+
+.spoiler{
+    position: relative;
+    background-color: var(--background-modifier) !important;
+    color: transparent !important;
+    border-radius: 4px;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    overflow: hidden;
+}
+
+.spoiler::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    opacity: 0.9;
+    background-image:
+        radial-gradient(circle 1px at 10px 8px, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+        radial-gradient(circle 1px at 30px 2px, rgba(255, 255, 255, 0.6) 50%, transparent 50%),
+        radial-gradient(circle 1px at 50px 12px, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
+        radial-gradient(circle 1px at 70px 6px, rgba(255, 255, 255, 0.7) 50%, transparent 50%),
+        radial-gradient(circle 1px at 15px 24px, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+        radial-gradient(circle 1px at 38px 28px, rgba(255, 255, 255, 0.6) 50%, transparent 50%),
+        radial-gradient(circle 1px at 60px 36px, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
+        radial-gradient(circle 1px at 85px 22px, rgba(255, 255, 255, 0.7) 50%, transparent 50%);
+    background-repeat: repeat;
+    animation: snowfall 1.5s linear infinite;
+}
+
+@keyframes snowfall {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 40px;
+    }
+}
+
+.spoiler:hover {
+    background-color: var(--background-modifier-hover) !important;
+}
+
+.spoiler.spoiler-revealed {
+    background-color: var(--background-modifier-hover) !important;
+    color: var(--text-normal) !important;
+}
+
+.cm-spoiler {
+    position: relative;
+    background-color: var(--background-modifier-hover) !important;
+    color: var(--text-normal) !important;
+    border-radius: 4px;
+    padding: 2px 6px;
+    overflow: hidden;
+}
+
+.cm-spoiler::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    opacity: 0.8;
+    background-image:
+        radial-gradient(circle 1px at 10px 8px, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+        radial-gradient(circle 1px at 30px 2px, rgba(255, 255, 255, 0.6) 50%, transparent 50%),
+        radial-gradient(circle 1px at 50px 12px, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
+        radial-gradient(circle 1px at 70px 6px, rgba(255, 255, 255, 0.7) 50%, transparent 50%),
+        radial-gradient(circle 1px at 70px 6px, rgba(255, 255, 255, 0.7) 50%, transparent 50%),
+        radial-gradient(circle 1px at 15px 24px, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+        radial-gradient(circle 1px at 38px 28px, rgba(255, 255, 255, 0.6) 50%, transparent 50%),
+        radial-gradient(circle 1px at 60px 36px, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
+        radial-gradient(circle 1px at 85px 22px, rgba(255, 255, 255, 0.7) 50%, transparent 50%);
+    background-repeat: repeat;
+    background-size: 100px 40px;
+    animation: snowfall 1.5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .spoiler::before,
+    .cm-spoiler::before {
+        animation: none !important;
+    }
+}
