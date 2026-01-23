@@ -1,0 +1,48 @@
+/* ========================================================================== */
+/*                           TEXT TYPOGRAPHY                                  */
+/* ========================================================================== */
+
+/* Bold (Strong) */
+.cm-strong, strong, b {
+    color: var(--bold-color) !important;
+    font-weight: 700 !important;
+}
+
+/* Italic (Emphasis) */
+.cm-em, em, i {
+    color: var(--italic-color) !important;
+    font-style: italic;
+}
+
+/* Combined Bold + Italic */
+.cm-strong.cm-em, strong em, em strong, b i, i b {
+    color: var(--orange) !important;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Strikethrough */
+.cm-strikethrough, s, del {
+    color: var(--text-error) !important;
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+/* Highlight (Mark) */
+mark, .cm-highlight {
+    background: var(--text-highlight-bg);
+    color: var(--text-normal);
+    padding: 0 4px;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+mark:hover, .cm-highlight:hover {
+    background: rgba(var(--orange_x), 0.35);
+}
+
+/* Insertions */
+ins, .cm-ins {
+    text-decoration: none;
+    border-bottom: 2px solid var(--insertion-color);
+}

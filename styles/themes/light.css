@@ -1,4 +1,10 @@
+/* ========================================================================== */
+/*                               LIGHT THEME                                  */
+/* ========================================================================== */
+
 .theme-light {
+    color-scheme: light;
+
     /* ======================================================================== */
     /*                           THEME ACCENT COLORS                           */
     /* ======================================================================== */
@@ -9,18 +15,23 @@
     /* ======================================================================== */
     /*                           BACKGROUND COLORS                             */
     /* ======================================================================== */
+    /* Primitives */
     --bg_dark2_x: 230, 232, 236;
     --bg_dark2: rgb(var(--bg_dark2_x));
+    
     --bg_dark_x: 240, 242, 246;
     --bg_dark: rgb(var(--bg_dark_x));
+    
     --bg_x: 248, 250, 252;
     --bg: rgb(var(--bg_x));
+    
     --bg_highlight_x: 255, 255, 255;
     --bg_highlight: rgb(var(--bg_highlight_x));
+    
     --bg_highlight_dark_x: 235, 238, 242;
     --bg_highlight_dark: rgb(var(--bg_highlight_dark_x));
 
-    /* Standard background variables */
+    /* Mappings */
     --background-primary: #f8fafc;
     --background-secondary: #f8fafc;
 
@@ -29,22 +40,15 @@
     /* ======================================================================== */
     --fg_x: 30, 35, 42;
     --fg: rgb(var(--fg_x));
+    
     --fg_dark_x: 75, 85, 95;
     --fg_dark: rgb(var(--fg_dark_x));
+    
     --comment_x: 120, 125, 135;
     --comment: rgb(var(--comment_x));
+    
     --code-comment_x: 110, 115, 125;
     --code-comment: rgb(var(--code-comment_x));
-
-    /* Standard text variables */
-    --text-normal: #1e252e;
-    --text-muted: #64748b;
-    --text-faint: #94a3b8;
-    --text-accent: var(--purple);
-    --text-accent-hover: var(--cyan);
-    --text-error: var(--red);
-    --text-error-hover: var(--red1);
-    --text-on-accent: #ffffff;
 
     /* ======================================================================== */
     /*                             COLOR PALETTE                               */
@@ -95,209 +99,35 @@
     --red1_x: 180, 30, 50;
     --red1: rgb(var(--red1_x));
 
-    /* Special colors */
+    /* Special */
     --terminal_black_x: 15, 15, 20;
     --terminal_black: rgb(var(--terminal_black_x));
     --unknown: #000000;
-
-    /* Folder notes */
     --folder-note-color_x: 120, 85, 200;
     --folder-note-color: rgb(var(--folder-note-color_x));
 
     /* ======================================================================== */
-    /*                                LINKS                                    */
+    /*                         COMPONENT OVERRIDES                             */
     /* ======================================================================== */
-
-    --link-external-filter: invert(45%) sepia(85%) saturate(2000%) hue-rotate(190deg) brightness(95%) contrast(95%);
-
-    /* ======================================================================== */
-    /*                            UI COMPONENTS                                */
-    /* ======================================================================== */
+    
+    /* Interactive */
+    --interactive-normal: #e2e8f0;
+    --interactive-hover: #cbd5e1;
+    --interactive-success: var(--green);
+    --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    --accent-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    
     /* Tabs */
+    --tab-container-background: var(--background-primary);
     --tab-background: rgba(240, 242, 246, 0.9);
     --tab-background-active: rgba(255, 255, 255, 0.95);
     --tab-background-hover: rgba(248, 250, 252, 0.8);
-    --tab-background-unfocused: rgba(235, 238, 242, 0.7);
     --tab-divider-color: rgba(200, 205, 210, 0.4);
-    --tab-outline-color: rgba(180, 185, 190, 0.6);
-    --tab-outline-color-active: rgba(120, 125, 135, 0.8);
 
-    /* Titlebar */
-    --titlebar-background: var(--background-primary);
-    --titlebar-text-color: #475569;
-    --titlebar-text-color-focused: #1e252e;
-    --titlebar-text-color-inactive: #94a3b8;
-
-    /* ======================================================================== */
-    /*                           INTERACTIVE ELEMENTS                          */
-    /* ======================================================================== */
-    --interactive-normal: #e2e8f0;
-    --interactive-hover: #cbd5e1;
-    --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-    --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
-
-    /* Background modifiers */
-    --background-modifier-active-hover: rgba(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 5%), 0.12);
-    --background-modifier-border: #e2e8f0;
-    --background-modifier-border-hover: #cbd5e1;
-    --background-modifier-border-focus: var(--interactive-accent);
-    --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
-    --background-modifier-cover: rgba(248, 250, 252, 0.8);
-
-    /* ======================================================================== */
-    /*                           CONTENT ELEMENTS                              */
-    /* ======================================================================== */
-    /* Selection and highlighting */
-    --text-selection: rgba(var(--purple_x), 0.15);
-    --text-highlight-bg: rgba(220, 100, 20, 0.15);
-    --flashing-background: rgba(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
-
-    /* Code blocks */
-    --code-background: rgb(var(--purple_x), 0.05);
-    --code-normal: var(--text-muted);
-    --text-on-code: var(--text-normal);
-    --code-selection-bg: rgba(var(--purple_x), 0.15);
-
-    /* Code syntax highlighting */
-    /* --code-keyword: var(--purple);
-    --code-function: var(--orange);
-    --code-string: var(--green);
-    --code-number: var(--red);
-    --code-comment: var(--comment);
-    --code-property: var(--cyan);
-    --code-tag: var(--red);
-    --code-operator: var(--magenta);
-    --code-class: var(--blue);
-    --code-variable: var(--teal); */
-
-    /* Blockquotes */
-    --blockquote-color: var(--text-muted);
-    --blockquote-bg: rgba(var(--cyan_x), 0.05);
-    --blockquote-border: var(--cyan);
-    --blockquote-accent: var(--purple);
-    --blockquote-quote-mark: rgba(var(--purple_x), 0.7);
-
-    /* Headers */
-    --h1-color: var(--red);
-    --h2-color: var(--purple);
-    --h3-color: var(--green);
-    --h4-color: var(--cyan);
-    --h5-color: var(--blue);
-    --h6-color: var(--orange);
-
-    /* Tags */
-    --tag-color: var(--purple);
-    --tag-background: rgba(var(--purple_x), 0.1);
-    --tag-color-hover: var(--cyan);
-    --tag-background-hover: rgba(var(--cyan_x), 0.1);
-
-    /* Tables */
-    --table-header-background: #f8fafc;
-    --table-header-background-hover: #f1f5f9;
-    --table-border-color: #e2e8f0;
-
-    /* Scrollbars */
-    --scrollbar-bg: rgba(0, 0, 0, 0.03);
-    --scrollbar-thumb-bg: rgba(0, 0, 0, 0.15);
-    --scrollbar-active-thumb-bg: rgba(0, 0, 0, 0.3);
-
-    /* Date elements */
-    --date-color: var(--blue);
-    --date-background-color: rgba(30, 70, 160, 0.1);
-
-    /* ======================================================================== */
-    /*                             NAVIGATION                                  */
-    /* ======================================================================== */
-    --nav-item-color: #2d3748;
-    --nav-item-color-hover: #1a202c;
-    --nav-item-background-hover: rgba(0, 120, 180, 0.08);
-    --nav-item-color-active: var(--purple);
-    --nav-item-background-active: var(--cyan);
-    --nav-file-tag: rgba(180, 120, 0, 0.9);
-
-    /* ======================================================================== */
-    /*                           FORM ELEMENTS                                 */
-    /* ======================================================================== */
-    /* Checkboxes */
-    --checkbox-color: var(--green);
-    --checkbox-color-hover: var(--blue);
-    --checkbox-border-color: #cbd5e1;
-    --checkbox-border-color-hover: var(--green);
-
-    /* Modals */
-    --modal-border-color: var(--background-modifier-border);
-    --prompt-border-color: var(--background-modifier-border);
-
-    /* ======================================================================== */
-    /*                              CALLOUTS                                   */
-    /* ======================================================================== */
-    --callout-default: var(--blue_x);
-    --callout-info: var(--blue_x);
-    --callout-summary: var(--cyan_x);
-    --callout-tip: var(--cyan_x);
-    --callout-todo: var(--cyan_x);
-    --callout-bug: var(--red_x);
-    --callout-error: var(--red1_x);
-    --callout-fail: var(--red1_x);
-    --callout-example: var(--magenta_x);
-    --callout-important: var(--green_x);
-    --callout-success: var(--teal_x);
-    --callout-question: var(--yellow_x);
-    --callout-warning: var(--orange_x);
-    --callout-quote: var(--fg_dark_x);
-
-    /* ======================================================================== */
-    /*                               GRAPHS                                     */
-    /* ======================================================================== */
-    --graph-line: #cbd5e1;
-    --graph-node: var(--fg);
-    --graph-node-tag: var(--orange);
-    --graph-node-attachment: var(--blue);
-
-
-}
-
-
-
-/* ======================================================================== */
-/*                      LIGHT THEME COMPONENT STYLING                        */
-/* ======================================================================== */
-
-
-/* Status bar */
-.theme-light .status-bar {
-    background: #f8fafc;
-    border-top: 1px solid #e2e8f0;
-    color: #64748b;
-}
-
-/* Workspace tabs */
-.theme-light .workspace-tab-header {
-    background: #f1f5f9;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-/* ======================================================================== */
-/*                      TEXT FORMATTING ADJUSTMENTS                        */
-/* ======================================================================== */
-
-/* Light theme specific text formatting adjustments */
-.theme-light .cm-strong,
-.theme-light strong,
-.theme-light b {
-    text-shadow: none;
-}
-
-.theme-light .cm-em,
-.theme-light em,
-.theme-light i {
-    text-shadow: none;
-}
-
-.theme-light .cm-strong.cm-em,
-.theme-light strong em,
-.theme-light em strong,
-.theme-light b i,
-.theme-light i b {
-    text-shadow: none;
+    /* Status bar */
+    .status-bar {
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+        color: #64748b;
+    }
 }

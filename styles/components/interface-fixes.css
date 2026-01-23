@@ -1,29 +1,15 @@
 /* ========================================================================== */
-/*                             INTERFACE FIXES                               */
+/*                             INTERFACE FIXES                                */
 /* ========================================================================== */
 
-
-
-.view-action:hover {
-    background: var(--background-modifier-hover);
+/* Hide unnecessary elements */
+.tree-item-flair:not(.tag-pane-tag-count),
+.prompt-instructions {
+    display: none;
 }
 
-
-/* ========================================================================== */
-/*                             OVERFLOW FIXES                                */
-/* ========================================================================== */
-
-/* Clean overflow fixes - only where actually needed */
-.nav-files-container {
-    overflow: auto;
-}
-
-/* Essential overflow settings for content areas */
-.workspace-leaf-content .view-content,
-.nav-files-container {
-    overflow: auto;
-}
-
-.markdown-rendered p {
-    margin-block-end: 0;
+/* Suggestions (Quick Switcher, Command Palette) */
+.suggestion-item.is-selected {
+    background-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.15);
+    border-radius: var(--radius-m);
 }

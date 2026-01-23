@@ -1,0 +1,15 @@
+/* ========================================================================== */
+/*                           EDITOR INTERFACE                                 */
+/* ========================================================================== */
+
+
+/* Bottom Panels (Search/Replace) */
+.ͼ2 .cm-panels-bottom {
+    border-top: var(--border-width) solid var(--bg_highlight);
+}
+
+/* Vim Mode Messages */
+.cm-vim-message { color: var(--red); }
+
+/* Tag Pills */
+.multi-select-pill { line-height: normal; }

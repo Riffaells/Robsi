@@ -1,0 +1,13 @@
+/* ========================================================================== */
+/*                                  TOOLTIPS                                  */
+/* ========================================================================== */
+
+.tooltip {
+    backdrop-filter: blur(16px);
+    background: rgba(var(--background-primary-rgb), 0.85);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-l);
+    color: var(--text-normal);
+    padding: 6px 10px;
+}

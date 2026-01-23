@@ -1,0 +1,47 @@
+/* ========================================================================== */
+/*                              MENUS & SUGGESTIONS                           */
+/* ========================================================================== */
+
+/* Context menus and Quick Switcher / Command Palette containers */
+.suggestion-container,
+.menu {
+    background: rgba(var(--background-primary-rgb), 0.4) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 4px;
+}
+
+/* Individual items - More compact */
+.menu-item,
+.suggestion-item {
+    border-radius: var(--radius-s);
+    margin: 1px 2px;
+    padding: 4px 8px; /* Compact padding */
+    font-size: 0.95em; /* Slightly smaller text */
+    transition: background-color 0.1s ease;
+}
+
+/* Selected/Focused state */
+.menu-item.is-selected,
+.menu-item.is-focused,
+.suggestion-item.is-selected {
+    background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2) !important;
+    color: var(--accent-color);
+}
+
+/* Icons inside menus - Smaller and aligned */
+.menu-item-icon {
+    opacity: 0.8;
+    width: 14px;
+    height: 14px;
+}
+
+/* Menu headers/titles if any */
+.menu-header {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-faint);
+}

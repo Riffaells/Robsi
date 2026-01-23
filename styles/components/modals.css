@@ -1,52 +1,47 @@
-/* ======================================================================== */
-/*                              MODAL STYLES                               */
-/* ======================================================================== */
+/* ========================================================================== */
+/*                              MODAL STYLES                                 */
+/* ========================================================================== */
 
 /* Modal backdrop with blur effect */
 .modal-bg {
-    background: rgba(var(--background-modifier-cover), 0.6);
-    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.3) !important; /* Force semi-transparent black */
+    backdrop-filter: blur(16px);
     opacity: 1 !important;
 }
 
-
-.horizontal-tab-content, .vertical-tab-content, .vertical-tab-header {
-    background: rgba(var(--bg_dark_x), 0.6);
-}
-
+/* Main Modal and Prompt containers */
 .prompt,
 .modal {
-    background-color: rgba(var(--background-primary-rgb), 0.5) !important;
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--prompt-border-color);
-    border-radius: var(--radius-l);
+    background-color: rgba(var(--background-primary-rgb), 0.25) !important; /* Lighter background */
+    border: 1px solid var(--background-modifier-border);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
-/* Modal content areas */
+/* Ensure content areas are transparent to show the blur */
 .modal-content,
-.modal-sidebar {
-    background: transparent;
+.modal-sidebar,
+.modal-header,
+.modal-form,
+.hotkey-settings-container,
+.community-modal-info {
+    background: transparent !important;
 }
+
+/* Tabs inside modals (e.g. Settings) */
+.horizontal-tab-content, 
+.vertical-tab-content, 
+.vertical-tab-header {
+    background: transparent !important;
+}
+
+/* Settings sidebar specific */
+.vertical-tab-header {
+    border-right: 1px solid var(--background-modifier-border);
+}
+
+/* Community plugin cards */
 .community-item {
     background-color: rgba(var(--background-primary-rgb), 0.4);
-
-}
-
-/* Modal header */
-.modal-header {
-    border-bottom: 1px solid var(--background-modifier-border);
-    background: transparent;
-}
-
-
-
-/* Community plugins and other modals */
-.community-modal-info,
-.modal-form {
-    background: transparent;
-}
-
-/* Hotkey settings modal */
-.hotkey-settings-container {
-    background: transparent;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
 }

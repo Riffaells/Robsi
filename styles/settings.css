@@ -106,13 +106,13 @@ settings:
     title: List Indent
     description: Indentation for nested list items
     type: variable-text
-    default: 1.5em
+    default: 2em
   -
     id: list-spacing
     title: List Spacing
     description: Vertical spacing between list items
     type: variable-text
-    default: 0.125em
+    default: 0
   -
     id: unordered-lists-heading
     title: Unordered Lists (Bullets)

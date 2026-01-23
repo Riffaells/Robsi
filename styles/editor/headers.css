@@ -1,0 +1,137 @@
+/* ========================================================================== */
+/*                               HEADERS                                      */
+/* ========================================================================== */
+
+/*
+   Contains:
+   1. Typography & Spacing
+   2. Colors & Indicators (Left bar)
+   3. Dividers (Bottom lines)
+   4. Folding Indicators
+   5. Inner Formatting Overrides (Bold/Italic fixes)
+*/
+
+/* -------------------------------------------------------------------------- */
+/*                           1. Typography & Spacing                          */
+/* -------------------------------------------------------------------------- */
+
+.markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3,
+.markdown-preview-view h4, .markdown-preview-view h5, .markdown-preview-view h6,
+.HyperMD-header {
+    position: relative;
+    font-family: var(--font-family-heading);
+    font-weight: 400;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    z-index: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           2. Colors & Indicators                           */
+/* -------------------------------------------------------------------------- */
+
+/* Colors */
+:is(.markdown-preview-view h1, .HyperMD-header-1, .cm-header-1) { color: var(--h1-color) !important; }
+:is(.markdown-preview-view h2, .HyperMD-header-2, .cm-header-2) { color: var(--h2-color) !important; }
+:is(.markdown-preview-view h3, .HyperMD-header-3, .cm-header-3) { color: var(--h3-color) !important; }
+:is(.markdown-preview-view h4, .HyperMD-header-4, .cm-header-4) { color: var(--h4-color) !important; }
+:is(.markdown-preview-view h5, .HyperMD-header-5, .cm-header-5) { color: var(--h5-color) !important; }
+:is(.markdown-preview-view h6, .HyperMD-header-6, .cm-header-6) { color: var(--h6-color) !important; }
+
+/* Left "Block" Indicator (The ▍ character) */
+.markdown-preview-view :is(h1, h2, h3, h4, h5, h6)::before,
+.HyperMD-header::before {
+    content: "▍";
+    opacity: 0.8;
+    margin-right: 6px;
+    font-weight: normal;
+}
+
+/* Colorize the indicator */
+:is(.markdown-preview-view h1, .HyperMD-header-1)::before { color: var(--h1-color); }
+:is(.markdown-preview-view h2, .HyperMD-header-2)::before { color: var(--h2-color); }
+:is(.markdown-preview-view h3, .HyperMD-header-3)::before { color: var(--h3-color); }
+:is(.markdown-preview-view h4, .HyperMD-header-4)::before { color: var(--h4-color); }
+:is(.markdown-preview-view h5, .HyperMD-header-5)::before { color: var(--h5-color); }
+:is(.markdown-preview-view h6, .HyperMD-header-6)::before { color: var(--h6-color); }
+
+/* -------------------------------------------------------------------------- */
+/*                           3. Dividers (Underlines)                         */
+/* -------------------------------------------------------------------------- */
+
+/* Base style for the divider line - Applied ALWAYS */
+:is(.markdown-preview-sizer > div > :is(h1, h2, h3, h4, h5, h6),
+    .markdown-rendered > :is(h1, h2, h3, h4, h5, h6),
+    .HyperMD-header)::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -2px;
+    opacity: 0.8; /* Keep visible */
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+/* Gradients per header level with hierarchical thickness */
+:is(.markdown-preview-view h1, .HyperMD-header-1)::after {
+    height: 3px;
+    background: linear-gradient(to right, var(--h1-color) 30%, transparent 70%);
+}
+:is(.markdown-preview-view h2, .HyperMD-header-2)::after {
+    height: 2px;
+    background: linear-gradient(to right, var(--h2-color) 30%, transparent 70%);
+}
+:is(.markdown-preview-view h3, .HyperMD-header-3)::after {
+    height: 1px;
+    background: linear-gradient(to right, var(--h3-color) 30%, transparent 70%);
+}
+:is(.markdown-preview-view h4, .HyperMD-header-4)::after {
+    height: 1px;
+    background: linear-gradient(to right, var(--h4-color) 30%, transparent 70%);
+}
+:is(.markdown-preview-view h5, .HyperMD-header-5)::after {
+    height: 1px;
+    background: linear-gradient(to right, var(--h5-color) 30%, transparent 70%);
+}
+:is(.markdown-preview-view h6, .HyperMD-header-6)::after {
+    height: 1px;
+    background: linear-gradient(to right, var(--h6-color) 30%, transparent 70%);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           4. Folding Indicators                            */
+/* -------------------------------------------------------------------------- */
+
+/* Hide default SVG chevron */
+.HyperMD-header .cm-fold-indicator .collapse-indicator svg {
+    display: none;
+}
+
+/* Always show collapse indicator */
+.HyperMD-header .cm-fold-indicator .collapse-indicator {
+    opacity: 1 !important;
+}
+
+.HyperMD-header .cm-fold-indicator .collapse-indicator::before {
+    font-size: calc(var(--font-text-size) * 0.75);
+    font-weight: 600 !important;
+    color: var(--text-faint);
+    width: max-content;
+}
+
+.cm-fold-indicator:hover .collapse-indicator { color: var(--accent-color) !important; }
+
+/* -------------------------------------------------------------------------- */
+/*                           5. Inner Formatting Overrides                    */
+/* -------------------------------------------------------------------------- */
+
+/*
+   Force Bold, Italic, and other formatting INSIDE headers
+   to inherit the header's color instead of using the global accent color.
+*/
+:is(.markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3,
+    .markdown-preview-view h4, .markdown-preview-view h5, .markdown-preview-view h6,
+    .HyperMD-header) :is(strong, b, em, i, .cm-strong, .cm-em) {
+    color: inherit !important;
+}

@@ -1,0 +1,75 @@
+/* ========================================================================== */
+/*                               NAVIGATION                                   */
+/* ========================================================================== */
+
+/*
+   Contains:
+   1. Breadcrumbs
+   2. Outline View
+*/
+
+/* -------------------------------------------------------------------------- */
+/*                           1. Breadcrumbs                                   */
+/* -------------------------------------------------------------------------- */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: "▶";
+    margin: 0 8px;
+    color: var(--text-faint);
+    font-size: 0.7em;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           2. Outline View                                  */
+/* -------------------------------------------------------------------------- */
+
+.outline .tree-item-self {
+    position: relative;
+    padding-left: 1.5em;
+}
+
+.tree-item-self.has-active-menu {
+    box-shadow: none;
+}
+
+.outline .tree-item-self::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 60%;
+    border-radius: 2px;
+    opacity: 0.6;
+    background-color: var(--interactive-accent);
+}
+
+.outline .tree-item-self:hover::before {
+    opacity: 1;
+    width: 4px;
+}
+
+.outline .tree-item-self.is-active::before {
+    opacity: 1;
+    width: 4px;
+}
+
+/* Table of Contents in Preview */
+.markdown-preview-view .toc li::before {
+    content: "→";
+    color: var(--accent-color);
+    margin-right: 8px;
+}

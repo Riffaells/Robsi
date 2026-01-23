@@ -1,0 +1,11 @@
+/* ========================================================================== */
+/*                                  NOTICES                                   */
+/* ========================================================================== */
+
+.notice {
+    background-color: rgba(var(--background-secondary-rgb), 0.6);
+    backdrop-filter: blur(8px);
+    border: 2px solid var(--background-modifier-border);
+    border-radius: var(--radius-l);
+    color: var(--text-normal);
+}

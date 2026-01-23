@@ -1,0 +1,223 @@
+/* ========================================================================== */
+/*                                WORKSPACE                                   */
+/* ========================================================================== */
+
+/* 
+   Contains:
+   1. Workspace Leaves (Containers)
+   2. Tabs & Headers
+   3. Titlebar & Dragging
+   4. Sidebars & Navigation
+   5. Popovers & Embeds (Blur effects)
+*/
+
+/* -------------------------------------------------------------------------- */
+/*                           1. Workspace Leaves                              */
+/* -------------------------------------------------------------------------- */
+
+/* Main containers */
+.workspace-leaf {
+    background: var(--workspace-background-translucent);
+    border-radius: 12px; /* Material Design 3 Styling */
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: border-color 0.2s ease;
+}
+
+.workspace-leaf:hover .workspace-leaf-content {
+    border-color: var(--border-color-hover);
+}
+
+.workspace-leaf-content {
+    border-radius: 8px;
+}
+
+/* Splitters */
+.workspace-leaf-resize-handle {
+    background: transparent;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           2. Tabs & Headers                                */
+/* -------------------------------------------------------------------------- */
+
+/* Tab Container */
+.workspace-tabs {
+    border-radius: 8px;
+}
+
+.workspace-tab-header-container {
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid rgba(var(--background-modifier-border-hover-rgb), 0.2);
+}
+
+/* Individual Tab */
+.workspace-tab-header {
+    background: var(--tab-background);
+    border-radius: 8px 8px 0 0;
+    border: none;
+    transition: background-color 0.15s ease;
+    min-width: var(--tab-min-width);
+    max-width: var(--tab-max-width);
+}
+
+.workspace-tab-header:hover:not(.is-active) {
+    background: var(--tab-background-hover);
+}
+
+.workspace-tab-header.is-active {
+    background: var(--tab-background-active);
+    font-weight: 600;
+}
+
+/* View Header (Breadcrumbs area + Buttons) */
+.view-header-nav-buttons {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+/* Buttons in header */
+.view-header-nav-buttons .clickable-icon {
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+}
+
+.view-header-nav-buttons .clickable-icon:hover {
+    background-color: var(--background-modifier-hover);
+    opacity: 1;
+}
+
+/* Hide disabled icons */
+.view-header-nav-buttons .clickable-icon[aria-disabled="true"] {
+    display: none;
+}
+
+/* Hide Tab Bar Option (via class) */
+.hide-tab-bar-always .mod-root .workspace-tabs .workspace-tab-header-container {
+    display: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           3. Titlebar & Dragging                           */
+/* -------------------------------------------------------------------------- */
+
+.titlebar {
+    background: var(--titlebar-background);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mod-linux .titlebar-button,
+.mod-windows .titlebar-button {
+    padding: 0 8px;
+}
+
+/* Fix draggability regions */
+.view-header-title-container {
+    -webkit-app-region: drag;
+    border-radius: 8px;
+    transition: none;
+}
+
+.view-header-title-container div {
+    -webkit-app-region: no-drag;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           4. Sidebars & Navigation                         */
+/* -------------------------------------------------------------------------- */
+
+/* Sidebar Toggles */
+.sidebar-toggle-button.mod-right,
+.sidebar-toggle-button.mod-left {
+    display: flex;
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
+}
+
+.sidebar-toggle-button.mod-right:hover,
+.sidebar-toggle-button.mod-left:hover {
+    opacity: 1;
+}
+
+/* Vault Actions (Settings, etc) */
+.workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
+    display: flex !important;
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
+}
+
+.workspace-sidedock-vault-profile:hover .workspace-drawer-vault-actions {
+    opacity: 1;
+}
+
+/* Navigation Items (File Explorer) */
+.nav-file-title,
+.nav-folder-title {
+    border-left: 2px solid transparent;
+    transition: background-color 0.1s ease, border-color 0.1s ease;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover {
+    background-color: var(--background-modifier-hover);
+    border-left-color: var(--border-color-active);
+}
+
+.nav-file.is-active .nav-file-title {
+    background-color: var(--background-modifier-active-hover);
+    border-left-color: var(--interactive-accent);
+    color: var(--text-normal);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           5. Popovers & Embeds (BLUR)                      */
+/* -------------------------------------------------------------------------- */
+
+/* Popover Container */
+.popover.hover-popover {
+    max-height: 500px;
+    min-height: 100px;
+    width: 500px;
+    background-color: transparent; /* Transparent to show blur underneath */
+    box-shadow: var(--shadow-xl);
+    border: none;
+}
+
+/* The actual content inside popover/embed */
+.markdown-embed {
+    background-color: rgba(var(--background-primary-rgb), 0.2);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 12px;
+}
+
+.popover .markdown-embed {
+    height: 100%;
+    border-radius: 12px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           6. Mobile & Tweaks                               */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .workspace-leaf { border-radius: 8px; }
+    .workspace-tab-header { border-radius: 6px 6px 0 0; }
+    
+    .sidebar-toggle-button.mod-right,
+    .sidebar-toggle-button.mod-left {
+        min-width: 44px;
+        min-height: 44px;
+        opacity: 1;
+    }
+}
+
+/* Input Tweaks from old file */
+body:not(.is-ios):not(.is-android) input[type='date'], 
+body:not(.is-ios):not(.is-android) input[type='datetime-local'] {
+    padding-inline-start: 24px;
+}

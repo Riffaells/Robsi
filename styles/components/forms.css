@@ -1,0 +1,94 @@
+/* ========================================================================== */
+/*                                   FORMS                                    */
+/* ========================================================================== */
+
+/* --- Settings Groups --- */
+.setting-item-container,
+.setting-group,
+.setting-items {
+    background: transparent !important;
+}
+
+/* --- Input Fields --- */
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+    background-color: var(--background-modifier-form-field);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: var(--text-normal);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: var(--interactive-accent);
+    background-color: rgba(var(--background-primary-rgb), 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 0 3px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+    outline: none;
+}
+
+/* Prompt/Modal Inputs */
+input.prompt-input {
+    background: rgba(var(--background-primary-rgb), 0.5);
+    border-color: var(--prompt-border-color);
+    font-size: 1.1em;
+    padding: 10px 14px;
+}
+
+/* --- Dropdowns (Select) --- */
+.dropdown {
+    background-color: var(--background-modifier-form-field);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 6px;
+    padding: 4px 24px 4px 8px; /* Right padding for arrow */
+    color: var(--text-normal);
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 14px;
+    -webkit-appearance: none; /* Hide default arrow */
+    appearance: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.dropdown:hover {
+    border-color: var(--text-muted);
+}
+
+.dropdown:focus {
+    border-color: var(--interactive-accent);
+    background-color: rgba(var(--background-primary-rgb), 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 0 3px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+    outline: none;
+}
+
+/* --- Range Sliders --- */
+input[type=range] {
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--background-modifier-border);
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--interactive-accent);
+    cursor: pointer;
+    border: 2px solid var(--background-primary);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    margin-top: -6px;
+}

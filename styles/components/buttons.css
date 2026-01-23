@@ -1,0 +1,16 @@
+/* ========================================================================== */
+/*                                  BUTTONS                                   */
+/* ========================================================================== */
+
+/* Primary CTA Button (Call to Action) */
+.mod-cta {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border: none;
+    transition: background-color 0.15s ease;
+}
+
+.mod-cta:hover {
+    background-color: var(--interactive-accent-hover);
+    color: var(--text-on-accent);
+}

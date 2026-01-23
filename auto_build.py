@@ -41,15 +41,18 @@ class ThemeBuilder:
         def get_priority(file_path: Path) -> tuple:
             relative_path = file_path.relative_to(self.styles_dir)
             path_str = str(relative_path).lower()
+            parts = relative_path.parts
 
-            if relative_path.name == "variables.css": return (0, path_str)
-            if relative_path.name == "base.css": return (1, path_str)
-            if "components" in relative_path.parts: return (2, path_str)
-            if "plugins" in relative_path.parts: return (3, path_str)
-            if "utilities" in relative_path.parts: return (4, path_str)
-            if "themes" in relative_path.parts: return (5, path_str)
-            if relative_path.name == "settings.css": return (6, path_str)
-            return (7, path_str)
+            # Semantic load order
+            if "base" in parts: return (0, path_str)
+            if "themes" in parts: return (1, path_str)
+            if "layout" in parts: return (2, path_str)
+            if "components" in parts: return (3, path_str)
+            if "editor" in parts: return (4, path_str)
+            if "plugins" in parts: return (5, path_str)
+            if "utilities" in parts: return (6, path_str)
+            
+            return (99, path_str)
 
         css_files.sort(key=get_priority)
         return css_files

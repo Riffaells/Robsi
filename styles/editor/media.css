@@ -1,0 +1,11 @@
+/* ========================================================================== */
+/*                               MEDIA & EMBEDS                               */
+/* ========================================================================== */
+
+.image-embed {
+    border-radius: var(--image-radius);
+}
+
+/* Minimal Image Captions (Plugin Support) */
+.minimal-image-captions .image-captions-figure { background-color: transparent !important; }
+.minimal-image-captions .image-captions-caption { background-color: transparent !important; text-align: left !important; }

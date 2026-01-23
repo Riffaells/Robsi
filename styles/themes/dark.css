@@ -1,3 +1,7 @@
+/* ========================================================================== */
+/*                                DARK THEME                                  */
+/* ========================================================================== */
+
 .theme-dark {
     color-scheme: dark;
 
@@ -11,18 +15,23 @@
     /* ======================================================================== */
     /*                           BACKGROUND COLORS                             */
     /* ======================================================================== */
+    /* Primitives */
     --bg_dark2_x: 2, 2, 2;
     --bg_dark2: rgb(var(--bg_dark2_x));
+    
     --bg_dark_x: 8, 8, 8;
     --bg_dark: rgb(var(--bg_dark_x));
+    
     --bg_x: 15, 15, 15;
     --bg: rgb(var(--bg_x));
+    
     --bg_highlight_x: 25, 25, 25;
     --bg_highlight: rgb(var(--bg_highlight_x));
+    
     --bg_highlight_dark_x: 18, 18, 18;
     --bg_highlight_dark: rgb(var(--bg_highlight_dark_x));
 
-    /* Standard background variables */
+    /* Mappings */
     --background-primary: #020202;
     --background-secondary: #020202;
     --bg-primary-rgb: 2, 2, 2;
@@ -34,20 +43,15 @@
     /* ======================================================================== */
     --fg_x: 220, 220, 220;
     --fg: rgb(var(--fg_x));
+    
     --fg_dark_x: 180, 180, 180;
     --fg_dark: rgb(var(--fg_dark_x));
+    
     --comment_x: 120, 120, 120;
     --comment: rgb(var(--comment_x));
+    
     --code-comment_x: 115, 125, 165;
     --code-comment: rgb(var(--code-comment_x));
-
-    /* Standard text variables */
-    --text-normal: #d0d0d0;
-    --text-muted: #888;
-    --text-faint: var(--fg_dark);
-    --text-on-accent: #ffffff;
-    --text-error: var(--red);
-    --text-error-hover: var(--red1);
 
     /* ======================================================================== */
     /*                             COLOR PALETTE                               */
@@ -90,6 +94,8 @@
     /* Greens */
     --green_x: 158, 206, 106;
     --green: rgb(var(--green_x));
+    --green-dark_x: 120, 156, 122;
+    --green-dark: rgb(var(--green-dark_x));
     --teal_x: 26, 188, 156;
     --teal: rgb(var(--teal_x));
 
@@ -98,178 +104,38 @@
     --red: rgb(var(--red_x));
     --red1_x: 219, 75, 75;
     --red1: rgb(var(--red1_x));
+    --red-dark_x: 155, 45, 45;
+    --red-dark: rgb(var(--red_x));
 
-    /* Special colors */
+    /* Special */
     --terminal_black_x: 65, 72, 104;
     --terminal_black: rgb(var(--terminal_black_x));
     --unknown: #ffffff;
-
-    /* Folder notes */
-    --folder-note-color_x: 220, 200, 250;
+    --folder-note-color_x: 200, 190, 250;
     --folder-note-color: rgb(var(--folder-note-color_x));
 
     /* ======================================================================== */
-    /*                                LINKS                                    */
+    /*                         COMPONENT OVERRIDES                             */
     /* ======================================================================== */
+    
+    /* Interactive */
+    --interactive-normal: var(--bg_dark);
+    --interactive-hover: var(--bg_highlight);
+    --interactive-success: var(--green);
+    --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    --accent-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 
-    --link-external-filter: invert(35%) sepia(28%) saturate(681%) hue-rotate(192deg) brightness(94%) contrast(85%);
-
-    /* ======================================================================== */
-    /*                            UI COMPONENTS                                */
-    /* ======================================================================== */
     /* Tabs */
+    --tab-container-background: var(--background-primary);
     --tab-background: rgba(2, 2, 2, 0.9);
     --tab-background-active: rgba(25, 25, 25, 0.95);
     --tab-background-hover: rgba(18, 18, 18, 0.8);
-    --tab-background-unfocused: rgba(8, 8, 8, 0.7);
     --tab-divider-color: rgba(40, 40, 40, 0.3);
-    --tab-outline-color: rgba(60, 60, 60, 0.5);
-    --tab-outline-color-active: rgba(80, 80, 80, 0.8);
 
-    /* Workspace */
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --workspace-background-translucent: rgba(2, 2, 2, 0.9);
-
-    /* Titlebar */
-    --titlebar-background: var(--background-primary);
-    --titlebar-text-color: #e8e8e8;
-    --titlebar-text-color-focused: #ffffff;
-    --titlebar-text-color-inactive: #666;
-
-    /* ======================================================================== */
-    /*                           INTERACTIVE ELEMENTS                          */
-    /* ======================================================================== */
-    --interactive-normal: var(--bg_dark);
-    --interactive-hover: var(--bg_highlight);
-    --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-    --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
-
-    /* Background modifiers */
-    --background-modifier-active-hover: rgba(var(--cyan_x), 0.12);
-    --background-modifier-border: var(--bg_highlight);
-    --background-modifier-border-hover: var(--bg_highlight_dark);
-    --background-modifier-border-focus: var(--interactive-accent);
-    --background-modifier-box-shadow: rgba(0, 0, 0, 0.5);
-    --background-modifier-cover: rgba(2, 2, 2, 0.8);
-
-    /* ======================================================================== */
-    /*                           CONTENT ELEMENTS                              */
-    /* ======================================================================== */
-    /* Selection and highlighting */
-    --text-selection: rgba(var(--purple_x), 0.15);
-    --text-highlight-bg: rgba(var(--orange_x), 0.25);
-    --flashing-background: rgba(var(--cyan_x), 0.2);
-
-    /* Code blocks */
+    /* Code */
     --code-background: rgb(var(--purple_x), 0.05);
     --code-normal: var(--fg_dark);
-    --text-on-code: var(--fg);
-    --code-selection-bg: rgba(var(--cyan_x), 0.2);
-
-    /* Code syntax highlighting */
-    /* --code-keyword: var(--purple);
-    --code-function: var(--yellow);
-    --code-string: var(--green);
-    --code-number: var(--orange);
-    --code-comment: var(--comment);
-    --code-property: var(--red);
-    --code-tag: var(--red);
-    --code-operator: var(--cyan);
-    --code-class: var(--yellow);
-    --code-variable: var(--cyan); */
-
-    /* Blockquotes */
-    --blockquote-color: var(--fg_dark);
-    --blockquote-bg: rgba(var(--cyan_x), 0.08);
-    --blockquote-border: var(--cyan);
-    --blockquote-accent: var(--magenta);
-    --blockquote-quote-mark: rgba(var(--purple_x), 0.7);
-
-    /* Headers */
-    --h1-color: var(--red);
-    --h2-color: var(--magenta);
-    --h3-color: var(--green);
-    --h4-color: var(--cyan);
-    --h5-color: var(--blue);
-    --h6-color: var(--orange);
-
-    /* Tags */
-    --tag-color: var(--magenta);
-    --tag-background: rgba(var(--magenta_x), 0.15);
-    --tag-color-hover: var(--cyan);
-    --tag-background-hover: rgba(var(--cyan_x), 0.15);
-
-    /* Tables */
-    --table-border-color: var(--bg_highlight);
-    --table-header-background: var(--bg_highlight);
-    --table-header-background-hover: var(--bg_highlight_dark);
-
-    /* Scrollbars */
-    --scrollbar-bg: rgba(255, 255, 255, 0.03);
-    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.15);
-    --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.3);
-
-    /* Date elements */
-    --date-color: var(--blue);
-    --date-background-color: rgba(var(--blue_x), 0.15);
-
-    /* ======================================================================== */
-    /*                             NAVIGATION                                  */
-    /* ======================================================================== */
-    --nav-item-color: rgba(255, 255, 255, 0.9);
-    --nav-item-color-hover: var(--fg);
-    --nav-item-background-hover: var(--bg_highlight);
-    --nav-item-color-active: var(--purple);
-    --nav-item-background-active: var(--bg_highlight);
-    --nav-file-tag: rgba(var(--yellow_x), 0.9);
-
-    /* ======================================================================== */
-    /*                           FORM ELEMENTS                                 */
-    /* ======================================================================== */
-    /* Checkboxes */
-    --checkbox-color: var(--green);
-    --checkbox-color-hover: var(--blue);
-    --checkbox-border-color: var(--comment);
-    --checkbox-border-color-hover: var(--green);
-
-    /* Modals */
-    --modal-border-color: var(--background-modifier-border);
-    --prompt-border-color: var(--background-modifier-border);
-
-    /* ======================================================================== */
-    /*                              CALLOUTS                                   */
-    /* ======================================================================== */
-    --callout-default: var(--blue_x);
-    --callout-info: var(--blue_x);
-    --callout-summary: var(--cyan_x);
-    --callout-tip: var(--cyan_x);
-    --callout-todo: var(--cyan_x);
-    --callout-bug: var(--red_x);
-    --callout-error: var(--red1_x);
-    --callout-fail: var(--red1_x);
-    --callout-example: var(--magenta_x);
-    --callout-important: var(--green_x);
-    --callout-success: var(--teal_x);
-    --callout-question: var(--yellow_x);
-    --callout-warning: var(--orange_x);
-    --callout-quote: var(--fg_dark_x);
-
-    /* ======================================================================== */
-    /*                               GRAPHS                                    */
-    /* ======================================================================== */
-    --graph-line: var(--comment);
-    --graph-node: var(--fg);
-    --graph-node-tag: var(--orange);
-    --graph-node-attachment: var(--blue);
-
-
+    
+    /* Workspace */
+    --workspace-background-translucent: rgba(2, 2, 2, 0.9);
 }
-
-
-:not(.mod-windows).theme-dark {
-    --background-primary: transparent;
-}
-
-/* ======================================================================== */
-/*                           CODE BLOCK STYLING                            */
-/* ======================================================================== */

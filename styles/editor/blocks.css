@@ -1,0 +1,47 @@
+/* ========================================================================== */
+/*                           BLOCK ELEMENTS                                   */
+/* ========================================================================== */
+
+/* --- Blockquotes --- */
+blockquote {
+	border: none;
+	border-left: 2px solid var(--blockquote-border);
+	background: var(--blockquote-bg);
+	border-radius: var(--radius-m);
+	color: var(--blockquote-color);
+	position: relative;
+
+	padding: 12px 16px 12px 40px; /* место под иконку */
+	overflow: hidden; /* КЛЮЧЕВО */
+}
+
+/* Decorative Quote Mark */
+blockquote::before {
+	content: "𒀭";
+	color: var(--blockquote-quote-mark);
+	position: absolute;
+	top: 7px;
+	left: 14px;
+	line-height: 1;
+	font-size: 1.2em;
+	font-family: 'Georgia', serif;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+/* Content styling - ensure text doesn't overlap with the decorative icon */
+blockquote p {
+    padding-left: 24px;
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
+    margin: 0;
+}
+
+/* Live Preview Formatting for Quotes */
+.cm-formatting.cm-formatting-quote {
+    color: var(--blockquote-accent) !important;
+    font-weight: 600;
+    opacity: 0.8;
+}
+

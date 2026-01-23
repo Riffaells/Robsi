@@ -1,0 +1,30 @@
+/* ========================================================================== */
+/*                                SCROLLBARS                                  */
+/* ========================================================================== */
+
+/* Webkit Scrollbar Customization */
+
+::-webkit-scrollbar {
+    background-color: var(--scrollbar-bg);
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-bg);
+    border-radius: var(--radius-m); /* Немного скруглим, но не сильно */
+    border: 2px solid transparent; /* Создает отступ вокруг ползунка, чтобы он не слипался с краем */
+    background-clip: content-box; /* Важно для работы прозрачной границы */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-active-thumb-bg);
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}

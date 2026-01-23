@@ -1,0 +1,59 @@
+/* ========== LEVEL 1 ========== */
+/* Большая точка */
+ul:not(li > *) > li > .list-bullet::after,
+.HyperMD-list-line-1 .list-bullet::after {
+	height: 6px;
+	width: 6px;
+	border-radius: 50%;
+	background-color: var(--bullet-new-color);
+}
+
+/* ========== LEVEL 2 ========== */
+/* Пустой кружок */
+ul:not(li > *) > li > ul > li > .list-bullet::after,
+.HyperMD-list-line-2 .list-bullet::after {
+	height: 6px;
+	width: 6px;
+	background-color: transparent;
+	border: 2px solid var(--bullet-new-color);
+	border-radius: 50%;
+}
+
+/* ========== LEVEL 3 ========== */
+/* Чёрточка */
+ul:not(li > *) > li > ul > li > ul > li > .list-bullet::after,
+.HyperMD-list-line-3 .list-bullet::after {
+	height: 2px;
+	width: 8px;
+	border-radius: 0;
+	background-color: var(--bullet-new-color);
+}
+
+/* ========== LEVEL 4 ========== */
+/* Маленькая точка */
+ul:not(li > *) > li > ul > li > ul > li > ul > li > .list-bullet::after,
+.HyperMD-list-line-4 .list-bullet::after {
+	height: 3px;
+	width: 3px;
+	border-radius: 50%;
+	background-color: var(--bullet-new-color);
+}
+
+/* ========== LEVEL 5 ========== */
+/* Квадрат */
+ul:not(li > *) > li > ul > li > ul > li > ul > li > ul > li > .list-bullet::after,
+.HyperMD-list-line-5 .list-bullet::after {
+	height: 5px;
+	width: 5px;
+	border-radius: 0;
+	background-color: var(--bullet-new-color);
+}
+
+ul > li.task-list-item > .task-list-item-checkbox {
+	margin-inline-start: 0;
+}
+
+.markdown-rendered ul > li,
+.markdown-rendered ol > li {
+    margin-inline-start: 2ch !important;
+}
