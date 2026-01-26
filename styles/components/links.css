@@ -74,12 +74,13 @@ a.internal-link:hover,
 .cm-hmd-internal-link:hover,
 .cm-hmd-internal-link a:hover,
 .internal-link:hover {
-  color: var(--internal-link-color-hover) !important;
+  color: var(--internal-link-color-hover);
   text-decoration: none !important;
 }
 
 /* Helper for data-link-text */
-span.data-link-text > a.cm-underline {
-  color: var(--internal-link-color) !important;
+/* Lower specificity to allow plugin overrides via data-link-type */
+.data-link-text a.cm-underline {
+  color: var(--internal-link-color);
   text-decoration: none !important;
 }

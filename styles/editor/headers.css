@@ -67,8 +67,10 @@
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: -2px;
-    opacity: 0.8; /* Keep visible */
+    bottom: 1px;
+    transform: translateY(3px); /* Опускаем линию ниже */
+    line-height: unset !important;
+    opacity: 0.4;
     pointer-events: none;
     border-radius: 10px;
 }

@@ -13,3 +13,8 @@
 
 /* Tag Pills */
 .multi-select-pill { line-height: normal; }
+
+/* Remove line-height from metadata tags */
+.metadata-property-value[data-property-type="tags"] .multi-select-pill {
+    line-height: unset;
+}

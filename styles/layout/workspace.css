@@ -61,13 +61,33 @@
     max-width: var(--tab-max-width);
 }
 
-.workspace-tab-header:hover:not(.is-active) {
-    background: var(--tab-background-hover);
-}
-
 .workspace-tab-header.is-active {
     background: var(--tab-background-active);
     font-weight: 600;
+}
+
+/* Reset box-shadow on active tab pseudo-elements */
+.workspace-split.mod-root .workspace-tab-header-container .workspace-tab-header.is-active::before,
+.workspace-split.mod-root .workspace-tab-header-container .workspace-tab-header.is-active::after {
+    box-shadow: none;
+}
+
+/* Tab header inner styles */
+.workspace .mod-root .workspace-tab-header-inner::after {
+    width: 0;
+}
+
+/* Hover effect on inner element */
+@media (hover: hover) {
+    .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+        background-color: var(--background-modifier-hover);
+    }
+}
+
+/* Active and focus styles for inner element */
+.workspace-tab-header.is-active .workspace-tab-header-inner,
+.workspace-tab-header:focus .workspace-tab-header-inner {
+    background-color: var(--background-modifier-hover);
 }
 
 /* View Header (Breadcrumbs area + Buttons) */
