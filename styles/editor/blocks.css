@@ -6,7 +6,6 @@
 blockquote {
 	border: none;
 	border-left: 2px solid var(--blockquote-border);
-	background: var(--blockquote-bg);
 	border-radius: var(--radius-m);
 	color: var(--blockquote-color);
 	position: relative;

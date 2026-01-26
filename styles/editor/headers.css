@@ -77,19 +77,19 @@
 
 /* Gradients per header level with hierarchical thickness */
 :is(.markdown-preview-view h1, .HyperMD-header-1)::after {
-    height: 3px;
+    height: 5px;
     background: linear-gradient(to right, var(--h1-color) 30%, transparent 70%);
 }
 :is(.markdown-preview-view h2, .HyperMD-header-2)::after {
-    height: 2px;
+    height: 4px;
     background: linear-gradient(to right, var(--h2-color) 30%, transparent 70%);
 }
 :is(.markdown-preview-view h3, .HyperMD-header-3)::after {
-    height: 1px;
+    height: 3px;
     background: linear-gradient(to right, var(--h3-color) 30%, transparent 70%);
 }
 :is(.markdown-preview-view h4, .HyperMD-header-4)::after {
-    height: 1px;
+    height: 2px;
     background: linear-gradient(to right, var(--h4-color) 30%, transparent 70%);
 }
 :is(.markdown-preview-view h5, .HyperMD-header-5)::after {

@@ -130,4 +130,25 @@
         border-top: 1px solid #e2e8f0;
         color: #64748b;
     }
+
+    /* Blockquote */
+    --blockquote-background-color: rgba(var(--purple_x), 0.08);
+
+    /* Code */
+    --code-background: rgba(var(--purple_x), 0.06);
+
+    /* Spoiler */
+    --spoiler-background: rgba(var(--bg_dark_x), 0.5);
+    --spoiler-background-hover: rgba(var(--bg_dark_x), 0.7);
+    --spoiler-pattern: radial-gradient(circle 1px at 10px 8px, rgba(100, 100, 100, 0.6) 50%, transparent 50%),
+        radial-gradient(circle 1px at 30px 2px, rgba(100, 100, 100, 0.4) 50%, transparent 50%),
+        radial-gradient(circle 1px at 50px 12px, rgba(100, 100, 100, 0.7) 50%, transparent 50%),
+        radial-gradient(circle 1px at 70px 6px, rgba(100, 100, 100, 0.5) 50%, transparent 50%),
+        radial-gradient(circle 1px at 15px 24px, rgba(100, 100, 100, 0.6) 50%, transparent 50%),
+        radial-gradient(circle 1px at 38px 28px, rgba(100, 100, 100, 0.4) 50%, transparent 50%),
+        radial-gradient(circle 1px at 60px 36px, rgba(100, 100, 100, 0.7) 50%, transparent 50%),
+        radial-gradient(circle 1px at 85px 22px, rgba(100, 100, 100, 0.5) 50%, transparent 50%);
+
+    /* Navigation */
+    --nav-item-color: rgba(30, 35, 42, 0.9);
 }

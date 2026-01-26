@@ -90,6 +90,19 @@
     background-color: var(--background-modifier-hover);
 }
 
+/* -------------------------------------------------------------------------- */
+/*                           7. Status Bar                                    */
+/* -------------------------------------------------------------------------- */
+
+.status-bar {
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
+}
+
+.status-bar:hover {
+    opacity: 1;
+}
+
 /* View Header (Breadcrumbs area + Buttons) */
 .view-header-nav-buttons {
     display: flex;

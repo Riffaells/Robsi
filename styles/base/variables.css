@@ -128,7 +128,7 @@
     /* Modifiers */
     --background-modifier-border: transparent;
     --background-modifier-border-hover: transparent;
-    --background-modifier-form-field: transperent;
+    --background-modifier-form-field: transparent;
     --background-modifier-form-field-highlighted: var(--bg_dark);
     --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
     --background-modifier-cover: rgba(var(--bg_dark_x), 0.8);
@@ -213,7 +213,6 @@
     --scrollbar-thumb-bg: rgba(var(--text-muted-rgb), 0.2);
     --scrollbar-active-thumb-bg: rgba(var(--text-muted-rgb), 0.4);
 
-    --nav-item-color: rgba(255, 255, 255, 0.9);
     --nav-item-color-hover: var(--fg);
     --nav-item-background-hover: var(--bg_highlight);
     --nav-item-background-active: rgba(var(--bg_highlight), 0.2);
