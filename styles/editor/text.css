@@ -46,3 +46,18 @@ ins, .cm-ins {
     text-decoration: none;
     border-bottom: 2px solid var(--insertion-color);
 }
+
+/* -------------------------------------------------------------------------- */
+/*                           Horizontal Rule (hr)                             */
+/* -------------------------------------------------------------------------- */
+
+hr,
+.markdown-rendered hr,
+.markdown-preview-view hr {
+    border: none;
+    height: var(--hr-thickness);
+    background: var(--hr-color);
+    border-radius: 4px;
+    margin: 2em 0;
+    opacity: 0.3;
+}

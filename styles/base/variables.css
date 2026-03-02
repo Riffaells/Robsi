@@ -90,9 +90,9 @@
     --checkbox-radius: var(--radius-s);
     --checkbox-size: 16px;
 
-    /* Callouts */
+    /* Callouts */ 
     --callout-radius: var(--radius-m);
-    --callout-padding: 16px;
+    --callout-padding: 10px;
     --callout-title-padding: 0;
     --callout-content-padding: 0;
 
@@ -163,6 +163,9 @@
     --h5-color: var(--blue);
     --h6-color: var(--yellow);
 
+    --hr-color: var(--text-normal);
+    --hr-thickness: 3px;
+
     /* Links */
     --link-color: var(--purple);
     --link-color-hover: var(--cyan);
@@ -215,9 +218,10 @@
 
     --nav-item-color-hover: var(--fg);
     --nav-item-background-hover: var(--bg_highlight);
-    --nav-item-background-active: rgba(var(--bg_highlight), 0.2);
+    --nav-item-background-active: rgba(var(--bg_highlight_x), 0.9);
     --nav-item-padding: var(--size-2-2) var(--size-4-1) var(--size-2-2) var(--size-4-6);
     --nav-item-parent-padding: var(--nav-item-padding);
+    --nav-item-weight-active: 600;
     --nav-file-tag: rgba(var(--yellow_x), 0.9);
 
     --graph-line: var(--comment);
@@ -231,5 +235,6 @@
 	--link-decoration: none;
 	--link-decoration-hover: none;
 
-	--divider-vertical-height: 0%;
+	--divider-vertical-height: 100%;
+	--embed-padding: 0;
 }

@@ -16,12 +16,11 @@ input[type="email"],
 input[type="password"],
 input[type="number"],
 textarea {
-    background-color: var(--background-modifier-form-field);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 8px;
-    padding: 6px 10px;
+    background-color: rgba(var(--background-modifier-form-field), 0.3);
+    border: 2px solid var(--background-modifier-border);
+    border-radius: 12px;
     color: var(--text-normal);
-    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 input[type="text"]:focus,
@@ -31,9 +30,7 @@ input[type="password"]:focus,
 input[type="number"]:focus,
 textarea:focus {
     border-color: var(--interactive-accent);
-    background-color: rgba(var(--background-primary-rgb), 0.7);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 0 3px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+    background-color: rgba(var(--background-primary-rgb), 0.5);
     outline: none;
 }
 
@@ -47,10 +44,11 @@ input.prompt-input {
 
 /* --- Dropdowns (Select) --- */
 .dropdown {
-    background-color: var(--background-modifier-form-field);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 6px;
-    padding: 4px 24px 4px 8px; /* Right padding for arrow */
+    background-color: rgba(var(--background-primary-rgb), 0.4);
+    backdrop-filter: blur(12px);
+    border: 2px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 6px 28px 6px 12px; /* Right padding for arrow */
     color: var(--text-normal);
     cursor: pointer;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
@@ -59,19 +57,27 @@ input.prompt-input {
     background-size: 14px;
     -webkit-appearance: none; /* Hide default arrow */
     appearance: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    transition: all 0.2s var(--motion-easing-standard);
+    box-shadow: var(--shadow-s);
 }
 
 .dropdown:hover {
     border-color: var(--text-muted);
+    background-color: rgba(var(--background-primary-rgb), 0.5);
+    box-shadow: var(--shadow-m);
 }
 
 .dropdown:focus {
     border-color: var(--interactive-accent);
-    background-color: rgba(var(--background-primary-rgb), 0.7);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 0 3px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+    background-color: rgba(var(--background-primary-rgb), 0.8);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 0 3px rgba(var(--interactive-accent-rgb), 0.2), var(--shadow-m);
     outline: none;
+}
+
+/* Dropdown options */
+.dropdown option {
+    font-weight: normal;    
 }
 
 /* --- Range Sliders --- */

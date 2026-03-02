@@ -32,10 +32,6 @@
     border-radius: 8px;
 }
 
-/* Splitters */
-.workspace-leaf-resize-handle {
-    background: transparent;
-}
 
 /* -------------------------------------------------------------------------- */
 /*                           2. Tabs & Headers                                */
@@ -87,7 +83,7 @@
 /* Active and focus styles for inner element */
 .workspace-tab-header.is-active .workspace-tab-header-inner,
 .workspace-tab-header:focus .workspace-tab-header-inner {
-    background-color: var(--background-modifier-hover);
+    background-color: transparent;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -204,6 +200,7 @@
     background-color: var(--background-modifier-active-hover);
     border-left-color: var(--interactive-accent);
     color: var(--text-normal);
+    font-weight: bold;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -222,7 +219,7 @@
 
 /* The actual content inside popover/embed */
 .markdown-embed {
-    background-color: rgba(var(--background-primary-rgb), 0.2);
+    background-color: rgba(var(--background-primary-rgb), 0.1);
     backdrop-filter: blur(16px);
     border: 1px solid var(--background-modifier-border);
     border-radius: 12px;
@@ -249,8 +246,8 @@
     }
 }
 
-/* Input Tweaks from old file */
-body:not(.is-ios):not(.is-android) input[type='date'], 
-body:not(.is-ios):not(.is-android) input[type='datetime-local'] {
-    padding-inline-start: 24px;
+/* Input Tweaks - Date/DateTime inputs */
+body:not(.is-ios):not(.is-android) input[type='date']:not([disabled="true"]), 
+body:not(.is-ios):not(.is-android) input[type='datetime-local']:not([disabled="true"]) {
+    padding-left: 32px;
 }

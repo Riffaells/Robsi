@@ -1,8 +1,8 @@
 /*
 Robsi Theme - A modern theme for Obsidian.
 By Riffaells - 2026
-Built: 2026-01-26T17:55:28.303095
-Files included: 24
+Built: 2026-02-23T14:44:03.166842
+Files included: 25
 */
 
 /* base\variables.css */
@@ -98,9 +98,9 @@ Files included: 24
     --checkbox-radius: var(--radius-s);
     --checkbox-size: 16px;
 
-    /* Callouts */
+    /* Callouts */ 
     --callout-radius: var(--radius-m);
-    --callout-padding: 16px;
+    --callout-padding: 10px;
     --callout-title-padding: 0;
     --callout-content-padding: 0;
 
@@ -171,6 +171,9 @@ Files included: 24
     --h5-color: var(--blue);
     --h6-color: var(--yellow);
 
+    --hr-color: var(--text-normal);
+    --hr-thickness: 3px;
+
     /* Links */
     --link-color: var(--purple);
     --link-color-hover: var(--cyan);
@@ -223,9 +226,10 @@ Files included: 24
 
     --nav-item-color-hover: var(--fg);
     --nav-item-background-hover: var(--bg_highlight);
-    --nav-item-background-active: rgba(var(--bg_highlight), 0.2);
+    --nav-item-background-active: rgba(var(--bg_highlight_x), 0.9);
     --nav-item-padding: var(--size-2-2) var(--size-4-1) var(--size-2-2) var(--size-4-6);
     --nav-item-parent-padding: var(--nav-item-padding);
+    --nav-item-weight-active: 600;
     --nav-file-tag: rgba(var(--yellow_x), 0.9);
 
     --graph-line: var(--comment);
@@ -239,7 +243,8 @@ Files included: 24
 	--link-decoration: none;
 	--link-decoration-hover: none;
 
-	--divider-vertical-height: 0%;
+	--divider-vertical-height: 100%;
+	--embed-padding: 0;
 }
 
 
@@ -717,10 +722,6 @@ Files included: 24
     border-radius: 8px;
 }
 
-/* Splitters */
-.workspace-leaf-resize-handle {
-    background: transparent;
-}
 
 /* -------------------------------------------------------------------------- */
 /*                           2. Tabs & Headers                                */
@@ -772,7 +773,7 @@ Files included: 24
 /* Active and focus styles for inner element */
 .workspace-tab-header.is-active .workspace-tab-header-inner,
 .workspace-tab-header:focus .workspace-tab-header-inner {
-    background-color: var(--background-modifier-hover);
+    background-color: transparent;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -889,6 +890,7 @@ Files included: 24
     background-color: var(--background-modifier-active-hover);
     border-left-color: var(--interactive-accent);
     color: var(--text-normal);
+    font-weight: bold;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -907,7 +909,7 @@ Files included: 24
 
 /* The actual content inside popover/embed */
 .markdown-embed {
-    background-color: rgba(var(--background-primary-rgb), 0.2);
+    background-color: rgba(var(--background-primary-rgb), 0.1);
     backdrop-filter: blur(16px);
     border: 1px solid var(--background-modifier-border);
     border-radius: 12px;
@@ -934,10 +936,10 @@ Files included: 24
     }
 }
 
-/* Input Tweaks from old file */
-body:not(.is-ios):not(.is-android) input[type='date'], 
-body:not(.is-ios):not(.is-android) input[type='datetime-local'] {
-    padding-inline-start: 24px;
+/* Input Tweaks - Date/DateTime inputs */
+body:not(.is-ios):not(.is-android) input[type='date']:not([disabled="true"]), 
+body:not(.is-ios):not(.is-android) input[type='datetime-local']:not([disabled="true"]) {
+    padding-left: 32px;
 }
 
 
@@ -948,17 +950,278 @@ body:not(.is-ios):not(.is-android) input[type='datetime-local'] {
 /*                                  BUTTONS                                   */
 /* ========================================================================== */
 
-/* Primary CTA Button (Call to Action) */
-.mod-cta {
-    background-color: var(--interactive-accent);
-    color: var(--text-on-accent);
-    border: none;
-    transition: background-color 0.15s ease;
+/* Base button styles */
+button {
+    background-color: rgba(var(--background-primary-rgb), 0.4);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: var(--text-normal);
+    cursor: pointer;
+    transition: all 0.2s var(--motion-easing-standard);
+    box-shadow: var(--shadow-s);
+    font-weight: 500;
+    font-size: 0.95em;
 }
 
-.mod-cta:hover {
-    background-color: var(--interactive-accent-hover);
+button:hover {
+    background-color: rgba(var(--background-primary-rgb), 0.6);
+    border-color: var(--interactive-accent);
+    box-shadow: var(--shadow-m);
+}
+
+button:active {
+    box-shadow: var(--shadow-s);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Primary CTA Button (Call to Action) */
+.mod-cta,
+button.mod-cta {
+    background-color: var(--interactive-accent);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid transparent;
     color: var(--text-on-accent);
+    box-shadow: 0 2px 8px rgba(var(--interactive-accent-rgb), 0.3);
+}
+
+.mod-cta:hover,
+button.mod-cta:hover {
+    background-color: rgba(var(--background-primary-rgb), 0.6);
+    color: var(--text-normal);
+    box-shadow: 0 4px 12px rgba(var(--interactive-accent-rgb), 0.4);
+}
+
+/* Warning/Destructive buttons */
+.mod-warning,
+button.mod-warning,
+.mod-destructive,
+button.mod-destructive {
+    border-color: rgba(var(--text-error-rgb), 0.4);
+    color: var(--text-error);
+}
+
+.mod-warning:hover,
+button.mod-warning:hover,
+.mod-destructive:hover,
+button.mod-destructive:hover {
+    background-color: rgba(var(--text-error-rgb), 0.12);
+    border-color: var(--text-error);
+}
+
+/* Secondary/Ghost buttons */
+.mod-secondary,
+button.mod-secondary {
+    background-color: transparent;
+    border-color: var(--background-modifier-border);
+}
+
+.mod-secondary:hover,
+button.mod-secondary:hover {
+    background-color: rgba(var(--background-primary-rgb), 0.3);
+}
+
+/* Small buttons */
+.mod-small,
+button.mod-small {
+    padding: 4px 10px;
+    font-size: 0.85em;
+    border-radius: 6px;
+}
+
+/* Icon buttons */
+.clickable-icon {
+    border-radius: 6px;
+    padding: 6px;
+    transition: all 0.15s var(--motion-easing-standard);
+    cursor: pointer;
+}
+
+.clickable-icon:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+
+
+/* ================================================= */
+
+/* components\community-modal.css */
+/* ========================================================================== */
+/*                           COMMUNITY MODAL                                  */
+/* ========================================================================== */
+
+/* Main info container */
+.community-modal-info {
+    background: rgba(var(--background-primary-rgb), 0.3) !important;
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius-l);
+    padding: 16px;
+    border: 1px solid var(--background-modifier-border);
+}
+
+/* Meta section - compact layout */
+.community-modal-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Plugin name and flair */
+.community-modal-info-name {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--text-normal);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.community-modal-info-name .flair {
+    font-size: 0.6em;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background: rgba(var(--interactive-accent-rgb), 0.15);
+    color: var(--interactive-accent);
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(var(--interactive-accent-rgb), 0.3);
+}
+
+/* Compact meta info */
+.community-modal-info-downloads,
+.community-modal-info-version,
+.community-modal-info-author,
+.community-modal-info-repo {
+    padding: 4px 0;
+    color: var(--text-muted);
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 1.4;
+}
+
+.community-modal-info-downloads {
+    color: var(--text-normal);
+    font-weight: 500;
+}
+
+.community-modal-info-downloads svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
+.community-modal-info-downloads-text {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Compact description */
+.community-modal-info-desc {
+    margin: 12px 0;
+    padding: 12px;
+    background: rgba(var(--background-secondary-rgb), 0.25);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-m);
+    border-left: 2px solid var(--interactive-accent);
+    color: var(--text-normal);
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+/* Compact button container */
+.community-modal-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(var(--background-modifier-border-hover-rgb), 0.3);
+}
+
+.community-modal-button-container button {
+    background-color: rgba(var(--background-primary-rgb), 0.4);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid var(--background-modifier-border);
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: var(--text-normal);
+    cursor: pointer;
+    transition: all 0.15s var(--motion-easing-standard);
+    box-shadow: var(--shadow-s);
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.community-modal-button-container button:hover {
+    background-color: rgba(var(--background-primary-rgb), 0.6);
+    border-color: var(--interactive-accent);
+    box-shadow: var(--shadow-m);
+}
+
+.community-modal-button-container button:active {
+    box-shadow: var(--shadow-s);
+}
+
+.community-modal-button-container button.mod-destructive {
+    border-color: rgba(var(--text-error-rgb), 0.4);
+    color: var(--text-error);
+}
+
+.community-modal-button-container button.mod-destructive:hover {
+    background-color: rgba(var(--text-error-rgb), 0.12);
+    border-color: var(--text-error);
+}
+
+/* Readme section - compact */
+.community-modal-readme {
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(var(--background-secondary-rgb), 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-m);
+    border: 1px solid var(--background-modifier-border);
+}
+
+.community-modal-readme.markdown-rendered {
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* Compact headings in readme */
+.community-modal-readme h1 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.community-modal-readme h2 {
+    font-size: 1.3em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.community-modal-readme h3 {
+    font-size: 1.1em;
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+}
+
+/* Compact lists in readme */
+.community-modal-readme ul,
+.community-modal-readme ol {
+    padding-left: 1.5em;
+    margin: 0.5em 0;
+}
+
+.community-modal-readme li {
+    margin: 0.3em 0;
 }
 
 
@@ -983,12 +1246,11 @@ input[type="email"],
 input[type="password"],
 input[type="number"],
 textarea {
-    background-color: var(--background-modifier-form-field);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 8px;
-    padding: 6px 10px;
+    background-color: rgba(var(--background-modifier-form-field), 0.3);
+    border: 2px solid var(--background-modifier-border);
+    border-radius: 12px;
     color: var(--text-normal);
-    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 input[type="text"]:focus,
@@ -998,9 +1260,7 @@ input[type="password"]:focus,
 input[type="number"]:focus,
 textarea:focus {
     border-color: var(--interactive-accent);
-    background-color: rgba(var(--background-primary-rgb), 0.7);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 0 3px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+    background-color: rgba(var(--background-primary-rgb), 0.5);
     outline: none;
 }
 
@@ -1014,10 +1274,11 @@ input.prompt-input {
 
 /* --- Dropdowns (Select) --- */
 .dropdown {
-    background-color: var(--background-modifier-form-field);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 6px;
-    padding: 4px 24px 4px 8px; /* Right padding for arrow */
+    background-color: rgba(var(--background-primary-rgb), 0.4);
+    backdrop-filter: blur(12px);
+    border: 2px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 6px 28px 6px 12px; /* Right padding for arrow */
     color: var(--text-normal);
     cursor: pointer;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
@@ -1026,19 +1287,27 @@ input.prompt-input {
     background-size: 14px;
     -webkit-appearance: none; /* Hide default arrow */
     appearance: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    transition: all 0.2s var(--motion-easing-standard);
+    box-shadow: var(--shadow-s);
 }
 
 .dropdown:hover {
     border-color: var(--text-muted);
+    background-color: rgba(var(--background-primary-rgb), 0.5);
+    box-shadow: var(--shadow-m);
 }
 
 .dropdown:focus {
     border-color: var(--interactive-accent);
-    background-color: rgba(var(--background-primary-rgb), 0.7);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 0 3px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+    background-color: rgba(var(--background-primary-rgb), 0.8);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 0 3px rgba(var(--interactive-accent-rgb), 0.2), var(--shadow-m);
     outline: none;
+}
+
+/* Dropdown options */
+.dropdown option {
+    font-weight: normal;    
 }
 
 /* --- Range Sliders --- */
@@ -1244,6 +1513,7 @@ a.internal-link:hover,
     background-color: rgba(var(--background-primary-rgb), 0.25) !important; /* Lighter background */
     border: 1px solid var(--background-modifier-border);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
 }
 
 /* Ensure content areas are transparent to show the blur */
@@ -1274,6 +1544,7 @@ a.internal-link:hover,
     border: 1px solid var(--background-modifier-border);
     border-radius: var(--radius-m);
 }
+
 
 
 /* ================================================= */
@@ -1324,8 +1595,31 @@ a.internal-link:hover,
 .setting-item-control {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     flex-shrink: 0;
+}
+
+/* Buttons in settings */
+.setting-item-control button {
+    background-color: rgba(var(--background-primary-rgb), 0.4);
+    backdrop-filter: blur(12px);
+    border: 2px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 6px 16px;
+    color: var(--text-normal);
+    cursor: pointer;
+    transition: all 0.2s var(--motion-easing-standard);
+    box-shadow: var(--shadow-s);
+    font-weight: 500;
+}
+
+.setting-item-control button:hover {
+    border-color: var(--interactive-accent);
+    box-shadow: var(--shadow-m);
+}
+
+.setting-item-control button:active {
+    box-shadow: var(--shadow-s);
 }
 
 /* --- General Checkboxes --- */
@@ -1341,13 +1635,26 @@ input[type="checkbox"] {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: var(--background-modifier-form-field);
+    background-color: rgba(var(--background-primary-rgb), 0.3);
+    backdrop-filter: blur(8px);
+    border: 2px solid var(--background-modifier-border);
     border-radius: 12px;
+    transition: all 0.2s var(--motion-easing-standard);
+    box-shadow: var(--shadow-s);
+}
+
+.checkbox-container:hover {
+    background-color: rgba(var(--background-primary-rgb), 0.4);
+    border-color: var(--text-muted);
+    box-shadow: var(--shadow-m);
 }
 
 /* Enabled state - Default Obsidian checkmark behavior */
 .checkbox-container.is-enabled {
     background-color: var(--interactive-accent);
+    border-color: var(--interactive-accent);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 8px rgba(var(--interactive-accent-rgb), 0.3);
 }
 
 /* Disabled state */
@@ -1782,6 +2089,21 @@ mark:hover, .cm-highlight:hover {
 ins, .cm-ins {
     text-decoration: none;
     border-bottom: 2px solid var(--insertion-color);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           Horizontal Rule (hr)                             */
+/* -------------------------------------------------------------------------- */
+
+hr,
+.markdown-rendered hr,
+.markdown-preview-view hr {
+    border: none;
+    height: var(--hr-thickness);
+    background: var(--hr-color);
+    border-radius: 4px;
+    margin: 2em 0;
+    opacity: 0.3;
 }
 
 

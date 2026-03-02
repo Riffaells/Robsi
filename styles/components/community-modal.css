@@ -1,0 +1,172 @@
+/* ========================================================================== */
+/*                           COMMUNITY MODAL                                  */
+/* ========================================================================== */
+
+/* Main info container */
+.community-modal-info {
+    background: rgba(var(--background-primary-rgb), 0.3) !important;
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius-l);
+    padding: 16px;
+    border: 1px solid var(--background-modifier-border);
+}
+
+/* Meta section - compact layout */
+.community-modal-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Plugin name and flair */
+.community-modal-info-name {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--text-normal);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.community-modal-info-name .flair {
+    font-size: 0.6em;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background: rgba(var(--interactive-accent-rgb), 0.15);
+    color: var(--interactive-accent);
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(var(--interactive-accent-rgb), 0.3);
+}
+
+/* Compact meta info */
+.community-modal-info-downloads,
+.community-modal-info-version,
+.community-modal-info-author,
+.community-modal-info-repo {
+    padding: 4px 0;
+    color: var(--text-muted);
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 1.4;
+}
+
+.community-modal-info-downloads {
+    color: var(--text-normal);
+    font-weight: 500;
+}
+
+.community-modal-info-downloads svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
+.community-modal-info-downloads-text {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Compact description */
+.community-modal-info-desc {
+    margin: 12px 0;
+    padding: 12px;
+    background: rgba(var(--background-secondary-rgb), 0.25);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-m);
+    border-left: 2px solid var(--interactive-accent);
+    color: var(--text-normal);
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+/* Compact button container */
+.community-modal-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(var(--background-modifier-border-hover-rgb), 0.3);
+}
+
+.community-modal-button-container button {
+    background-color: rgba(var(--background-primary-rgb), 0.4);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid var(--background-modifier-border);
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: var(--text-normal);
+    cursor: pointer;
+    transition: all 0.15s var(--motion-easing-standard);
+    box-shadow: var(--shadow-s);
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.community-modal-button-container button:hover {
+    background-color: rgba(var(--background-primary-rgb), 0.6);
+    border-color: var(--interactive-accent);
+    box-shadow: var(--shadow-m);
+}
+
+.community-modal-button-container button:active {
+    box-shadow: var(--shadow-s);
+}
+
+.community-modal-button-container button.mod-destructive {
+    border-color: rgba(var(--text-error-rgb), 0.4);
+    color: var(--text-error);
+}
+
+.community-modal-button-container button.mod-destructive:hover {
+    background-color: rgba(var(--text-error-rgb), 0.12);
+    border-color: var(--text-error);
+}
+
+/* Readme section - compact */
+.community-modal-readme {
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(var(--background-secondary-rgb), 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-m);
+    border: 1px solid var(--background-modifier-border);
+}
+
+.community-modal-readme.markdown-rendered {
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* Compact headings in readme */
+.community-modal-readme h1 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.community-modal-readme h2 {
+    font-size: 1.3em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.community-modal-readme h3 {
+    font-size: 1.1em;
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+}
+
+/* Compact lists in readme */
+.community-modal-readme ul,
+.community-modal-readme ol {
+    padding-left: 1.5em;
+    margin: 0.5em 0;
+}
+
+.community-modal-readme li {
+    margin: 0.3em 0;
+}

@@ -27,8 +27,31 @@
 .setting-item-control {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     flex-shrink: 0;
+}
+
+/* Buttons in settings */
+.setting-item-control button {
+    background-color: rgba(var(--background-primary-rgb), 0.4);
+    backdrop-filter: blur(12px);
+    border: 2px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 6px 16px;
+    color: var(--text-normal);
+    cursor: pointer;
+    transition: all 0.2s var(--motion-easing-standard);
+    box-shadow: var(--shadow-s);
+    font-weight: 500;
+}
+
+.setting-item-control button:hover {
+    border-color: var(--interactive-accent);
+    box-shadow: var(--shadow-m);
+}
+
+.setting-item-control button:active {
+    box-shadow: var(--shadow-s);
 }
 
 /* --- General Checkboxes --- */
@@ -44,13 +67,26 @@ input[type="checkbox"] {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: var(--background-modifier-form-field);
+    background-color: rgba(var(--background-primary-rgb), 0.3);
+    backdrop-filter: blur(8px);
+    border: 2px solid var(--background-modifier-border);
     border-radius: 12px;
+    transition: all 0.2s var(--motion-easing-standard);
+    box-shadow: var(--shadow-s);
+}
+
+.checkbox-container:hover {
+    background-color: rgba(var(--background-primary-rgb), 0.4);
+    border-color: var(--text-muted);
+    box-shadow: var(--shadow-m);
 }
 
 /* Enabled state - Default Obsidian checkmark behavior */
 .checkbox-container.is-enabled {
     background-color: var(--interactive-accent);
+    border-color: var(--interactive-accent);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 8px rgba(var(--interactive-accent-rgb), 0.3);
 }
 
 /* Disabled state */

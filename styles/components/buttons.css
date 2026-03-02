@@ -2,15 +2,99 @@
 /*                                  BUTTONS                                   */
 /* ========================================================================== */
 
-/* Primary CTA Button (Call to Action) */
-.mod-cta {
-    background-color: var(--interactive-accent);
-    color: var(--text-on-accent);
-    border: none;
-    transition: background-color 0.15s ease;
+/* Base button styles */
+button {
+    background-color: rgba(var(--background-primary-rgb), 0.4);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: var(--text-normal);
+    cursor: pointer;
+    transition: all 0.2s var(--motion-easing-standard);
+    box-shadow: var(--shadow-s);
+    font-weight: 500;
+    font-size: 0.95em;
 }
 
-.mod-cta:hover {
-    background-color: var(--interactive-accent-hover);
-    color: var(--text-on-accent);
+button:hover {
+    background-color: rgba(var(--background-primary-rgb), 0.6);
+    border-color: var(--interactive-accent);
+    box-shadow: var(--shadow-m);
 }
+
+button:active {
+    box-shadow: var(--shadow-s);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Primary CTA Button (Call to Action) */
+.mod-cta,
+button.mod-cta {
+    background-color: var(--interactive-accent);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid transparent;
+    color: var(--text-on-accent);
+    box-shadow: 0 2px 8px rgba(var(--interactive-accent-rgb), 0.3);
+}
+
+.mod-cta:hover,
+button.mod-cta:hover {
+    background-color: rgba(var(--background-primary-rgb), 0.6);
+    color: var(--text-normal);
+    box-shadow: 0 4px 12px rgba(var(--interactive-accent-rgb), 0.4);
+}
+
+/* Warning/Destructive buttons */
+.mod-warning,
+button.mod-warning,
+.mod-destructive,
+button.mod-destructive {
+    border-color: rgba(var(--text-error-rgb), 0.4);
+    color: var(--text-error);
+}
+
+.mod-warning:hover,
+button.mod-warning:hover,
+.mod-destructive:hover,
+button.mod-destructive:hover {
+    background-color: rgba(var(--text-error-rgb), 0.12);
+    border-color: var(--text-error);
+}
+
+/* Secondary/Ghost buttons */
+.mod-secondary,
+button.mod-secondary {
+    background-color: transparent;
+    border-color: var(--background-modifier-border);
+}
+
+.mod-secondary:hover,
+button.mod-secondary:hover {
+    background-color: rgba(var(--background-primary-rgb), 0.3);
+}
+
+/* Small buttons */
+.mod-small,
+button.mod-small {
+    padding: 4px 10px;
+    font-size: 0.85em;
+    border-radius: 6px;
+}
+
+/* Icon buttons */
+.clickable-icon {
+    border-radius: 6px;
+    padding: 6px;
+    transition: all 0.15s var(--motion-easing-standard);
+    cursor: pointer;
+}
+
+.clickable-icon:hover {
+    background-color: var(--background-modifier-hover);
+}
+

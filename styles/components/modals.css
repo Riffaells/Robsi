@@ -15,6 +15,7 @@
     background-color: rgba(var(--background-primary-rgb), 0.25) !important; /* Lighter background */
     border: 1px solid var(--background-modifier-border);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
 }
 
 /* Ensure content areas are transparent to show the blur */
@@ -45,3 +46,4 @@
     border: 1px solid var(--background-modifier-border);
     border-radius: var(--radius-m);
 }
+
