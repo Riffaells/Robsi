@@ -154,6 +154,14 @@
         radial-gradient(circle 1px at 60px 36px, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
         radial-gradient(circle 1px at 85px 22px, rgba(255, 255, 255, 0.7) 50%, transparent 50%);
 
+    /* Tables */
+    --table-border-color: rgba(var(--comment_x), 0.3);
+    --table-header-background: rgba(var(--bg_highlight_x), 0.5);
+    --table-header-background-hover: rgba(var(--bg_highlight_x), 0.7);
+    --table-row-alt-background: rgba(var(--bg_highlight_x), 0.08);
+    --table-row-alt-background-hover: rgba(var(--bg_highlight_x), 0.25);
+    --table-row-background-hover: rgba(var(--bg_highlight_x), 0.3);
+
     /* Navigation */
     --nav-item-color: rgba(220, 220, 220, 0.9);
 }

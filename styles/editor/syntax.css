@@ -18,7 +18,7 @@
 .token.italic { font-style: italic; }
 
 /* MathJax */
-mjx-math { font-size: 110% !important; }
+.MathJax { font-size: 130% !important; }
 
 /* Frontmatter */
 span.cm-hmd-frontmatter.cm-meta { color: rgba(var(--blue0_x), 0.9); }

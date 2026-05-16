@@ -1,8 +1,8 @@
 /*
 Robsi Theme - A modern theme for Obsidian.
 By Riffaells - 2026
-Built: 2026-02-23T14:44:03.166842
-Files included: 25
+Built: 2026-05-16T23:22:12.857033
+Files included: 26
 */
 
 /* base\variables.css */
@@ -106,6 +106,28 @@ Files included: 25
 
     /* Tables */
     --table-border-width: 1px;
+    --table-white-space: break-spaces;
+    --table-line-height: 1.4;
+    --table-header-weight: 600;
+    --table-header-size: var(--font-text-size);
+    --table-header-color: var(--text-normal);
+    --table-text-size: var(--font-text-size);
+    --table-text-color: inherit;
+    --table-column-min-width: 6ch;
+    --table-column-max-width: none;
+    --table-cell-vertical-alignment: middle;
+    --table-selection-border-width: 2px;
+    --table-selection-border-radius: 4px;
+    --table-selection-border-color: var(--interactive-accent);
+    --table-drag-handle-color: var(--text-faint);
+    --table-drag-handle-color-active: var(--text-on-accent);
+
+    /* Cursor */
+    --cursor-move-speed: 120ms;
+    --cursor-move-easing: ease;
+    --cursor-blink-rate: 1000ms;
+    --cursor-blink-count: 10;
+    --cursor-blink-easing: ease-in-out;
 
     /* Scrollbars */
     --scrollbar-width: 10px; /* Increased for visibility */
@@ -181,6 +203,11 @@ Files included: 25
     --internal-link-color-hover: var(--blue);
     --link-external-color: var(--purple);
     --link-external-color-hover: var(--cyan);
+	--link-decoration: none;
+	--link-decoration-hover: none;
+	--link-external-decoration: none;
+    --link-external-decoration-hover: none;
+    
 
     /* UI Elements */
     --tag-color: var(--magenta);
@@ -199,9 +226,7 @@ Files included: 25
     --checkbox-border-color-hover: var(--comment);
 
 
-    --table-header-background: var(--bg_dark2);
-    --table-header-background-hover: var(--bg_dark2);
-    --table-border-color: var(--border-color);
+    /* Table color overrides are defined in styles/editor/tables.css */
 
     /* Callout Colors */
     --callout-default: var(--blue_x);
@@ -240,8 +265,6 @@ Files included: 25
 	--bullet-new-color: var(--purple);
 
 	--setting-items-background: transparent;
-	--link-decoration: none;
-	--link-decoration-hover: none;
 
 	--divider-vertical-height: 100%;
 	--embed-padding: 0;
@@ -407,6 +430,14 @@ Files included: 25
         radial-gradient(circle 1px at 60px 36px, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
         radial-gradient(circle 1px at 85px 22px, rgba(255, 255, 255, 0.7) 50%, transparent 50%);
 
+    /* Tables */
+    --table-border-color: rgba(var(--comment_x), 0.3);
+    --table-header-background: rgba(var(--bg_highlight_x), 0.5);
+    --table-header-background-hover: rgba(var(--bg_highlight_x), 0.7);
+    --table-row-alt-background: rgba(var(--bg_highlight_x), 0.08);
+    --table-row-alt-background-hover: rgba(var(--bg_highlight_x), 0.25);
+    --table-row-background-hover: rgba(var(--bg_highlight_x), 0.3);
+
     /* Navigation */
     --nav-item-color: rgba(220, 220, 220, 0.9);
 }
@@ -565,6 +596,14 @@ Files included: 25
         radial-gradient(circle 1px at 38px 28px, rgba(100, 100, 100, 0.4) 50%, transparent 50%),
         radial-gradient(circle 1px at 60px 36px, rgba(100, 100, 100, 0.7) 50%, transparent 50%),
         radial-gradient(circle 1px at 85px 22px, rgba(100, 100, 100, 0.5) 50%, transparent 50%);
+
+    /* Tables */
+    --table-border-color: rgba(var(--comment_x), 0.2);
+    --table-header-background: rgba(var(--bg_dark_x), 0.6);
+    --table-header-background-hover: rgba(var(--bg_dark_x), 0.8);
+    --table-row-alt-background: rgba(var(--bg_dark_x), 0.25);
+    --table-row-alt-background-hover: rgba(var(--bg_dark_x), 0.4);
+    --table-row-background-hover: rgba(var(--bg_dark_x), 0.35);
 
     /* Navigation */
     --nav-item-color: rgba(30, 35, 42, 0.9);
@@ -953,8 +992,7 @@ body:not(.is-ios):not(.is-android) input[type='datetime-local']:not([disabled="t
 /* Base button styles */
 button {
     background-color: rgba(var(--background-primary-rgb), 0.4);
-    backdrop-filter: blur(10px);
-    border: 1.5px solid var(--background-modifier-border);
+    border: 2px solid var(--background-modifier-border);
     border-radius: 8px;
     padding: 8px 16px;
     color: var(--text-normal);
@@ -984,17 +1022,21 @@ button:disabled {
 .mod-cta,
 button.mod-cta {
     background-color: var(--interactive-accent);
-    backdrop-filter: blur(12px);
-    border: 1.5px solid transparent;
+    border: 1.5px solid rgba(var(--interactive-accent-rgb), 0.6);
     color: var(--text-on-accent);
-    box-shadow: 0 2px 8px rgba(var(--interactive-accent-rgb), 0.3);
+    font-weight: 600;
 }
 
 .mod-cta:hover,
 button.mod-cta:hover {
-    background-color: rgba(var(--background-primary-rgb), 0.6);
-    color: var(--text-normal);
-    box-shadow: 0 4px 12px rgba(var(--interactive-accent-rgb), 0.4);
+    background-color: var(--interactive-accent-hover);
+    border-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+.mod-cta:active,
+button.mod-cta:active {
+    box-shadow: 0 1px 4px rgba(var(--interactive-accent-rgb), 0.3);
 }
 
 /* Warning/Destructive buttons */
@@ -1003,7 +1045,6 @@ button.mod-warning,
 .mod-destructive,
 button.mod-destructive {
     border-color: rgba(var(--text-error-rgb), 0.4);
-    color: var(--text-error);
 }
 
 .mod-warning:hover,
@@ -1433,11 +1474,57 @@ a.internal-link:hover,
   text-decoration: none !important;
 }
 
+/* --- Unresolved Links --- */
+a.internal-link.is-unresolved,
+.cm-hmd-internal-link.is-unresolved,
+.markdown-preview-view .internal-link.is-unresolved,
+.markdown-rendered .internal-link.is-unresolved {
+  color: var(--link-unresolved-color);
+  opacity: 0.7;
+}
+
+a.internal-link.is-unresolved:hover,
+.cm-hmd-internal-link.is-unresolved:hover,
+.internal-link.is-unresolved:hover {
+  color: var(--link-unresolved-color);
+  opacity: 0.7;
+}
+
+/* --- Links inside bold / italic / both --- */
+/* Prevent bold-color and italic-color from overriding link color */
+.cm-strong .cm-hmd-internal-link,
+.cm-em .cm-hmd-internal-link,
+.cm-strong.cm-em .cm-hmd-internal-link,
+strong a.internal-link,
+em a.internal-link,
+strong em a.internal-link,
+em strong a.internal-link {
+  color: var(--internal-link-color) !important;
+}
+
+.cm-strong .cm-hmd-internal-link:hover,
+.cm-em .cm-hmd-internal-link:hover,
+strong a.internal-link:hover,
+em a.internal-link:hover {
+  color: var(--internal-link-color-hover) !important;
+}
+
 /* Helper for data-link-text */
 /* Lower specificity to allow plugin overrides via data-link-type */
 .data-link-text a.cm-underline {
   color: var(--internal-link-color);
   text-decoration: none !important;
+}
+
+/* --- Links without plugin recognition (no data-link-text wrapper) --- */
+/* These are unresolved links not handled by Periodic Notes or similar plugins */
+.cm-hmd-internal-link:not(:has(.data-link-text)) {
+  color: var(--link-unresolved-color) !important;
+  opacity: 0.7;
+}
+
+.cm-hmd-internal-link:not(:has(.data-link-text)):hover {
+  opacity: 1;
 }
 
 
@@ -1908,21 +1995,28 @@ blockquote p {
 /*                           EDITOR INTERFACE                                 */
 /* ========================================================================== */
 
-
 /* Bottom Panels (Search/Replace) */
 .ͼ2 .cm-panels-bottom {
-    border-top: var(--border-width) solid var(--bg_highlight);
+	border-top: var(--border-width) solid var(--bg_highlight);
 }
 
 /* Vim Mode Messages */
-.cm-vim-message { color: var(--red); }
+.cm-vim-message {
+	color: var(--red);
+}
 
 /* Tag Pills */
-.multi-select-pill { line-height: normal; }
+.multi-select-pill {
+	line-height: normal;
+}
 
 /* Remove line-height from metadata tags */
 .metadata-property-value[data-property-type="tags"] .multi-select-pill {
-    line-height: unset;
+	line-height: unset;
+}
+
+.metadata-container {
+	margin-block-end: 0px;
 }
 
 
@@ -2029,7 +2123,7 @@ ul > li.task-list-item > .task-list-item-checkbox {
 .token.italic { font-style: italic; }
 
 /* MathJax */
-mjx-math { font-size: 110% !important; }
+.MathJax { font-size: 130% !important; }
 
 /* Frontmatter */
 span.cm-hmd-frontmatter.cm-meta { color: rgba(var(--blue0_x), 0.9); }
@@ -2037,6 +2131,133 @@ span.cm-hmd-frontmatter.cm-meta { color: rgba(var(--blue0_x), 0.9); }
 
 /* Inline Code Atoms */
 .cm-atom { color: var(--blue); }
+
+
+/* ================================================= */
+
+/* editor\tables.css */
+/* ========================================================================== */
+/*                              TABLES                                        */
+/* ========================================================================== */
+
+/* --- Table Container --- */
+.markdown-rendered table,
+.markdown-preview-view table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    font-size: 0.9em;
+    line-height: var(--table-line-height);
+    background: transparent;
+    margin: 1.2em 0;
+    border-radius: var(--radius-m);
+    border: none;
+    box-shadow: none;
+    transition: box-shadow var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+/* Внешняя рамка при фокусе */
+.markdown-rendered table:focus-within,
+.markdown-preview-view table:focus-within {
+    box-shadow: 0 0 0 var(--table-border-width) var(--table-border-color);
+}
+
+/* --- Header --- */
+.markdown-rendered thead tr,
+.markdown-preview-view thead tr {
+    background: var(--table-header-background);
+}
+
+.markdown-rendered th,
+.markdown-preview-view th {
+    padding: 7px 12px;
+    font-weight: var(--table-header-weight);
+    color: var(--table-header-color);
+    font-size: var(--table-header-size);
+    text-align: left;
+    border-bottom: 2px solid var(--table-border-color);
+    border-top: none;
+    white-space: nowrap;
+}
+
+/* Скругление углов шапки */
+.markdown-rendered thead tr th:first-child,
+.markdown-preview-view thead tr th:first-child {
+    border-radius: var(--radius-m) 0 0 0;
+}
+
+.markdown-rendered thead tr th:last-child,
+.markdown-preview-view thead tr th:last-child {
+    border-radius: 0 var(--radius-m) 0 0;
+}
+
+/* Убираем боковые границы у крайних ячеек */
+.markdown-rendered th:first-child,
+.markdown-rendered td:first-child,
+.markdown-preview-view th:first-child,
+.markdown-preview-view td:first-child {
+    border-left: none;
+}
+
+.markdown-rendered th:last-child,
+.markdown-rendered td:last-child,
+.markdown-preview-view th:last-child,
+.markdown-preview-view td:last-child {
+    border-right: none;
+}
+
+/* --- Body Cells --- */
+.markdown-rendered td,
+.markdown-preview-view td {
+    padding: 5px 12px;
+    color: var(--table-text-color);
+    vertical-align: var(--table-cell-vertical-alignment);
+    border-bottom: var(--table-border-width) solid var(--table-border-color);
+    white-space: var(--table-white-space);
+    min-width: var(--table-column-min-width);
+    max-width: var(--table-column-max-width);
+}
+
+/* Последняя строка — убираем нижнюю границу */
+.markdown-rendered tbody tr:last-child td,
+.markdown-preview-view tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.markdown-rendered tbody tr:last-child td:first-child,
+.markdown-preview-view tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 var(--radius-m);
+}
+
+.markdown-rendered tbody tr:last-child td:last-child,
+.markdown-preview-view tbody tr:last-child td:last-child {
+    border-radius: 0 0 var(--radius-m) 0;
+}
+
+/* --- Alternating rows --- */
+.markdown-rendered tbody tr:nth-child(even),
+.markdown-preview-view tbody tr:nth-child(even) {
+    background: var(--table-row-alt-background);
+}
+
+/* --- Row hover --- */
+.markdown-rendered tbody tr:hover,
+.markdown-preview-view tbody tr:hover {
+    background: var(--table-row-background-hover);
+    transition: background var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+.markdown-rendered tbody tr:nth-child(even):hover,
+.markdown-preview-view tbody tr:nth-child(even):hover {
+    background: var(--table-row-alt-background-hover);
+}
+
+/* --- Live editor (CM6) source mode --- */
+.cm-editor .HyperMD-table-row {
+    line-height: var(--table-line-height);
+}
+
+
 
 
 /* ================================================= */

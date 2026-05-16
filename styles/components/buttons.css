@@ -5,8 +5,7 @@
 /* Base button styles */
 button {
     background-color: rgba(var(--background-primary-rgb), 0.4);
-    backdrop-filter: blur(10px);
-    border: 1.5px solid var(--background-modifier-border);
+    border: 2px solid var(--background-modifier-border);
     border-radius: 8px;
     padding: 8px 16px;
     color: var(--text-normal);
@@ -36,17 +35,21 @@ button:disabled {
 .mod-cta,
 button.mod-cta {
     background-color: var(--interactive-accent);
-    backdrop-filter: blur(12px);
-    border: 1.5px solid transparent;
+    border: 1.5px solid rgba(var(--interactive-accent-rgb), 0.6);
     color: var(--text-on-accent);
-    box-shadow: 0 2px 8px rgba(var(--interactive-accent-rgb), 0.3);
+    font-weight: 600;
 }
 
 .mod-cta:hover,
 button.mod-cta:hover {
-    background-color: rgba(var(--background-primary-rgb), 0.6);
-    color: var(--text-normal);
-    box-shadow: 0 4px 12px rgba(var(--interactive-accent-rgb), 0.4);
+    background-color: var(--interactive-accent-hover);
+    border-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+.mod-cta:active,
+button.mod-cta:active {
+    box-shadow: 0 1px 4px rgba(var(--interactive-accent-rgb), 0.3);
 }
 
 /* Warning/Destructive buttons */
@@ -55,7 +58,6 @@ button.mod-warning,
 .mod-destructive,
 button.mod-destructive {
     border-color: rgba(var(--text-error-rgb), 0.4);
-    color: var(--text-error);
 }
 
 .mod-warning:hover,

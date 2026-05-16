@@ -98,6 +98,28 @@
 
     /* Tables */
     --table-border-width: 1px;
+    --table-white-space: break-spaces;
+    --table-line-height: 1.4;
+    --table-header-weight: 600;
+    --table-header-size: var(--font-text-size);
+    --table-header-color: var(--text-normal);
+    --table-text-size: var(--font-text-size);
+    --table-text-color: inherit;
+    --table-column-min-width: 6ch;
+    --table-column-max-width: none;
+    --table-cell-vertical-alignment: middle;
+    --table-selection-border-width: 2px;
+    --table-selection-border-radius: 4px;
+    --table-selection-border-color: var(--interactive-accent);
+    --table-drag-handle-color: var(--text-faint);
+    --table-drag-handle-color-active: var(--text-on-accent);
+
+    /* Cursor */
+    --cursor-move-speed: 120ms;
+    --cursor-move-easing: ease;
+    --cursor-blink-rate: 1000ms;
+    --cursor-blink-count: 10;
+    --cursor-blink-easing: ease-in-out;
 
     /* Scrollbars */
     --scrollbar-width: 10px; /* Increased for visibility */
@@ -173,6 +195,11 @@
     --internal-link-color-hover: var(--blue);
     --link-external-color: var(--purple);
     --link-external-color-hover: var(--cyan);
+	--link-decoration: none;
+	--link-decoration-hover: none;
+	--link-external-decoration: none;
+    --link-external-decoration-hover: none;
+    
 
     /* UI Elements */
     --tag-color: var(--magenta);
@@ -191,9 +218,7 @@
     --checkbox-border-color-hover: var(--comment);
 
 
-    --table-header-background: var(--bg_dark2);
-    --table-header-background-hover: var(--bg_dark2);
-    --table-border-color: var(--border-color);
+    /* Table color overrides are defined in styles/editor/tables.css */
 
     /* Callout Colors */
     --callout-default: var(--blue_x);
@@ -232,8 +257,6 @@
 	--bullet-new-color: var(--purple);
 
 	--setting-items-background: transparent;
-	--link-decoration: none;
-	--link-decoration-hover: none;
 
 	--divider-vertical-height: 100%;
 	--embed-padding: 0;

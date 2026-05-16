@@ -78,9 +78,55 @@ a.internal-link:hover,
   text-decoration: none !important;
 }
 
+/* --- Unresolved Links --- */
+a.internal-link.is-unresolved,
+.cm-hmd-internal-link.is-unresolved,
+.markdown-preview-view .internal-link.is-unresolved,
+.markdown-rendered .internal-link.is-unresolved {
+  color: var(--link-unresolved-color);
+  opacity: 0.7;
+}
+
+a.internal-link.is-unresolved:hover,
+.cm-hmd-internal-link.is-unresolved:hover,
+.internal-link.is-unresolved:hover {
+  color: var(--link-unresolved-color);
+  opacity: 0.7;
+}
+
+/* --- Links inside bold / italic / both --- */
+/* Prevent bold-color and italic-color from overriding link color */
+.cm-strong .cm-hmd-internal-link,
+.cm-em .cm-hmd-internal-link,
+.cm-strong.cm-em .cm-hmd-internal-link,
+strong a.internal-link,
+em a.internal-link,
+strong em a.internal-link,
+em strong a.internal-link {
+  color: var(--internal-link-color) !important;
+}
+
+.cm-strong .cm-hmd-internal-link:hover,
+.cm-em .cm-hmd-internal-link:hover,
+strong a.internal-link:hover,
+em a.internal-link:hover {
+  color: var(--internal-link-color-hover) !important;
+}
+
 /* Helper for data-link-text */
 /* Lower specificity to allow plugin overrides via data-link-type */
 .data-link-text a.cm-underline {
   color: var(--internal-link-color);
   text-decoration: none !important;
+}
+
+/* --- Links without plugin recognition (no data-link-text wrapper) --- */
+/* These are unresolved links not handled by Periodic Notes or similar plugins */
+.cm-hmd-internal-link:not(:has(.data-link-text)) {
+  color: var(--link-unresolved-color) !important;
+  opacity: 0.7;
+}
+
+.cm-hmd-internal-link:not(:has(.data-link-text)):hover {
+  opacity: 1;
 }

@@ -2,19 +2,26 @@
 /*                           EDITOR INTERFACE                                 */
 /* ========================================================================== */
 
-
 /* Bottom Panels (Search/Replace) */
 .ͼ2 .cm-panels-bottom {
-    border-top: var(--border-width) solid var(--bg_highlight);
+	border-top: var(--border-width) solid var(--bg_highlight);
 }
 
 /* Vim Mode Messages */
-.cm-vim-message { color: var(--red); }
+.cm-vim-message {
+	color: var(--red);
+}
 
 /* Tag Pills */
-.multi-select-pill { line-height: normal; }
+.multi-select-pill {
+	line-height: normal;
+}
 
 /* Remove line-height from metadata tags */
 .metadata-property-value[data-property-type="tags"] .multi-select-pill {
-    line-height: unset;
+	line-height: unset;
+}
+
+.metadata-container {
+	margin-block-end: 0px;
 }

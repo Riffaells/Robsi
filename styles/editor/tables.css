@@ -1,0 +1,122 @@
+/* ========================================================================== */
+/*                              TABLES                                        */
+/* ========================================================================== */
+
+/* --- Table Container --- */
+.markdown-rendered table,
+.markdown-preview-view table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    font-size: 0.9em;
+    line-height: var(--table-line-height);
+    background: transparent;
+    margin: 1.2em 0;
+    border-radius: var(--radius-m);
+    border: none;
+    box-shadow: none;
+    transition: box-shadow var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+/* Внешняя рамка при фокусе */
+.markdown-rendered table:focus-within,
+.markdown-preview-view table:focus-within {
+    box-shadow: 0 0 0 var(--table-border-width) var(--table-border-color);
+}
+
+/* --- Header --- */
+.markdown-rendered thead tr,
+.markdown-preview-view thead tr {
+    background: var(--table-header-background);
+}
+
+.markdown-rendered th,
+.markdown-preview-view th {
+    padding: 7px 12px;
+    font-weight: var(--table-header-weight);
+    color: var(--table-header-color);
+    font-size: var(--table-header-size);
+    text-align: left;
+    border-bottom: 2px solid var(--table-border-color);
+    border-top: none;
+    white-space: nowrap;
+}
+
+/* Скругление углов шапки */
+.markdown-rendered thead tr th:first-child,
+.markdown-preview-view thead tr th:first-child {
+    border-radius: var(--radius-m) 0 0 0;
+}
+
+.markdown-rendered thead tr th:last-child,
+.markdown-preview-view thead tr th:last-child {
+    border-radius: 0 var(--radius-m) 0 0;
+}
+
+/* Убираем боковые границы у крайних ячеек */
+.markdown-rendered th:first-child,
+.markdown-rendered td:first-child,
+.markdown-preview-view th:first-child,
+.markdown-preview-view td:first-child {
+    border-left: none;
+}
+
+.markdown-rendered th:last-child,
+.markdown-rendered td:last-child,
+.markdown-preview-view th:last-child,
+.markdown-preview-view td:last-child {
+    border-right: none;
+}
+
+/* --- Body Cells --- */
+.markdown-rendered td,
+.markdown-preview-view td {
+    padding: 5px 12px;
+    color: var(--table-text-color);
+    vertical-align: var(--table-cell-vertical-alignment);
+    border-bottom: var(--table-border-width) solid var(--table-border-color);
+    white-space: var(--table-white-space);
+    min-width: var(--table-column-min-width);
+    max-width: var(--table-column-max-width);
+}
+
+/* Последняя строка — убираем нижнюю границу */
+.markdown-rendered tbody tr:last-child td,
+.markdown-preview-view tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.markdown-rendered tbody tr:last-child td:first-child,
+.markdown-preview-view tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 var(--radius-m);
+}
+
+.markdown-rendered tbody tr:last-child td:last-child,
+.markdown-preview-view tbody tr:last-child td:last-child {
+    border-radius: 0 0 var(--radius-m) 0;
+}
+
+/* --- Alternating rows --- */
+.markdown-rendered tbody tr:nth-child(even),
+.markdown-preview-view tbody tr:nth-child(even) {
+    background: var(--table-row-alt-background);
+}
+
+/* --- Row hover --- */
+.markdown-rendered tbody tr:hover,
+.markdown-preview-view tbody tr:hover {
+    background: var(--table-row-background-hover);
+    transition: background var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+.markdown-rendered tbody tr:nth-child(even):hover,
+.markdown-preview-view tbody tr:nth-child(even):hover {
+    background: var(--table-row-alt-background-hover);
+}
+
+/* --- Live editor (CM6) source mode --- */
+.cm-editor .HyperMD-table-row {
+    line-height: var(--table-line-height);
+}
+
+
