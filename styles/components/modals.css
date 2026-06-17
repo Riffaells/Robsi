@@ -4,7 +4,6 @@
 
 /* Modal backdrop with blur effect */
 .modal-bg {
-    background-color: rgba(0, 0, 0, 0.3) !important; /* Force semi-transparent black */
     backdrop-filter: blur(16px);
     opacity: 1 !important;
 }

@@ -11,6 +11,7 @@
     --accent-h: 202;
     --accent-s: 100%;
     --accent-l: 75%;
+    --accent-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 
     /* ======================================================================== */
     /*                           BACKGROUND COLORS                             */
@@ -50,8 +51,12 @@
     --comment_x: 120, 120, 120;
     --comment: rgb(var(--comment_x));
     
+    /* Code */
     --code-comment_x: 115, 125, 165;
     --code-comment: rgb(var(--code-comment_x));
+
+    --code-background: rgb(var(--purple_x), 0.1);
+    --code-normal: rgb(var(--fg_dark_x), .9);
 
     /* ======================================================================== */
     /*                             COLOR PALETTE                               */
@@ -74,7 +79,7 @@
     --purple-light: rgb(var(--purple-light_x));
 
     /* Magentas */
-    --magent_hsl: 261 85% 79%;
+    --magenta_hsl: 261 85% 79%;
     --magenta_x: 187, 154, 247;
     --magenta: rgb(var(--magenta_x));
     --magenta-light_x: 210, 190, 255;
@@ -105,7 +110,7 @@
     --red1_x: 219, 75, 75;
     --red1: rgb(var(--red1_x));
     --red-dark_x: 155, 45, 45;
-    --red-dark: rgb(var(--red_x));
+    --red-dark: rgb(var(--red-dark_x));
 
     /* Special */
     --terminal_black_x: 65, 72, 104;
@@ -123,7 +128,6 @@
     --interactive-hover: var(--bg_highlight);
     --interactive-success: var(--green);
     --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-    --accent-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 
     /* Tabs */
     --tab-container-background: var(--background-primary);
@@ -132,15 +136,19 @@
     --tab-background-hover: rgba(18, 18, 18, 0.8);
     --tab-divider-color: rgba(40, 40, 40, 0.3);
 
-    /* Code */
-    --code-background: rgb(var(--purple_x), 0.05);
-    --code-normal: var(--fg_dark);
     
     /* Workspace */
     --workspace-background-translucent: rgba(2, 2, 2, 0.9);
 
     /* Blockquote */
-    --blockquote-background-color: rgba(var(--purple_x), 0.12);
+    --blockquote-background-color: rgba(var(--teal_x), 0.12);
+    --blockquote-border: var(--teal);
+    --blockquote-border-color: rgba(var(--teal_x), 0.4);
+    --blockquote-color: var(--fg);
+    --blockquote-quote-mark: var(--teal);
+    --blockquote-accent: var(--teal);
+    --blockquote-gradient: rgba(var(--teal_x), 0.1), rgba(var(--teal_x), 0);
+    --blockquote-border-thickness: 3px;
 
     /* Spoiler */
     --spoiler-background: rgba(var(--bg_highlight_x), 0.3);

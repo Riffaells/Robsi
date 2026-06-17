@@ -37,8 +37,9 @@ textarea:focus {
 /* Prompt/Modal Inputs */
 input.prompt-input {
     background: rgba(var(--background-primary-rgb), 0.5);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px !important;
     border-color: var(--prompt-border-color);
-    font-size: 1.1em;
+    font-size: 1.4em;
     padding: 10px 14px;
 }
 

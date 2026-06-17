@@ -2,10 +2,10 @@
 /* Большая точка */
 ul:not(li > *) > li > .list-bullet::after,
 .HyperMD-list-line-1 .list-bullet::after {
-	height: 6px;
-	width: 6px;
+	height: 8px;
+	width: 8px;
 	border-radius: 50%;
-	background-color: var(--bullet-new-color);
+	background-color: var(--list-marker-color);
 }
 
 /* ========== LEVEL 2 ========== */
@@ -15,28 +15,30 @@ ul:not(li > *) > li > ul > li > .list-bullet::after,
 	height: 6px;
 	width: 6px;
 	background-color: transparent;
-	border: 2px solid var(--bullet-new-color);
+	border: 2px solid var(--list-marker-color);
 	border-radius: 50%;
 }
 
 /* ========== LEVEL 3 ========== */
-/* Чёрточка */
+/* Ромб ◈ */
 ul:not(li > *) > li > ul > li > ul > li > .list-bullet::after,
 .HyperMD-list-line-3 .list-bullet::after {
-	height: 2px;
-	width: 8px;
-	border-radius: 0;
-	background-color: var(--bullet-new-color);
+	content: "◈";
+	height: unset;
+	width: unset;
+	background-color: transparent;
+	color: var(--list-marker-color);
+	margin-top: 3px;
 }
 
 /* ========== LEVEL 4 ========== */
 /* Маленькая точка */
 ul:not(li > *) > li > ul > li > ul > li > ul > li > .list-bullet::after,
 .HyperMD-list-line-4 .list-bullet::after {
-	height: 3px;
-	width: 3px;
-	border-radius: 50%;
-	background-color: var(--bullet-new-color);
+	height: 2px;
+	width: 8px;
+	border-radius: 0;
+	background-color: var(--list-marker-color);
 }
 
 /* ========== LEVEL 5 ========== */
@@ -46,14 +48,6 @@ ul:not(li > *) > li > ul > li > ul > li > ul > li > ul > li > .list-bullet::afte
 	height: 5px;
 	width: 5px;
 	border-radius: 0;
-	background-color: var(--bullet-new-color);
+	background-color: var(--list-marker-color);
 }
 
-ul > li.task-list-item > .task-list-item-checkbox {
-	margin-inline-start: 0;
-}
-
-.markdown-rendered ul > li,
-.markdown-rendered ol > li {
-    margin-inline-start: 2ch !important;
-}

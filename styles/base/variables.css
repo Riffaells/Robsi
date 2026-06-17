@@ -2,17 +2,6 @@
 /*                           BASE VARIABLES                                   */
 /* ========================================================================== */
 
-:root {
-    /* --- Typography Fonts --- */
-    --font-family-theme: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-family-heading: var(--font-family-theme);
-    --font-family-monospace: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
-
-    /* --- Base Sizes --- */
-    --font-size-theme: 16px;
-    --line-height-theme: 1.6;
-}
-
 /* Common variables shared across both themes */
 .theme-dark,
 .theme-light {
@@ -20,8 +9,9 @@
     /* ======================================================================== */
     /*                               TYPOGRAPHY                                */
     /* ======================================================================== */
-    --font-text-size: var(--font-size-theme);
-    --line-height-normal: var(--line-height-theme);
+    --font-text-size: 16px;
+    --line-height-normal: 1.6;
+    --font-monospace: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
 
     /* ======================================================================== */
     /*                                BORDERS                                  */
@@ -39,8 +29,8 @@
     --size-2-1: 2px;
     --size-2-2: 4px;
     --size-2-3: 6px;
-    --size-4-1: 8px;
-    --size-4-2: 10px;
+    --size-4-1: 4px;
+    --size-4-2: 8px;
     --size-4-3: 12px;
     --size-4-4: 14px;
     --size-4-5: 16px;
@@ -153,7 +143,7 @@
     --background-modifier-form-field: transparent;
     --background-modifier-form-field-highlighted: var(--bg_dark);
     --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
-    --background-modifier-cover: rgba(var(--bg_dark_x), 0.8);
+    --background-modifier-cover: rgba(var(--bg_dark_x), 0.3);
     --background-modifier: rgba(var(--bg_highlight_x), 0.5);
     --background-modifier-hover: rgba(var(--bg_highlight_x), 0.7);
     --background-modifier-hover-rgb: var(--bg_highlight_x);
@@ -185,14 +175,17 @@
     --h5-color: var(--blue);
     --h6-color: var(--yellow);
 
-    --hr-color: var(--text-normal);
-    --hr-thickness: 3px;
+    --hr-gradient-start: #B68D40;   /* Bronze gold */
+    --hr-gradient-mid: #E1A95F;     /* Light gold */
+    --hr-star-color: #FFC800;       /* Neon gold */
+    --hr-star-glow-mid: #FFD700;    /* Mid glow */
+    --hr-star-glow-outer: #FFA500;  /* Outer glow */
 
     /* Links */
-    --link-color: var(--purple);
-    --link-color-hover: var(--cyan);
-    --internal-link-color: var(--green);
-    --internal-link-color-hover: var(--blue);
+    --link-color: var(--green);
+    --link-color-hover: var(--blue);
+    --link-unresolved-color: var(--purple);
+    --link-unresolved-opacity: 0.6;
     --link-external-color: var(--purple);
     --link-external-color-hover: var(--cyan);
 	--link-decoration: none;
@@ -254,10 +247,10 @@
     --graph-node-tag: var(--orange);
     --graph-node-attachment: var(--blue);
 
-	--bullet-new-color: var(--purple);
-
 	--setting-items-background: transparent;
 
 	--divider-vertical-height: 100%;
 	--embed-padding: 0;
+
+    --prompt-width: 900px;
 }

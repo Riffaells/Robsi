@@ -1,0 +1,11 @@
+/* CHECKBOXES */
+
+input[type="checkbox"] {
+    border: 3px solid var(--checkbox-border-color);
+    border-radius: var(--checkbox-radius);
+    cursor: pointer;
+}
+
+ul > li.task-list-item > .task-list-item-checkbox {
+    margin-inline-start: 0;
+}

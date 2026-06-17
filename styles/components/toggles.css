@@ -1,8 +1,6 @@
-/* ========================================================================== */
-/*                           TOGGLES & CHECKBOXES                             */
-/* ========================================================================== */
+/* TOGGLES */
 
-/* --- Settings Toggles --- */
+/* --- Settings Toggle Item --- */
 .setting-item.mod-toggle {
     display: flex;
     align-items: center;
@@ -11,7 +9,6 @@
     padding-bottom: 8px;
 }
 
-/* Info section (Label + Desc) */
 .setting-item-info {
     padding-right: 12px;
     min-width: 0;
@@ -23,7 +20,6 @@
     color: var(--text-faint);
 }
 
-/* Control section (The Switch) */
 .setting-item-control {
     display: flex;
     align-items: center;
@@ -54,14 +50,7 @@
     box-shadow: var(--shadow-s);
 }
 
-/* --- General Checkboxes --- */
-input[type="checkbox"] {
-    border: 3px solid var(--checkbox-border-color);
-    border-radius: var(--checkbox-radius);
-    cursor: pointer;
-}
-
-/* Checkbox Container Wrapper (Obsidian UI Toggles) */
+/* --- Checkbox Container (UI Toggle Switch) --- */
 .checkbox-container {
     display: flex;
     align-items: center;
@@ -81,7 +70,6 @@ input[type="checkbox"] {
     box-shadow: var(--shadow-m);
 }
 
-/* Enabled state - Default Obsidian checkmark behavior */
 .checkbox-container.is-enabled {
     background-color: var(--interactive-accent);
     border-color: var(--interactive-accent);
@@ -89,13 +77,12 @@ input[type="checkbox"] {
     box-shadow: 0 2px 8px rgba(var(--interactive-accent-rgb), 0.3);
 }
 
-/* Disabled state */
 .checkbox-container input[type="checkbox"]:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-/* Extra Settings Buttons */
+/* --- Extra Settings Button --- */
 .extra-setting-button {
     width: 28px;
     height: 28px;
@@ -110,9 +97,9 @@ input[type="checkbox"] {
     background-color: var(--background-modifier-hover);
 }
 
-/* Installed Plugins List Spacing */
+/* --- Installed Plugins List --- */
 .installed-plugins-container .setting-item.mod-toggle {
-    background-color: rgba(var(--background-primary-rgb), 0.25) !important;
+    background-color: rgba(var(--background-primary-rgb), 0.25);
     border: 2px solid var(--background-modifier-border);
     border-radius: 12px;
     padding: 10px 12px;

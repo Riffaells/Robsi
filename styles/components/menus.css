@@ -23,6 +23,10 @@
     transition: background-color 0.1s ease;
 }
 
+.prompt .suggestion-item {
+    padding: 8px 12px; /* Compact padding */
+}
+
 /* Selected/Focused state */
 .menu-item.is-selected,
 .menu-item.is-focused,

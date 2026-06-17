@@ -51,13 +51,51 @@ ins, .cm-ins {
 /*                           Horizontal Rule (hr)                             */
 /* -------------------------------------------------------------------------- */
 
-hr,
-.markdown-rendered hr,
+/* Common styles for both views */
+.markdown-source-view.mod-cm6 hr,
 .markdown-preview-view hr {
+    position: relative;
+    overflow: initial;
     border: none;
-    height: var(--hr-thickness);
-    background: var(--hr-color);
-    border-radius: 4px;
-    margin: 2em 0;
-    opacity: 0.3;
+    height: 1px;
+    border-bottom: 1px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(to right,
+        transparent 0%,
+        var(--hr-gradient-start) 16%,
+        var(--hr-gradient-mid) 46%,
+        transparent 48%,
+        transparent 52%,
+        var(--hr-gradient-mid) 54%,
+        var(--hr-gradient-start) 84%,
+        transparent 100%);
+}
+
+/* Margin adjustments */
+.markdown-source-view.mod-cm6 hr {
+    margin-block-start: 0.8em;
+    margin-block-end: 0.2em;
+}
+
+.markdown-preview-view hr {
+    margin-block-start: 2em;
+    margin-block-end: 1.2em;
+}
+
+/* Star decoration */
+.markdown-source-view.mod-cm6 hr::after,
+.markdown-preview-view hr::after {
+    content: '✧';
+    display: inline-block;
+    font-size: 1.4rem;
+    border-width: 2px;
+    position: absolute;
+    color: var(--hr-star-color);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow:
+        0 0 3px var(--hr-star-color),
+        0 0 6px var(--hr-star-glow-mid),
+        0 0 12px var(--hr-star-glow-outer);
 }

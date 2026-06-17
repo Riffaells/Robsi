@@ -68,8 +68,8 @@ class ThemeBuilder:
                 return False
 
             header = f"""/*
-Robsi Theme - A modern theme for Obsidian.
-By Riffaells - {datetime.now().year}
+Robsi Theme for Obsidian
+By Riffaells
 Built: {datetime.now().isoformat()}
 Files included: {len(css_files)}
 */\n\n"""

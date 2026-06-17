@@ -9,8 +9,9 @@
     /*                           THEME ACCENT COLORS                           */
     /* ======================================================================== */
     --accent-h: 265;
-    --accent-s: 60%;
-    --accent-l: 55%;
+    --accent-s: 55%;
+    --accent-l: 45%;
+    --accent-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 
     /* ======================================================================== */
     /*                           BACKGROUND COLORS                             */
@@ -70,7 +71,7 @@
     --purple-light: rgb(var(--purple-light_x));
 
     /* Magentas */
-    --magent_hsl: 261 65% 50%;
+    --magenta_hsl: 261 65% 50%;
     --magenta_x: 160, 30, 140;
     --magenta: rgb(var(--magenta_x));
     --magenta-light_x: 180, 60, 200;
@@ -115,7 +116,6 @@
     --interactive-hover: #cbd5e1;
     --interactive-success: var(--green);
     --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-    --accent-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
     
     /* Tabs */
     --tab-container-background: var(--background-primary);
@@ -124,15 +124,14 @@
     --tab-background-hover: rgba(248, 250, 252, 0.8);
     --tab-divider-color: rgba(200, 205, 210, 0.4);
 
-    /* Status bar */
-    .status-bar {
-        background: #f8fafc;
-        border-top: 1px solid #e2e8f0;
-        color: #64748b;
-    }
-
     /* Blockquote */
-    --blockquote-background-color: rgba(var(--purple_x), 0.08);
+    --blockquote-background-color: rgba(var(--teal_x), 0.08);
+    --blockquote-border: var(--teal);
+    
+    --blockquote-color: var(--fg);
+    --blockquote-quote-mark: var(--teal);
+    --blockquote-accent: var(--teal);
+    --blockquote-gradient: rgba(var(--teal_x), 0.08), rgba(var(--teal_x), 0);
 
     /* Code */
     --code-background: rgba(var(--purple_x), 0.06);

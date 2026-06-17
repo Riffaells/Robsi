@@ -2,131 +2,98 @@
 /*                                   LINKS                                    */
 /* ========================================================================== */
 
-/* --- External Links --- */
-.external-link,
-.cm-link:not(.internal-link),
-.cm-url {
-  color: var(--link-external-color) !important;
-  text-decoration: none !important;
-  border-bottom: 1px solid rgba(var(--link-external-color-rgb), 0.5);
-  padding-inline-end: 0;
-  background: none;
+/* --- Internal Links (resolved) --- */
+/* Reading view */
+.markdown-preview-view a.internal-link,
+.markdown-rendered a.internal-link {
+    color: var(--link-color);
+    text-decoration: none;
 }
 
-.external-link:hover,
-.cm-link:not(.internal-link):hover,
-.cm-url:hover {
-  color: var(--link-external-color-hover) !important;
-  border-bottom-color: rgba(var(--link-external-color-hover-rgb), 0.7);
+.markdown-preview-view a.internal-link:hover,
+.markdown-rendered a.internal-link:hover {
+    color: var(--link-color-hover);
+    text-decoration: none;
 }
 
-/* Force disable filter on external links */
-.cm-s-obsidian span.cm-formatting-link.cm-url,
-.cm-s-obsidian span.cm-url,
-.external-link {
-  filter: none !important;
+/* Live Preview (CM6) */
+.cm-s-obsidian .cm-hmd-internal-link:not(.cm-hmd-unresolved) {
+    color: var(--link-color);
 }
 
-/* Remove underline from child 'a' tags */
-.cm-link:not(.internal-link) a.cm-underline,
-.cm-url a.cm-underline {
-    text-decoration: none !important;
-}
-
-/* External Link Icon */
-a.external-link::after {
-  content: ' ';
-  width: 12px;
-  height: 12px;
-  background-image: linear-gradient(transparent, transparent), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>');
-  background-size: contain;
-  display: inline-block;
-  vertical-align: text-top;
-  opacity: 0.7;
-  transition: none;
-  border-bottom: none !important;
-  margin-left: 4px;
-}
-
-a.external-link:hover::after {
-  opacity: 1;
-}
-
-/* --- Internal Links --- */
-a.internal-link,
-.cm-hmd-internal-link,
-.cm-hmd-internal-link a,
-.HyperMD-header .cm-hmd-internal-link a,
-.cm-link,
-.cm-link .cm-hmd-internal-link,
-.markdown-preview-view .internal-link,
-.markdown-source-view .internal-link,
-.internal-lin,
-.metadata-property-value .internal-link,
-.markdown-rendered .internal-link,
-.cm-s-obsidian span.cm-hmd-internal-link {
-  color: var(--internal-link-color);
-  text-decoration: none !important;
-  transition: none;
-}
-
-a.internal-link:hover,
-.cm-hmd-internal-link:hover,
-.cm-hmd-internal-link a:hover,
-.internal-link:hover {
-  color: var(--internal-link-color-hover);
-  text-decoration: none !important;
+.cm-s-obsidian .cm-hmd-internal-link:not(.cm-hmd-unresolved):hover {
+    color: var(--link-color-hover);
 }
 
 /* --- Unresolved Links --- */
-a.internal-link.is-unresolved,
-.cm-hmd-internal-link.is-unresolved,
-.markdown-preview-view .internal-link.is-unresolved,
-.markdown-rendered .internal-link.is-unresolved {
-  color: var(--link-unresolved-color);
-  opacity: 0.7;
+/* Reading view */
+.markdown-preview-view a.internal-link.is-unresolved,
+.markdown-rendered a.internal-link.is-unresolved {
+    color: var(--link-unresolved-color);
+    opacity: var(--link-unresolved-opacity, 0.6);
+    text-decoration-color: var(--link-unresolved-color);
 }
 
-a.internal-link.is-unresolved:hover,
-.cm-hmd-internal-link.is-unresolved:hover,
-.internal-link.is-unresolved:hover {
-  color: var(--link-unresolved-color);
-  opacity: 0.7;
+.markdown-preview-view a.internal-link.is-unresolved:hover,
+.markdown-rendered a.internal-link.is-unresolved:hover {
+    opacity: 1;
 }
 
-/* --- Links inside bold / italic / both --- */
-/* Prevent bold-color and italic-color from overriding link color */
-.cm-strong .cm-hmd-internal-link,
-.cm-em .cm-hmd-internal-link,
-.cm-strong.cm-em .cm-hmd-internal-link,
+/* Live Preview (CM6) */
+.cm-s-obsidian .cm-hmd-internal-link.cm-hmd-unresolved,
+.cm-s-obsidian span.cm-hmd-unresolved {
+    color: var(--link-unresolved-color);
+    opacity: var(--link-unresolved-opacity, 0.6);
+}
+
+.cm-s-obsidian .cm-hmd-internal-link.cm-hmd-unresolved:hover,
+.cm-s-obsidian span.cm-hmd-unresolved:hover {
+    opacity: 1;
+}
+
+/* --- External Links --- */
+.external-link,
+a[href^="https://"],
+a[href^="http://"],
+.cm-s-obsidian .cm-link:not(.cm-hmd-internal-link),
+.cm-s-obsidian .cm-url {
+    color: var(--link-external-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-external-border-color);
+    padding-inline-end: 0;
+    background: none;
+}
+
+.external-link:hover,
+a[href^="https://"]:hover,
+a[href^="http://"]:hover,
+.cm-s-obsidian .cm-link:not(.cm-hmd-internal-link):hover,
+.cm-s-obsidian .cm-url:hover {
+    color: var(--link-external-color-hover);
+}
+
+
+a.external-link:hover::after,
+a[href^="https://"]:hover::after,
+a[href^="http://"]:hover::after {
+    opacity: 1;
+}
+
+.cm-s-obsidian .cm-link-alias-pipe {
+    opacity: 0.4;
+}
+
+/* --- Links inside bold / italic --- */
+.cm-strong .cm-hmd-internal-link:not(.cm-hmd-unresolved),
+.cm-em .cm-hmd-internal-link:not(.cm-hmd-unresolved),
 strong a.internal-link,
-em a.internal-link,
-strong em a.internal-link,
-em strong a.internal-link {
-  color: var(--internal-link-color) !important;
+em a.internal-link {
+    color: var(--link-color);
 }
 
-.cm-strong .cm-hmd-internal-link:hover,
-.cm-em .cm-hmd-internal-link:hover,
+.cm-strong .cm-hmd-internal-link:not(.cm-hmd-unresolved):hover,
+.cm-em .cm-hmd-internal-link:not(.cm-hmd-unresolved):hover,
 strong a.internal-link:hover,
 em a.internal-link:hover {
-  color: var(--internal-link-color-hover) !important;
-}
-
-/* Helper for data-link-text */
-/* Lower specificity to allow plugin overrides via data-link-type */
-.data-link-text a.cm-underline {
-  color: var(--internal-link-color);
-  text-decoration: none !important;
-}
-
-/* --- Links without plugin recognition (no data-link-text wrapper) --- */
-/* These are unresolved links not handled by Periodic Notes or similar plugins */
-.cm-hmd-internal-link:not(:has(.data-link-text)) {
-  color: var(--link-unresolved-color) !important;
-  opacity: 0.7;
-}
-
-.cm-hmd-internal-link:not(:has(.data-link-text)):hover {
-  opacity: 1;
+    color: var(--link-color-hover);
 }
